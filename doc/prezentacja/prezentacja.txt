@@ -1,0 +1,67 @@
+0. Specific Domain Languages
+1. Coś o sumerach
+2. TQL (dać przykłady, spytać co znaczą?)
+3. Struktura translatora, opisać co się dzieje, dlaczego jest niezależne itp., przepływ zapytania przez program
+4. Problemy (?) planowane optymalizacje (coś ciekawego na pewno musi być), featury (planowane)
+5. Pokaz działania
+
+Do zrobienia jeszcze:
+$blank -> nie wrzucać do sekwencji
+Źle się wrzucają "IM —"
+nie pozwala wstawić gwiazdki na początku
+
+
+lepsze wykrywanie uszkodzeń
+
+
+
+
+Uwagi:
+A-> policzyć ile tabliczek ściągneliśmy
+A-> dobrać zapytania, żeby były sensowne
+O-> podział na moduły: dopisać funkcje do komunikacji między modułami
+O-> kolejność w podziale na moduły - najpierw teksty potem obrazek
+
+
+147468 - tyle tabliczek ściągnęłyśmy
+
+zakładamy że do danej bazy danych da się wysłać zapytanie w formie tekstu
+
+opowiedzieć trochę o piśmie
+"Zapytania zawierają informacje tylko o treści tabliczek i ich
+metadanych." - a o co jeszcze można by pytać? (przy tym należałoby powiedzieć o jakie metadane można pytać)
+
+przykłady:
+-> (--) - może być spójnik logiczny, jak nie ma zakładamy, że jest i
+jak wyglądają regexpy (będzie pytanie czy '*' wystarczy)
+znaczene końców linii
+co się dzieje jak w jednym zapytaniu pojawi się to samo złowo kluczowe?
+pogrubić słowa kluczowe, przykłady monospacem, tabulatory w przykładzie 3
+
+trzeba powiedzieć, że wyszukujesz po odczycie w tym momencie (wyszukujesz konkretny odczyt i tylko ten odczyt)
+druga opcja, że odczyt translujesz na kliny i na tej podstawie bierzesz wszystkie możliwe odczyty i na tej podstawie to robisz (bo odczyty zapisane w bazie mogą być błędne i dlatego da opcja jest potrzebna) (nie jestem pewna w którym momencie)
+
+Do tej pory:
+=> opowiedzieć jak wygląda baza danych
+=> napisać, że jest w C
+=> dopisać skrypt do ściągania i wrzucania do bazy tabliczek (który można wrzucić do crona i odpalać co jakiś czas)?
+
+slajd końcowy (pytania, uwagi, dziękujemy)
+spis treści na początku
+
+Może dodać slajd w stylu "Co jeszcze można zrobić"? Poniżej pomysły, które przyszły mi do głowy:
+=> skróty (prov zamiast provenience)??
+=> można dać parametr w jakiej formie ma zwracać wynik (teraz jest pseudo XML, może jakieś jeszcze?)
+=> my planujemy zrobić aplikację www do tych zapytań, ale można dodać opcję exportu do jakieś bazy danych (np. sqlite) i aplikację wolnostojącą
+=> ? podpowiadanie przy tekstowym wpisywaniu do edytora zapytań
+=> znalezienie i wyświetlanie tagów (+ możliwość wyszukiwania po tagach) takich jak imię, data, liczba, miara itp
+=> peselowanie ludzi i wyszukiwanie po peselach?
+trzeba to jakoś ładnie ubrać w słowa i napisać tak, żeby w miarę wyraźnie dotyczyło tql-a (-;
+
+
+
+
+poprawić w translatorze:
+pojedyncze zapytanie moze miec sam text
+
+

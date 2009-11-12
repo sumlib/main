@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{Domain Specific Languages}{2}{0}{1}
+\beamer@sectionintoc {2}{Tabliczki sumeryjskie}{3}{0}{2}
+\beamer@sectionintoc {3}{Tablets Query Language}{5}{0}{3}
+\beamer@sectionintoc {4}{Struktura translatora}{9}{0}{4}
+\beamer@sectionintoc {5}{Co zrobi\IeC {\l }y\IeC {\'s}my, co planujemy}{14}{0}{5}

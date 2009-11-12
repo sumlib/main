@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo $1 | sed -e "s/^P//g; s/.html$//g; s/...$//g;"
-

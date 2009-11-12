@@ -1,0 +1,35 @@
+{-
+# <tekst> ::= <ciag_liter> | <ciag_liter>*<ciag_liter>
+# <ciag_liter> ::= {<litera>}
+UWAGA! <ciag_liter> może być puste => <wyr> może być puste
+-}
+
+ZapZloz.	ZapZloz ::= [Zapytanie];
+ZapProste.	Zapytanie ::= [LiniaZapytania] [Przerwa];
+ZapDef.		Zapytanie ::= "define" "<newline>" Zapytanie "as" Nazwa [Przerwa];
+ZapWyw.		Zapytanie ::= "search" "<newline>" Zapytanie "in" Nazwa [Przerwa];
+ZapPuste.	Zapytanie ::= [Przerwa];
+LiniaZap.	LiniaZapytania ::= Ident ":" Wyraz;
+WyrazAnd.	Wyraz ::= Wyraz "+" Wyraz1;
+WyrazOr.	Wyraz ::= Wyraz "/" Wyraz1;
+WyrazNeg.	Wyraz1 ::= "--" Wyraz1;
+WyrazFrag.	Wyraz2 ::= Tekst "*" Tekst;
+WyrazFragL.	Wyraz2 ::= Tekst "*";
+WyrazFragP.	Wyraz2 ::= "*" Tekst;
+WyrazTekst.	Wyraz2 ::= Tekst;
+
+coercions Wyraz 2;
+
+terminator nonempty Zapytanie "";
+terminator nonempty LiniaZapytania "<newline>";
+
+Przerwa.	Przerwa ::= "<newline>";
+separator Przerwa "";
+
+token MyToken (digit (letter | digit | '_' )*) ;
+
+TekstStr.	Tekst ::= String;
+TekstIdent.	Tekst ::= Ident;
+TekstDigit.	Tekst ::= MyToken;
+Nazwa.	Nazwa ::= String;
+

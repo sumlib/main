@@ -1,0 +1,9 @@
+define
+  provenience: Garshana
+  period: UrIII
+  text: udu ban/mash2
+as "zwierzaki w Garshana"
+search
+  text: adad-tilati
+in "zwierzaki w Garshana"
+

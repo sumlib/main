@@ -1,0 +1,78 @@
+CC = gcc
+CCFLAGS = -g -W -Wall
+
+FLEX = flex
+FLEX_OPTS = -PTQL
+
+BISON = bison
+BISON_OPTS = -t -pTQL
+
+LATEX = latex
+DVIPS = dvips
+
+all: testTQL TQL.ps
+
+.PHONY: clean distclean
+
+clean:
+	rm -f *.o TQL.dvi TQL.aux TQL.log TQL.ps testTQL
+
+distclean: clean
+	rm -f *.o Absyn.c Absyn.h Test.c Parser.c Parser.h Lexer.c Translator.c Translator.h TQL.l TQL.y TQL.tex TQL.dvi TQL.aux TQL.log TQL.ps testTQL Makefile
+
+testTQL: Absyn.o Lexer.o Parser.o Test.o symbols.o Translator.o conf/Translator_config.o Context.o Cexplode.o Database.o
+	@echo "Linking testTQL..."
+	${CC} ${CCFLAGS} *.o -o testTQL
+
+#symbols_test: symbols.o symbols_test.o
+
+symbols.o: symbols.c symbols.h
+	${CC} ${CCFLAGS} -c symbols.c
+
+conf/Translator_config.o: conf/Translator_config.c conf/Translator_config.h Buffer.o
+	${CC} ${CCFLAGS} -c conf/Translator_config.c
+
+conf/Database_config.o: conf/Database_config.c conf/Database_config.h Buffer.o
+	${CC} ${CCFLAGS} -c conf/Database_config.c
+	
+Database.o: Database.c  Database.h conf/Database_config.h
+	${CC} ${CCFLAGS} -c Database.c	
+	
+Cexplode.o: Cexplode.c Cexplode.h
+	${CC} ${CCFLAGS} -c Cexplode.c
+	
+Buffer.o: Buffer.c Buffer.h
+	${CC} ${CCFLAGS} -c Buffer.c
+	
+#symbols_test.o: symbols_test.c symbols.h
+
+Absyn.o: Absyn.c Absyn.h conf/Translator_config.h
+	${CC} ${CCFLAGS} -c Absyn.c
+
+Lexer.c: TQL.l
+	${FLEX} ${FLEX_OPTS} -oLexer.c TQL.l
+
+Parser.c: TQL.y
+	${BISON} ${BISON_OPTS} TQL.y -o Parser.c
+
+Lexer.o: Lexer.c Parser.h  symbols.h
+	${CC} ${CCFLAGS} -c Lexer.c 
+
+Parser.o: Parser.c Absyn.h symbols.h
+	${CC} ${CCFLAGS} -c Parser.c
+
+Translator.o: Translator.c Absyn.h symbols.h Translator.h conf/Translator_config.h
+	${CC} ${CCFLAGS} -c Translator.c
+
+Context.o: Context.c Absyn.h symbols.h Context.h conf/Translator_config.h
+	${CC} ${CCFLAGS} -c Context.c
+
+Test.o: Test.c Parser.h Absyn.h  symbols.h conf/Translator_config.h
+	${CC} ${CCFLAGS} -c Test.c
+
+TQL.dvi: TQL.tex
+	${LATEX} TQL.tex
+
+TQL.ps: TQL.dvi
+	${DVIPS} TQL.dvi -o TQL.ps
+

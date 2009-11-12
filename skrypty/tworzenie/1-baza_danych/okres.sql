@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS Okres CASCADE;
+
+CREATE TABLE Okres (
+    id SERIAL,
+    wartosc VARCHAR(100) NOT NULL,
+    PRIMARY KEY(id)
+);
+

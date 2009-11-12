@@ -1,0 +1,6 @@
+#!/bin/bash
+folder=strony_cdli
+if [ $# -gt 1 ]; then folder=$1; shift; fi
+folder=$folder
+
+echo $1 | sed -e "s/.html$//g; s/^$folder\///g;"

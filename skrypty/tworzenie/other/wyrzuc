@@ -1,0 +1,19 @@
+#!/bin/bash
+
+z_pliku='tekst.atf'
+do_pliku='sumlib.atf'
+sql='tab.sql'
+
+for id in `cat $sql | grep Administrative | grep 'Ur III' | cut -c 115-121`
+do
+	#chcę fragmen tekst.atf od &$id do &
+	echo $id
+	pocz=`cat $z_pliku | grep -n $id | cut -d: -f 1`
+	nr=`echo $pocz+1 | bc`
+	koniec=`cat $z_pliku | tail +$nr | grep -n '&P' | head -n 1 | cut -d: -f 1 `
+	#koniec=`echo $koniec-$pocz | bc`
+	echo $pocz
+	echo $koniec
+    cat $z_pliku | tail +$pocz | head -n $koniec >> $do_pliku
+
+done

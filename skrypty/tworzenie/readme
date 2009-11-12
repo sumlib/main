@@ -1,0 +1,34 @@
+WAZNE:
+przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
+
+Opis skryptów, ich wejścia i wyjścia/wyjść:
+
+1. Ściąganie:
+a) id.sh
+robi listę id tabliczek od P000001 do P999999
+-> Wejście: brak
+-> Wyjście: id.txt
+b) sciagnij.sh
+ściąga dane ze strony cdli
+-> Wejście: id.txt
+-> Wyjście: id_new.txt, tekst.atf, tab.sql
+c) wyrzuc.sh
+wyrzuca dane, które nie dotyczą urIII i administrative
+-> Wejście: tekst.atf, tab.sql
+-> Wyjście: sumlib.atf
+
+2. Poprawianie:
+a) popraw.py:
+zmienia numery wezlow grafu
+-> Wejście: show.xml, sign.xml, sign_name.xml 
+-> Wyjście: nowy_show.xml, nowy_sign.xml, nowy_sign_name.xml
+b) xmltosql.py:
+przerabia plik sign.xml na inserty do tabeli Odczyty
+-> Wejście: sign.xml (pierwszy argument skryptu - można dać na sztywno chyba)
+-> Wyjście: standardowe wyjście - inserty do tabeli Odczyty (można dać konkretny plik, albo od razu do bazy)
+
+3. Wrzucanie:
+a) wrzuc_do_bazy.py
+!!DOKOŃCZYĆ!! wrzuca dane z tab.sql do bazy
+-> Wejście: dane.txt (proponuję zmianę na tab.sql + insert_odczyty.sql)
+-> Wyjście: brak - do bazy bezpośrednio

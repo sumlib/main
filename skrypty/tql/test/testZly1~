@@ -1,0 +1,10 @@
+define
+  provenience: Garshana
+  period: UrIII
+  period: UrII
+  text: udu/mash2
+as "zwierzaki w Garshana"
+
+search
+in "zwierzaki w Garshana"
+

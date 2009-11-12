@@ -1,0 +1,34 @@
+SELECT id_tab, array_accum(wezly), COUNT(DISTINCT id_sekw) as sekw
+ FROM 
+((SELECT id_tab, cast(array_accum(wezly) as text) as wezly, COUNT(DISTINCT id_sekw) AS sekw, 1 AS id_sekw 
+FROM (
+  SELECT 
+   o1.wezel1_id % 1000000 AS id_tab, 
+    '{' || o1.wezel1_id || ',' || o2.wezel2_id || '}'AS wezly, 
+	   1 AS id_sekw
+  FROM 
+    odczyty o1 
+    LEFT JOIN odczyty o2 ON (o1.wezel2_id = o2.wezel1_id) 
+  WHERE
+    (
+    o1.wartosc LIKE '#unknown'
+    AND
+    o2.wartosc LIKE '@text_end'
+    )
+) AS a GROUP BY id_tab) 
+UNION 
+ (SELECT id_tab, cast(array_accum(wezly) as text) as wezly, COUNT(DISTINCT id_sekw) AS sekw, 0 AS id_sekw 
+FROM (
+  SELECT 
+   o1.wezel1_id % 1000000 AS id_tab, 
+    '{' || o1.wezel1_id || ',' || o1.wezel2_id || '}'AS wezly, 
+	   1 AS id_sekw
+  FROM 
+    odczyty o1 
+  WHERE
+    (
+    o1.wartosc LIKE 'cos'
+    )
+) AS a GROUP BY id_tab
+))AS a GROUP BY id_tab
+

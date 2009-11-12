@@ -1,0 +1,10 @@
+define
+	provenience: Ur
+	period: "Ur III"
+	genre: Administrative
+	text: udu --szabra
+as "moje zapytanie"
+
+search
+  text: masz2/ugula
+in "moje zapytanie"

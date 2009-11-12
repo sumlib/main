@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS Muzeum CASCADE;
+
+CREATE TABLE Muzeum (
+    id SERIAL,
+    wartosc VARCHAR(100) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+
+
+
+

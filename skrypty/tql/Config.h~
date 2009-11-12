@@ -1,0 +1,22 @@
+#define MAX_POL 9
+#ifndef _CONFIG_FILE_
+#define _CONFIG_FILE_
+#define ZMIENNA "###"
+#define NAWIAS_L "("
+#define NAWIAS_P ")"
+#define TRANS_AND " AND "
+#define TRANS_OR " OR "
+#define TRANS_GWIAZDKA "%"
+#define TRANS_NOT " NOT "
+
+  int ilePol();
+  char *nazwaPola(int i);
+  char *translator_zapytanie(int i, char *tekst);
+  char *translator_polaczOr(int id, char *wyr1, char *wyr2);
+  char *translator_polaczAnd(int id, char *wyr1, char *wyr2);
+  char *translator_negacja(int id, char *wyr1);
+  char *translator_gwiazdka(char *frag1, char *frag2);
+  void translator_init();
+  void translator_linia_zapytania(char *tekst, int bylo);
+  char *translator_wynik();
+#endif

@@ -1,0 +1,12 @@
+#!/bin/bash
+DB=sumlib
+USER=asia
+
+cat kolekcja.sql | psql -U $USER $DB
+cat odczyty.sql | psql -U $USER $DB
+cat okres.sql | psql -U $USER $DB
+cat prowiniencja.sql | psql -U $USER $DB
+cat tagi.sql | psql -U $USER $DB
+cat typ.sql | psql -U $USER $DB
+cat wartosc_tag.sql | psql -U $USER $DB
+cat tabliczka.sql | psql -U $USER $DB

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+database=sumlib
+user=asia
+current=.
+
+if [ $# -gt 0 ]; then user=$1; shift 1; fi 
+if [ $# -gt 0 ]; then database=$1; shift 1; fi 
+if [ $# -gt 0 ]; then current=$1; shift 1; fi 
+$current/../common/info "tworzenie user-a $user"
+echo "create user $user password 'achajka';" | psql
+$current/../common/info "tworzenie bazy $database"
+echo "create database $database with owner $user;" | psql
+$current/../common/info "tworzenie funkcji"
+cat $current/funkcje.sql | psql

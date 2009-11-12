@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS Kolekcja CASCADE;
+
+CREATE TABLE Kolekcja (
+    id SERIAL,
+    wartosc VARCHAR(100) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+
+
+
+
+
+
+

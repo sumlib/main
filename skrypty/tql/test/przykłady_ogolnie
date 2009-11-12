@@ -1,0 +1,44 @@
+Pomyślałam, że fajnie, żeby pierwsze 3 przykłady pokazywały jak można pytać o to samo w różny sposób:
+
+Przykład 1:
+provenience: Ur
+period: "Ur III"
+genre: Administrative
+text: udu + (masz2/ugula) --szabra
+
+-------------------------------------------------
+Przykład 2:
+provenience: Ur
+period: "Ur III"
+genre: Administrative
+text: udu --szabra
+
+text: masz2/ugula
+
+----------------------------------------------------
+Przykład 3:
+define
+    provenience: Ur
+    period: "Ur III"
+    genre: Administrative
+    text: udu --szabra
+as "moje zapytanie"
+
+search
+  text: masz2/ugula
+in "moje zapytanie"
+
+----------------------------------------------------
+Wszystkie 3 zwracają 2 tabliczki (136403, 136401). W pierwszym jest udu i ugula w drugim udu i masz2 (i [ugula], ale tego w tym momencie nie bierzemy pod uwagę - możesz dodać, że obsługa uszkodzeń jest jeszcze do dorobienia)
+
+=======================
+Przykład 4 (pokazuje trochę regexpa i frazy):
+provenience: Ur*
+period: "Ur III"
+genre: Administrative
+text: "udu niga"/nig2*sze3
+
+---------------------------------------------------
+to zwraca 2 tabliczki (200377, 285682). W pierwszej masz udu niga w pierwszej linijce, w drugiej "nig2-sag-gesz-sze3 " w obverse 12 (-;
+i uwaga - nie próbuj wrzucać gwiazdki na początek frazy - wywala błąd parsowania (-;
+

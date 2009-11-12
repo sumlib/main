@@ -1,0 +1,18 @@
+#!/bin/bash
+
+start=1
+end=999999
+if [ $# -gt 0 ]; then start=$1; fi 
+if [ $# -gt 1 ]; then end=$2; fi 
+
+
+for i in `seq $start $end` 
+do
+ if [ $i -le 9 ]; then echo "P00000$i"
+ else if [ $i -le 99 ]; then echo "P0000$i"
+ else if [ $i -le 999 ]; then echo "P000$i" 
+ else if [ $i -le 9999 ]; then echo "P00$i" 
+ else if [ $i -le 99999 ]; then echo "P0$i"
+ else echo "P$i" 
+ fi;fi;fi;fi;fi
+done

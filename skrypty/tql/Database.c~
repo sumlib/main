@@ -1,0 +1,9 @@
+#include "Database.h"
+#include "conf/Database_config.h"
+
+char* getXmlFromQuery(char* query){
+    Tablet *tabs = getTablets(query);
+    if(tabs==NULL) return "No results";
+    else
+	return "There are some results";
+}

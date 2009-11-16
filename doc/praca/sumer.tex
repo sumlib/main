@@ -167,7 +167,7 @@ poza \terminal{"}\ niepoprzedzonymi \verb6\6.
 \subsubsection*{Słowo Od Litery}
 Literał \nonterminal{Słowo Od Litery} to ciąg liter, cyfr oraz znaków  {\tt - \_ '}, zaczynający się od litery,
 z wyjątkiem słów kluczowych.
-%usunąć @ z translatora
+
 
 
 \subsubsection*{Słowo Od Liczby}
@@ -273,10 +273,115 @@ Wszystkie pozostałe symbole to terminale.\\
 \chapter{Implementacja}
 Implementacja składa się z dwóch części - zależnej i niezależnej od struktury danych. 
 \section{Trzon}
-\section{nie wiem}
+
+\subsection{Parser}
+Parser został utworzony za pomocą narzędzia BNFC. Następnie został zmodyfikowany ręcznie: nazwy stałych oznaczających symbole, 
+dodanie tablicy symboli (stringów), uporządkowanie kodu, zmiana niektórych struktur danych. Na parser składają się następujące pliki:
+\begin{itemize}
+ \item Parser.c
+\item Parser.h
+\item TQL.y % tłumaczony na Parser.c
+\item TQL.l % tłumaczony na Lexer.c
+\end{itemize}
+
+
+
+\subsection{Analizator kontekstowy}
+\begin{itemize}
+ \item sprawdza, czy to co jest po lewej w linii zapytania jest nazwą pola.
+\item upraszcza zapytania - z zapytania złożonego (wywołanie search in) tworzy jedno zapytanie proste
+\item wypełnia strukturę danych
+\end{itemize}
+Składa się z następujących plików:
+\begin{itemize}
+ \item Context.c
+ \item Context.h
+\end{itemize}
+
+\subsection{Translator}
+Zadaniem translatora jest przetłumaczenie struktury (drzewa składni abstrakcyjnej) jaka powstała na zapytanie w danym języku. 
+Składa się z następujących plików:
+\begin {itemize}
+ \item Translator.c
+ \item Translator.h
+ \item Translator\_config.h
+ \item Translator\_config.c (implementacja interfejsu z Translator\_config.h, zależny od wyboru bazy danych itp)
+\end {itemize}
+
+To jak poszczególne elementy są tłumaczone zależy od pliku Translator\_config.c (interfejs jest w Translator\_config.h). Plik Translator.c 
+przechodzi całą strukturę i od czasu do czasu wywołuje funkcję z Translator\_config.
+
+\subsection{Baza}
+Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - w tym momencie xml.
+Składa się z następujących plików:
+\begin {itemize}
+ \item Database.c
+ \item Database.h
+ \item Database\_config.h
+ \item Database\_config.c (implementacja interfejsu z Database\_conf.h, zależny od wyboru bazy danych itp)
+\end {itemize}
+Wywołuje funkcję z Database\_config.h, jako parametr podaje treść zapytania, funkcja zwraca wypełnioną strukturę danych Tablets.
+
+
+\begin{verbatim}
+typedef struct{    
+    char* id;
+    char* id_cdli;
+    char* publication;
+    char* measurements;
+    char* year;
+    char* provenience;
+    char* period;
+    char* genre;
+    char* subgenre;
+    char* collection;
+    char* text;
+    Tags *tags; //miejsca gdzie w tekście są wyniki wyszukiwania
+} Tablet;
+
+typedef struct{
+    int size;
+    Tablet *tabs;
+} Tablets;
+\end{verbatim}
+
+Następnie tłumaczy otrzymaną strukturę na xml-a.
+
+\subsection{Pliki pomocnicze}
+Tablica symboli (stringów):
+\begin{itemize}
+ \item symbols.c
+\item symbols.h
+\end{itemize}
+Obsługa błędów:
+\begin{itemize}
+ \item Err.c
+\item Err.h
+\end{itemize}
+Definicja struktur danych:
+\begin{itemize}
+ \item Absyn.c
+\item Absyn.h
+\end{itemize}
+
+\section{Moduły wymienne}
+Pliki zależne od wyboru konkretnej bazy danych to:
+\begin{itemize}
+ \item Translator\_config.c
+\item Database\_config.c
+\end{itemize}
+Ich interfejs jest wspólny dla wszystkich baz danych.
+
 \subsection{Baza PostgreSQL}
 \subsubsection{Diagram encji}
 \includegraphics[width=500px]{diagramy/Model-encji-postgresql.png}
+\subsubsection{Translator\_config}
+Dostaje poszczególne fragmenty drzewa struktury zapytania i tłumaczy je na SQL. Przetłumaczone fragmenty zbiera do buforów (select, from, where), które następnie odpowiednio skleja.
+Każde proste zapytanie jest tłumaczone na jednego selecta; jak jest kilka prostych zapytań to są sklejane UNION.
+
+\subsubsection{Database\_config}
+Odpowiada za wywołanie zapytania na konkretnej bazie. Korzysta z pliku database.conf, który zawiera dane dostępu do bazy. Korzysta z biblioteki libpq-fe.h do postgresa. Zwrócony wynik zapisuje do struktury Tablets.
+
 \subsection{Baza XML}
 
 %\chapter{Dokumentacja użytkowa i opis implementacji}\label{r:impl}

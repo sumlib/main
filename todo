@@ -1,0 +1,15 @@
+przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
+
+$blank -> nie wrzucać do sekwencji
+Źle się wrzucają "IM —"
+nie pozwala wstawić gwiazdki na początku
+lepsze wykrywanie uszkodzeń
+pojedyncze zapytanie moze miec sam text
+
+zmiana nazw stałych symboli - żeby wszystkie były znaczące
+zmiana nazwy symbols.h/c na Symbols.h/c
+zmiana nazw funkcji na takie jak na prezentacji
+
+usunąć @ z translatora
+
+sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć)

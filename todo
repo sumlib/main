@@ -13,3 +13,5 @@ zmiana nazw funkcji na takie jak na prezentacji
 usunąć @ z translatora
 
 sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć)
+
+zmienić nazwy tabel i pól na angielski w bazie danych

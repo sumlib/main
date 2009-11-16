@@ -22,6 +22,7 @@
 %odkomentowana
 \usepackage[utf8]{inputenc}
 \RequirePackage{graphicx}
+\RequirePackage{longtable}
 
 \newcommand{\emptyP}{\mbox{$\epsilon$}}
 \newcommand{\terminal}[1]{\mbox{{\texttt {#1}}}}
@@ -378,6 +379,61 @@ Ich interfejs jest wspólny dla wszystkich baz danych.
 \subsubsection{Translator\_config}
 Dostaje poszczególne fragmenty drzewa struktury zapytania i tłumaczy je na SQL. Przetłumaczone fragmenty zbiera do buforów (select, from, where), które następnie odpowiednio skleja.
 Każde proste zapytanie jest tłumaczone na jednego selecta; jak jest kilka prostych zapytań to są sklejane UNION.
+
+\subsubsection{Tłumaczenie konstrukcji}
+\begin{longtable}{|p{3in}|p{3in}|}
+\hline
+{\bf Konstrukcja} & {\bf Tłumaczenie na SQL}\\
+\hline
+\endhead
+provenience: wartosc & \begin{description}
+     \item[From] 
+     \item[Where] p.value LIKE 'wartosc'
+     \end{description}\\
+\hline
+publication: wartosc & 
+\begin{description}
+     \item[From]
+     \item[Where] t.publication LIKE 'wartosc'
+     \end{description}\\
+\hline
+period: wartosc & 
+\begin{description}
+     \item[From]
+     \item[Where] pd.value LIKE 'wartosc'
+     \end{description}\\
+\hline
+year: wartosc & \begin{description}
+     \item[From]
+     \item[Where] t.origin\_date LIKE 'wartosc'
+     \end{description}\\
+\hline
+genre: wartosc & \begin{description}
+     \item[From]
+     \item[Where] g1.value LIKE 'wartosc' OR g2.value LIKE 'wartosc'
+     \end{description}\\
+\hline
+cdli\_id: wartosc & \begin{description}
+     \item[From]
+     \item[Where] t.cdli\_id LIKE 'wartosc'
+     \end{description}
+\\
+\hline
+text: wartosc & \begin{description}
+     \item[From]
+     \item[Where] 
+     \end{description}
+\\
+\hline
+\end{longtable}
+
+
+% \begin{array}{ll}
+% x & x \\
+% \textbf{Konstrukcja} & \textbf{Tłumaczenie na sql}\\
+% \end{array}
+
+
 
 \subsubsection{Database\_config}
 Odpowiada za wywołanie zapytania na konkretnej bazie. Korzysta z pliku database.conf, który zawiera dane dostępu do bazy. Korzysta z biblioteki libpq-fe.h do postgresa. Zwrócony wynik zapisuje do struktury Tablets.

@@ -233,9 +233,3 @@ Tablets *getTablets(char* query) {
     return retVal;
 
 }
-
-
-
-/*
-
- */

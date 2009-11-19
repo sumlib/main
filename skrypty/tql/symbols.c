@@ -21,11 +21,11 @@ void symbols_init(){
 	symbols_size = 128;
 	symbols = malloc(symbols_size * sizeof(Symbol));
 	for(i=0;i<fieldsCount();i++)
-		symbols_get_id(fieldName(i));
+		symbols_getId(fieldName(i));
 	
 }
 
-int symbols_get_id(char* name){
+int symbols_getId(char* name){
 	int i;
 	Symbol *tmp;
 	if(!symbols_size) symbols_init();
@@ -46,7 +46,7 @@ int symbols_get_id(char* name){
 	return symbols_count-1;
 }
 
-char* symbols_get_name(int id){
+char* symbols_getName(int id){
 	if(id<0 || id>symbols_count){
 		fprintf(stderr, "Error: wrong id in symbol_get_name (%d)\n", id);
 		return NULL;
@@ -54,7 +54,7 @@ char* symbols_get_name(int id){
 	return symbols[id].name;
 }
 
-Zapytanie symbols_get_zapyt(int id){
+Zapytanie symbols_getQuery(int id){
 	if(id<0 || id>symbols_count){
 		fprintf(stderr, "Error: wrong id in symbol_get_zapyt (%d)\n", id);
 		return NULL;
@@ -62,7 +62,7 @@ Zapytanie symbols_get_zapyt(int id){
 	return symbols[id].zapyt;
 }
 
-void symbols_set_zapyt(int id, Zapytanie zapyt){
+void symbols_setQuery(int id, Zapytanie zapyt){
   	if(id<0 || id>symbols_count){
 		fprintf(stderr, "Error: wrong id in symbol_set_zapyt (%d)\n", id);
 		return;
@@ -70,13 +70,13 @@ void symbols_set_zapyt(int id, Zapytanie zapyt){
 	symbols[id].zapyt = zapyt;
 }
 
-int symbols_is_NazwaPola(Ident i){
+int symbols_isFieldName(Ident i){
 //	printf("czy %d jest Nazwą pola\n", i);
 	return (i>=0 && i<fieldsCount());
 }
 
-int symbols_to_NazwaPola_id(Ident id){
-	if(symbols_is_NazwaPola(id))
+int symbols_toFieldId(Ident id){
+	if(symbols_isFieldName(id))
 		return id;
 	else
 		return -1;

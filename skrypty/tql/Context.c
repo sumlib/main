@@ -48,14 +48,14 @@ void contextZapytanie(Zapytanie _p_)
     /* Code for ZapDef Goes Here */
     contextZapytanie(_p_->u.zapdef_.zapytanie_);
     contextNazwa(_p_->u.zapdef_.nazwa_);
-    symbols_set_zapyt(_p_->u.zapdef_.nazwa_, _p_->u.zapdef_.zapytanie_);
+    symbols_setQuery(_p_->u.zapdef_.nazwa_, _p_->u.zapdef_.zapytanie_);
     break;
   case is_ZapWyw:
     /* Code for ZapWyw Goes Here */
     //TODO: Połączyć linie zapytania z zap_def
     contextZapytanie(_p_->u.zapwyw_.zapytanie_);
     contextNazwa(_p_->u.zapwyw_.nazwa_);
-    zapyt = symbols_get_zapyt(_p_->u.zapwyw_.nazwa_);
+    zapyt = symbols_getQuery(_p_->u.zapwyw_.nazwa_);
     if(zapyt==NULL){
 	//TODO: komunikat
 	exit(1);
@@ -167,7 +167,7 @@ void contextIdent(Ident i)
 
 void contextNazwaPola(Ident i)
 {
-  if(symbols_is_NazwaPola(i)) fprintf(stderr, "Error: %s nie jest nazwą pola\n", symbols_get_name(i));
+  if(symbols_isFieldName(i)) fprintf(stderr, "Error: %s nie jest nazwą pola\n", symbols_getName(i));
 }
 
 void contextInteger(Integer i)

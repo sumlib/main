@@ -277,7 +277,7 @@ void ppPrzerwa(int _p_, int _i_)
 char* ppTekst(Tekst _p_)
 {
 
-    return symbols_get_name(_p_);
+    return symbols_getName(_p_);
 
 }
 
@@ -306,10 +306,10 @@ void ppChar(Char c, int i)
 void ppString(String s, int i)
 {
   tmpBufAppendC('\"');
-  tmpBufAppendS(symbols_get_name(i));
+  tmpBufAppendS(symbols_getName(i));
   tmpBufAppendC('\"');
 }
 void ppIdent(String s, int i)
 {
-  renderS(symbols_get_name(s));
+  renderS(symbols_getName(s));
 }

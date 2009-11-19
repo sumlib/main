@@ -900,7 +900,7 @@ BEGIN ESCAPED;
 case 15:
 YY_RULE_SETUP
 #line 52 "TQL.l"
-yylval.string_ = symbols_get_id(YY_PARSED_STRING); YY_BUFFER_RESET(); BEGIN YYINITIAL; return _STRING_;
+yylval.string_ = symbols_getId(YY_PARSED_STRING); YY_BUFFER_RESET(); BEGIN YYINITIAL; return _STRING_;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
@@ -935,12 +935,12 @@ YY_BUFFER_APPEND(TQLtext); BEGIN STRING;
 case 22:
 YY_RULE_SETUP
 #line 59 "TQL.l"
-yylval.string_ = symbols_get_id(TQLtext); return _IDENT_;
+yylval.string_ = symbols_getId(TQLtext); return _IDENT_;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 60 "TQL.l"
-yylval.string_ = symbols_get_id(TQLtext); return _SYMB_DWUKROPEK2;
+yylval.string_ = symbols_getId(TQLtext); return _SYMB_DWUKROPEK2;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP

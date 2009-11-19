@@ -40,15 +40,15 @@ Zapytanie make_ZapProste(ListLiniaZapytania p1, ListPrzerwa p2)
   for(;p1;p1=p1->listliniazapytania_){
 	linia = p1->liniazapytania_;
 	id = linia->ident_;
-	id = symbols_to_NazwaPola_id(id);
+	id = symbols_toFieldId(id);
 	if(id>=0){
 		if(tmp->u.zapproste_.tabliniazapytania_[id] == NULL)
 			tmp->u.zapproste_.tabliniazapytania_[id] = linia;
 		else
-			fprintf(stderr, "Warning: field '%s' was already used\n", symbols_get_name(linia->ident_));
+			fprintf(stderr, "Warning: field '%s' was already used\n", symbols_getName(linia->ident_));
 	}
 	else
-	 fprintf(stderr, "Warning: '%s' is not a valid name of field\n", symbols_get_name(linia->ident_));
+	 fprintf(stderr, "Warning: '%s' is not a valid name of field\n", symbols_getName(linia->ident_));
   }
   return tmp;
 }

@@ -165,8 +165,8 @@ void ppZapytanie(Query _p_, int _i_)
     if (_i_ > 0) renderC(_L_PAREN);
     b=0;
     for(j=0;j<fieldsCount();j++){
-	if(_p_->u.zapproste_.tabliniazapytania_[j]!=NULL){
-    		translator_mergeLines(ppLiniaZapytania(_p_->u.zapproste_.tabliniazapytania_[j], 0), _p_->u.zapproste_.tabliniazapytania_[j]->ident_, b);
+	if(_p_->u.simplequery_.tabqueryline_[j]!=NULL){
+    		translator_mergeLines(ppLiniaZapytania(_p_->u.simplequery_.tabqueryline_[j], 0), _p_->u.simplequery_.tabqueryline_[j]->ident_, b);
 		b++;
 	}
     }
@@ -179,7 +179,7 @@ void ppZapytanie(Query _p_, int _i_)
 
   case is_ZapWyw:
     if (_i_ > 0) renderC(_L_PAREN);
-    ppZapytanie(_p_->u.zapwyw_.zapytanie_, 0);
+    ppZapytanie(_p_->u.callquery_.query_, 0);
 
     if (_i_ > 0) renderC(_R_PAREN);
     break;
@@ -200,7 +200,7 @@ void ppZapytanie(Query _p_, int _i_)
 char *ppLiniaZapytania(QueryLine _p_, int _i_)
 {
 
-    return ppWyraz(_p_->wyraz_, _p_->ident_, 0);
+    return ppWyraz(_p_->expr_, _p_->ident_, 0);
 
 }
 
@@ -210,17 +210,17 @@ char *ppWyraz(Expr _p_, Ident id, int _i_)
   switch(_p_->kind)
   {
   case is_WyrazAnd:
-    return translator_and(id, ppWyraz(_p_->u.wyrazand_.wyraz_1, id, 0), ppWyraz(_p_->u.wyrazand_.wyraz_2, id, 1));
+    return translator_and(id, ppWyraz(_p_->u.andexpr_.expr_1, id, 0), ppWyraz(_p_->u.andexpr_.expr_2, id, 1));
   case is_WyrazOr:
-    return translator_or(id, ppWyraz(_p_->u.wyrazor_.wyraz_1, id, 0), ppWyraz(_p_->u.wyrazor_.wyraz_2, id, 1));
+    return translator_or(id, ppWyraz(_p_->u.orexpr_.expr_1, id, 0), ppWyraz(_p_->u.orexpr_.expr_2, id, 1));
   case is_WyrazNeg:
-    return translator_not(id, ppWyraz(_p_->u.wyrazneg_.wyraz_, id, 1));
+    return translator_not(id, ppWyraz(_p_->u.notexpr_.expr_, id, 1));
 
   case is_WyrazFrag:
-    return translator_simpleText(id, translator_star(ppTekst(_p_->u.wyrazfrag_.tekst_1), ppTekst(_p_->u.wyrazfrag_.tekst_2)));
+    return translator_simpleText(id, translator_star(ppTekst(_p_->u.partexpr_.text_1), ppTekst(_p_->u.partexpr_.text_2)));
 
   case is_WyrazFragL:
-    return translator_simpleText(id, translator_star(ppTekst(_p_->u.wyrazfragl_.tekst_), NULL));
+    return translator_simpleText(id, translator_star(ppTekst(_p_->u.wyrazfragl_.text_1), NULL));
 
   case is_WyrazFragP:
     return translator_simpleText(id, translator_star(NULL, ppTekst(_p_->u.wyrazfragp_.tekst_)));

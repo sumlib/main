@@ -20,15 +20,15 @@ Query polacz_zapytania(Query z1, Query z2){
     Expr w;
     if(z1->kind == is_ZapProste && z2->kind == is_ZapProste){
         for(i=0;i<fieldsCount();i++){
-	  if(z2->u.zapproste_.tabliniazapytania_[i]!=NULL){
-    		w = z2->u.zapproste_.tabliniazapytania_[i]->wyraz_;
-		if(z1->u.zapproste_.tabliniazapytania_[i]==NULL)
-		    z->u.zapproste_.tabliniazapytania_[i] = make_LiniaZap(z2->u.zapproste_.tabliniazapytania_[i]->ident_, w);
+	  if(z2->u.simplequery_.tabqueryline_[i]!=NULL){
+    		w = z2->u.simplequery_.tabqueryline_[i]->expr_;
+		if(z1->u.simplequery_.tabqueryline_[i]==NULL)
+		    z->u.simplequery_.tabqueryline_[i] = make_QueryLine(z2->u.simplequery_.tabqueryline_[i]->ident_, w);
 		else{
-		    z->u.zapproste_.tabliniazapytania_[i] = make_LiniaZap(z2->u.zapproste_.tabliniazapytania_[i]->ident_, make_WyrazAnd(w, z1->u.zapproste_.tabliniazapytania_[i]->wyraz_));
+		    z->u.simplequery_.tabqueryline_[i] = make_QueryLine(z2->u.simplequery_.tabqueryline_[i]->ident_, make_WyrazAnd(w, z1->u.simplequery_.tabqueryline_[i]->expr_));
 		}
 	  }else
-	    z->u.zapproste_.tabliniazapytania_[i] = z1->u.zapproste_.tabliniazapytania_[i];
+	    z->u.simplequery_.tabqueryline_[i] = z1->u.simplequery_.tabqueryline_[i];
 	}
 	return z;
     }
@@ -46,24 +46,24 @@ void contextZapytanie(Query _p_)
     break;
   case is_ZapDef:
     /* Code for ZapDef Goes Here */
-    contextZapytanie(_p_->u.zapdef_.zapytanie_);
-    contextNazwa(_p_->u.zapdef_.nazwa_);
-    symbols_setQuery(_p_->u.zapdef_.nazwa_, _p_->u.zapdef_.zapytanie_);
+    contextZapytanie(_p_->u.defquery_.query_);
+    contextNazwa(_p_->u.defquery_.name_);
+    symbols_setQuery(_p_->u.defquery_.name_, _p_->u.defquery_.query_);
     break;
   case is_ZapWyw:
     /* Code for ZapWyw Goes Here */
     //TODO: Połączyć linie zapytania z zap_def
-    contextZapytanie(_p_->u.zapwyw_.zapytanie_);
-    contextNazwa(_p_->u.zapwyw_.nazwa_);
-    zapyt = symbols_getQuery(_p_->u.zapwyw_.nazwa_);
+    contextZapytanie(_p_->u.callquery_.query_);
+    contextNazwa(_p_->u.callquery_.name_);
+    zapyt = symbols_getQuery(_p_->u.callquery_.name_);
     if(zapyt==NULL){
 	//TODO: komunikat
 	exit(1);
     }
     //TODO: zdefiniować funkcję
-    zapyt = polacz_zapytania(_p_->u.zapwyw_.zapytanie_, zapyt);
+    zapyt = polacz_zapytania(_p_->u.callquery_.query_, zapyt);
     if(zapyt)
-      _p_->u.zapwyw_.zapytanie_ = zapyt;
+      _p_->u.callquery_.query_ = zapyt;
     break;
   case is_ZapPuste:
     /* Code for ZapPuste Goes Here */
@@ -80,7 +80,7 @@ void contextLiniaZapytania(QueryLine _p_)
 
     /* Code for LiniaZap Goes Here */
     contextNazwaPola(_p_->ident_);
-    contextWyraz(_p_->wyraz_);
+    contextWyraz(_p_->expr_);
 
 }
 
@@ -90,26 +90,26 @@ void contextWyraz(Expr _p_)
   {
   case is_WyrazAnd:
     /* Code for WyrazAnd Goes Here */
-    contextWyraz(_p_->u.wyrazand_.wyraz_1);
-    contextWyraz(_p_->u.wyrazand_.wyraz_2);
+    contextWyraz(_p_->u.andexpr_.expr_1);
+    contextWyraz(_p_->u.andexpr_.expr_2);
     break;
   case is_WyrazOr:
     /* Code for WyrazOr Goes Here */
-    contextWyraz(_p_->u.wyrazor_.wyraz_1);
-    contextWyraz(_p_->u.wyrazor_.wyraz_2);
+    contextWyraz(_p_->u.orexpr_.expr_1);
+    contextWyraz(_p_->u.orexpr_.expr_2);
     break;
   case is_WyrazNeg:
     /* Code for WyrazNeg Goes Here */
-    contextWyraz(_p_->u.wyrazneg_.wyraz_);
+    contextWyraz(_p_->u.notexpr_.expr_);
     break;
   case is_WyrazFrag:
     /* Code for WyrazFrag Goes Here */
-    contextTekst(_p_->u.wyrazfrag_.tekst_1);
-    contextTekst(_p_->u.wyrazfrag_.tekst_2);
+    contextTekst(_p_->u.partexpr_.text_1);
+    contextTekst(_p_->u.partexpr_.text_2);
     break;
   case is_WyrazFragL:
     /* Code for WyrazFragL Goes Here */
-    contextTekst(_p_->u.wyrazfragl_.tekst_);
+    contextTekst(_p_->u.wyrazfragl_.text_1);
     break;
   case is_WyrazFragP:
     /* Code for WyrazFragP Goes Here */

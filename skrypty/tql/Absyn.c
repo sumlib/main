@@ -22,7 +22,7 @@ ComplexQuery make_ZapZloz(QueryList p1)
 
 
 /********************   ZapProste    ********************/
-Query make_ZapProste(QueryLineList p1, SpaceList p2)
+Query make_SimpleQuery(QueryLineList p1, SpaceList p2)
 {
   Query tmp = (Query) malloc(sizeof(*tmp));
   QueryLine linia;
@@ -35,15 +35,15 @@ Query make_ZapProste(QueryLineList p1, SpaceList p2)
   tmp->kind = is_ZapProste;
   //tmp->u.zapproste_.listliniazapytania_ = p1;
   for(i=0;i<fieldsCount();i++){
-	tmp->u.zapproste_.tabliniazapytania_[i] = NULL;
+	tmp->u.simplequery_.tabqueryline_[i] = NULL;
   }
   for(;p1;p1=p1->listliniazapytania_){
 	linia = p1->liniazapytania_;
 	id = linia->ident_;
 	id = symbols_toFieldId(id);
 	if(id>=0){
-		if(tmp->u.zapproste_.tabliniazapytania_[id] == NULL)
-			tmp->u.zapproste_.tabliniazapytania_[id] = linia;
+		if(tmp->u.simplequery_.tabqueryline_[id] == NULL)
+			tmp->u.simplequery_.tabqueryline_[id] = linia;
 		else
 			fprintf(stderr, "Warning: field '%s' was already used\n", symbols_getName(linia->ident_));
 	}
@@ -64,8 +64,8 @@ Query make_ZapDef(Query p1, Name p2, SpaceList p3)
     exit(1);
   }
   tmp->kind = is_ZapDef;
-  tmp->u.zapdef_.zapytanie_ = p1;
-  tmp->u.zapdef_.nazwa_ = p2;
+  tmp->u.defquery_.query_ = p1;
+  tmp->u.defquery_.name_ = p2;
  // tmp->u.zapdef_.listprzerwa_ = p3;
 
   return tmp;
@@ -82,8 +82,8 @@ Query make_ZapWyw(Query p1, Name p2, SpaceList p3)
     exit(1);
   }
   tmp->kind = is_ZapWyw;
-  tmp->u.zapwyw_.zapytanie_ = p1;
-  tmp->u.zapwyw_.nazwa_ = p2;
+  tmp->u.callquery_.query_ = p1;
+  tmp->u.callquery_.name_ = p2;
   //tmp->u.zapwyw_.listprzerwa_ = p3;
 
   return tmp;
@@ -107,7 +107,7 @@ Query make_ZapPuste(SpaceList p1)
 
 
 /********************   LiniaZap    ********************/
-QueryLine make_LiniaZap(Ident p1, Expr p2)
+QueryLine make_QueryLine(Ident p1, Expr p2)
 {
   QueryLine tmp = (QueryLine) malloc(sizeof(*tmp));
   if (!tmp)
@@ -116,7 +116,7 @@ QueryLine make_LiniaZap(Ident p1, Expr p2)
     exit(1);
   }
   tmp->ident_ = p1;
-  tmp->wyraz_ = p2;
+  tmp->expr_ = p2;
 
   return tmp;
 }
@@ -132,8 +132,8 @@ Expr make_WyrazAnd(Expr p1, Expr p2)
     exit(1);
   }
   tmp->kind = is_WyrazAnd;
-  tmp->u.wyrazand_.wyraz_1 = p1;
-  tmp->u.wyrazand_.wyraz_2 = p2;
+  tmp->u.andexpr_.expr_1 = p1;
+  tmp->u.andexpr_.expr_2 = p2;
 
   return tmp;
 }
@@ -149,8 +149,8 @@ Expr make_WyrazOr(Expr p1, Expr p2)
     exit(1);
   }
   tmp->kind = is_WyrazOr;
-  tmp->u.wyrazor_.wyraz_1 = p1;
-  tmp->u.wyrazor_.wyraz_2 = p2;
+  tmp->u.orexpr_.expr_1 = p1;
+  tmp->u.orexpr_.expr_2 = p2;
 
   return tmp;
 }
@@ -166,7 +166,7 @@ Expr make_WyrazNeg(Expr p1)
     exit(1);
   }
   tmp->kind = is_WyrazNeg;
-  tmp->u.wyrazneg_.wyraz_ = p1;
+  tmp->u.notexpr_.expr_ = p1;
 
   return tmp;
 }
@@ -182,8 +182,8 @@ Expr make_WyrazFrag(Text p1, Text p2)
     exit(1);
   }
   tmp->kind = is_WyrazFrag;
-  tmp->u.wyrazfrag_.tekst_1 = p1;
-  tmp->u.wyrazfrag_.tekst_2 = p2;
+  tmp->u.partexpr_.text_1 = p1;
+  tmp->u.partexpr_.text_2 = p2;
 
   return tmp;
 }
@@ -199,7 +199,7 @@ Expr make_WyrazFragL(Text p1)
     exit(1);
   }
   tmp->kind = is_WyrazFragL;
-  tmp->u.wyrazfragl_.tekst_ = p1;
+  tmp->u.wyrazfragl_.text_1 = p1;
 
   return tmp;
 }

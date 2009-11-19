@@ -44,38 +44,38 @@ ComplexQuery make_ZapZloz(QueryList p0);
 
 struct Query_
 {
-  enum { is_ZapProste, is_ZapDef, is_ZapWyw, is_ZapPuste } kind;
+  enum { is_SingleQuery, is_DefQuery, is_CallQuery, is_EmptyQuery } kind;
   union
   {
-    struct { QueryLine tabliniazapytania_[MAX_POL];} zapproste_;
-    struct { Query zapytanie_;Name nazwa_;} zapdef_;
-    struct { Query zapytanie_;Name nazwa_;} zapwyw_;
+    struct { QueryLine tabqueryline_[MAX_POL];} simplequery_;
+    struct { Query query_;Name name_;} defquery_;
+    struct { Query query_;Name name_;} callquery_;
   } u;
 };
 
-Query make_ZapProste(QueryLineList p0, SpaceList p1);
-Query make_ZapDef(Query p0, Name p1, SpaceList p2);
-Query make_ZapWyw(Query p0, Name p1, SpaceList p2);
-Query make_ZapPuste(SpaceList p0);
+Query make_SimpleQuery(QueryLineList p0, SpaceList p1);
+Query make_DefQuery(Query p0, Name p1, SpaceList p2);
+Query make_CallQuery(Query p0, Name p1, SpaceList p2);
+Query make_EmptyQuery(SpaceList p0);
 
 struct QueryLine_
 {
   Ident ident_;
-  Expr wyraz_;
+  Expr expr_;
 };
 
-QueryLine make_LiniaZap(Ident p0, Expr p1);
+QueryLine make_QueryLine(Ident p0, Expr p1);
 
 struct Expr_
 {
-  enum { is_WyrazAnd, is_WyrazOr, is_WyrazNeg, is_WyrazFrag, is_WyrazFragL, is_WyrazFragP, is_WyrazTekst } kind;
+  enum { is_AndExpr, is_OrExpr, is_NotExpr, is_PartExpr, is_LPartExpr, is_RPartExpr, is_TextExpr } kind;
   union
   {
-    struct { Expr wyraz_1, wyraz_2; } wyrazand_;
-    struct { Expr wyraz_1, wyraz_2; } wyrazor_;
-    struct { Expr wyraz_; } wyrazneg_;
-    struct { Text tekst_1, tekst_2; } wyrazfrag_;
-    struct { Text tekst_; } wyrazfragl_;
+    struct { Expr expr_1, expr_2; } andexpr_;
+    struct { Expr expr_1, expr_2; } orexpr_;
+    struct { Expr expr_; } notexpr_;
+    struct { Text text_1, text_2; } partexpr_;
+    struct { Text text_1; } wyrazfragl_;
     struct { Text tekst_; } wyrazfragp_;
     struct { Text tekst_; } wyraztekst_;
   } u;

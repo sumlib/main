@@ -1338,7 +1338,7 @@ case 1:
     break;}
 case 2:
 #line 252 "TQL.y"
-{ yyval.zapytanie_ = make_ZapProste(yyvsp[-1].listliniazapytania_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Zapytanie_= yyval.zapytanie_; ;
+{ yyval.zapytanie_ = make_SimpleQuery(yyvsp[-1].listliniazapytania_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Zapytanie_= yyval.zapytanie_; ;
     break;}
 case 3:
 #line 253 "TQL.y"
@@ -1354,7 +1354,7 @@ case 5:
     break;}
 case 6:
 #line 257 "TQL.y"
-{ yyval.liniazapytania_ = make_LiniaZap(yyvsp[-2].string_, yyvsp[0].wyraz_); YY_RESULT_LiniaZapytania_= yyval.liniazapytania_; ;
+{ yyval.liniazapytania_ = make_QueryLine(yyvsp[-2].string_, yyvsp[0].wyraz_); YY_RESULT_LiniaZapytania_= yyval.liniazapytania_; ;
     break;}
 case 7:
 #line 259 "TQL.y"

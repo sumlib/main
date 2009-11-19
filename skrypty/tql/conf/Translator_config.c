@@ -173,17 +173,12 @@ char *add_id_seq(const char *tekst){
  while(p){
     ile = strlen(buffer);
     strncat(buffer, tmp, p-tmp); // Copy characters buf_from 'str' start to 'orig' st$
-//     fprintf(stderr, "początek: %s\n", buffer);
     buffer[ile + p-tmp] = '\0';
-//     strcat(buffer, tekst);
     sprintf(buffer+(ile+p-tmp), "%d", ID_SEQ);
-//     fprintf(stderr, "po dodaniu tekstu: %s\n", buffer);
     tmp = p+strlen(PUT_HERE_ID_SEQ);
     p = strstr(tmp,PUT_HERE_ID_SEQ);
   }
   strcat(buffer, tmp);
-//   fprintf(stderr, "koniec: %s\n", buffer);
-//   bufAppendS(buf_where, buffer);
   return strdup(buffer);
 }
 

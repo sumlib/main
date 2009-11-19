@@ -182,49 +182,49 @@ char *add_id_seq(const char *tekst){
   return strdup(buffer);
 }
 
-char *polacz(char *wyr1, char *lacznik, char* wyr2, int nawiasy){
+char *concat(char *expr1, char *connector, char* expr2, int useBrackets){
   _bufor buffer;
   bufReset(&buffer);
-  if(nawiasy)  bufAppendS(&buffer, "   (\n ");
+  if(useBrackets)  bufAppendS(&buffer, "   (\n ");
   else bufAppendS(&buffer, "");
-  bufAppendS(&buffer, add_id_seq(wyr1));
-  bufAppendS(&buffer, lacznik);
-  bufAppendS(&buffer, wyr2);
-  if(nawiasy) bufAppendS(&buffer, "   )\n");
+  bufAppendS(&buffer, add_id_seq(expr1));
+  bufAppendS(&buffer, connector);
+  bufAppendS(&buffer, expr2);
+  if(useBrackets) bufAppendS(&buffer, "   )\n");
   //fprintf(stderr, "bufor: %s\n", buffer);
   return strdup(buffer.buf);
 }
-char *translator_or(int id, char *wyr1, char *wyr2) {
+char *translator_or(int id, char *expr1, char *expr2) {
   if (strcmp(queries[id],TEXT) == 0) {
-      return polacz("\n   (\nSELECT id_tab, CAST(array_accum(wezly) as TEXT) as wezly, COUNT(DISTINCT id_sekw) as sekw, ## as id_sekw\n FROM\n", 
-		      polacz(wyr1, "   UNION \n", wyr2, 1), 
+      return concat("\n   (\nSELECT id_tab, CAST(array_accum(wezly) as TEXT) as wezly, COUNT(DISTINCT id_sekw) as sekw, ## as id_sekw\n FROM\n",
+		      concat(expr1, "   UNION \n", expr2, 1),
 		      "  as c \n GROUP BY id_tab\n   )\n", 0);
   }
-  return polacz(wyr1, " OR ", wyr2, 1);
+  return concat(expr1, " OR ", expr2, 1);
 }
   
   
-char *translator_and(int id, char *wyr1, char *wyr2) {
+char *translator_and(int id, char *expr1, char *expr2) {
   if (strcmp(queries[id],TEXT) == 0) {
-      return polacz("\n   (\nSELECT * FROM\n   (\nSELECT id_tab, CAST(array_accum(wezly) as TEXT) as wezly, COUNT(DISTINCT id_sekw) as sekw, ## as id_sekw\n FROM\n", 
-		      polacz(wyr1, "   UNION \n", wyr2, 1), 
+      return concat("\n   (\nSELECT * FROM\n   (\nSELECT id_tab, CAST(array_accum(wezly) as TEXT) as wezly, COUNT(DISTINCT id_sekw) as sekw, ## as id_sekw\n FROM\n",
+		      concat(expr1, "   UNION \n", expr2, 1),
 		      "  as c \n GROUP BY id_tab\n   ) as b\nWHERE b.sekw=2\n   )", 0);
   }
-  return polacz(wyr1, " AND ", wyr2, 1);
+  return concat(expr1, " AND ", expr2, 1);
 }
 
-char *translator_not(int id, char *wyr1)  {
+char *translator_not(int id, char *expr1)  {
   if (strcmp(queries[id],TEXT) == 0) {
-      return polacz("\nSELECT id_tab, '' as wezly, 0 as sekw, ## as id_sekw\nFROM\n   (\n     (select id as id_tab from tabliczka)\n   EXCEPT\n     (SELECT id_tab from\n", wyr1, " as a\n     )\n   ) as b\n", 1);
+      return concat("\nSELECT id_tab, '' as wezly, 0 as sekw, ## as id_sekw\nFROM\n   (\n     (select id as id_tab from tabliczka)\n   EXCEPT\n     (SELECT id_tab from\n", expr1, " as a\n     )\n   ) as b\n", 1);
   }
-  return polacz("", "NOT ", wyr1, 1);
+  return concat("", "NOT ", expr1, 1);
 }
 
 char *translator_star(char *frag1, char *frag2)  {
   if(frag1==NULL) frag1 = "";
   if(frag2==NULL) frag2 = "";
   
- return polacz(frag1, "%", frag2, 0);
+ return concat(frag1, "%", frag2, 0);
 }
 
 void translator_mergeLines(char *line, int id, int notFirstLine){

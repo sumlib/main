@@ -273,7 +273,7 @@ Wszystkie pozostałe symbole to terminale.\\
 
 \chapter{Implementacja}
 Implementacja składa się z dwóch części - zależnej i niezależnej od struktury danych. 
-\section{Trzon}
+\section{Moduły podstawowe}
 
 \subsection{Parser}
 Parser został utworzony za pomocą narzędzia BNFC. Następnie został zmodyfikowany ręcznie: nazwy stałych oznaczających symbole, 
@@ -364,6 +364,12 @@ Definicja struktur danych:
  \item Absyn.c
 \item Absyn.h
 \end{itemize}
+Moduł do dzielenia tekstu wg. separatora, implementacja funkcji explode z php (pobrane z internetu):
+\begin{itemize}
+ \item Cexplode.c
+ \item Cexplode.h
+\end{itemize}
+
 
 \section{Moduły wymienne}
 Pliki zależne od wyboru konkretnej bazy danych to:
@@ -375,7 +381,7 @@ Ich interfejs jest wspólny dla wszystkich baz danych.
 
 \subsection{Baza PostgreSQL}
 \subsubsection{Diagram encji}
-\includegraphics[width=500px]{diagramy/Model-encji-postgresql.png}
+\includegraphics[width=500px]{diagramy/diagram_encji/ang2.pdf}
 \subsubsection{Translator\_config}
 Dostaje poszczególne fragmenty drzewa struktury zapytania i tłumaczy je na SQL. Przetłumaczone fragmenty zbiera do buforów (select, from, where), które następnie odpowiednio skleja.
 Każde proste zapytanie jest tłumaczone na jednego selecta; jak jest kilka prostych zapytań to są sklejane UNION.
@@ -444,7 +450,6 @@ Odpowiada za wywołanie zapytania na konkretnej bazie. Korzysta z pliku database
 
 \chapter{Podsumowanie}
 
-Jesteśmy fajne (-;
 
 \appendix
 

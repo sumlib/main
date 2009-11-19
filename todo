@@ -15,3 +15,12 @@ usunąć @ z translatora
 sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć)
 
 zmienić nazwy tabel i pól na angielski w bazie danych
+
+plik Translator_config.c - funkcja replace jest używana na zasadzie copy-paste - użyć poprawnie (-;
+
+
+DO PRACY:
+obrazek z różnymi bazami (żeby pokazać, że można różnie implementować)
+semantyka na przykładach
+oddzielić tłumaczenia na SQL - proste i złożone
+wrzucić obrazek z prezentacji

@@ -19,7 +19,7 @@ Zapytanie polacz_zapytania(Zapytanie z1, Zapytanie z2){
     int i;
     Wyraz w;
     if(z1->kind == is_ZapProste && z2->kind == is_ZapProste){
-        for(i=0;i<ilePol();i++){
+        for(i=0;i<fieldsCount();i++){
 	  if(z2->u.zapproste_.tabliniazapytania_[i]!=NULL){
     		w = z2->u.zapproste_.tabliniazapytania_[i]->wyraz_;
 		if(z1->u.zapproste_.tabliniazapytania_[i]==NULL)

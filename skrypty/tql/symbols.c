@@ -20,8 +20,8 @@ void symbols_init(){
 	int i;
 	symbols_size = 128;
 	symbols = malloc(symbols_size * sizeof(Symbol));
-	for(i=0;i<ilePol();i++)
-		symbols_get_id(nazwaPola(i));
+	for(i=0;i<fieldsCount();i++)
+		symbols_get_id(fieldName(i));
 	
 }
 
@@ -72,7 +72,7 @@ void symbols_set_zapyt(int id, Zapytanie zapyt){
 
 int symbols_is_NazwaPola(Ident i){
 //	printf("czy %d jest Nazwą pola\n", i);
-	return (i>=0 && i<ilePol());
+	return (i>=0 && i<fieldsCount());
 }
 
 int symbols_to_NazwaPola_id(Ident id){

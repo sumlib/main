@@ -147,7 +147,7 @@ char* translateZapZloz(ZapZloz p)
   tmpBufReset();
   ppZapZloz(p, 0);
   //printf("\n\n\n%s\n\n\n",  translator_wynik());
-  return translator_wynik();
+  return translator_getResult();
 }
 void ppZapZloz(ZapZloz _p_, int _i_)
 {
@@ -161,12 +161,12 @@ void ppZapytanie(Zapytanie _p_, int _i_)
   switch(_p_->kind)
   {
   case is_ZapProste:
-    translator_init();
+    translator_initSingleQuery();
     if (_i_ > 0) renderC(_L_PAREN);
     b=0;
-    for(j=0;j<ilePol();j++){
+    for(j=0;j<fieldsCount();j++){
 	if(_p_->u.zapproste_.tabliniazapytania_[j]!=NULL){
-    		translator_linia_zapytania(ppLiniaZapytania(_p_->u.zapproste_.tabliniazapytania_[j], 0), _p_->u.zapproste_.tabliniazapytania_[j]->ident_, b);
+    		translator_mergeLines(ppLiniaZapytania(_p_->u.zapproste_.tabliniazapytania_[j], 0), _p_->u.zapproste_.tabliniazapytania_[j]->ident_, b);
 		b++;
 	}
     }
@@ -210,22 +210,22 @@ char *ppWyraz(Wyraz _p_, Ident id, int _i_)
   switch(_p_->kind)
   {
   case is_WyrazAnd:
-    return translator_polaczAnd(id, ppWyraz(_p_->u.wyrazand_.wyraz_1, id, 0), ppWyraz(_p_->u.wyrazand_.wyraz_2, id, 1));
+    return translator_and(id, ppWyraz(_p_->u.wyrazand_.wyraz_1, id, 0), ppWyraz(_p_->u.wyrazand_.wyraz_2, id, 1));
   case is_WyrazOr:
-    return translator_polaczOr(id, ppWyraz(_p_->u.wyrazor_.wyraz_1, id, 0), ppWyraz(_p_->u.wyrazor_.wyraz_2, id, 1));
+    return translator_or(id, ppWyraz(_p_->u.wyrazor_.wyraz_1, id, 0), ppWyraz(_p_->u.wyrazor_.wyraz_2, id, 1));
   case is_WyrazNeg:
-    return translator_negacja(id, ppWyraz(_p_->u.wyrazneg_.wyraz_, id, 1));
+    return translator_not(id, ppWyraz(_p_->u.wyrazneg_.wyraz_, id, 1));
 
   case is_WyrazFrag:
-    return translator_zapytanie(id, translator_gwiazdka(ppTekst(_p_->u.wyrazfrag_.tekst_1), ppTekst(_p_->u.wyrazfrag_.tekst_2)));
+    return translator_simpleText(id, translator_star(ppTekst(_p_->u.wyrazfrag_.tekst_1), ppTekst(_p_->u.wyrazfrag_.tekst_2)));
 
   case is_WyrazFragL:
-    return translator_zapytanie(id, translator_gwiazdka(ppTekst(_p_->u.wyrazfragl_.tekst_), NULL));
+    return translator_simpleText(id, translator_star(ppTekst(_p_->u.wyrazfragl_.tekst_), NULL));
 
   case is_WyrazFragP:
-    return translator_zapytanie(id, translator_gwiazdka(NULL, ppTekst(_p_->u.wyrazfragp_.tekst_)));
+    return translator_simpleText(id, translator_star(NULL, ppTekst(_p_->u.wyrazfragp_.tekst_)));
   case is_WyrazTekst:
-    return translator_zapytanie(id, ppTekst(_p_->u.wyraztekst_.tekst_));
+    return translator_simpleText(id, ppTekst(_p_->u.wyraztekst_.tekst_));
   default:
     fprintf(stderr, "Error: bad kind field when translating Wyraz!\n");
     exit(1);

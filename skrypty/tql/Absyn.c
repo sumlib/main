@@ -34,7 +34,7 @@ Zapytanie make_ZapProste(ListLiniaZapytania p1, ListPrzerwa p2)
   }
   tmp->kind = is_ZapProste;
   //tmp->u.zapproste_.listliniazapytania_ = p1;
-  for(i=0;i<ilePol();i++){
+  for(i=0;i<fieldsCount();i++){
 	tmp->u.zapproste_.tabliniazapytania_[i] = NULL;
   }
   for(;p1;p1=p1->listliniazapytania_){

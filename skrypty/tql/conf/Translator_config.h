@@ -4,14 +4,14 @@
 #define ZMIENNA "###"
 
 
-  int ilePol();
-  char *nazwaPola(int i);
-  char *translator_zapytanie(int i, char *tekst);
-  char *translator_polaczOr(int id, char *wyr1, char *wyr2);
-  char *translator_polaczAnd(int id, char *wyr1, char *wyr2);
-  char *translator_negacja(int id, char *wyr1);
-  char *translator_gwiazdka(char *frag1, char *frag2);
-  void translator_init();
-  void translator_linia_zapytania(char *tekst, int id, int bylo);
-  char *translator_wynik();
+  int fieldsCount();
+  char *fieldName(int i);
+  char *translator_simpleText(int i, char *text);
+  char *translator_or(int id, char *expr1, char *expr2);
+  char *translator_and(int id, char *expr1, char *expr2);
+  char *translator_not(int id, char *expr1);
+  char *translator_star(char *frag1, char *frag2);
+  void translator_initSingleQuery();
+  void translator_mergeLines(char *line, int id, int notFirstLine);
+  char *translator_getResult();
 #endif

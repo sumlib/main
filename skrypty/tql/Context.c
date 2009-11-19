@@ -9,15 +9,15 @@
 #include "symbols.h"
 #include "Absyn.h"
 
-void contextZapZloz(ZapZloz _p_)
+void contextZapZloz(ComplexQuery _p_)
 {
-  contextListZapytanie(_p_->listzapytanie_);
+  contextListZapytanie(_p_->querylist_);
 }
 
-Zapytanie polacz_zapytania(Zapytanie z1, Zapytanie z2){
-    Zapytanie z = malloc(sizeof(struct Zapytanie_));
+Query polacz_zapytania(Query z1, Query z2){
+    Query z = malloc(sizeof(struct Query_));
     int i;
-    Wyraz w;
+    Expr w;
     if(z1->kind == is_ZapProste && z2->kind == is_ZapProste){
         for(i=0;i<fieldsCount();i++){
 	  if(z2->u.zapproste_.tabliniazapytania_[i]!=NULL){
@@ -35,9 +35,9 @@ Zapytanie polacz_zapytania(Zapytanie z1, Zapytanie z2){
     return NULL;
 }
 
-void contextZapytanie(Zapytanie _p_)
+void contextZapytanie(Query _p_)
 {
-  Zapytanie zapyt;
+  Query zapyt;
   int i;
   switch(_p_->kind)
   {
@@ -75,7 +75,7 @@ void contextZapytanie(Zapytanie _p_)
   }
 }
 
-void contextLiniaZapytania(LiniaZapytania _p_)
+void contextLiniaZapytania(QueryLine _p_)
 {
 
     /* Code for LiniaZap Goes Here */
@@ -84,7 +84,7 @@ void contextLiniaZapytania(LiniaZapytania _p_)
 
 }
 
-void contextWyraz(Wyraz _p_)
+void contextWyraz(Expr _p_)
 {
   switch(_p_->kind)
   {
@@ -126,7 +126,7 @@ void contextWyraz(Wyraz _p_)
   }
 }
 
-void contextListZapytanie(ListZapytanie listzapytanie)
+void contextListZapytanie(QueryList listzapytanie)
 {
   while(listzapytanie != 0)
   {
@@ -136,7 +136,7 @@ void contextListZapytanie(ListZapytanie listzapytanie)
   }
 }
 
-void contextListLiniaZapytania(ListLiniaZapytania listliniazapytania)
+void contextListLiniaZapytania(QueryLineList listliniazapytania)
 {
   while(listliniazapytania != 0)
   {
@@ -146,12 +146,12 @@ void contextListLiniaZapytania(ListLiniaZapytania listliniazapytania)
   }
 }
 
-void contextTekst(Tekst _p_)
+void contextTekst(Text _p_)
 {
 
 }
 
-void contextNazwa(Nazwa _p_)
+void contextNazwa(Name _p_)
 {
 
 }

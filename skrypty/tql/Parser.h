@@ -10,16 +10,16 @@ typedef union
   char char_;
   double double_;
   int string_;
-  ZapZloz zapzloz_;
-  Zapytanie zapytanie_;
-  LiniaZapytania liniazapytania_;
-  Wyraz wyraz_;
-  ListZapytanie listzapytanie_;
-  ListLiniaZapytania listliniazapytania_;
+  ComplexQuery zapzloz_;
+  Query zapytanie_;
+  QueryLine liniazapytania_;
+  Expr wyraz_;
+  QueryList listzapytanie_;
+  QueryLineList listliniazapytania_;
   int przerwa_;
-  ListPrzerwa listprzerwa_;
-  Tekst tekst_;
-  Nazwa nazwa_;
+  SpaceList listprzerwa_;
+  Text tekst_;
+  Name nazwa_;
 } YYSTYPE;
 
 #define _ERROR_ 258
@@ -41,16 +41,16 @@ typedef union
 
 extern YYSTYPE yylval;
 extern int yyline;
-ZapZloz pZapZloz(FILE *inp);
-Zapytanie pZapytanie(FILE *inp);
-LiniaZapytania pLiniaZapytania(FILE *inp);
-Wyraz pWyraz(FILE *inp);
-ListZapytanie pListZapytanie(FILE *inp);
-ListLiniaZapytania pListLiniaZapytania(FILE *inp);
+ComplexQuery pZapZloz(FILE *inp);
+Query pZapytanie(FILE *inp);
+QueryLine pLiniaZapytania(FILE *inp);
+Expr pWyraz(FILE *inp);
+QueryList pListZapytanie(FILE *inp);
+QueryLineList pListLiniaZapytania(FILE *inp);
 int pPrzerwa(FILE *inp);
-ListPrzerwa pListPrzerwa(FILE *inp);
-Tekst pTekst(FILE *inp);
-Nazwa pNazwa(FILE *inp);
+SpaceList pListPrzerwa(FILE *inp);
+Text pTekst(FILE *inp);
+Name pNazwa(FILE *inp);
 
 
 #endif

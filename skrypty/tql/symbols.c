@@ -11,7 +11,7 @@ int symbols_count = 0;
 
 typedef struct{
   char *name;
-  Zapytanie zapyt;
+  Query zapyt;
 } Symbol;
 
 Symbol* symbols;
@@ -54,7 +54,7 @@ char* symbols_getName(int id){
 	return symbols[id].name;
 }
 
-Zapytanie symbols_getQuery(int id){
+Query symbols_getQuery(int id){
 	if(id<0 || id>symbols_count){
 		fprintf(stderr, "Error: wrong id in symbol_get_zapyt (%d)\n", id);
 		return NULL;
@@ -62,7 +62,7 @@ Zapytanie symbols_getQuery(int id){
 	return symbols[id].zapyt;
 }
 
-void symbols_setQuery(int id, Zapytanie zapyt){
+void symbols_setQuery(int id, Query zapyt){
   	if(id<0 || id>symbols_count){
 		fprintf(stderr, "Error: wrong id in symbol_set_zapyt (%d)\n", id);
 		return;

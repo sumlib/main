@@ -141,7 +141,7 @@ void backup(void)
     cur_--;
   }
 }
-char* translateZapZloz(ZapZloz p)
+char* translateZapZloz(ComplexQuery p)
 {
   _n_ = 0;
   tmpBufReset();
@@ -149,12 +149,12 @@ char* translateZapZloz(ZapZloz p)
   //printf("\n\n\n%s\n\n\n",  translator_wynik());
   return translator_getResult();
 }
-void ppZapZloz(ZapZloz _p_, int _i_)
+void ppZapZloz(ComplexQuery _p_, int _i_)
 {
-    ppListZapytanie(_p_->listzapytanie_, 0);
+    ppListZapytanie(_p_->querylist_, 0);
 }
 
-void ppZapytanie(Zapytanie _p_, int _i_)
+void ppZapytanie(Query _p_, int _i_)
 {
    int j, b;
 
@@ -197,14 +197,14 @@ void ppZapytanie(Zapytanie _p_, int _i_)
   }
 }
 
-char *ppLiniaZapytania(LiniaZapytania _p_, int _i_)
+char *ppLiniaZapytania(QueryLine _p_, int _i_)
 {
 
     return ppWyraz(_p_->wyraz_, _p_->ident_, 0);
 
 }
 
-char *ppWyraz(Wyraz _p_, Ident id, int _i_)
+char *ppWyraz(Expr _p_, Ident id, int _i_)
 {
   //char *format = zapytanie(id);
   switch(_p_->kind)
@@ -232,7 +232,7 @@ char *ppWyraz(Wyraz _p_, Ident id, int _i_)
   }
 }
 
-void ppListZapytanie(ListZapytanie listzapytanie, int i)
+void ppListZapytanie(QueryList listzapytanie, int i)
 {
   while(listzapytanie!= 0)
   {
@@ -251,7 +251,7 @@ void ppListZapytanie(ListZapytanie listzapytanie, int i)
   }
 }
 
-void ppListLiniaZapytania(ListLiniaZapytania listliniazapytania, int i)
+void ppListLiniaZapytania(QueryLineList listliniazapytania, int i)
 {
   while(listliniazapytania!= 0)
   {
@@ -274,14 +274,14 @@ void ppPrzerwa(int _p_, int _i_)
 {
 }
 
-char* ppTekst(Tekst _p_)
+char* ppTekst(Text _p_)
 {
 
     return symbols_getName(_p_);
 
 }
 
-void ppNazwa(Nazwa _p_, int _i_)
+void ppNazwa(Name _p_, int _i_)
 {
 }
 

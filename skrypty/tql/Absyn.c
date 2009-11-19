@@ -7,25 +7,25 @@
 #include "symbols.h"
 
 /********************   ZapZloz    ********************/
-ZapZloz make_ZapZloz(ListZapytanie p1)
+ComplexQuery make_ZapZloz(QueryList p1)
 {
-  ZapZloz tmp = (ZapZloz) malloc(sizeof(*tmp));
+  ComplexQuery tmp = (ComplexQuery) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating ZapZloz!\n");
     exit(1);
   }
-  tmp->listzapytanie_ = p1;
+  tmp->querylist_ = p1;
 
   return tmp;
 }
 
 
 /********************   ZapProste    ********************/
-Zapytanie make_ZapProste(ListLiniaZapytania p1, ListPrzerwa p2)
+Query make_ZapProste(QueryLineList p1, SpaceList p2)
 {
-  Zapytanie tmp = (Zapytanie) malloc(sizeof(*tmp));
-  LiniaZapytania linia;
+  Query tmp = (Query) malloc(sizeof(*tmp));
+  QueryLine linia;
   int id, i;
   if (!tmp)
   {
@@ -55,9 +55,9 @@ Zapytanie make_ZapProste(ListLiniaZapytania p1, ListPrzerwa p2)
 
 
 /********************   ZapDef    ********************/
-Zapytanie make_ZapDef(Zapytanie p1, Nazwa p2, ListPrzerwa p3)
+Query make_ZapDef(Query p1, Name p2, SpaceList p3)
 {
-  Zapytanie tmp = (Zapytanie) malloc(sizeof(*tmp));
+  Query tmp = (Query) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating ZapDef!\n");
@@ -73,9 +73,9 @@ Zapytanie make_ZapDef(Zapytanie p1, Nazwa p2, ListPrzerwa p3)
 
 
 /********************   ZapWyw    ********************/
-Zapytanie make_ZapWyw(Zapytanie p1, Nazwa p2, ListPrzerwa p3)
+Query make_ZapWyw(Query p1, Name p2, SpaceList p3)
 {
-  Zapytanie tmp = (Zapytanie) malloc(sizeof(*tmp));
+  Query tmp = (Query) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating ZapWyw!\n");
@@ -91,9 +91,9 @@ Zapytanie make_ZapWyw(Zapytanie p1, Nazwa p2, ListPrzerwa p3)
 
 
 /********************   ZapPuste    ********************/
-Zapytanie make_ZapPuste(ListPrzerwa p1)
+Query make_ZapPuste(SpaceList p1)
 {
-  Zapytanie tmp = (Zapytanie) malloc(sizeof(*tmp));
+  Query tmp = (Query) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating ZapPuste!\n");
@@ -107,9 +107,9 @@ Zapytanie make_ZapPuste(ListPrzerwa p1)
 
 
 /********************   LiniaZap    ********************/
-LiniaZapytania make_LiniaZap(Ident p1, Wyraz p2)
+QueryLine make_LiniaZap(Ident p1, Expr p2)
 {
-  LiniaZapytania tmp = (LiniaZapytania) malloc(sizeof(*tmp));
+  QueryLine tmp = (QueryLine) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating LiniaZap!\n");
@@ -123,9 +123,9 @@ LiniaZapytania make_LiniaZap(Ident p1, Wyraz p2)
 
 
 /********************   WyrazAnd    ********************/
-Wyraz make_WyrazAnd(Wyraz p1, Wyraz p2)
+Expr make_WyrazAnd(Expr p1, Expr p2)
 {
-  Wyraz tmp = (Wyraz) malloc(sizeof(*tmp));
+  Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating WyrazAnd!\n");
@@ -140,9 +140,9 @@ Wyraz make_WyrazAnd(Wyraz p1, Wyraz p2)
 
 
 /********************   WyrazOr    ********************/
-Wyraz make_WyrazOr(Wyraz p1, Wyraz p2)
+Expr make_WyrazOr(Expr p1, Expr p2)
 {
-  Wyraz tmp = (Wyraz) malloc(sizeof(*tmp));
+  Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating WyrazOr!\n");
@@ -157,9 +157,9 @@ Wyraz make_WyrazOr(Wyraz p1, Wyraz p2)
 
 
 /********************   WyrazNeg    ********************/
-Wyraz make_WyrazNeg(Wyraz p1)
+Expr make_WyrazNeg(Expr p1)
 {
-  Wyraz tmp = (Wyraz) malloc(sizeof(*tmp));
+  Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating WyrazNeg!\n");
@@ -173,9 +173,9 @@ Wyraz make_WyrazNeg(Wyraz p1)
 
 
 /********************   WyrazFrag    ********************/
-Wyraz make_WyrazFrag(Tekst p1, Tekst p2)
+Expr make_WyrazFrag(Text p1, Text p2)
 {
-  Wyraz tmp = (Wyraz) malloc(sizeof(*tmp));
+  Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating WyrazFrag!\n");
@@ -190,9 +190,9 @@ Wyraz make_WyrazFrag(Tekst p1, Tekst p2)
 
 
 /********************   WyrazFragL    ********************/
-Wyraz make_WyrazFragL(Tekst p1)
+Expr make_WyrazFragL(Text p1)
 {
-  Wyraz tmp = (Wyraz) malloc(sizeof(*tmp));
+  Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating WyrazFragL!\n");
@@ -206,9 +206,9 @@ Wyraz make_WyrazFragL(Tekst p1)
 
 
 /********************   WyrazFragP    ********************/
-Wyraz make_WyrazFragP(Tekst p1)
+Expr make_WyrazFragP(Text p1)
 {
-  Wyraz tmp = (Wyraz) malloc(sizeof(*tmp));
+  Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating WyrazFragP!\n");
@@ -222,9 +222,9 @@ Wyraz make_WyrazFragP(Tekst p1)
 
 
 /********************   WyrazTekst    ********************/
-Wyraz make_WyrazTekst(Tekst p1)
+Expr make_WyrazTekst(Text p1)
 {
-  Wyraz tmp = (Wyraz) malloc(sizeof(*tmp));
+  Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating WyrazTekst!\n");
@@ -238,9 +238,9 @@ Wyraz make_WyrazTekst(Tekst p1)
 
 
 /********************   ListZapytanie    ********************/
-ListZapytanie make_ListZapytanie(Zapytanie p1, ListZapytanie p2)
+QueryList make_ListZapytanie(Query p1, QueryList p2)
 {
-  ListZapytanie tmp = (ListZapytanie) malloc(sizeof(*tmp));
+  QueryList tmp = (QueryList) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating ListZapytanie!\n");
@@ -253,9 +253,9 @@ ListZapytanie make_ListZapytanie(Zapytanie p1, ListZapytanie p2)
 
 
 /********************   ListLiniaZapytania    ********************/
-ListLiniaZapytania make_ListLiniaZapytania(LiniaZapytania p1, ListLiniaZapytania p2)
+QueryLineList make_ListLiniaZapytania(QueryLine p1, QueryLineList p2)
 {
-  ListLiniaZapytania tmp = (ListLiniaZapytania) malloc(sizeof(*tmp));
+  QueryLineList tmp = (QueryLineList) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating ListLiniaZapytania!\n");
@@ -270,9 +270,9 @@ ListLiniaZapytania make_ListLiniaZapytania(LiniaZapytania p1, ListLiniaZapytania
 
 
 /********************   ListPrzerwa    ********************/
-ListPrzerwa make_ListPrzerwa(int p1, ListPrzerwa p2)
+SpaceList make_ListPrzerwa(int p1, SpaceList p2)
 {
-  ListPrzerwa tmp = (ListPrzerwa) malloc(sizeof(*tmp));
+  SpaceList tmp = (SpaceList) malloc(sizeof(*tmp));
   if (!tmp)
   {
     fprintf(stderr, "Error: out of memory when allocating ListPrzerwa!\n");
@@ -285,7 +285,7 @@ ListPrzerwa make_ListPrzerwa(int p1, ListPrzerwa p2)
 
 
 /********************   Tekst    ********************/
-Tekst make_Tekst(int p1)
+Text make_Tekst(int p1)
 {
   return p1;
 }
@@ -293,7 +293,7 @@ Tekst make_Tekst(int p1)
 
 
 /********************   Nazwa    ********************/
-Nazwa make_Nazwa(String p1)
+Name make_Nazwa(String p1)
 {
   return p1;
 }

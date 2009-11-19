@@ -15,110 +15,110 @@ typedef int Przerwa;
 
 /********************   Forward Declarations    ********************/
 
-struct ListZapytanie_;
-typedef struct ListZapytanie_ *ListZapytanie;
-struct ListLiniaZapytania_;
-typedef struct ListLiniaZapytania_ *ListLiniaZapytania;
-struct ListPrzerwa_;
-typedef struct ListPrzerwa_ *ListPrzerwa;
-struct ZapZloz_;
-typedef struct ZapZloz_ *ZapZloz;
-struct Zapytanie_;
-typedef struct Zapytanie_ *Zapytanie;
-struct LiniaZapytania_;
-typedef struct LiniaZapytania_ *LiniaZapytania;
-struct Wyraz_;
-typedef struct Wyraz_ *Wyraz;
-typedef int Tekst;
-typedef int Nazwa;
+struct QueryList_;
+typedef struct QueryList_ *QueryList;
+struct QueryLineList_;
+typedef struct QueryLineList_ *QueryLineList;
+struct SpaceList_;
+typedef struct SpaceList_ *SpaceList;
+struct ComplexQuery_;
+typedef struct ComplexQuery_ *ComplexQuery;
+struct Query_;
+typedef struct Query_ *Query;
+struct QueryLine_;
+typedef struct QueryLine_ *QueryLine;
+struct Expr_;
+typedef struct Expr_ *Expr;
+typedef int Text;
+typedef int Name;
 
 
 /********************   Abstract Syntax Classes    ********************/
 
-struct ZapZloz_
+struct ComplexQuery_
 {
-    ListZapytanie listzapytanie_;
+    QueryList querylist_;
 };
 
-ZapZloz make_ZapZloz(ListZapytanie p0);
+ComplexQuery make_ZapZloz(QueryList p0);
 
-struct Zapytanie_
+struct Query_
 {
   enum { is_ZapProste, is_ZapDef, is_ZapWyw, is_ZapPuste } kind;
   union
   {
-    struct { LiniaZapytania tabliniazapytania_[MAX_POL];} zapproste_;
-    struct { Zapytanie zapytanie_;Nazwa nazwa_;} zapdef_;
-    struct { Zapytanie zapytanie_;Nazwa nazwa_;} zapwyw_;
+    struct { QueryLine tabliniazapytania_[MAX_POL];} zapproste_;
+    struct { Query zapytanie_;Name nazwa_;} zapdef_;
+    struct { Query zapytanie_;Name nazwa_;} zapwyw_;
   } u;
 };
 
-Zapytanie make_ZapProste(ListLiniaZapytania p0, ListPrzerwa p1);
-Zapytanie make_ZapDef(Zapytanie p0, Nazwa p1, ListPrzerwa p2);
-Zapytanie make_ZapWyw(Zapytanie p0, Nazwa p1, ListPrzerwa p2);
-Zapytanie make_ZapPuste(ListPrzerwa p0);
+Query make_ZapProste(QueryLineList p0, SpaceList p1);
+Query make_ZapDef(Query p0, Name p1, SpaceList p2);
+Query make_ZapWyw(Query p0, Name p1, SpaceList p2);
+Query make_ZapPuste(SpaceList p0);
 
-struct LiniaZapytania_
+struct QueryLine_
 {
   Ident ident_;
-  Wyraz wyraz_;
+  Expr wyraz_;
 };
 
-LiniaZapytania make_LiniaZap(Ident p0, Wyraz p1);
+QueryLine make_LiniaZap(Ident p0, Expr p1);
 
-struct Wyraz_
+struct Expr_
 {
   enum { is_WyrazAnd, is_WyrazOr, is_WyrazNeg, is_WyrazFrag, is_WyrazFragL, is_WyrazFragP, is_WyrazTekst } kind;
   union
   {
-    struct { Wyraz wyraz_1, wyraz_2; } wyrazand_;
-    struct { Wyraz wyraz_1, wyraz_2; } wyrazor_;
-    struct { Wyraz wyraz_; } wyrazneg_;
-    struct { Tekst tekst_1, tekst_2; } wyrazfrag_;
-    struct { Tekst tekst_; } wyrazfragl_;
-    struct { Tekst tekst_; } wyrazfragp_;
-    struct { Tekst tekst_; } wyraztekst_;
+    struct { Expr wyraz_1, wyraz_2; } wyrazand_;
+    struct { Expr wyraz_1, wyraz_2; } wyrazor_;
+    struct { Expr wyraz_; } wyrazneg_;
+    struct { Text tekst_1, tekst_2; } wyrazfrag_;
+    struct { Text tekst_; } wyrazfragl_;
+    struct { Text tekst_; } wyrazfragp_;
+    struct { Text tekst_; } wyraztekst_;
   } u;
 };
 
-Wyraz make_WyrazAnd(Wyraz p0, Wyraz p1);
-Wyraz make_WyrazOr(Wyraz p0, Wyraz p1);
-Wyraz make_WyrazNeg(Wyraz p0);
-Wyraz make_WyrazFrag(Tekst p0, Tekst p1);
-Wyraz make_WyrazFragL(Tekst p0);
-Wyraz make_WyrazFragP(Tekst p0);
-Wyraz make_WyrazTekst(Tekst p0);
+Expr make_WyrazAnd(Expr p0, Expr p1);
+Expr make_WyrazOr(Expr p0, Expr p1);
+Expr make_WyrazNeg(Expr p0);
+Expr make_WyrazFrag(Text p0, Text p1);
+Expr make_WyrazFragL(Text p0);
+Expr make_WyrazFragP(Text p0);
+Expr make_WyrazTekst(Text p0);
 
-struct ListZapytanie_
+struct QueryList_
 {
-  Zapytanie zapytanie_;
-  ListZapytanie listzapytanie_;
+  Query zapytanie_;
+  QueryList listzapytanie_;
 };
 
-ListZapytanie make_ListZapytanie(Zapytanie p1, ListZapytanie p2);
-struct ListLiniaZapytania_
+QueryList make_ListZapytanie(Query p1, QueryList p2);
+struct QueryLineList_
 {
-  LiniaZapytania liniazapytania_;
+  QueryLine liniazapytania_;
   //LiniaZapytania liniazapytaniatab[MAX_POL];
-  ListLiniaZapytania listliniazapytania_;
+  QueryLineList listliniazapytania_;
 };
 
-ListLiniaZapytania make_ListLiniaZapytania(LiniaZapytania p1, ListLiniaZapytania p2);
+QueryLineList make_ListLiniaZapytania(QueryLine p1, QueryLineList p2);
 
 
-struct ListPrzerwa_
+struct SpaceList_
 {
   int przerwa_;
-  ListPrzerwa listprzerwa_;
+  SpaceList listprzerwa_;
 };
 
-ListPrzerwa make_ListPrzerwa(int p1, ListPrzerwa p2);
+SpaceList make_ListPrzerwa(int p1, SpaceList p2);
 
 
-Tekst make_Tekst(int p0);
+Text make_Tekst(int p0);
 
 
-Nazwa make_Nazwa(String p0);
+Name make_Nazwa(String p0);
 
 
 

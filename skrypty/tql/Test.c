@@ -18,7 +18,7 @@
 int main(int argc, char ** argv)
 {
   FILE *input;
-  ZapZloz parse_tree;
+  ComplexQuery parse_tree;
   int i;
   if (argc > 1) 
   {

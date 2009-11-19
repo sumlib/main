@@ -121,8 +121,8 @@ void yyerror(const char *str)
     fprintf(stderr,"error in line %d: %s\n",yyline, str);
 }
 
-ZapZloz YY_RESULT_ZapZloz_ = 0;
-ZapZloz pZapZloz(FILE *inp)
+ComplexQuery YY_RESULT_ZapZloz_ = 0;
+ComplexQuery pZapZloz(FILE *inp)
 {
   symbols_init();
   initialize_lexer(inp);
@@ -136,8 +136,8 @@ ZapZloz pZapZloz(FILE *inp)
   }
 }
 
-Zapytanie YY_RESULT_Zapytanie_ = 0;
-Zapytanie pZapytanie(FILE *inp)
+Query YY_RESULT_Zapytanie_ = 0;
+Query pZapytanie(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -150,8 +150,8 @@ Zapytanie pZapytanie(FILE *inp)
   }
 }
 
-LiniaZapytania YY_RESULT_LiniaZapytania_ = 0;
-LiniaZapytania pLiniaZapytania(FILE *inp)
+QueryLine YY_RESULT_LiniaZapytania_ = 0;
+QueryLine pLiniaZapytania(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -164,8 +164,8 @@ LiniaZapytania pLiniaZapytania(FILE *inp)
   }
 }
 
-Wyraz YY_RESULT_Wyraz_ = 0;
-Wyraz pWyraz(FILE *inp)
+Expr YY_RESULT_Wyraz_ = 0;
+Expr pWyraz(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -178,8 +178,8 @@ Wyraz pWyraz(FILE *inp)
   }
 }
 
-ListZapytanie YY_RESULT_ListZapytanie_ = 0;
-ListZapytanie pListZapytanie(FILE *inp)
+QueryList YY_RESULT_ListZapytanie_ = 0;
+QueryList pListZapytanie(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -192,8 +192,8 @@ ListZapytanie pListZapytanie(FILE *inp)
   }
 }
 
-ListLiniaZapytania YY_RESULT_ListLiniaZapytania_ = 0;
-ListLiniaZapytania pListLiniaZapytania(FILE *inp)
+QueryLineList YY_RESULT_ListLiniaZapytania_ = 0;
+QueryLineList pListLiniaZapytania(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -220,8 +220,8 @@ int pPrzerwa(FILE *inp)
   }
 }
 
-ListPrzerwa YY_RESULT_ListPrzerwa_ = 0;
-ListPrzerwa pListPrzerwa(FILE *inp)
+SpaceList YY_RESULT_ListPrzerwa_ = 0;
+SpaceList pListPrzerwa(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -234,8 +234,8 @@ ListPrzerwa pListPrzerwa(FILE *inp)
   }
 }
 
-Tekst YY_RESULT_Tekst_ = 0;
-Tekst pTekst(FILE *inp)
+Text YY_RESULT_Tekst_ = 0;
+Text pTekst(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -248,8 +248,8 @@ Tekst pTekst(FILE *inp)
   }
 }
 
-Nazwa YY_RESULT_Nazwa_ = 0;
-Nazwa pNazwa(FILE *inp)
+Name YY_RESULT_Nazwa_ = 0;
+Name pNazwa(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -263,10 +263,10 @@ Nazwa pNazwa(FILE *inp)
 }
 
 
-ListZapytanie reverseListZapytanie(ListZapytanie l)
+QueryList reverseListZapytanie(QueryList l)
 {
-  ListZapytanie prev = 0;
-  ListZapytanie tmp = 0;
+  QueryList prev = 0;
+  QueryList tmp = 0;
   while (l)
   {
     tmp = l->listzapytanie_;
@@ -276,10 +276,10 @@ ListZapytanie reverseListZapytanie(ListZapytanie l)
   }
   return prev;
 }
-ListLiniaZapytania reverseListLiniaZapytania(ListLiniaZapytania l)
+QueryLineList reverseListLiniaZapytania(QueryLineList l)
 {
-  ListLiniaZapytania prev = 0;
-  ListLiniaZapytania tmp = 0;
+  QueryLineList prev = 0;
+  QueryLineList tmp = 0;
   while (l)
   {
     tmp = l->listliniazapytania_;
@@ -289,10 +289,10 @@ ListLiniaZapytania reverseListLiniaZapytania(ListLiniaZapytania l)
   }
   return prev;
 }
-ListPrzerwa reverseListPrzerwa(ListPrzerwa l)
+SpaceList reverseListPrzerwa(SpaceList l)
 {
-  ListPrzerwa prev = 0;
-  ListPrzerwa tmp = 0;
+  SpaceList prev = 0;
+  SpaceList tmp = 0;
   while (l)
   {
     tmp = l->listprzerwa_;
@@ -311,16 +311,16 @@ typedef union
   char char_;
   double double_;
   int string_;
-  ZapZloz zapzloz_;
-  Zapytanie zapytanie_;
-  LiniaZapytania liniazapytania_;
-  Wyraz wyraz_;
-  ListZapytanie listzapytanie_;
-  ListLiniaZapytania listliniazapytania_;
+  ComplexQuery zapzloz_;
+  Query zapytanie_;
+  QueryLine liniazapytania_;
+  Expr wyraz_;
+  QueryList listzapytanie_;
+  QueryLineList listliniazapytania_;
   Przerwa przerwa_;
-  ListPrzerwa listprzerwa_;
-  Tekst tekst_;
-  Nazwa nazwa_;
+  SpaceList listprzerwa_;
+  Text tekst_;
+  Name nazwa_;
 
 } yy_parse_stype;
 #define YY_parse_STYPE yy_parse_stype

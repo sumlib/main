@@ -5,16 +5,16 @@
 #include "Absyn.h"
 
 
-void contextZapZloz(ZapZloz p);
-void contextZapytanie(Zapytanie p);
-void contextLiniaZapytania(LiniaZapytania p);
-void contextWyraz(Wyraz p);
-void contextListZapytanie(ListZapytanie p);
-void contextListLiniaZapytania(ListLiniaZapytania p);
+void contextZapZloz(ComplexQuery p);
+void contextZapytanie(Query p);
+void contextLiniaZapytania(QueryLine p);
+void contextWyraz(Expr p);
+void contextListZapytanie(QueryList p);
+void contextListLiniaZapytania(QueryLineList p);
 void contextPrzerwa(Przerwa p);
-void contextListPrzerwa(ListPrzerwa p);
-void contextTekst(Tekst p);
-void contextNazwa(Nazwa p);
+void contextListPrzerwa(SpaceList p);
+void contextTekst(Text p);
+void contextNazwa(Name p);
 
 void contextMytoken(MyToken p);
 void contextIdent(Ident i);

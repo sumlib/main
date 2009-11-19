@@ -25,7 +25,7 @@ Query polacz_zapytania(Query z1, Query z2){
 		if(z1->u.simplequery_.tabqueryline_[i]==NULL)
 		    z->u.simplequery_.tabqueryline_[i] = make_QueryLine(z2->u.simplequery_.tabqueryline_[i]->ident_, w);
 		else{
-		    z->u.simplequery_.tabqueryline_[i] = make_QueryLine(z2->u.simplequery_.tabqueryline_[i]->ident_, make_WyrazAnd(w, z1->u.simplequery_.tabqueryline_[i]->expr_));
+		    z->u.simplequery_.tabqueryline_[i] = make_QueryLine(z2->u.simplequery_.tabqueryline_[i]->ident_, make_AndExpr(w, z1->u.simplequery_.tabqueryline_[i]->expr_));
 		}
 	  }else
 	    z->u.simplequery_.tabqueryline_[i] = z1->u.simplequery_.tabqueryline_[i];
@@ -109,15 +109,15 @@ void contextWyraz(Expr _p_)
     break;
   case is_WyrazFragL:
     /* Code for WyrazFragL Goes Here */
-    contextTekst(_p_->u.wyrazfragl_.text_1);
+    contextTekst(_p_->u.lpartexpr_.text_1);
     break;
   case is_WyrazFragP:
     /* Code for WyrazFragP Goes Here */
-    contextTekst(_p_->u.wyrazfragp_.tekst_);
+    contextTekst(_p_->u.rpartexpr_.text_);
     break;
   case is_WyrazTekst:
     /* Code for WyrazTekst Goes Here */
-    contextTekst(_p_->u.wyraztekst_.tekst_);
+    contextTekst(_p_->u.textexpr_.text_);
     break;
 
   default:

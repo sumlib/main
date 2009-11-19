@@ -75,17 +75,17 @@ struct Expr_
     struct { Expr expr_1, expr_2; } orexpr_;
     struct { Expr expr_; } notexpr_;
     struct { Text text_1, text_2; } partexpr_;
-    struct { Text text_1; } wyrazfragl_;
-    struct { Text tekst_; } wyrazfragp_;
-    struct { Text tekst_; } wyraztekst_;
+    struct { Text text_1; } lpartexpr_;
+    struct { Text text_; } rpartexpr_;
+    struct { Text text_; } textexpr_;
   } u;
 };
 
-Expr make_WyrazAnd(Expr p0, Expr p1);
-Expr make_WyrazOr(Expr p0, Expr p1);
-Expr make_WyrazNeg(Expr p0);
-Expr make_WyrazFrag(Text p0, Text p1);
-Expr make_WyrazFragL(Text p0);
+Expr make_AndExpr(Expr p0, Expr p1);
+Expr make_OrExpr(Expr p0, Expr p1);
+Expr make_NotExpr(Expr p0);
+Expr make_PartExpr(Text p0, Text p1);
+Expr make_LPartExpr(Text p0);
 Expr make_WyrazFragP(Text p0);
 Expr make_WyrazTekst(Text p0);
 

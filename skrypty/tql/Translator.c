@@ -220,12 +220,12 @@ char *ppWyraz(Expr _p_, Ident id, int _i_)
     return translator_simpleText(id, translator_star(ppTekst(_p_->u.partexpr_.text_1), ppTekst(_p_->u.partexpr_.text_2)));
 
   case is_WyrazFragL:
-    return translator_simpleText(id, translator_star(ppTekst(_p_->u.wyrazfragl_.text_1), NULL));
+    return translator_simpleText(id, translator_star(ppTekst(_p_->u.lpartexpr_.text_1), NULL));
 
   case is_WyrazFragP:
-    return translator_simpleText(id, translator_star(NULL, ppTekst(_p_->u.wyrazfragp_.tekst_)));
+    return translator_simpleText(id, translator_star(NULL, ppTekst(_p_->u.rpartexpr_.text_)));
   case is_WyrazTekst:
-    return translator_simpleText(id, ppTekst(_p_->u.wyraztekst_.tekst_));
+    return translator_simpleText(id, ppTekst(_p_->u.textexpr_.text_));
   default:
     fprintf(stderr, "Error: bad kind field when translating Wyraz!\n");
     exit(1);

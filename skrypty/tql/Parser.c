@@ -1358,7 +1358,7 @@ case 6:
     break;}
 case 7:
 #line 259 "TQL.y"
-{ yyval.wyraz_ = make_WyrazAnd(yyvsp[-2].wyraz_, yyvsp[0].wyraz_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_AndExpr(yyvsp[-2].wyraz_, yyvsp[0].wyraz_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
     break;}
 case 8:
 #line 260 "TQL.y"
@@ -1366,7 +1366,7 @@ case 8:
     break;}
 case 9:
 #line 261 "TQL.y"
-{ yyval.wyraz_ = make_WyrazAnd(yyvsp[-2].wyraz_, make_WyrazNeg(yyvsp[0].wyraz_)); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_AndExpr(yyvsp[-2].wyraz_, make_WyrazNeg(yyvsp[0].wyraz_)); YY_RESULT_Wyraz_= yyval.wyraz_; ;
     break;}
 case 10:
 #line 262 "TQL.y"

@@ -123,7 +123,7 @@ QueryLine make_QueryLine(Ident p1, Expr p2)
 
 
 /********************   WyrazAnd    ********************/
-Expr make_WyrazAnd(Expr p1, Expr p2)
+Expr make_AndExpr(Expr p1, Expr p2)
 {
   Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
@@ -199,7 +199,7 @@ Expr make_WyrazFragL(Text p1)
     exit(1);
   }
   tmp->kind = is_WyrazFragL;
-  tmp->u.wyrazfragl_.text_1 = p1;
+  tmp->u.lpartexpr_.text_1 = p1;
 
   return tmp;
 }
@@ -215,7 +215,7 @@ Expr make_WyrazFragP(Text p1)
     exit(1);
   }
   tmp->kind = is_WyrazFragP;
-  tmp->u.wyrazfragp_.tekst_ = p1;
+  tmp->u.rpartexpr_.text_ = p1;
 
   return tmp;
 }
@@ -231,7 +231,7 @@ Expr make_WyrazTekst(Text p1)
     exit(1);
   }
   tmp->kind = is_WyrazTekst;
-  tmp->u.wyraztekst_.tekst_ = p1;
+  tmp->u.textexpr_.text_ = p1;
 
   return tmp;
 }

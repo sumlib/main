@@ -6,19 +6,19 @@
 
 
 void contextZapZloz(ComplexQuery p);
-void contextZapytanie(Query p);
-void contextLiniaZapytania(QueryLine p);
-void contextWyraz(Expr p);
-void contextListZapytanie(QueryList p);
-void contextListLiniaZapytania(QueryLineList p);
+void contextQuery(Query p);
+void contextQueryLine(QueryLine p);
+void contextExpr(Expr p);
+void contextQueryList(QueryList p);
+void contextQueryLineList(QueryLineList p);
 void contextPrzerwa(Przerwa p);
 void contextListPrzerwa(SpaceList p);
-void contextTekst(Text p);
+void contextText(Text p);
 void contextNazwa(Name p);
 
 void contextMytoken(MyToken p);
 void contextIdent(Ident i);
-void contextNazwaPola(Ident i);
+void contextFieldName(Ident i);
 void contextInteger(Integer i);
 void contextDouble(Double d);
 void contextChar(Char c);

@@ -151,22 +151,22 @@ char* translateZapZloz(ComplexQuery p)
 }
 void ppZapZloz(ComplexQuery _p_, int _i_)
 {
-    ppListZapytanie(_p_->querylist_, 0);
+    ppQueryList(_p_->querylist_, 0);
 }
 
-void ppZapytanie(Query _p_, int _i_)
+void ppQuery(Query _p_, int _i_)
 {
    int j, b;
 
   switch(_p_->kind)
   {
-  case is_ZapProste:
+  case is_SingleQuery:
     translator_initSingleQuery();
     if (_i_ > 0) renderC(_L_PAREN);
     b=0;
     for(j=0;j<fieldsCount();j++){
 	if(_p_->u.simplequery_.tabqueryline_[j]!=NULL){
-    		translator_mergeLines(ppLiniaZapytania(_p_->u.simplequery_.tabqueryline_[j], 0), _p_->u.simplequery_.tabqueryline_[j]->ident_, b);
+    		translator_mergeLines(ppQueryLine(_p_->u.simplequery_.tabqueryline_[j], 0), _p_->u.simplequery_.tabqueryline_[j]->ident_, b);
 		b++;
 	}
     }
@@ -174,17 +174,17 @@ void ppZapytanie(Query _p_, int _i_)
     if (_i_ > 0) renderC(_R_PAREN);
     break;
 
-  case is_ZapDef:
+  case is_DefQuery:
     break;
 
-  case is_ZapWyw:
+  case is_CallQuery:
     if (_i_ > 0) renderC(_L_PAREN);
-    ppZapytanie(_p_->u.callquery_.query_, 0);
+    ppQuery(_p_->u.callquery_.query_, 0);
 
     if (_i_ > 0) renderC(_R_PAREN);
     break;
 
-  case is_ZapPuste:
+  case is_EmptyQuery:
     if (_i_ > 0) renderC(_L_PAREN);
 
     if (_i_ > 0) renderC(_R_PAREN);
@@ -192,80 +192,80 @@ void ppZapytanie(Query _p_, int _i_)
 
 
   default:
-    fprintf(stderr, "Error: bad kind field when translating Zapytanie!\n");
+    fprintf(stderr, "Error: bad kind field when translating Query!\n");
     exit(1);
   }
 }
 
-char *ppLiniaZapytania(QueryLine _p_, int _i_)
+char *ppQueryLine(QueryLine _p_, int _i_)
 {
 
-    return ppWyraz(_p_->expr_, _p_->ident_, 0);
+    return ppExpr(_p_->expr_, _p_->ident_, 0);
 
 }
 
-char *ppWyraz(Expr _p_, Ident id, int _i_)
+char *ppExpr(Expr _p_, Ident id, int _i_)
 {
   //char *format = zapytanie(id);
   switch(_p_->kind)
   {
-  case is_WyrazAnd:
-    return translator_and(id, ppWyraz(_p_->u.andexpr_.expr_1, id, 0), ppWyraz(_p_->u.andexpr_.expr_2, id, 1));
-  case is_WyrazOr:
-    return translator_or(id, ppWyraz(_p_->u.orexpr_.expr_1, id, 0), ppWyraz(_p_->u.orexpr_.expr_2, id, 1));
-  case is_WyrazNeg:
-    return translator_not(id, ppWyraz(_p_->u.notexpr_.expr_, id, 1));
+  case is_AndExpr:
+    return translator_and(id, ppExpr(_p_->u.andexpr_.expr_1, id, 0), ppExpr(_p_->u.andexpr_.expr_2, id, 1));
+  case is_OrExpr:
+    return translator_or(id, ppExpr(_p_->u.orexpr_.expr_1, id, 0), ppExpr(_p_->u.orexpr_.expr_2, id, 1));
+  case is_NotExpr:
+    return translator_not(id, ppExpr(_p_->u.notexpr_.expr_, id, 1));
 
-  case is_WyrazFrag:
-    return translator_simpleText(id, translator_star(ppTekst(_p_->u.partexpr_.text_1), ppTekst(_p_->u.partexpr_.text_2)));
+  case is_PartExpr:
+    return translator_simpleText(id, translator_star(ppText(_p_->u.partexpr_.text_1), ppText(_p_->u.partexpr_.text_2)));
 
-  case is_WyrazFragL:
-    return translator_simpleText(id, translator_star(ppTekst(_p_->u.lpartexpr_.text_1), NULL));
+  case is_LPartExpr:
+    return translator_simpleText(id, translator_star(ppText(_p_->u.lpartexpr_.text_1), NULL));
 
-  case is_WyrazFragP:
-    return translator_simpleText(id, translator_star(NULL, ppTekst(_p_->u.rpartexpr_.text_)));
-  case is_WyrazTekst:
-    return translator_simpleText(id, ppTekst(_p_->u.textexpr_.text_));
+  case is_RPartExpr:
+    return translator_simpleText(id, translator_star(NULL, ppText(_p_->u.rpartexpr_.text_)));
+  case is_TextExpr:
+    return translator_simpleText(id, ppText(_p_->u.textexpr_.text_));
   default:
-    fprintf(stderr, "Error: bad kind field when translating Wyraz!\n");
+    fprintf(stderr, "Error: bad kind field when translating Expr!\n");
     exit(1);
   }
 }
 
-void ppListZapytanie(QueryList listzapytanie, int i)
+void ppQueryList(QueryList querylist, int i)
 {
-  while(listzapytanie!= 0)
+  while(querylist!= 0)
   {
-    if (listzapytanie->listzapytanie_ == 0)
+    if (querylist->querylist_ == 0)
     {
-      ppZapytanie(listzapytanie->zapytanie_, 0);
+      ppQuery(querylist->query_, 0);
 
-      listzapytanie = 0;
+      querylist = 0;
     }
     else
     {
-      ppZapytanie(listzapytanie->zapytanie_, 0);
+      ppQuery(querylist->query_, 0);
       renderS("");
-      listzapytanie = listzapytanie->listzapytanie_;
+      querylist = querylist->querylist_;
     }
   }
 }
 
-void ppListLiniaZapytania(QueryLineList listliniazapytania, int i)
+void ppQueryLineList(QueryLineList querylinelist, int i)
 {
-  while(listliniazapytania!= 0)
+  while(querylinelist!= 0)
   {
-    if (listliniazapytania->listliniazapytania_ == 0)
+    if (querylinelist->querylinelist_ == 0)
     {
-      ppLiniaZapytania(listliniazapytania->liniazapytania_, 0);
+      ppQueryLine(querylinelist->queryline_, 0);
 
-      listliniazapytania = 0;
+      querylinelist = 0;
     }
     else
     {
-      ppLiniaZapytania(listliniazapytania->liniazapytania_, 0);
+      ppQueryLine(querylinelist->queryline_, 0);
       renderS("\n");
-      listliniazapytania = listliniazapytania->listliniazapytania_;
+      querylinelist = querylinelist->querylinelist_;
     }
   }
 }
@@ -274,7 +274,7 @@ void ppPrzerwa(int _p_, int _i_)
 {
 }
 
-char* ppTekst(Text _p_)
+char* ppText(Text _p_)
 {
 
     return symbols_getName(_p_);

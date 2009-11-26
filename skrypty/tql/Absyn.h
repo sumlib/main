@@ -40,7 +40,7 @@ struct ComplexQuery_
     QueryList querylist_;
 };
 
-ComplexQuery make_ZapZloz(QueryList p0);
+ComplexQuery make_ComplexQuery(QueryList p0);
 
 struct Query_
 {
@@ -86,39 +86,39 @@ Expr make_OrExpr(Expr p0, Expr p1);
 Expr make_NotExpr(Expr p0);
 Expr make_PartExpr(Text p0, Text p1);
 Expr make_LPartExpr(Text p0);
-Expr make_WyrazFragP(Text p0);
-Expr make_WyrazTekst(Text p0);
+Expr make_RPartExpr(Text p0);
+Expr make_TextExpr(Text p0);
 
 struct QueryList_
 {
-  Query zapytanie_;
-  QueryList listzapytanie_;
+  Query query_;
+  QueryList querylist_;
 };
 
-QueryList make_ListZapytanie(Query p1, QueryList p2);
+QueryList make_QueryList(Query p1, QueryList p2);
 struct QueryLineList_
 {
-  QueryLine liniazapytania_;
-  //LiniaZapytania liniazapytaniatab[MAX_POL];
-  QueryLineList listliniazapytania_;
+  QueryLine queryline_;
+  //QueryLine liniazapytaniatab[MAX_POL];
+  QueryLineList querylinelist_;
 };
 
-QueryLineList make_ListLiniaZapytania(QueryLine p1, QueryLineList p2);
+QueryLineList make_QueryLineList(QueryLine p1, QueryLineList p2);
 
 
 struct SpaceList_
 {
-  int przerwa_;
-  SpaceList listprzerwa_;
+  int space_;
+  SpaceList spacelist_;
 };
 
-SpaceList make_ListPrzerwa(int p1, SpaceList p2);
+SpaceList make_SpaceList(int p1, SpaceList p2);
 
 
-Text make_Tekst(int p0);
+Text make_Text(int p0);
 
 
-Name make_Nazwa(String p0);
+Name make_Name(String p0);
 
 
 

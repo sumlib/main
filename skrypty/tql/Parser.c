@@ -136,8 +136,8 @@ ComplexQuery pZapZloz(FILE *inp)
   }
 }
 
-Query YY_RESULT_Zapytanie_ = 0;
-Query pZapytanie(FILE *inp)
+Query YY_RESULT_Query_ = 0;
+Query pQuery(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -146,12 +146,12 @@ Query pZapytanie(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_Zapytanie_;
+    return YY_RESULT_Query_;
   }
 }
 
-QueryLine YY_RESULT_LiniaZapytania_ = 0;
-QueryLine pLiniaZapytania(FILE *inp)
+QueryLine YY_RESULT_QueryLine_ = 0;
+QueryLine pQueryLine(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -160,12 +160,12 @@ QueryLine pLiniaZapytania(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_LiniaZapytania_;
+    return YY_RESULT_QueryLine_;
   }
 }
 
-Expr YY_RESULT_Wyraz_ = 0;
-Expr pWyraz(FILE *inp)
+Expr YY_RESULT_Expr_ = 0;
+Expr pExpr(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -174,12 +174,12 @@ Expr pWyraz(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_Wyraz_;
+    return YY_RESULT_Expr_;
   }
 }
 
-QueryList YY_RESULT_ListZapytanie_ = 0;
-QueryList pListZapytanie(FILE *inp)
+QueryList YY_RESULT_QueryList_ = 0;
+QueryList pQueryList(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -188,12 +188,12 @@ QueryList pListZapytanie(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_ListZapytanie_;
+    return YY_RESULT_QueryList_;
   }
 }
 
-QueryLineList YY_RESULT_ListLiniaZapytania_ = 0;
-QueryLineList pListLiniaZapytania(FILE *inp)
+QueryLineList YY_RESULT_QueryLineList_ = 0;
+QueryLineList pQueryLineList(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -202,7 +202,7 @@ QueryLineList pListLiniaZapytania(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_ListLiniaZapytania_;
+    return YY_RESULT_QueryLineList_;
   }
 }
 
@@ -234,8 +234,8 @@ SpaceList pListPrzerwa(FILE *inp)
   }
 }
 
-Text YY_RESULT_Tekst_ = 0;
-Text pTekst(FILE *inp)
+Text YY_RESULT_Text_ = 0;
+Text pText(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -244,7 +244,7 @@ Text pTekst(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_Tekst_;
+    return YY_RESULT_Text_;
   }
 }
 
@@ -263,27 +263,27 @@ Name pNazwa(FILE *inp)
 }
 
 
-QueryList reverseListZapytanie(QueryList l)
+QueryList reverseQueryList(QueryList l)
 {
   QueryList prev = 0;
   QueryList tmp = 0;
   while (l)
   {
-    tmp = l->listzapytanie_;
-    l->listzapytanie_ = prev;
+    tmp = l->querylist_;
+    l->querylist_ = prev;
     prev = l;
     l = tmp;
   }
   return prev;
 }
-QueryLineList reverseListLiniaZapytania(QueryLineList l)
+QueryLineList reverseQueryLineList(QueryLineList l)
 {
   QueryLineList prev = 0;
   QueryLineList tmp = 0;
   while (l)
   {
-    tmp = l->listliniazapytania_;
-    l->listliniazapytania_ = prev;
+    tmp = l->querylinelist_;
+    l->querylinelist_ = prev;
     prev = l;
     l = tmp;
   }
@@ -295,8 +295,8 @@ SpaceList reverseListPrzerwa(SpaceList l)
   SpaceList tmp = 0;
   while (l)
   {
-    tmp = l->listprzerwa_;
-    l->listprzerwa_ = prev;
+    tmp = l->spacelist_;
+    l->spacelist_ = prev;
     prev = l;
     l = tmp;
   }
@@ -315,8 +315,8 @@ typedef union
   Query zapytanie_;
   QueryLine liniazapytania_;
   Expr wyraz_;
-  QueryList listzapytanie_;
-  QueryLineList listliniazapytania_;
+  QueryList querylist_;
+  QueryLineList querylinelist_;
   Przerwa przerwa_;
   SpaceList listprzerwa_;
   Text tekst_;
@@ -773,9 +773,9 @@ static const short yyrline[] = { 0,
 static const char * const yytname[] = {   "$","error","$illegal.","_ERROR_",
 "_SYMB_NEWLINE","_SYMB_DWUKROPEK","_SYMB_AND","_SYMB_OR","_SYMB_NOT","_SYMB_ALL",
 "_SYMB_LEWIAS","_SYMB_PRAWIAS","_SYMB_AS","_SYMB_DEFINE","_SYMB_IN","_SYMB_SEARCH",
-"_SYMB_DWUKROPEK2","_STRING_","_IDENT_","ZapZloz","Zapytanie","LiniaZapytania",
-"Wyraz","Wyraz1","Wyraz2","ListZapytanie","ListLiniaZapytania","Przerwa","ListPrzerwa",
-"Tekst","Nazwa",""
+"_SYMB_DWUKROPEK2","_STRING_","_IDENT_","ZapZloz","Query","QueryLine",
+"Expr","Expr1","Expr2","QueryList","QueryLineList","Przerwa","ListPrzerwa",
+"Text","Nazwa",""
 };
 #endif
 
@@ -1334,87 +1334,87 @@ YYLABEL(yyreduce)
 
 case 1:
 #line 250 "TQL.y"
-{ yyval.zapzloz_ = make_ZapZloz(yyvsp[0].listzapytanie_); YY_RESULT_ZapZloz_= yyval.zapzloz_; ;
+{ yyval.zapzloz_ = make_ComplexQuery(yyvsp[0].querylist_); YY_RESULT_ZapZloz_= yyval.zapzloz_; ;
     break;}
 case 2:
 #line 252 "TQL.y"
-{ yyval.zapytanie_ = make_SimpleQuery(yyvsp[-1].listliniazapytania_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Zapytanie_= yyval.zapytanie_; ;
+{ yyval.zapytanie_ = make_SimpleQuery(yyvsp[-1].querylinelist_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Query_= yyval.zapytanie_; ;
     break;}
 case 3:
 #line 253 "TQL.y"
-{ yyval.zapytanie_ = make_ZapDef(yyvsp[-3].zapytanie_, yyvsp[-1].nazwa_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Zapytanie_= yyval.zapytanie_; ;
+{ yyval.zapytanie_ = make_DefQuery(yyvsp[-3].zapytanie_, yyvsp[-1].nazwa_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Query_= yyval.zapytanie_; ;
     break;}
 case 4:
 #line 254 "TQL.y"
-{ yyval.zapytanie_ = make_ZapWyw(yyvsp[-3].zapytanie_, yyvsp[-1].nazwa_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Zapytanie_= yyval.zapytanie_; ;
+{ yyval.zapytanie_ = make_CallQuery(yyvsp[-3].zapytanie_, yyvsp[-1].nazwa_, reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Query_= yyval.zapytanie_; ;
     break;}
 case 5:
 #line 255 "TQL.y"
-{ yyval.zapytanie_ = make_ZapPuste(reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Zapytanie_= yyval.zapytanie_; ;
+{ yyval.zapytanie_ = make_EmptyQuery(reverseListPrzerwa(yyvsp[0].listprzerwa_)); YY_RESULT_Query_= yyval.zapytanie_; ;
     break;}
 case 6:
 #line 257 "TQL.y"
-{ yyval.liniazapytania_ = make_QueryLine(yyvsp[-2].string_, yyvsp[0].wyraz_); YY_RESULT_LiniaZapytania_= yyval.liniazapytania_; ;
+{ yyval.liniazapytania_ = make_QueryLine(yyvsp[-2].string_, yyvsp[0].wyraz_); YY_RESULT_QueryLine_= yyval.liniazapytania_; ;
     break;}
 case 7:
 #line 259 "TQL.y"
-{ yyval.wyraz_ = make_AndExpr(yyvsp[-2].wyraz_, yyvsp[0].wyraz_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_AndExpr(yyvsp[-2].wyraz_, yyvsp[0].wyraz_); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 8:
 #line 260 "TQL.y"
-{ yyval.wyraz_ = make_WyrazOr(yyvsp[-2].wyraz_, yyvsp[0].wyraz_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_OrExpr(yyvsp[-2].wyraz_, yyvsp[0].wyraz_); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 9:
 #line 261 "TQL.y"
-{ yyval.wyraz_ = make_AndExpr(yyvsp[-2].wyraz_, make_WyrazNeg(yyvsp[0].wyraz_)); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_AndExpr(yyvsp[-2].wyraz_, make_NotExpr(yyvsp[0].wyraz_)); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 10:
 #line 262 "TQL.y"
-{ yyval.wyraz_ = yyvsp[0].wyraz_; YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = yyvsp[0].wyraz_; YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 11:
 #line 264 "TQL.y"
-{ yyval.wyraz_ = make_WyrazNeg(yyvsp[0].wyraz_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_NotExpr(yyvsp[0].wyraz_); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 12:
 #line 265 "TQL.y"
-{ yyval.wyraz_ = yyvsp[0].wyraz_; YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = yyvsp[0].wyraz_; YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 13:
 #line 267 "TQL.y"
-{ yyval.wyraz_ = make_WyrazFrag(yyvsp[-2].tekst_, yyvsp[0].tekst_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_PartExpr(yyvsp[-2].tekst_, yyvsp[0].tekst_); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 14:
 #line 268 "TQL.y"
-{ yyval.wyraz_ = make_WyrazFragL(yyvsp[-1].tekst_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_LPartExpr(yyvsp[-1].tekst_); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 15:
 #line 269 "TQL.y"
-{ yyval.wyraz_ = make_WyrazFragP(yyvsp[0].tekst_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_RPartExpr(yyvsp[0].tekst_); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 16:
 #line 270 "TQL.y"
-{ yyval.wyraz_ = make_WyrazTekst(yyvsp[0].tekst_); YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = make_TextExpr(yyvsp[0].tekst_); YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 17:
 #line 271 "TQL.y"
-{ yyval.wyraz_ = yyvsp[-1].wyraz_; YY_RESULT_Wyraz_= yyval.wyraz_; ;
+{ yyval.wyraz_ = yyvsp[-1].wyraz_; YY_RESULT_Expr_= yyval.wyraz_; ;
     break;}
 case 18:
 #line 273 "TQL.y"
-{ yyval.listzapytanie_ = make_ListZapytanie(yyvsp[0].zapytanie_, 0); YY_RESULT_ListZapytanie_= yyval.listzapytanie_; ;
+{ yyval.querylist_ = make_QueryList(yyvsp[0].zapytanie_, 0); YY_RESULT_QueryList_= yyval.querylist_; ;
     break;}
 case 19:
 #line 274 "TQL.y"
-{ yyval.listzapytanie_ = make_ListZapytanie(yyvsp[-1].zapytanie_, yyvsp[0].listzapytanie_); YY_RESULT_ListZapytanie_= yyval.listzapytanie_; ;
+{ yyval.querylist_ = make_QueryList(yyvsp[-1].zapytanie_, yyvsp[0].querylist_); YY_RESULT_QueryList_= yyval.querylist_; ;
     break;}
 case 20:
 #line 276 "TQL.y"
-{ yyval.listliniazapytania_ = make_ListLiniaZapytania(yyvsp[-1].liniazapytania_, 0); YY_RESULT_ListLiniaZapytania_= yyval.listliniazapytania_; ;
+{ yyval.querylinelist_ = make_QueryLineList(yyvsp[-1].liniazapytania_, 0); YY_RESULT_QueryLineList_= yyval.querylinelist_; ;
     break;}
 case 21:
 #line 277 "TQL.y"
-{ yyval.listliniazapytania_ = make_ListLiniaZapytania(yyvsp[-2].liniazapytania_, yyvsp[0].listliniazapytania_); YY_RESULT_ListLiniaZapytania_= yyval.listliniazapytania_; ;
+{ yyval.querylinelist_ = make_QueryLineList(yyvsp[-2].liniazapytania_, yyvsp[0].querylinelist_); YY_RESULT_QueryLineList_= yyval.querylinelist_; ;
     break;}
 case 22:
 #line 279 "TQL.y"
@@ -1426,23 +1426,23 @@ case 23:
     break;}
 case 24:
 #line 282 "TQL.y"
-{ yyval.listprzerwa_ = make_ListPrzerwa(yyvsp[0].przerwa_, yyvsp[-1].listprzerwa_); YY_RESULT_ListPrzerwa_= yyval.listprzerwa_; ;
+{ yyval.listprzerwa_ = make_SpaceList(yyvsp[0].przerwa_, yyvsp[-1].listprzerwa_); YY_RESULT_ListPrzerwa_= yyval.listprzerwa_; ;
     break;}
 case 25:
 #line 284 "TQL.y"
-{ yyval.tekst_ = make_Tekst(yyvsp[0].string_); YY_RESULT_Tekst_= yyval.tekst_; ;
+{ yyval.tekst_ = make_Text(yyvsp[0].string_); YY_RESULT_Text_= yyval.tekst_; ;
     break;}
 case 26:
 #line 285 "TQL.y"
-{ yyval.tekst_ = make_Tekst(yyvsp[0].string_); YY_RESULT_Tekst_= yyval.tekst_; ;
+{ yyval.tekst_ = make_Text(yyvsp[0].string_); YY_RESULT_Text_= yyval.tekst_; ;
     break;}
 case 27:
 #line 286 "TQL.y"
-{ yyval.tekst_ = make_Tekst(yyvsp[0].string_); YY_RESULT_Tekst_= yyval.tekst_; ;
+{ yyval.tekst_ = make_Text(yyvsp[0].string_); YY_RESULT_Text_= yyval.tekst_; ;
     break;}
 case 28:
 #line 288 "TQL.y"
-{ yyval.nazwa_ = make_Nazwa(yyvsp[0].string_); YY_RESULT_Nazwa_= yyval.nazwa_; ;
+{ yyval.nazwa_ = make_Name(yyvsp[0].string_); YY_RESULT_Nazwa_= yyval.nazwa_; ;
     break;}
 }
 

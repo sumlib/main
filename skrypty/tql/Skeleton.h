@@ -6,19 +6,19 @@
 
 
 void visitZapZloz(ZapZloz p);
-void visitZapytanie(Zapytanie p);
-void visitLiniaZapytania(LiniaZapytania p);
-void visitWyraz(Wyraz p);
-void visitListZapytanie(ListZapytanie p);
-void visitListLiniaZapytania(ListLiniaZapytania p);
+void visitQuery(Query p);
+void visitQueryLine(QueryLine p);
+void visitExpr(Expr p);
+void visitQueryList(QueryList p);
+void visitQueryLineList(QueryLineList p);
 void visitPrzerwa(Przerwa p);
 void visitListPrzerwa(ListPrzerwa p);
-void visitTekst(Tekst p);
+void visitText(Text p);
 void visitNazwa(Nazwa p);
 
 void visitMytoken(MyToken p);
 void visitIdent(Ident i);
-void visitNazwaPola(Ident i);
+void visitFieldName(Ident i);
 void visitInteger(Integer i);
 void visitDouble(Double d);
 void visitChar(Char c);

@@ -14,8 +14,8 @@ typedef union
   Query zapytanie_;
   QueryLine liniazapytania_;
   Expr wyraz_;
-  QueryList listzapytanie_;
-  QueryLineList listliniazapytania_;
+  QueryList querylist_;
+  QueryLineList querylinelist_;
   int przerwa_;
   SpaceList listprzerwa_;
   Text tekst_;
@@ -42,14 +42,14 @@ typedef union
 extern YYSTYPE yylval;
 extern int yyline;
 ComplexQuery pZapZloz(FILE *inp);
-Query pZapytanie(FILE *inp);
-QueryLine pLiniaZapytania(FILE *inp);
-Expr pWyraz(FILE *inp);
-QueryList pListZapytanie(FILE *inp);
-QueryLineList pListLiniaZapytania(FILE *inp);
+Query pQuery(FILE *inp);
+QueryLine pQueryLine(FILE *inp);
+Expr pExpr(FILE *inp);
+QueryList pQueryList(FILE *inp);
+QueryLineList pQueryLineList(FILE *inp);
 int pPrzerwa(FILE *inp);
 SpaceList pListPrzerwa(FILE *inp);
-Text pTekst(FILE *inp);
+Text pText(FILE *inp);
 Name pNazwa(FILE *inp);
 
 

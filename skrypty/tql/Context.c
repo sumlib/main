@@ -11,14 +11,14 @@
 
 void contextZapZloz(ComplexQuery _p_)
 {
-  contextListZapytanie(_p_->querylist_);
+  contextQueryList(_p_->querylist_);
 }
 
 Query polacz_zapytania(Query z1, Query z2){
     Query z = malloc(sizeof(struct Query_));
     int i;
     Expr w;
-    if(z1->kind == is_ZapProste && z2->kind == is_ZapProste){
+    if(z1->kind == is_SingleQuery && z2->kind == is_SingleQuery){
         for(i=0;i<fieldsCount();i++){
 	  if(z2->u.simplequery_.tabqueryline_[i]!=NULL){
     		w = z2->u.simplequery_.tabqueryline_[i]->expr_;
@@ -35,25 +35,25 @@ Query polacz_zapytania(Query z1, Query z2){
     return NULL;
 }
 
-void contextZapytanie(Query _p_)
+void contextQuery(Query _p_)
 {
   Query zapyt;
   int i;
   switch(_p_->kind)
   {
-  case is_ZapProste:
-    /* Code for ZapProste Goes Here */
+  case is_SingleQuery:
+    /* Code for SingleQuery Goes Here */
     break;
-  case is_ZapDef:
-    /* Code for ZapDef Goes Here */
-    contextZapytanie(_p_->u.defquery_.query_);
+  case is_DefQuery:
+    /* Code for DefQuery Goes Here */
+    contextQuery(_p_->u.defquery_.query_);
     contextNazwa(_p_->u.defquery_.name_);
     symbols_setQuery(_p_->u.defquery_.name_, _p_->u.defquery_.query_);
     break;
-  case is_ZapWyw:
-    /* Code for ZapWyw Goes Here */
+  case is_CallQuery:
+    /* Code for CallQuery Goes Here */
     //TODO: Połączyć linie zapytania z zap_def
-    contextZapytanie(_p_->u.callquery_.query_);
+    contextQuery(_p_->u.callquery_.query_);
     contextNazwa(_p_->u.callquery_.name_);
     zapyt = symbols_getQuery(_p_->u.callquery_.name_);
     if(zapyt==NULL){
@@ -65,88 +65,88 @@ void contextZapytanie(Query _p_)
     if(zapyt)
       _p_->u.callquery_.query_ = zapyt;
     break;
-  case is_ZapPuste:
-    /* Code for ZapPuste Goes Here */
+  case is_EmptyQuery:
+    /* Code for EmptyQuery Goes Here */
     break;
 
   default:
-    fprintf(stderr, "Error: bad kind field when printing Zapytanie!\n");
+    fprintf(stderr, "Error: bad kind field when printing Query!\n");
     exit(1);
   }
 }
 
-void contextLiniaZapytania(QueryLine _p_)
+void contextQueryLine(QueryLine _p_)
 {
 
     /* Code for LiniaZap Goes Here */
-    contextNazwaPola(_p_->ident_);
-    contextWyraz(_p_->expr_);
+    contextFieldName(_p_->ident_);
+    contextExpr(_p_->expr_);
 
 }
 
-void contextWyraz(Expr _p_)
+void contextExpr(Expr _p_)
 {
   switch(_p_->kind)
   {
-  case is_WyrazAnd:
-    /* Code for WyrazAnd Goes Here */
-    contextWyraz(_p_->u.andexpr_.expr_1);
-    contextWyraz(_p_->u.andexpr_.expr_2);
+  case is_AndExpr:
+    /* Code for AndExpr Goes Here */
+    contextExpr(_p_->u.andexpr_.expr_1);
+    contextExpr(_p_->u.andexpr_.expr_2);
     break;
-  case is_WyrazOr:
-    /* Code for WyrazOr Goes Here */
-    contextWyraz(_p_->u.orexpr_.expr_1);
-    contextWyraz(_p_->u.orexpr_.expr_2);
+  case is_OrExpr:
+    /* Code for OrExpr Goes Here */
+    contextExpr(_p_->u.orexpr_.expr_1);
+    contextExpr(_p_->u.orexpr_.expr_2);
     break;
-  case is_WyrazNeg:
-    /* Code for WyrazNeg Goes Here */
-    contextWyraz(_p_->u.notexpr_.expr_);
+  case is_NotExpr:
+    /* Code for NotExpr Goes Here */
+    contextExpr(_p_->u.notexpr_.expr_);
     break;
-  case is_WyrazFrag:
-    /* Code for WyrazFrag Goes Here */
-    contextTekst(_p_->u.partexpr_.text_1);
-    contextTekst(_p_->u.partexpr_.text_2);
+  case is_PartExpr:
+    /* Code for PartExpr Goes Here */
+    contextText(_p_->u.partexpr_.text_1);
+    contextText(_p_->u.partexpr_.text_2);
     break;
-  case is_WyrazFragL:
-    /* Code for WyrazFragL Goes Here */
-    contextTekst(_p_->u.lpartexpr_.text_1);
+  case is_LPartExpr:
+    /* Code for LPartExpr Goes Here */
+    contextText(_p_->u.lpartexpr_.text_1);
     break;
-  case is_WyrazFragP:
-    /* Code for WyrazFragP Goes Here */
-    contextTekst(_p_->u.rpartexpr_.text_);
+  case is_RPartExpr:
+    /* Code for RPartExpr Goes Here */
+    contextText(_p_->u.rpartexpr_.text_);
     break;
-  case is_WyrazTekst:
-    /* Code for WyrazTekst Goes Here */
-    contextTekst(_p_->u.textexpr_.text_);
+  case is_TextExpr:
+    /* Code for TextExpr Goes Here */
+    contextText(_p_->u.textexpr_.text_);
     break;
 
   default:
-    fprintf(stderr, "Error: bad kind field when printing Wyraz!\n");
+    fprintf(stderr, "Error: bad kind field when printing Expr!\n");
     exit(1);
   }
 }
 
-void contextListZapytanie(QueryList listzapytanie)
+void contextQueryList(QueryList querylist)
 {
-  while(listzapytanie != 0)
+  while(querylist != 0)
   {
-    /* Code For ListZapytanie Goes Here */
-    contextZapytanie(listzapytanie->zapytanie_);
-    listzapytanie = listzapytanie->listzapytanie_;
+    /* Code For QueryList Goes Here */
+    contextQuery(querylist->query_);
+    querylist = querylist->querylist_;
   }
 }
 
-void contextListLiniaZapytania(QueryLineList listliniazapytania)
+void contextQueryLineList(QueryLineList querylinelist)
 {
-  while(listliniazapytania != 0)
+  while(querylinelist != 0)
   {
-    /* Code For ListLiniaZapytania Goes Here */
-    contextLiniaZapytania(listliniazapytania->liniazapytania_);
-    listliniazapytania = listliniazapytania->listliniazapytania_;
+    /* Code For QueryLineList Goes Here */
+    contextQueryLine(querylinelist->queryline_);
+    querylinelist = querylinelist->querylinelist_;
   }
 }
 
-void contextTekst(Text _p_)
+void contextText(Text _p_)
 {
 
 }
@@ -165,7 +165,7 @@ void contextIdent(Ident i)
   /* Code for Ident Goes Here */
 }
 
-void contextNazwaPola(Ident i)
+void contextFieldName(Ident i)
 {
   if(symbols_isFieldName(i)) fprintf(stderr, "Error: %s nie jest nazwą pola\n", symbols_getName(i));
 }

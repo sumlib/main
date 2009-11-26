@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram><element><type>com.umlet.element.base.Package</type><coordinates><x>310</x><y>280</y><w>330</w><h>70</h></coordinates><panel_attributes>Baza config
+--
+left:
+Tablets* getTablets(char* query);
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Package</type><coordinates><x>310</x><y>80</y><w>330</w><h>190</h></coordinates><panel_attributes>Translator config
+--
+left:
+getResult();
+initSingleQuery();
+mergeLines(char *line, int fieldId, int notFirstLine);
+translate_or(int fieldId, char *expr1, char *expr2);
+translate_and(int fieldId, char *expr1, char *expr2);
+translate_not(int fieldId, char *expr1);
+translate_star(char *textFrag1, char *textFrag2);
+translate_simpleText(int fieldId, char *text);
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Package</type><coordinates><x>290</x><y>50</y><w>370</w><h>320</h></coordinates><panel_attributes>Zalezne od bazy danych</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Package</type><coordinates><x>0</x><y>10</y><w>270</w><h>360</h></coordinates><panel_attributes>Niezalezne od bazy danych</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Package</type><coordinates><x>20</x><y>280</y><w>230</w><h>70</h></coordinates><panel_attributes>Baza
+--
+left:
+getXmlFromQuery(char* query);</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Package</type><coordinates><x>20</x><y>200</y><w>230</w><h>70</h></coordinates><panel_attributes>Translator
+--
+left:
+translate(ZapZloz complexQuery);
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>140</x><y>250</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;</panel_attributes><additional_attributes>20;50;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>140</x><y>170</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;</panel_attributes><additional_attributes>20;50;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>140</x><y>90</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;</panel_attributes><additional_attributes>20;50;20;20</additional_attributes></element><element><type>com.umlet.element.base.Package</type><coordinates><x>20</x><y>40</y><w>230</w><h>70</h></coordinates><panel_attributes>Parser
+--
+left:
+parseComplexQuery(FILE *inp);
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Package</type><coordinates><x>20</x><y>120</y><w>230</w><h>70</h></coordinates><panel_attributes>Analizator
+--
+left:
+analyse(ZapZloz complexQuery);
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>230</x><y>230</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;</panel_attributes><additional_attributes>20;20;80;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>230</x><y>300</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;</panel_attributes><additional_attributes>80;20;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>230</x><y>220</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;</panel_attributes><additional_attributes>80;20;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>230</x><y>310</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;</panel_attributes><additional_attributes>20;20;80;20</additional_attributes></element></umlet_diagram>

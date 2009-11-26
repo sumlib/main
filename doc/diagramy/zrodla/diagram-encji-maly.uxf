@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>340</x><y>0</y><w>180</w><h>50</h></coordinates><panel_attributes>Provenience
+--
+value : varchar(100)
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>150</x><y>60</y><w>180</w><h>50</h></coordinates><panel_attributes>Collection
+--
+value : varchar(100)
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>40</x><y>170</y><w>180</w><h>50</h></coordinates><panel_attributes>Museum
+--
+value : varchar(100)
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>730</x><y>150</y><w>180</w><h>80</h></coordinates><panel_attributes>Genre
+--
+value : varchar(100)
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>610</x><y>20</y><w>170</w><h>50</h></coordinates><panel_attributes>Period
+--
+value : varchar(100)
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>560</x><y>160</y><w>190</w><h>72</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..1
+ 
+Of subgenre&gt;</panel_attributes><additional_attributes>20;50;170;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>556</x><y>300</y><w>108</w><h>140</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..n
+Has value&gt;</panel_attributes><additional_attributes>24;120;84;20</additional_attributes></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>640</x><y>310</y><w>180</w><h>50</h></coordinates><panel_attributes>TagValue
+--
+value : varchar(255)
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>50</x><y>280</y><w>190</w><h>90</h></coordinates><panel_attributes>Reading
+--
+node1_id : integer
+node2_id : integer
+value : varchar(20)</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>194</x><y>290</y><w>102</w><h>160</h></coordinates><panel_attributes>lt=.
+m1=1..n
+m2=0..n
+ 
+&lt;Contains</panel_attributes><additional_attributes>26;20;76;140</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>294</x><y>250</y><w>102</w><h>190</h></coordinates><panel_attributes>lt=.
+m1=1..n
+m2=1
+&lt;Contains</panel_attributes><additional_attributes>36;170;66;20</additional_attributes></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>350</x><y>190</y><w>230</w><h>150</h></coordinates><panel_attributes>Tablet
+--
+ID_CDLI : varchar(10)
+publication : varchar(100)
+measurements : varchar(15)
+date_of_origin : varchar(100)
+show_text : text
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>310</x><y>70</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..1
+&lt;In</panel_attributes><additional_attributes>90;120;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>481</x><y>10</y><w>78</w><h>200</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..1
+&lt;From</panel_attributes><additional_attributes>39;180;39;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>200</x><y>161</y><w>170</w><h>59</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..1
+&lt;Is placed in</panel_attributes><additional_attributes>150;39;20;29</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>550</x><y>10</y><w>80</w><h>200</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..1
+From&gt;</panel_attributes><additional_attributes>20;180;60;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>220</x><y>200</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=.
+m1=1..n
+m2=1
+&lt;Contains</panel_attributes><additional_attributes>20;80;130;20</additional_attributes></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>270</x><y>420</y><w>380</w><h>100</h></coordinates><panel_attributes>Tag
+--
+node1_id : integer
+node2_id : integer
+type : enum('person','place','number', 'measure', 'date')
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>560</x><y>130</y><w>190</w><h>80</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..1
+Of genre&gt;</panel_attributes><additional_attributes>20;60;170;20</additional_attributes></element></umlet_diagram>

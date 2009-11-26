@@ -272,6 +272,7 @@ Wszystkie pozostałe symbole to terminale.\\
 
 
 \chapter{Implementacja}
+\includegraphics[width=500px]{diagramy/pakiety.pdf}
 Implementacja składa się z dwóch części - zależnej i niezależnej od struktury danych. 
 \section{Moduły podstawowe}
 
@@ -381,7 +382,7 @@ Ich interfejs jest wspólny dla wszystkich baz danych.
 
 \subsection{Baza PostgreSQL}
 \subsubsection{Diagram encji}
-\includegraphics[width=500px]{diagramy/diagram_encji/ang2.pdf}
+\includegraphics[width=500px]{diagramy/diagram-encji-maly.pdf}
 \subsubsection{Translator\_config}
 Dostaje poszczególne fragmenty drzewa struktury zapytania i tłumaczy je na SQL. Przetłumaczone fragmenty zbiera do buforów (select, from, where), które następnie odpowiednio skleja.
 Każde proste zapytanie jest tłumaczone na jednego selecta; jak jest kilka prostych zapytań to są sklejane UNION.

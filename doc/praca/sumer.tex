@@ -131,12 +131,19 @@ i zmieniać tak, by mógł służyć też do innych zastosowań.
 
 \chapter{Podstawowe pojęcia}\label{r:pojecia}
 \section{Definicje}
--> odróżnienie tabliczki glinianej od elektronicznej
--> prowiniencja
--> sumerolodzy
--> odczyty
--> kliny
--> pieczęć
+\begin{description}
+ \item[Sumerolodzy] - ludzie, którzy zajmują się odczytywaniem pisma klinowego w języku sumeryjskim. Na potrzeby tej pracy
+		      to pojęcie jest rozszerzone do wszystkich ludzi zajmujących się odczytywaniem tabliczek sumeryjskich 
+		      i wyciąganiem z nich wiedzy historycznej.
+ \item[Tabliczka] - w tej pracy tabliczka będzie oznaczała tabliczkę sumeryjską w wersji elektronicznej 
+		  (chyba, że zostanie zaznaczone inaczej). Dla rozróżnienia, kiedy będziemy mówić o ``prawdziwej'', 
+		  glinianej tabliczce, będziemy używać pojęcia \textbf{gliniana tabliczka}
+ \item[Prowiniencja] - pojęcie używane przez sumerologów, oznacza miejsce pochodzenia/znalezienia glinianej tabliczki
+ \item[Kliny] - znaki występujące na glinianych tabliczkach.
+ \item[Odczyty] - sposób transkrypcji klinów, występuje na tabliczkach elektronicznych.
+ \item[Pieczęć] - część tabliczki zawierająca znak rozpoznawczy autora
+\end{description}
+
 
 
 
@@ -144,10 +151,10 @@ i zmieniać tak, by mógł służyć też do innych zastosowań.
 W chwili obecnej nie ma czegoś takiego jak język dostosowany do potrzeb sumerologów. Są strony internetowe oferujące wyszukiwanie, 
 jak np.
 \begin{itemize}
-\item The Cuneiform Digital Library Initiative (http://cdli.ucla.edu) - największa znana nam baza tekstów sumeryjskich, 
+\item \textbf{The Cuneiform Digital Library Initiative} (http://cdli.ucla.edu) - największa znana nam baza tekstów sumeryjskich, 
 wyszukiwanie po praktycznie wszystkich możliwych parametrach, choć trochę mało wygodne. Brakuje wyjaśnienia jak 
 używać ``Advanced search syntax''
-\item The Electronic Text Corpus of Sumerian Literature (http://etcsl.orinst.ox.ac.uk/) - baza znacznie mniejsza, zawiera 
+\item \textbf{The Electronic Text Corpus of Sumerian Literature} (http://etcsl.orinst.ox.ac.uk/) - baza znacznie mniejsza, zawiera 
 głównie teksty literackie. Wyszukiwanie mało rozbudowane.
 \end{itemize}
 
@@ -574,7 +581,7 @@ Natomiast do select dodajemy:
 , sequence.nodes as nodes
 \end{verbatim}
 
-Gdzie <wynikowe zapytanie o treść tablczki> to kombinacja zapytań typu:
+Gdzie $<$wynikowe zapytanie o treść tablczki$>$ to kombinacja zapytań typu:
 \begin{verbatim}
   SELECT 
     id_tab, 

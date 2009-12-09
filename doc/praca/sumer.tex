@@ -131,6 +131,15 @@ i zmieniać tak, by mógł służyć też do innych zastosowań.
 
 \chapter{Podstawowe pojęcia}\label{r:pojecia}
 \section{Definicje}
+-> odróżnienie tabliczki glinianej od elektronicznej
+-> prowiniencja
+-> sumerolodzy
+-> odczyty
+-> kliny
+-> pieczęć
+
+
+
 \chapter{Wcześniejsze rozwiązania}\label{r:losers}
 W chwili obecnej nie ma czegoś takiego jak język dostosowany do potrzeb sumerologów. Są strony internetowe oferujące wyszukiwanie, 
 jak np.
@@ -271,8 +280,81 @@ Wszystkie pozostałe symbole to terminale.\\
 {\nonterminal{Nazwa}} & {\arrow}  &{\nonterminal{String}}  \\
 \end{tabular}\\
 
+\section{Semantyka}
+%możliwe pola
+Przedstawimy semantykę na wybranych przykładach.
+\subsection{Zapytania proste}
+\begin{verbatim}
+provenience: Gar*
+period: "Ur III"
+genre: Administrative
+text: udu + (masz2/ugula) --szabra
+\end{verbatim}
+Wynikiem zapytania będą wszystkie tabliczki, które:
+\begin{itemize}
+ \item pochodzą z miejscowości o nazwie zaczynającej się na ``Gar''
+\item pochodzą z okresu Ur III
+\item są dokumentami administracyjnymi
+\item zawierają słowo ``udu'' oraz conajmniej jedno ze słów ``masz2'' lub ``ugula''
+\item nie zawierają słowa ``szabra''
+\end{itemize}
+
+
+\subsection{Zapytania złożone}
+\begin{verbatim}
+provenience: Ur
+period: "Ur III"/"Ur IV"
+text: udu --szabra
+
+text: masz2/ugula
+publication: tan*
+provenience: Ur
+\end{verbatim}
+Wynikiem zapytania będą wszystkie tabliczki, które:
+\begin{itemize}
+ \item pochodzą z miejscowości Ur
+ \item pochodzą z okresu Ur III lub Ur IV
+ \item zawierają słowo ``udu''
+ \item nie zawierają słowa ``szabra``
+\end{itemize}
+oraz wszystkie tabliczki, które:
+\begin{itemize}
+ \item zawierają słowo ''masz2`` lub ''ugula``
+ \item zostały opublikowane w publikacji, której nazwa zaczyna się od ''tan``
+ \item pochodzą z miejscowości Ur
+\end{itemize}
+
+
+\subsection{Zapytanie zdefiniowane}
+\begin{verbatim}
+ define
+  provenience: Garshana
+  period: Ur III
+  text: "udu ban"/mash2
+as "zwierzaki w Garshana"
+\end{verbatim}
+Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
+\begin{itemize}
+\item pochodzą z miejscowości Garshana
+\item pochodzą z okresu Ur III
+\item zawierają conajmniej jedną z fraz ''udu ban`` lub ''mash2``
+\end{itemize}
+
+\subsection{Wywołanie zapytania zdefiniowanego}
+\begin{verbatim}
+search
+  text: adad-tilati
+in "zwierzaki w Garshana"
+\end{verbatim}
+Wynikiem zapytania będą wszystkie tabliczki, które:
+\begin{itemize}
+ \item spełniają wszystkie warunki zapytania ''zwierzaki w Garshana``
+\item zawierają słowo ''adad-tilati``
+\end{itemize}
 
 \chapter{Implementacja}
+\includegraphics[width=500px]{diagramy/struktura.pdf}
+\newpage 
 \includegraphics[width=500px]{diagramy/pakiety.pdf}
 Implementacja składa się z dwóch części - zależnej i niezależnej od struktury danych. 
 \section{Moduły podstawowe}
@@ -388,63 +470,215 @@ Ich interfejs jest wspólny dla wszystkich baz danych.
 Dostaje poszczególne fragmenty drzewa struktury zapytania i tłumaczy je na SQL. Przetłumaczone fragmenty zbiera do buforów (select, from, where), które następnie odpowiednio skleja.
 Każde proste zapytanie jest tłumaczone na jednego selecta; jak jest kilka prostych zapytań to są sklejane UNION.
 
-\subsubsection{Tłumaczenie konstrukcji}
+\subsubsection{Inicjalizacja zapytania}
+Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL-a.
+Select jest inicjowany na 
+\begin{verbatim}
+SELECT t.id, t.id_cdli, t.publication, t.measurements, t.origin_date, 
+       p.value, pd.value as period,
+       g1.value as genre, g2.value as subgenre, 
+       c.value as collection, t.text
+\end{verbatim}
+From jest inicjowany
+\begin{verbatim}
+FROM tablet t
+  LEFT JOIN provenience p ON p.id=t.provenience_id
+  LEFT JOIN collection c ON c.id=t.collection_id
+  LEFT JOIN genre g1 ON g1.id=t.genre_id
+  LEFT JOIN genre g2 ON g2.id = t.subgenre_id
+  LEFT JOIN period pd ON pd.id = t.period_id
+\end{verbatim}
+Where jest inicjowany na
+\begin{verbatim}
+WHERE
+\end{verbatim}
+
+
+\subsubsection{Tłumaczenie konstrukcji prostych}
+Poniższe tłumaczenia są dodawane do klauzuli ''where`` i łączone ''AND``.
 \begin{longtable}{|p{3in}|p{3in}|}
 \hline
 {\bf Konstrukcja} & {\bf Tłumaczenie na SQL}\\
 \hline
 \endhead
-provenience: wartosc & \begin{description}
-     \item[From] 
-     \item[Where] p.value LIKE 'wartosc'
-     \end{description}\\
-\hline
-publication: wartosc & 
-\begin{description}
-     \item[From]
-     \item[Where] t.publication LIKE 'wartosc'
-     \end{description}\\
-\hline
-period: wartosc & 
-\begin{description}
-     \item[From]
-     \item[Where] pd.value LIKE 'wartosc'
-     \end{description}\\
-\hline
-year: wartosc & \begin{description}
-     \item[From]
-     \item[Where] t.origin\_date LIKE 'wartosc'
-     \end{description}\\
-\hline
-genre: wartosc & \begin{description}
-     \item[From]
-     \item[Where] g1.value LIKE 'wartosc' OR g2.value LIKE 'wartosc'
-     \end{description}\\
-\hline
-cdli\_id: wartosc & \begin{description}
-     \item[From]
-     \item[Where] t.cdli\_id LIKE 'wartosc'
-     \end{description}
+provenience: wartosc & \begin{verbatim}p.value LIKE 'wartosc'\end{verbatim}
 \\
 \hline
-text: wartosc & \begin{description}
-     \item[From]
-     \item[Where] 
-     \end{description}
+publication: wartosc & 
+\begin{verbatim}
+t.publication LIKE 'wartosc'
+\end{verbatim}
+\\
+\hline
+period: wartosc & 
+\begin{verbatim}
+pd.value LIKE 'wartosc'
+\end{verbatim}
+\\
+\hline
+year: wartosc & 
+\begin{verbatim}
+t.origin_date LIKE 'wartosc'
+\end{verbatim}
+\\
+\hline
+genre: wartosc & 
+\begin{verbatim}
+   g1.value LIKE 'wartosc' 
+OR g2.value LIKE 'wartosc'
+\end{verbatim}
+\\
+\hline
+cdli\_id: wartosc & 
+\begin{verbatim}
+t.cdli_id LIKE 'wartosc'
+\end{verbatim}
 \\
 \hline
 \end{longtable}
 
+\textbf{Tłumaczenie operatorów:}
+\begin{longtable}{|p{1in}|p{1in}|}
+\hline
+{\bf Operator} & {\bf Tłumaczenie}\\
+\hline
+\endhead
+/ & OR\\ 
+\hline
+-- & NOT\\ 
+\hline
++ & AND\\ 
+\hline
+* & \%  \\ 
+\hline
+\end{longtable}
 
-% \begin{array}{ll}
-% x & x \\
-% \textbf{Konstrukcja} & \textbf{Tłumaczenie na sql}\\
-% \end{array}
 
+\subsubsection{Tłumaczenie konstrukcji złożonych}
+Została zaimplementowana tylko jedna konstrukcja złożona - przy zapytaniu o treść tabliczki (pole ''text``).
+Korzystamy przy tym zapytaniu z przedstawienia treści tabliczki w formie grafu. 
+Krawędziami grafu są słowa, jedyną funkcją węzłów jest zachowanie kolejności. 
+Graf jest w tabeli readings.
+Id węzłów składają się z numeru tabliczki i kolejnego numeru węzła tabliczki (nr\_wezla * 1 000 000 + id\_tabliczki). 
+Uznajemy, że słowa są oddzielone spacjami.
+
+Pojawienie się wyszukiwania po treści tabliczki niesie za sobą konieczność dodania do klauzuli ''from`` 
+\begin{verbatim}
+INNER JOIN (
+  <wynikowe zapytanie o treść tablczki>
+) AS sequence ON sequence.id_tab = t.id
+\end{verbatim}
+
+Natomiast do select dodajemy:
+\begin{verbatim}
+, sequence.nodes as nodes
+\end{verbatim}
+
+Gdzie <wynikowe zapytanie o treść tablczki> to kombinacja zapytań typu:
+\begin{verbatim}
+  SELECT 
+    id_tab, 
+    CAST(array_accum(nodes) as TEXT) as nodes, 
+    COUNT(DISTINCT id_seq) AS seq, 
+    <id_seq> AS id_seq
+  FROM (
+    SELECT
+      r1.node1_id % 1000000 AS id_tab,
+      '{' || r1.node1_id || ',' || r<dl_sekw>.node2_id || '}' AS nodes,
+      1 AS id_seq
+    FROM
+      readings r1
+      LEFT JOIN readings r2 ON (r2.node1 = r1.node2)
+      LEFT JOIN readings r3 ON (r3.node1 = r2.node2)
+      ...
+      LEFT JOIN readings r<dl_sekw> ON (r<dl_sekw>.node1 = r<dl_sekw-1>.node2)
+   WHERE
+      r1.value LIKE '<sekw[1]>'
+     AND
+      r2.value LIKE '<sekw[2]>'
+    AND
+      r3.value LIKE '<sekw[3]>'
+    AND
+      ...
+    AND
+      r<dl_sekw>.value LIKE '<sekw[<dl_sekw>]>'
+   ) AS a 
+  GROUP BY id_tab
+\end{verbatim}
+Zmienne użyte w powyższym pseudo-kodzie:
+\begin{description}
+ \item[id\_sekw] - kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu - do ich rozróżniania
+ \item[dl\_sekw] - ilość słów składających się na wyszukiwaną sekwencję
+ \item[sekw] - tablica zawierająca słowa składające się na wyszukiwaną sekwencję
+ \end{description}
+
+\begin{longtable}{|p{1in}|p{4.5in}|}
+\hline
+{\bf Operator} & {\bf Tłumaczenie}\\
+\hline
+\endhead
+/ & 
+\begin{verbatim}
+SELECT 
+  id_tab, 
+  CAST(array_accum(nodes) as TEXT) as nodes, 
+  COUNT(DISTINCT id_seq) as seq,
+  <id_sekw> as id_seq
+FROM 
+(
+  <zapytanie1>
+  UNION
+  <zapytanie2>
+)
+as c
+GROUP BY id_tab
+\end{verbatim}
+\\ 
+\hline
++ &
+\begin{verbatim}
+SELECT * FROM
+ (SELECT id_tab, 
+         CAST(array_accum(nodes) as TEXT) as nodes, 
+         COUNT(DISTINCT id_seq) as seq, 
+         <id_sekw> as id_seq
+  FROM
+    (<zapytanie1>
+    UNION
+    <zapytanie2>)
+  as c 
+  GROUP BY id_tab
+ ) as b
+WHERE b.seq=2 
+\end{verbatim}
+\\ 
+\hline
+-- & 
+\begin{verbatim}
+SELECT 
+  id_tab, 
+  '' as wezly, 
+  0 as sekw,
+  <id_sekw> as id_sekw
+FROM
+(
+ (SELECT id as id_tab from tabliczka)
+ EXCEPT
+ (SELECT id_tab from
+    <zapytanie_negowane> as a
+ )   
+) as b
+\end{verbatim}
+\\ 
+\hline
+* & \%  \\ 
+\hline
+\end{longtable}
 
 
 \subsubsection{Database\_config}
-Odpowiada za wywołanie zapytania na konkretnej bazie. Korzysta z pliku database.conf, który zawiera dane dostępu do bazy. Korzysta z biblioteki libpq-fe.h do postgresa. Zwrócony wynik zapisuje do struktury Tablets.
+Odpowiada za wywołanie zapytania na konkretnej bazie. Korzysta z pliku database.conf, który zawiera dane dostępu do bazy. 
+Korzysta z biblioteki libpq-fe.h do postgresa. Zwrócony wynik zapisuje do struktury Tablets.
 
 \subsection{Baza XML}
 

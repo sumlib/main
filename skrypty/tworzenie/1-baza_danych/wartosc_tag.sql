@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS WartoscTag CASCADE;
+DROP TABLE IF EXISTS TagValue CASCADE;
 
-CREATE TABLE WartoscTag(
+CREATE TABLE TagValue(
     id SERIAL,
     tag_id INT,
-    wartosc varchar(255),
+    value varchar(255),
     PRIMARY KEY(id),
-    FOREIGN KEY (tag_id) REFERENCES Tagi(id)
+    FOREIGN KEY (tag_id) REFERENCES Tag(id)
 );

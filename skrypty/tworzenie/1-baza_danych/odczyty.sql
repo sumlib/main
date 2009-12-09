@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS Odczyty CASCADE;
+DROP TABLE IF EXISTS Reading CASCADE;
 
-CREATE TABLE Odczyty(
+CREATE TABLE Reading(
     id SERIAL,
-    wezel1_id BIGINT NOT NULL, -- id_tabliczki * 100 000 + id_wezla
-    wezel2_id BIGINT NOT NULL,
-    wartosc VARCHAR(20) NOT NULL,
-    typ varchar(255) NOT NULL,
-    CHECK (typ IN ('normal', 'broken')),
+    node1_id BIGINT NOT NULL, -- tablet_id * 100 000 + node_id
+    node2_id BIGINT NOT NULL,
+    value VARCHAR(20) NOT NULL,
+    type varchar(255) NOT NULL,
+    CHECK (type IN ('normal', 'broken')),
     PRIMARY KEY(id)
 );

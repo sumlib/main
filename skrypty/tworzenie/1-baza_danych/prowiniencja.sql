@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS Prowiniencja CASCADE;
+DROP TABLE IF EXISTS Provenience CASCADE;
 
-CREATE TABLE Prowiniencja (
+CREATE TABLE Provenience (
     id SERIAL,
-    wartosc VARCHAR(100) NOT NULL,
+    value VARCHAR(100) NOT NULL,
     PRIMARY KEY(id)
 );
 

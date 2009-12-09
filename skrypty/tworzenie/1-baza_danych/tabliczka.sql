@@ -1,29 +1,29 @@
-DROP TABLE IF EXISTS Tabliczka CASCADE;
+DROP TABLE IF EXISTS Tablet CASCADE;
 
 
-CREATE TABLE Tabliczka(
+CREATE TABLE Tablet(
     id SERIAL,
 
 --dane id_cdli, publikacja, prowiniencja, okres, rozmiary, typ, podtyp, kolekcja, muzeum
     id_cdli VARCHAR(10) NOT NULL,
-    publikacja VARCHAR(100),
-    rozmiary VARCHAR(15),
-    data_powstania VARCHAR(100), -- COMMENT 'wynikająca z tabliczki data powstania', 
-    prowiniencja_id INT,
-    okres_id INT,
-    typ_id INT,
-    podtyp_id INT,
-    kolekcja_id INT,
-    muzeum VARCHAR(100),
+    publication VARCHAR(100),
+    measurements VARCHAR(15),
+    date_of_origin VARCHAR(100), -- COMMENT 'wynikająca z tabliczki data powstania', 
+    provenience_id INT,
+    period_id INT,
+    genre_id INT,
+    subgenre_id INT,
+    collection_id INT,
+    museum VARCHAR(100),
 
 --tekst w naszym formacie
-    tekst TEXT NULL,
+    show_text TEXT NULL,
 
 --warunki na tabele
     PRIMARY KEY(id),
-    FOREIGN KEY (prowiniencja_id) REFERENCES Prowiniencja(id),
-    FOREIGN KEY (okres_id) REFERENCES Okres(id),
-    FOREIGN KEY (typ_id) REFERENCES Typ(id),
-    FOREIGN KEY (podtyp_id) REFERENCES Typ(id),
-    FOREIGN KEY (kolekcja_id) REFERENCES Kolekcja(id)
+    FOREIGN KEY (provenience_id) REFERENCES Provenience(id),
+    FOREIGN KEY (period_id) REFERENCES Period(id),
+    FOREIGN KEY (genre_id) REFERENCES Genre(id),
+    FOREIGN KEY (subgenre_id) REFERENCES Genre(id),
+    FOREIGN KEY (collection_id) REFERENCES Collection(id)
 );

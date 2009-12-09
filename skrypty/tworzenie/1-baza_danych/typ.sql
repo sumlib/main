@@ -1,9 +1,9 @@
 -- typ tabliczki (administrative itp)
-DROP TABLE IF EXISTS Typ CASCADE;
+DROP TABLE IF EXISTS Genre CASCADE;
 
-CREATE TABLE Typ (
+CREATE TABLE Genre (
     id SERIAL,
-    wartosc VARCHAR(100) NOT NULL,
+    value VARCHAR(100) NOT NULL,
     PRIMARY KEY(id)
 );
 

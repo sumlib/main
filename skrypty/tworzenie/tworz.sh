@@ -41,7 +41,23 @@ force=0
 insert=0
 log=debug.log
 options=""
-db=sumlib
+db_name=sumlib
+db_port=5432
+db_host=localhost
+db_user=asia
+db_pass=achajka
+
+#ustawianie danych do bazy:
+for line in `cat common/database.conf`; do 
+    zm=`echo $line | cut -d= -f2`
+    case `echo $line | cut -d= -f1` in
+	DB_HOST) db_host=$zm;;
+	DB_PORT) db_port=$zm;;
+	DB_NAME) db_name=$zm;;
+	DB_USER) db_user=$zm;;
+	DB_PASS) db_pass=$zm;;
+    esac
+done
 
 # sprawdzam, czy użytkownik wybrał nazwę pliku do logów
 if echo "$1" | grep -v "\-.*" > /dev/null; then log=$1; shift 1; fi 
@@ -84,12 +100,12 @@ me=`whoami`
 
 if [ $serwer -eq 1 ]; then
   bigInfo "Tworzenie bazy" 2>>$log
-  sudo su postgres -c ". 1-baza_danych/tworzenie_bazy.sh $me $db 1-baza_danych" 2>>$log
+  sudo su postgres -c ". 1-baza_danych/tworzenie_bazy.sh $db_name $db_host $db_port $db_user $db_pass 1-baza_danych" 2>>$log
 fi
 
 if [ $database -eq 1 ]; then
   bigInfo "Tworzenie tabel" 2>>$log
-  1-baza_danych/install.sh $me $db 1-baza_danych 2>>$log >/dev/null
+  1-baza_danych/install.sh $db_name $db_host $db_port $db_user $db_pass 1-baza_danych 2>>$log >/dev/null
 fi
 
 if [ $get -eq 1 ]; then
@@ -99,10 +115,10 @@ fi
 
 if [ $insert -eq 1 ]; then
   2-przerzucenie/zapisz.sh $start $end 2-przerzucenie -d data.txt -a tekst.atf -c 2>>$log
-  python 2-przerzucenie/wrzuc_do_bazy.py data.txt $db 2-przerzucenie 2>>$log
+  python 2-przerzucenie/wrzuc_do_bazy.py data.txt $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
   #python 2-przerzucenie/atf2xml.py tekst.atf show.xml 2-przerzucenie 2>>$log
-  python 2-przerzucenie/wrzuc_tekst.py tekst.atf $db 2-przerzucenie 2>>$log
-  python 2-przerzucenie/wrzuc_sekwencje.py tekst.atf $db 2-przerzucenie 2>>$log
+  python 2-przerzucenie/wrzuc_tekst.py tekst.atf $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
+  python 2-przerzucenie/wrzuc_sekwencje.py tekst.atf $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
 fi
 
 # Potrzebne opcje:

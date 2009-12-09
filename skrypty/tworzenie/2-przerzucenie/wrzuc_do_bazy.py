@@ -6,14 +6,16 @@ import sys
 #from Numeric import *
 
 if len(sys.argv)==1:
-    print "USAGE: %s <filename> <dbname> [<folder> [<user> <password>]]" 
+    print "USAGE: %s <filename> <dbname> [<folder> [<user> <password> <host> <port>]]" 
     sys.exit()
     
     
 dane=sys.argv[1] 
-db="sumlib"
-us="asia"
-passw="achajka"
+db="null"
+us="null"
+passw="null"
+port=5432
+host=localhost
 current="."
 
 if len(sys.argv)>2:
@@ -24,6 +26,10 @@ if len(sys.argv)>4:
     us=sys.argv[4]
 if len(sys.argv)>5:
     passw=sys.argv[5]
+if len(sys.argv)>6:
+    host=sys.argv[6]
+if len(sys.argv)>7:
+    port=sys.argv[7]    
 
     
   
@@ -31,7 +37,7 @@ if len(sys.argv)>5:
 dane = current + "/../data/" + dane
 
 #ustalenia poczatkowe i funkcje ulatwiajace zapytania + inserty
-conn = pg.connect(host="localhost", user=us, passwd=passw, dbname=db)
+conn = pg.connect(host=host, user=us, passwd=passw, dbname=db, port=port)
 
 
 def query(q,a=(),connection=conn):
@@ -47,7 +53,7 @@ def insert(q,a=()):
 	sys.stderr.write("\n");
 	conn.query(q % a)
 	#print q % a
-	#cr.execute("SELECT id FROM %s WHERE wartosc = %s",a)
+	#cr.execute("SELECT id FROM %s WHERE value = %s",a)
 	#t = cr.fetchone()
 	#cr.close()
 	#return t[0].strip() # db_new.use_result()
@@ -65,22 +71,22 @@ def findOrAdd(table, keyname):
 	if keyname=='':
 		return "NULL"
 	#escaped_keyname=escape_string(keyname)
-	result = query("SELECT id FROM %s WHERE wartosc = '%s'", (table, keyname)).getresult()
+	result = query("SELECT id FROM %s WHERE value = '%s'", (table, keyname)).getresult()
 	if len(result) == 0:
-		insert("INSERT INTO %s(wartosc) VALUES('%s')", (table, keyname))
-		result = query("SELECT id FROM %s WHERE wartosc = '%s'", (table, keyname)).getresult()
+		insert("INSERT INTO %s(value) VALUES('%s')", (table, keyname))
+		result = query("SELECT id FROM %s WHERE value = '%s'", (table, keyname)).getresult()
 		return result[0][0]
 	else:
 		return result[0][0]
 
 	#escaped_keyname=escape_string(keyname)
-	#cr = query_new("SELECT id FROM %s WHERE wartosc = %s", (table, escaped_keyname))
+	#cr = query_new("SELECT id FROM %s WHERE value = %s", (table, escaped_keyname))
 	#i = cr.fetchone() 
 	#if cr.rowcount==0:
 		#print "not found %s: %s, adding" % (table, keyname)
 		##if keyname is None :
 			##return None
-		#return insert("INSERT INTO %d(wartosc) VALUES(%s)", (table, escaped_keyname))
+		#return insert("INSERT INTO %d(value) VALUES(%s)", (table, escaped_keyname))
 		#print "%s: %s added \n" % (table, keyname)
 	#else: 
 		#r = i[0].strip()
@@ -88,11 +94,11 @@ def findOrAdd(table, keyname):
 	
 
 def wrzucDane(row):
-	#(id_cdli, publikacja, prowiniencja, okres, rozmiary, typ, podtyp, kolekcja, muzeum)
+	#(id_cdli, publikacja, provenience, period, measurements, typ, podtyp, collection, muzeum)
 	#row = row[1:-1].strip()
 	row = row.split("||")
 	id = row[0].strip()[1:].strip()
-	insert("INSERT INTO tabliczka(id, id_cdli, publikacja, prowiniencja_id, okres_id, rozmiary, typ_id, podtyp_id, kolekcja_id, muzeum) VALUES(%s, %s, %s,%s, %s, %s,%s, %s, %s, %s);", (id, napisNull(row[0].strip()), napisNull(row[1].strip()), findOrAdd('prowiniencja', row[2].strip()), findOrAdd('okres', row[3].strip()), napisNull(row[4].strip()), findOrAdd('typ', row[5].strip()), findOrAdd('typ', row[6].strip()), findOrAdd('kolekcja', row[7].strip()), napisNull(row[8].strip())))
+	insert("INSERT INTO tablet(id, id_cdli, publication, provenience_id, period_id, measurements, genre_id, subgenre_id, collection_id, museum) VALUES(%s, %s, %s,%s, %s, %s,%s, %s, %s, %s);", (id, napisNull(row[0].strip()), napisNull(row[1].strip()), findOrAdd('provenience', row[2].strip()), findOrAdd('period', row[3].strip()), napisNull(row[4].strip()), findOrAdd('genre', row[5].strip()), findOrAdd('genre', row[6].strip()), findOrAdd('collection', row[7].strip()), napisNull(row[8].strip())))
 	
 
 f = open(dane,'r')

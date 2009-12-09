@@ -7,14 +7,16 @@ import cgi
 
 
 if len(sys.argv)==1:
-    print "USAGE: %s <filename> <dbname> [<folder> [<user> <password>]]" 
+    print "USAGE: %s <filename> <dbname> [<folder> [<user> <password> <host> <port>]]" 
     sys.exit()
     
     
-dane=sys.argv[1] 
-db="sumlib"
-us="asia"
-passw="achajka"
+dane=sys.argv[1]
+db="null"
+us="null"
+passw="null"
+port=5432
+host=localhost
 current="."
 
 if len(sys.argv)>2:
@@ -25,14 +27,15 @@ if len(sys.argv)>4:
     us=sys.argv[4]
 if len(sys.argv)>5:
     passw=sys.argv[5]
-
-    
-  
+if len(sys.argv)>6:
+    host=sys.argv[6]
+if len(sys.argv)>7:
+    port=sys.argv[7]    
 
 dane = current + "/../data/" + dane
 
 #ustalenia poczatkowe i funkcje ulatwiajace zapytania + inserty
-conn = psycopg.connect('host=localhost user=%s password=%s dbname=%s' % (us, passw, db))
+conn = psycopg.connect('host=%s user=%s password=%s dbname=%s port=%s' % (host, us, passw, db, port))
 cur = conn.cursor()
 
 
@@ -147,7 +150,7 @@ for line_raw in input:
 		przerwa = 0
 	elif len(line)>0:
 		if(id_tabliczki == None):
-		    sys.stderr.write("Id tabliczki not known!!!\n" + line + "\n")
+		    sys.stderr.write("Tablet id not known!!!\n" + line + "\n")
 		    exit();
 		slowa = filtruj(line)
 		if (slowa == None):
@@ -167,7 +170,7 @@ for line_raw in input:
 			
 				name = sl
 
-				insert("""INSERT INTO odczyty(wezel1_id, wezel2_id, wartosc, typ) VALUES(%s, %s, %s, %s);""", (node1, node2, napisNull(name), napisNull(t)));
+				insert("""INSERT INTO reading(node1_id, node2_id, value, type) VALUES(%s, %s, %s, %s);""", (node1, node2, napisNull(name), napisNull(t)));
 			i = i + 10
 			
 

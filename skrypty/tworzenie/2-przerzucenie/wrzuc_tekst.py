@@ -7,16 +7,18 @@ import sys
 #from Numeric import *
 
 if len(sys.argv)==1:
-    print "USAGE: %s <filename> <dbname> [<folder> [<user> <password>]]" 
+    print "USAGE: %s <filename> <dbname> [<folder> [<user> <password> <host> <port>]]" 
     sys.exit()
     
     
 dane=sys.argv[1]
-db="sumlib"
-us="asia"
-passw="achajka"
+db="null"
+us="null"
+passw="null"
+port=5432
+host=localhost
 current="."
-
+   
 if len(sys.argv)>2:
     db=sys.argv[2]
 if len(sys.argv)>3:
@@ -25,14 +27,15 @@ if len(sys.argv)>4:
     us=sys.argv[4]
 if len(sys.argv)>5:
     passw=sys.argv[5]
-
-    
-  
+if len(sys.argv)>6:
+    host=sys.argv[6]
+if len(sys.argv)>7:
+    port=sys.argv[7]    
 
 dane = current + "/../data/" + dane
 
 #ustalenia poczatkowe i funkcje ulatwiajace zapytania + inserty
-conn = psycopg.connect('host=localhost user=%s password=%s dbname=%s' % (us, passw, db)) # odkomentowac!!!
+conn = psycopg.connect('host=%s user=%s password=%s dbname=%s port=%s' % (host, us, passw, db, port)) # odkomentowac!!!
 cur = conn.cursor()
 
 
@@ -56,7 +59,7 @@ def napisNull(keyname):
 
 def zapisz_tabliczke_do_bazy(id_tabliczki,tekst):
 	print id_tabliczki
-	update("""UPDATE tabliczka SET tekst = %s WHERE id_cdli=%s;""", (napisNull(tekst), id_tabliczki))
+	update("""UPDATE tablet SET text = %s WHERE id_cdli=%s;""", (napisNull(tekst), id_tabliczki))
 	
 
 f = open(dane,'r')

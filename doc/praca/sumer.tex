@@ -159,7 +159,19 @@ głównie teksty literackie. Wyszukiwanie mało rozbudowane.
 \end{itemize}
 
 \chapter{Dziedzina problemu}
-\includegraphics[width=500px]{diagramy/Model-dziedziny.png}
+\begin{figure}
+ \centering
+ \includegraphics[bb=0 0 342 405]{./diagramy/tabliczka.pdf}
+ % tabliczka.pdf: 342x405 pixel, 72dpi, 12.06x14.29 cm, bb=0 0 342 405
+ \caption{Gliniana tabliczka - struktura}
+\end{figure}
+\begin{figure}
+ \centering
+ \includegraphics[width=500px,bb=0 0 650 345]{./diagramy/Model-dziedziny.png}
+ % Model-dziedziny.png: 650x345 pixel, 72dpi, 22.93x12.17 cm, bb=0 0 650 345
+ \caption{Co powinna zawierać tabliczka w formie elektronicznej}
+\end{figure}
+
 Głównym pojęciem jest tabliczka. Ma ona swoje metadane i treść. Tabliczka jest rozumiana dwojako - jako fizyczna tabliczka gliniana
 zapisana klinami lub jako tabliczka w formie cyfrowej zapisana odczytami. Może ona zawierać elementy znaczące takie jak imię jakiejś 
 osoby, liczba, jednostka (np. przy opisywaniu wypłat), miejsce, data, imię bóstwa. Część tych elementów da się przetłumaczyć na 
@@ -360,10 +372,21 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
 \end{itemize}
 
 \chapter{Implementacja}
-\includegraphics[width=500px]{diagramy/struktura.pdf}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=500px,bb=0 0 608 517]{./diagramy/struktura.pdf}
+ % struktura.pdf: 608x517 pixel, 72dpi, 21.45x18.24 cm, bb=0 0 608 517
+ \caption{Struktura systemu korzystającego z translatora}
+\end{figure}
 \newpage 
-\includegraphics[width=500px]{diagramy/pakiety.pdf}
-Implementacja składa się z dwóch części - zależnej i niezależnej od struktury danych. 
+\begin{figure}
+ \centering
+ \includegraphics[width=500px,bb=0 0 585 300]{./diagramy/pakiety.pdf}
+ % pakiety.pdf: 585x300 pixel, 72dpi, 20.64x10.58 cm, bb=0 0 585 300
+ \caption{Podział programu na moduły}
+\end{figure}
+
+Implementacja składa się z dwóch części - modułów podstawowych (niezależnych od struktury danych) i modułów wymiennych (zależnych).
 \section{Moduły podstawowe}
 
 \subsection{Parser}
@@ -472,7 +495,24 @@ Ich interfejs jest wspólny dla wszystkich baz danych.
 
 \subsection{Baza PostgreSQL}
 \subsubsection{Diagram encji}
-\includegraphics[width=500px]{diagramy/diagram-encji-maly.pdf}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=500px,bb=0 0 930 560]{./diagramy/diagram-encji-maly.pdf}
+ % diagram-encji-maly.pdf: 930x560 pixel, 72dpi, 32.81x19.76 cm, bb=0 0 930 560
+ \caption{Diagram encji}
+\end{figure}
+Treść tabliczki jest trzymana w formie grafu (zgodnie z pomysłem dr Wojciecha Jaworskiego), którego krawędziami są odczyty i tagi
+(w przyszłości także kliny). Węzeł tego grafu jest liczbą w postaci:
+\begin{verbatim}
+ <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>
+\end{verbatim}
+Stąd wzięły się przerywane linie na diagramie encji - nie ma bezpośredniego klucza obcego w tabeli Reading (czy Tag) do Tablet, 
+jednak związek istnieje. Taki sposób przechowywania informacji o treści tabliczki umożliwia sprawniejsze wyszukiwanie nie tylko
+po odczytach (pozwala pomijać linie z uszkodzeniami) ale także w przyszłości ułatwia zaimplementowanie wyszukiwania po klinach,
+po tagach itp.
+
+ 
+
 \subsubsection{Translator\_config}
 Dostaje poszczególne fragmenty drzewa struktury zapytania i tłumaczy je na SQL. Przetłumaczone fragmenty zbiera do buforów (select, from, where), które następnie odpowiednio skleja.
 Każde proste zapytanie jest tłumaczone na jednego selecta; jak jest kilka prostych zapytań to są sklejane UNION.
@@ -700,11 +740,15 @@ Korzysta z biblioteki libpq-fe.h do postgresa. Zwrócony wynik zapisuje do struk
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
+\bibitem[1]{jaworski} Wojciech Jaworski, \textit{Modelowanie tresci sumeryjskich tekstów gospodarczych z epoki Ur III}, 
+http://nlp.ipipan.waw.pl/NLP-SEMINAR/071119.pdf, 19 listopada 2007
 
 %\bibitem[Bea65]{beaman} Juliusz Beaman, \textit{Morbidity of the Jolly
  %   function}, Mathematica Absurdica, 117 (1965) 338--9.
 
 \end{thebibliography}
+
+\listoffigures
 
 \end{document}
 

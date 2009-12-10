@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "Absyn.h"
 #include "conf/Translator_config.h"
-#include "symbols.h"
+#include "Symbols.h"
 
 /********************   ZapZloz    ********************/
 ComplexQuery make_ComplexQuery(QueryList p1)

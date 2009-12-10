@@ -1,7 +1,7 @@
 /*** BNFC-Generated Pretty translateer and Abstract Syntax Viewer ***/
 
 #include "Translator.h"
-#include "symbols.h"
+#include "Symbols.h"
 #include "conf/Translator_config.h"
 #include <stdio.h>
 #include <string.h>

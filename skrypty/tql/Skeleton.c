@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Skeleton.h"
-#include "symbols.h"
+#include "Symbols.h"
 
 void visitZapZloz(ZapZloz _p_)
 {

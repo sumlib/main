@@ -531,7 +531,7 @@ char *TQLtext;
 #include <string.h>
 #include <stdio.h>
 #include "Parser.h"
-#include "symbols.h"
+#include "Symbols.h"
 #define YY_BUFFER_LENGTH 4096
 char YY_PARSED_STRING[YY_BUFFER_LENGTH];
 void YY_BUFFER_APPEND(char *s)

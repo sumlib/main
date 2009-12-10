@@ -2,7 +2,7 @@
 #define PARSER_HEADER_FILE
 
 #include "Absyn.h"
-#include "symbols.h"
+#include "Symbols.h"
 
 typedef union
 {

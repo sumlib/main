@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Context.h"
-#include "symbols.h"
+#include "Symbols.h"
 #include "Absyn.h"
 
 void contextZapZloz(ComplexQuery _p_)

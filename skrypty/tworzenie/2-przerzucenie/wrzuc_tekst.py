@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # -* encoding utf-8 *-
 #import pg
-import psycopg
+import psycopg2
 import sys
 #from Numeric import *
 
@@ -16,26 +16,26 @@ db="null"
 us="null"
 passw="null"
 port=5432
-host=localhost
+host='localhost'
 current="."
    
 if len(sys.argv)>2:
     db=sys.argv[2]
 if len(sys.argv)>3:
-    current=sys.argv[3]
+    us=sys.argv[3]
 if len(sys.argv)>4:
-    us=sys.argv[4]
+    passw=sys.argv[4]
 if len(sys.argv)>5:
-    passw=sys.argv[5]
+    host=sys.argv[5]
 if len(sys.argv)>6:
-    host=sys.argv[6]
+    port=sys.argv[6]
 if len(sys.argv)>7:
-    port=sys.argv[7]    
+    current=sys.argv[7]    
 
 dane = current + "/../data/" + dane
 
 #ustalenia poczatkowe i funkcje ulatwiajace zapytania + inserty
-conn = psycopg.connect('host=%s user=%s password=%s dbname=%s port=%s' % (host, us, passw, db, port)) # odkomentowac!!!
+conn = psycopg2.connect("host='%s' user=%s password=%s dbname=%s port=%s" % (host, us, passw, db, port)) # odkomentowac!!!
 cur = conn.cursor()
 
 

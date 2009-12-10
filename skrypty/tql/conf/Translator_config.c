@@ -6,13 +6,13 @@
 #include "../Buffer.h"
 
 #define TEXT "??"
-//id_seq - id sekwencji odczytów/klinów po której wyszukujemy
+//id_seq - id seqencji odczytów/klinów po której wyszukujemy
 #define PUT_HERE_ID_SEQ "##"
 #define VAR "###"
 
 
 static char *fieldsNames[] = { "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "seal", NULL};
-static char *queries[] = {"p.wartosc LIKE '###'", "t.publikacja LIKE '###'", "o.wartosc LIKE '###'", "t.data_powstania LIKE '###'", "typ1.wartosc LIKE '###' OR typ2.wartosc LIKE '###'", "", "t.cdli_id LIKE '###'", TEXT, "", NULL};
+static char *queries[] = {"p.value LIKE '###'", "t.publication LIKE '###'", "o.value LIKE '###'", "t.date_of_origin LIKE '###'", "g1.value LIKE '###' OR g2.value LIKE '###'", "", "t.cdli_id LIKE '###'", TEXT, "", NULL};
 int from_level=0, select_level=0;
 
 /************************************ buffory: *****************************************************/
@@ -49,8 +49,8 @@ void translator_initSingleQuery(){
     bufReset(buf_select);
     bufReset(buf_from);
     bufReset(buf_where);
-    bufAppendS(buf_select, "SELECT t.id, t.id_cdli, t.publikacja, t.rozmiary, t.data_powstania, p.wartosc, o.wartosc as okres, typ1.wartosc as typ, typ2.wartosc as podtyp, k.wartosc as kolekcja, t.tekst");
-    bufAppendS(buf_from, "FROM tabliczka t \n LEFT JOIN prowiniencja p ON p.id=t.prowiniencja_id\n LEFT JOIN kolekcja k ON k.id=t.kolekcja_id\n LEFT JOIN typ typ1 ON typ1.id=t.typ_id\n LEFT JOIN typ typ2 ON typ2.id = t.podtyp_id\n LEFT JOIN okres o ON o.id = t.okres_id \n");
+    bufAppendS(buf_select, "SELECT t.id, t.id_cdli, t.publication, t.measurements, t.date_of_origin, p.value as provenience, pd.value as period, g1.value as genre, g2.value as subgenre, c.value as collection, t.text");
+    bufAppendS(buf_from, "FROM tablet t \n LEFT JOIN provenience p ON p.id=t.provenience_id\n LEFT JOIN collection c ON c.id=t.collection_id\n LEFT JOIN genre g1 ON g1.id=t.genre_id\n LEFT JOIN genre g2 ON g2.id = t.subgenre_id\n LEFT JOIN period o ON o.id = t.period_id \n");
     bufAppendS(buf_where, "WHERE \n  ");
 }
 
@@ -78,27 +78,27 @@ char *translateTextQuery(int id, char *text){
   }
   
   bufReset(&tmp);
-  bufAppendS(&tmp,"       (\n         SELECT id_tab, CAST(array_accum(wezly) as TEXT) as wezly, COUNT(DISTINCT id_sekw) AS sekw, ");
+  bufAppendS(&tmp,"       (\n         SELECT id_tab, CAST(array_accum(nodes) as TEXT) as nodes, COUNT(DISTINCT id_seq) AS seq, ");
   bufAppendInt(&tmp,ID_SEQ);
-  bufAppendS(&tmp," AS id_sekw \n         FROM (\n            SELECT \n               o1.wezel1_id % 1000000 AS id_tab, \n               '{' || o1.wezel1_id || ',' || o");
+  bufAppendS(&tmp," AS id_seq \n         FROM (\n            SELECT \n               r1.node1_id % 1000000 AS id_tab, \n               '{' || r1.node1_id || ',' || r");
   bufAppendInt(&tmp,expString.amnt);
-  bufAppendS(&tmp,".wezel2_id || '}'AS wezly, \n               1 AS id_sekw\n            FROM \n               odczyty o1 \n");
+  bufAppendS(&tmp,".node2_id || '}'AS nodes, \n               1 AS id_seq\n            FROM \n               reading r1 \n");
   for (i = 1; i < expString.amnt; i++) {
-	bufAppendS(&tmp,"               LEFT JOIN odczyty o");
+	bufAppendS(&tmp,"               LEFT JOIN reading r");
 	bufAppendInt(&tmp,i+1);
-	bufAppendS(&tmp," ON (o");
+	bufAppendS(&tmp," ON (r");
 	bufAppendInt(&tmp,i);
-	bufAppendS(&tmp,".wezel2_id = o");
+	bufAppendS(&tmp,".node2_id = r");
 	bufAppendInt(&tmp,i+1);
-	bufAppendS(&tmp,".wezel1_id) \n");
+	bufAppendS(&tmp,".node1_id) \n");
   }
   bufAppendS(&tmp,"            WHERE\n               (\n");
    
   for (i = 0; i < expString.amnt; i++) {
 	if (i>0) bufAppendS(&tmp, "               AND\n");
-	bufAppendS(&tmp,"               o");
+	bufAppendS(&tmp,"               r");
 	bufAppendInt(&tmp,i+1);
-	bufAppendS(&tmp,".wartosc LIKE '");
+	bufAppendS(&tmp,".value LIKE '");
 	bufAppendS(&tmp, expString.strings[i]);
 	bufAppendS(&tmp, "'\n");
    }
@@ -159,13 +159,13 @@ char *replace(const char *text, char * co_zamienic, char * na_co){
 }
 
 
-char *add_id_seq(const char *tekst){
+char *add_id_seq(const char *text){
   static char buffer[4096];
   char *p, *tmp;
   memset(buffer, 0, 4096);
   int ile;
   
-  tmp = strdup(tekst);
+  tmp = strdup(text);
   if(!(p = strstr(tmp, PUT_HERE_ID_SEQ)))  // Is 'orig' even in 'str'?
     return tmp;
 
@@ -196,7 +196,7 @@ char *concat(char *expr1, char *connector, char* expr2, int useBrackets){
 }
 char *translator_or(int id, char *expr1, char *expr2) {
   if (strcmp(queries[id],TEXT) == 0) {
-      return concat("\n   (\nSELECT id_tab, CAST(array_accum(wezly) as TEXT) as wezly, COUNT(DISTINCT id_sekw) as sekw, ## as id_sekw\n FROM\n",
+      return concat("\n   (\nSELECT id_tab, CAST(array_accum(nodes) as TEXT) as nodes, COUNT(DISTINCT id_seq) as seq, ## as id_seq\n FROM\n",
 		      concat(expr1, "   UNION \n", expr2, 1),
 		      "  as c \n GROUP BY id_tab\n   )\n", 0);
   }
@@ -206,16 +206,16 @@ char *translator_or(int id, char *expr1, char *expr2) {
   
 char *translator_and(int id, char *expr1, char *expr2) {
   if (strcmp(queries[id],TEXT) == 0) {
-      return concat("\n   (\nSELECT * FROM\n   (\nSELECT id_tab, CAST(array_accum(wezly) as TEXT) as wezly, COUNT(DISTINCT id_sekw) as sekw, ## as id_sekw\n FROM\n",
+      return concat("\n   (\nSELECT * FROM\n   (\nSELECT id_tab, CAST(array_accum(nodes) as TEXT) as nodes, COUNT(DISTINCT id_seq) as seq, ## as id_seq\n FROM\n",
 		      concat(expr1, "   UNION \n", expr2, 1),
-		      "  as c \n GROUP BY id_tab\n   ) as b\nWHERE b.sekw=2\n   )", 0);
+		      "  as c \n GROUP BY id_tab\n   ) as b\nWHERE b.seq=2\n   )", 0);
   }
   return concat(expr1, " AND ", expr2, 1);
 }
 
 char *translator_not(int id, char *expr1)  {
   if (strcmp(queries[id],TEXT) == 0) {
-      return concat("\nSELECT id_tab, '' as wezly, 0 as sekw, ## as id_sekw\nFROM\n   (\n     (select id as id_tab from tabliczka)\n   EXCEPT\n     (SELECT id_tab from\n", expr1, " as a\n     )\n   ) as b\n", 1);
+      return concat("\nSELECT id_tab, '' as nodes, 0 as seq, ## as id_seq\nFROM\n   (\n     (select id as id_tab from tablet)\n   EXCEPT\n     (SELECT id_tab from\n", expr1, " as a\n     )\n   ) as b\n", 1);
   }
   return concat("", "NOT ", expr1, 1);
 }
@@ -231,8 +231,8 @@ void translator_mergeLines(char *line, int id, int notFirstLine){
   if(strcmp(queries[id],TEXT) == 0) {
     bufAppendS(buf_from, " INNER JOIN ");
     bufAppendS(buf_from, line);
-    bufAppendS(buf_from, " AS sekwencja ON sekwencja.id_tab = t.id\n");
-    bufAppendS(buf_select, ", sekwencja.wezly as wezly");
+    bufAppendS(buf_from, " AS sequence ON sequence.id_tab = t.id\n");
+    bufAppendS(buf_select, ", sequence.nodes as nodes");
     
   }
   else {

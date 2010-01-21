@@ -580,14 +580,18 @@ Ich interfejsy są wspólne dla wszystkich baz danych.
  % diagram-encji-maly.pdf: 930x560 pixel, 72dpi, 32.81x19.76 cm, bb=0 0 930 560
  \caption{Diagram encji}
 \end{figure}
-Jednym z problemów przy projektowaniu bazy danych 
-Sposób przechowywania treści tabliczki był problematyczny: trzeba było zapewnić szybkość wyszukiwania po treści tabliczki
-biorąc pod uwagę wieloznaczność odczytów, jednocześnie szybkość wyciągania konkretnej tabliczki - całej treści.
-Przez to treść tabliczki jest przechowywana podwójnie: z powodu 1 formie grafu,
- którego krawędziami są odczyty i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}) 
-w tabelach Reading i Tag,
-z powodu 2: jako otwarty tekst (kolumna w tabeli Tablet).
-Aby zapewnić połączenie pomiędzy tymi sposobami, węzły są liczbami postaci:
+Jednym z problemów przy projektowaniu bazy danych był wybór takiej reprezentacji treści tabliczki, żeby efektywnie wykonywać następujące operacje:
+\begin{itemize}
+ \item wyszukiwanie po treści tabliczki (po odczytach, klinach i tagach),
+\item wyszukiwanie treści konkretnej tabliczki.
+\end{itemize}
+Najlepszym rozwiązaniem pierwszego problemu jest reprezentacja treści tabliczki
+w formie grafu,
+ którego krawędziami są odczyty, kliny i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}).
+Natomiast w przypadku drugiego problemu narzuca się przechowywanie treści
+jako otwarty tekst.
+Zdecydowałyśmy się na połączenie obu sposobów. Odczyty, kliny i tagi przechowujemy w tabelach Reading, Cuneiform i Tag, natomiast otwarty tekst w kolumnie show_text tabeli Tablet.
+Aby zapewnić możliwość odwzorowania treści tabliczki między reprezentacjami, węzły są liczbami postaci:
 %Treść tabliczki jest przechowywana nie tylko jako otwarty tekst (kolumna w tabeli Tablet), ale także w formie grafu,
  %którego krawędziami są odczyty i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}) 
 %w tabelach Reading i Tag. 

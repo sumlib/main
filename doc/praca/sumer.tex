@@ -23,6 +23,14 @@
 \usepackage[utf8]{inputenc}
 \RequirePackage{graphicx}
 \RequirePackage{longtable}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage{hyperref}
+%\usepackage{url}
+\definecolor{gray}{RGB}{50,50,50}
+
+\usepackage[colorlinks=true,linkcolor=gray,urlcolor=blue]{hyperref}  
+
+
 
 \newcommand{\emptyP}{\mbox{$\epsilon$}}
 \newcommand{\terminal}[1]{\mbox{{\texttt {#1}}}}
@@ -176,32 +184,37 @@ Głównym pojęciem jest tabliczka. Ma ona swoje metadane i treść. Tabliczka j
 zapisana klinami lub jako tabliczka w formie cyfrowej zapisana odczytami. Może ona zawierać elementy znaczące takie jak imię jakiejś 
 osoby, liczba, jednostka (np. przy opisywaniu wypłat), miejsce, data, imię bóstwa. Część tych elementów da się przetłumaczyć na 
 współczesny język (np. jednostki przeliczyć na SI, datę na datę liczbową BC). Gliniane tabliczki są zapisywane z różnych stron 
-(od góry, z przodu, z tyłu itp). Poza tym zawierają pieczęcie - fragmenty tekstu po prostu odbijane na tabliczce (coś jak nasza
-pieczątka). 
+(od góry, z przodu, z tyłu itp). Poza tym zawierają pieczęcie. 
 
 Sumerolodzy rozpoznają tabliczki po publikacjach - wiedzą mniej więcej o co chodzi jak widzą publikację.
 
 Odczyty zawarte w cyfrowym zapisie tabliczki są wariantem tłumaczenia z klinów. W cyfrowej wersji nie ma klinów, stąd też możliwe
 są pomyłki w tłumaczeniach, które ciężko zweryfikować. Są też uszkodzone fragmenty, które zostały cyfrowo zapisane w najróżniejszej
-formie (np. po niemiecku ``Tutaj miałem problem, ale chyba powinno być <<xxx>>'' (-; )
+formie.
+
+Sumerolodzy oczekują możliwości wyszukiwania po metadanych, po treści tabliczki (odczyty) i po możliwych innych tłumaczeniach (po klinach).
+W pierwszej wersji języka implementujemy tylko wyszukiwanie po odczytach.
 \chapter{Definicja języka TQL}
 \section{Gramatyka}
 \subsection{Struktura leksykalna}
 
 \subsubsection*{String}
-Literał \nonterminal{String}\ ma postać
-\terminal{"}$x$\terminal{"}, gdzie $x$ jest dowolnym ciągiem znaków
-poza \terminal{"}\ niepoprzedzonymi \verb6\6.
+Literał \nonterminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\terminal{"} ). Nie może zawierać jedynie znaków 
+``\terminal{"}`` niepoprzedzonych ''\verb6\6``.
+
+% ma postać
+% \terminal{"}$x$\terminal{"}, gdzie $x$ jest dowolnym ciągiem znaków
+% poza \terminal{"}\ niepoprzedzonymi \verb6\6.
 
 
 \subsubsection*{Słowo Od Litery}
-Literał \nonterminal{Słowo Od Litery} to ciąg liter, cyfr oraz znaków  {\tt - \_ '}, zaczynający się od litery,
+Literał \nonterminal{Słowo Od Litery} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od litery,
 z wyjątkiem słów kluczowych.
 
 
 
 \subsubsection*{Słowo Od Liczby}
-Literał \nonterminal{Słowo Od Liczby} to ciąg liter, cyfr oraz znaków  {\tt - \_ '}, zaczynający się od cyfry.
+Literał \nonterminal{Słowo Od Liczby} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od cyfry.
 
 
 
@@ -213,18 +226,18 @@ Literał \nonterminal{Słowo Od Liczby} to ciąg liter, cyfr oraz znaków  {\tt 
 
 \subsection{Znaki specjalne}
 \begin{tabular}{lll}
-{\symb{$\backslash$n}} &{\symb{:}} &{\symb{{$+$}}} \\
+{\symb{(}} &{\symb{)}} &{\symb{{$+$}}} \\
 {\symb{/}} &{\symb{{$-$}{$-$}}} &{\symb{*}} \\
-{\symb{(}} &{\symb{)}} & \\
+{\symb{:}} & &{\symb{$\backslash$n}} (koniec linii)\\
 \end{tabular}\\
 
 \subsection{Komentarze}
 W chwili obecnej język nie zawiera komentarzy.
 
 \subsection{Struktura syntaktyczna języka}
-Nieterminale są pomiędzy $\langle$ a $\rangle$. 
-Symbole  {\arrow}  (produkcja),  {\delimit}  (lub) 
-i {\emptyP} (pusta reguła) należą do notacji BNF. 
+Nieterminale są pomiędzy ''$\langle$`` a ''$\rangle$``. 
+Symbole  ''{\arrow}``  (produkcja),  ''{\delimit}``  (lub) 
+i ''{\emptyP}`` (pusta reguła) należą do notacji BNF. 
 Wszystkie pozostałe symbole to terminale.\\
 
 \begin{tabular}{lll}
@@ -301,7 +314,52 @@ Wszystkie pozostałe symbole to terminale.\\
 
 \section{Semantyka}
 %możliwe pola
-Przedstawimy semantykę na wybranych przykładach.
+%W zapytaniu TQL można pytać o następujące dane:
+Język TQL umożliwia wyszukiwanie na podstawie następujących danych:
+\begin{longtable}{|p{3in}|p{3in}|}
+\hline
+{\bf Opis} & {\bf Nazwa pola w TQL}\\
+\hline
+\endhead
+numer tabliczki w bazie CDLI & cdli\_id
+\\
+\hline
+miejsce pochodzenia (proweniencja) & provenience
+\\
+\hline
+okres powstania & period
+\\
+\hline
+typ i podtyp & genre
+\\
+\hline
+rok powstania & year 
+\\
+\hline
+publikacja & publication
+\\
+\hline
+treść (po odczytach)& text
+\\
+\hline
+treść (po klinach) & cunetext
+\\
+\hline
+kolekcja & collection
+\\
+\hline
+muzeum & museum
+\\
+\hline
+\end{longtable}
+% \item kliny 
+% \item treść na pieczęci (seal)
+%  \item kod tematyczny (code)
+% "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "seal"
+Język można łatwo rozszerzać, aby umożliwić pytanie o inne dane (np. wyszukiwać po klinach czy po zawartości pieczęci).
+
+%Semantykę przedstawimy na wybranych przykładach. 
+Poniżej przedstawiamy semantykę wybranych przykładów.
 \subsection{Zapytania proste}
 \begin{verbatim}
 provenience: Gar*
@@ -326,7 +384,7 @@ period: "Ur III"/"Ur IV"
 text: udu --szabra
 
 text: masz2/ugula
-publication: tan*
+publication: *tan
 provenience: Ur
 \end{verbatim}
 Wynikiem zapytania będą wszystkie tabliczki, które:
@@ -339,7 +397,7 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
 oraz wszystkie tabliczki, które:
 \begin{itemize}
  \item zawierają słowo ''masz2`` lub ''ugula``
- \item zostały opublikowane w publikacji, której nazwa zaczyna się od ''tan``
+ \item zostały opublikowane w pracy, której nazwa kończy się na ''tan``
  \item pochodzą z miejscowości Ur
 \end{itemize}
 
@@ -347,14 +405,14 @@ oraz wszystkie tabliczki, które:
 \subsection{Zapytanie zdefiniowane}
 \begin{verbatim}
  define
-  provenience: Garshana
+  provenience: Gar*a
   period: Ur III
   text: "udu ban"/mash2
-as "zwierzaki w Garshana"
+as "zwierzęta w Gar*a"
 \end{verbatim}
 Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
 \begin{itemize}
-\item pochodzą z miejscowości Garshana
+\item pochodzą z miejscowości, których nazwy zaczynają się na ''Gar`` i kończą na ''a''
 \item pochodzą z okresu Ur III
 \item zawierają conajmniej jedną z fraz ''udu ban`` lub ''mash2``
 \end{itemize}
@@ -363,11 +421,11 @@ Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
 \begin{verbatim}
 search
   text: adad-tilati
-in "zwierzaki w Garshana"
+in "zwierzęta w Gar*a"
 \end{verbatim}
 Wynikiem zapytania będą wszystkie tabliczki, które:
 \begin{itemize}
- \item spełniają wszystkie warunki zapytania ''zwierzaki w Garshana``
+ \item spełniają wszystkie warunki zapytania ''zwierzęta w Gar*a``
 \item zawierają słowo ''adad-tilati``
 \end{itemize}
 
@@ -378,34 +436,49 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
  % struktura.pdf: 608x517 pixel, 72dpi, 21.45x18.24 cm, bb=0 0 608 517
  \caption{Struktura systemu korzystającego z translatora}
 \end{figure}
-\newpage 
+
 \begin{figure}
  \centering
  \includegraphics[width=500px,bb=0 0 585 300]{./diagramy/pakiety.pdf}
  % pakiety.pdf: 585x300 pixel, 72dpi, 20.64x10.58 cm, bb=0 0 585 300
  \caption{Podział programu na moduły}
 \end{figure}
+Jednym z głównych założeń jakie miał spełniać język TQL jest niezależność od struktury danych.
+%Jednym z głównych wymagań postawionych przed translatorem, żeby można było podłączyć różne bazy danych.
+ Wynikiem tego jest podział translatora na 2 rodzaje modułów:
+\begin{enumerate}
+ \item \textbf{Podstawowe}, które są niezależne od struktury danych i zajmują się głównie parsowaniem i analizą składniową zapytania.
+ \item \textbf{Wymienne}, które zależą od struktury danych, tłumaczą zapytanie TQL na język odpowiedni dla używanej bazy danych
+i wywołują je.
+\end{enumerate}
+ Wybór modułu wymiennego odbywa się na poziomie kompilacji. 
+%Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
-Implementacja składa się z dwóch części - modułów podstawowych (niezależnych od struktury danych) i modułów wymiennych (zależnych).
+
 \section{Moduły podstawowe}
 
 \subsection{Parser}
-Parser został utworzony za pomocą narzędzia BNFC. Następnie został zmodyfikowany ręcznie: nazwy stałych oznaczających symbole, 
-dodanie tablicy symboli (stringów), uporządkowanie kodu, zmiana niektórych struktur danych. Na parser składają się następujące pliki:
+Parser został utworzony za pomocą narzędzia BNFC. Następnie zostały w nim wprowadzone modyfikacje:
+\begin{itemize}
+\item poprawienie nazw stałych oznaczających symbole na bardziej intuicyjne,
+\item dodanie tablicy symboli,
+\item usunięcie niepotrzebnych funkcji z interfejsu,
+\item uporządkowanie kodu.
+\end{itemize}
+Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h.
+Na parser składają się następujące pliki:
 \begin{itemize}
  \item Parser.c
-\item Parser.h
-\item TQL.y % tłumaczony na Parser.c
-\item TQL.l % tłumaczony na Lexer.c
+ \item Parser.h
+ \item TQL.y % tłumaczony na Parser.c
+ \item TQL.l % tłumaczony na Lexer.c
 \end{itemize}
 
-
-
 \subsection{Analizator kontekstowy}
+Moduł analizuje drzewo struktury składniowej w następujący sposób:
 \begin{itemize}
- \item sprawdza, czy to co jest po lewej w linii zapytania jest nazwą pola.
-\item upraszcza zapytania - z zapytania złożonego (wywołanie search in) tworzy jedno zapytanie proste
-\item wypełnia strukturę danych
+ \item sprawdza, czy podano prawidłowe nazwy pól,  %to co jest po lewej w linii zapytania jest nazwą pola.
+\item upraszcza drzewo - z wywołania zapytania (wywołanie search in) tworzy zapytanie proste.
 \end{itemize}
 Składa się z następujących plików:
 \begin{itemize}
@@ -414,30 +487,34 @@ Składa się z następujących plików:
 \end{itemize}
 
 \subsection{Translator}
-Zadaniem translatora jest przetłumaczenie struktury (drzewa składni abstrakcyjnej) jaka powstała na zapytanie w danym języku. 
+Zadaniem translatora jest przetłumaczenie drzewa składni abstrakcyjnej na zapytanie w docelowym języku. 
 Składa się z następujących plików:
 \begin {itemize}
  \item Translator.c
  \item Translator.h
- \item Translator\_config.h
- \item Translator\_config.c (implementacja interfejsu z Translator\_config.h, zależny od wyboru bazy danych itp)
+ \item Translator\_config.h (interfejs modułu translatora zależnego od bazy danych)
+ %\item Translator\_config.c (implementacja interfejsu z Translator\_config.h, zależny od wyboru bazy danych itp)
 \end {itemize}
 
-To jak poszczególne elementy są tłumaczone zależy od pliku Translator\_config.c (interfejs jest w Translator\_config.h). Plik Translator.c 
-przechodzi całą strukturę i od czasu do czasu wywołuje funkcję z Translator\_config.
+Tłumaczenie poszczególnych elementów drzewa zależy od implementacji interfejsu zawartego w pliku Translator\_config.h. 
+Funkcja translate() przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_config.
+Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult(), aby przekazać je do modułu bazy.
 
 \subsection{Baza}
-Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - w tym momencie xml.
+Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - jako XML.
 Składa się z następujących plików:
 \begin {itemize}
  \item Database.c
  \item Database.h
- \item Database\_config.h
- \item Database\_config.c (implementacja interfejsu z Database\_conf.h, zależny od wyboru bazy danych itp)
+ \item Database\_config.h (interfejs modułu bazy zależnego od bazy danych)
+% \item Database\_config.c (implementacja interfejsu z Database\_conf.h, zależny od wyboru bazy danych itp)
 \end {itemize}
-Wywołuje funkcję z Database\_config.h, jako parametr podaje treść zapytania, funkcja zwraca wypełnioną strukturę danych Tablets.
 
-
+Wywołuje funkcję getTablets() z Database\_config.h, jako parametr podając przetłumaczoną treść zapytania. 
+Funkcja ta zwraca strukturę danych Tablets, wypełnioną informacjami o wyszukanych tabliczkach.
+Następnie na podstawie otrzymanej struktury tworzony jest dokument XML.
+\newline
+Definicja struktury Tablets:
 \begin{verbatim}
 typedef struct{    
     char* id;
@@ -451,7 +528,7 @@ typedef struct{
     char* subgenre;
     char* collection;
     char* text;
-    Tags *tags; //miejsca gdzie w tekście są wyniki wyszukiwania
+    Tags *tags; // specjalnie oznaczone miejsca w tekscie (w pierwszej wersji frazy wyszukiwania)
 } Tablet;
 
 typedef struct{
@@ -460,25 +537,27 @@ typedef struct{
 } Tablets;
 \end{verbatim}
 
-Następnie tłumaczy otrzymaną strukturę na xml-a.
+%//miejsca gdzie w tekście są wyniki wyszukiwania
+
+Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
 \subsection{Pliki pomocnicze}
-Tablica symboli (stringów):
+Definicje struktur danych (wygenerowane za pomocą BNFC, następnie uproszczone):
 \begin{itemize}
- \item symbols.c
-\item symbols.h
+ \item Absyn.c
+\item Absyn.h
+\end{itemize}
+Tablica symboli:
+\begin{itemize}
+ \item Symbols.c
+\item Symbols.h
 \end{itemize}
 Obsługa błędów:
 \begin{itemize}
  \item Err.c
 \item Err.h
 \end{itemize}
-Definicja struktur danych:
-\begin{itemize}
- \item Absyn.c
-\item Absyn.h
-\end{itemize}
-Moduł do dzielenia tekstu wg. separatora, implementacja funkcji explode z php (pobrane z internetu):
+Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexplode}:
 \begin{itemize}
  \item Cexplode.c
  \item Cexplode.h
@@ -488,10 +567,10 @@ Moduł do dzielenia tekstu wg. separatora, implementacja funkcji explode z php (
 \section{Moduły wymienne}
 Pliki zależne od wyboru konkretnej bazy danych to:
 \begin{itemize}
- \item Translator\_config.c
-\item Database\_config.c
+ \item Translator\_config.c - dla modułu translatora
+\item Database\_config.c - dla modułu bazy
 \end{itemize}
-Ich interfejs jest wspólny dla wszystkich baz danych.
+Ich interfejsy są wspólne dla wszystkich baz danych.
 
 \subsection{Baza PostgreSQL}
 \subsubsection{Diagram encji}
@@ -501,15 +580,34 @@ Ich interfejs jest wspólny dla wszystkich baz danych.
  % diagram-encji-maly.pdf: 930x560 pixel, 72dpi, 32.81x19.76 cm, bb=0 0 930 560
  \caption{Diagram encji}
 \end{figure}
-Treść tabliczki jest trzymana w formie grafu (zgodnie z pomysłem dr Wojciecha Jaworskiego), którego krawędziami są odczyty i tagi
-(w przyszłości także kliny). Węzeł tego grafu jest liczbą w postaci:
+Jednym z problemów przy projektowaniu bazy danych 
+Sposób przechowywania treści tabliczki był problematyczny: trzeba było zapewnić szybkość wyszukiwania po treści tabliczki
+biorąc pod uwagę wieloznaczność odczytów, jednocześnie szybkość wyciągania konkretnej tabliczki - całej treści.
+Przez to treść tabliczki jest przechowywana podwójnie: z powodu 1 formie grafu,
+ którego krawędziami są odczyty i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}) 
+w tabelach Reading i Tag,
+z powodu 2: jako otwarty tekst (kolumna w tabeli Tablet).
+Aby zapewnić połączenie pomiędzy tymi sposobami, węzły są liczbami postaci:
+%Treść tabliczki jest przechowywana nie tylko jako otwarty tekst (kolumna w tabeli Tablet), ale także w formie grafu,
+ %którego krawędziami są odczyty i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}) 
+%w tabelach Reading i Tag. 
+%  Węzeł tego grafu jest liczbą postaci:
 \begin{verbatim}
  <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>
 \end{verbatim}
-Stąd wzięły się przerywane linie na diagramie encji - nie ma bezpośredniego klucza obcego w tabeli Reading (czy Tag) do Tablet, 
-jednak związek istnieje. Taki sposób przechowywania informacji o treści tabliczki umożliwia sprawniejsze wyszukiwanie nie tylko
-po odczytach (pozwala pomijać linie z uszkodzeniami) ale także w przyszłości ułatwia zaimplementowanie wyszukiwania po klinach,
-po tagach itp.
+gdzie numer węzła w tabliczce to numer kolejnego słowa (słowa są oddzielone spacjami i końcem linii) pomnożone przez 10 (żeby umożliwić
+wstawienie kilku węzłów w jednym słowie np. pozwolić na przetłumaczenie jednego słowa na sekwencję trzech klinów). 
+
+
+Przerywane linie na diagramie encji oznaczają, że klucz obcy do tabeli Tablet nie występuje wprost w tabeli Reading, 
+jednak nie jest trudno go odczytać ;p 
+% relacja
+% Stąd wzięły się przerywane linie na diagramie encji - nie ma bezpośredniego klucza obcego w tabeli Reading (czy Tag) do Tablet, 
+% jednak związek istnieje. Taki sposób przechowywania informacji o treści tabliczki umożliwia sprawniejsze wyszukiwanie nie tylko
+% po odczytach (pozwala pomijać linie z uszkodzeniami) ale także w przyszłości ułatwia zaimplementowanie wyszukiwania po klinach,
+% po tagach itp.
+% Poza sprawnym
+%  wyszukiwaniem ułatwia to rozszerzenie programu o możliwość wyszukiwania po klinach - po dodaniu tabeli Cuneiform.
 
  
 
@@ -522,7 +620,7 @@ Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowu
 Select jest inicjowany na 
 \begin{verbatim}
 SELECT t.id, t.id_cdli, t.publication, t.measurements, t.origin_date, 
-       p.value, pd.value as period,
+       p.value as provenience, pd.value as period,
        g1.value as genre, g2.value as subgenre, 
        c.value as collection, t.text
 \end{verbatim}
@@ -579,6 +677,18 @@ OR g2.value LIKE 'wartosc'
 cdli\_id: wartosc & 
 \begin{verbatim}
 t.cdli_id LIKE 'wartosc'
+\end{verbatim}
+\\
+\hline
+museum: wartosc & 
+\begin{verbatim}
+t.museum LIKE 'wartosc'
+\end{verbatim}
+\\
+\hline
+collection: wartosc & 
+\begin{verbatim}
+c.value LIKE 'wartosc'
 \end{verbatim}
 \\
 \hline
@@ -740,8 +850,11 @@ Korzysta z biblioteki libpq-fe.h do postgresa. Zwrócony wynik zapisuje do struk
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
-\bibitem[1]{jaworski} Wojciech Jaworski, \textit{Modelowanie tresci sumeryjskich tekstów gospodarczych z epoki Ur III}, 
-http://nlp.ipipan.waw.pl/NLP-SEMINAR/071119.pdf, 19 listopada 2007
+\bibitem[1]{jaworski} Wojciech Jaworski, \textit{Modelowanie tresci sumeryjskich tekstów gospodarczych z epoki Ur~III}, 
+\url{http://nlp.ipipan.waw.pl/NLP-SEMINAR/071119.pdf}, 19 listopada 2007
+\bibitem[2]{cexplode} \url{http://maz-programmersdiary.blogspot.com/2008/09/c-explode.html}
+
+
 
 %\bibitem[Bea65]{beaman} Juliusz Beaman, \textit{Morbidity of the Jolly
  %   function}, Mathematica Absurdica, 117 (1965) 338--9.

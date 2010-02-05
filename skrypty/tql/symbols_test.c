@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "symbols.h"
+#include "Symbols.h"
 
 int main(){
 	char name[12], *tmp;

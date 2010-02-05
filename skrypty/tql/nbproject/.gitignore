@@ -1,0 +1,9 @@
+/Makefile-Default.mk
+/Makefile-impl.mk
+/Makefile-variables.mk
+/Package-Default.bash
+/build-impl.xml
+/configurations.xml
+/genfiles.properties
+/project.properties
+/project.xml

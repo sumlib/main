@@ -1,0 +1,8 @@
+/*.orig
+/*.o
+/*.c-bak
+/*.mk
+/*.log
+/*.aux
+/manifest.mf
+/*.dep.inc

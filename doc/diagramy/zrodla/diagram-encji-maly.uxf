@@ -1,40 +1,53 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>340</x><y>0</y><w>180</w><h>50</h></coordinates><panel_attributes>Provenience
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram><help_text>// Uncomment the following line to change the fontsize:
+// fontsize=14
+
+// Welcome to UMLet!
+//
+// Double-click on UML elements to add them to the diagram.
+// Edit element properties by modifying the text in this panel.
+// Edit the files in the 'palettes' directory to create your own element palettes.
+// Hold down Ctrl to select multiple elements.
+// Press Del to delete elements.
+// Press Ctrl-c to copy an element, and to store the whole UML diagram to the system clipboard.
+// Select "Custom elements &gt; New..." to create new element types.
+//
+// This text will be stored with each diagram;  use it for notes.</help_text><element><type>com.umlet.element.base.Class</type><coordinates><x>370</x><y>20</y><w>180</w><h>50</h></coordinates><panel_attributes>Provenience
 --
 value : varchar(100)
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>150</x><y>60</y><w>180</w><h>50</h></coordinates><panel_attributes>Collection
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>100</x><y>110</y><w>180</w><h>50</h></coordinates><panel_attributes>Collection
 --
 value : varchar(100)
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>40</x><y>170</y><w>180</w><h>50</h></coordinates><panel_attributes>Museum
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>70</x><y>240</y><w>180</w><h>50</h></coordinates><panel_attributes>Museum
 --
 value : varchar(100)
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>730</x><y>150</y><w>180</w><h>80</h></coordinates><panel_attributes>Genre
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>770</x><y>210</y><w>180</w><h>50</h></coordinates><panel_attributes>Genre
 --
 value : varchar(100)
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>610</x><y>20</y><w>170</w><h>50</h></coordinates><panel_attributes>Period
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>620</x><y>30</y><w>170</w><h>50</h></coordinates><panel_attributes>Period
 --
 value : varchar(100)
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>560</x><y>160</y><w>190</w><h>72</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>590</x><y>240</y><w>317</w><h>107</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..1
  
-Of subgenre&gt;</panel_attributes><additional_attributes>20;50;170;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>556</x><y>300</y><w>108</w><h>140</h></coordinates><panel_attributes>lt=-
+Of subgenre&gt;</panel_attributes><additional_attributes>20;70;250;70;250;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>610</x><y>526</y><w>180</w><h>54</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..n
-Has value&gt;</panel_attributes><additional_attributes>24;120;84;20</additional_attributes></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>640</x><y>310</y><w>180</w><h>50</h></coordinates><panel_attributes>TagValue
+Has value &gt;</panel_attributes><additional_attributes>20;34;160;34</additional_attributes></element><element><type>com.umlet.element.base.Class</type><coordinates><x>770</x><y>530</y><w>180</w><h>50</h></coordinates><panel_attributes>TagValue
 --
 value : varchar(255)
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>50</x><y>280</y><w>190</w><h>90</h></coordinates><panel_attributes>Reading
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>760</x><y>380</y><w>160</w><h>90</h></coordinates><panel_attributes>Reading
 --
 node1_id : integer
 node2_id : integer
-value : varchar(20)</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>194</x><y>290</y><w>102</w><h>160</h></coordinates><panel_attributes>lt=.
+value : varchar(20)</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>495</x><y>416</y><w>285</w><h>114</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..n
  
-&lt;Contains</panel_attributes><additional_attributes>26;20;76;140</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>294</x><y>250</y><w>102</w><h>190</h></coordinates><panel_attributes>lt=.
+Contains&gt;</panel_attributes><additional_attributes>265;34;55;34;55;94</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>395</x><y>310</y><w>110</w><h>220</h></coordinates><panel_attributes>lt=.
 m1=1..n
-m2=1
-&lt;Contains</panel_attributes><additional_attributes>36;170;66;20</additional_attributes></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>350</x><y>190</y><w>230</w><h>150</h></coordinates><panel_attributes>Tablet
+m2=  1
+Contains&gt;</panel_attributes><additional_attributes>55;200;55;20</additional_attributes></element><element><type>com.umlet.element.base.Class</type><coordinates><x>380</x><y>210</y><w>230</w><h>120</h></coordinates><panel_attributes>Tablet
 --
 ID_CDLI : varchar(10)
 publication : varchar(100)
@@ -42,27 +55,38 @@ measurements : varchar(15)
 date_of_origin : varchar(100)
 show_text : text
 
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>310</x><y>70</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>260</x><y>106</y><w>160</w><h>124</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..1
-&lt;In</panel_attributes><additional_attributes>90;120;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>481</x><y>10</y><w>78</w><h>200</h></coordinates><panel_attributes>lt=-
+&lt;In</panel_attributes><additional_attributes>130;104;130;34;20;34</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>408</x><y>50</y><w>84</w><h>180</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..1
-&lt;From</panel_attributes><additional_attributes>39;180;39;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>200</x><y>161</y><w>170</w><h>59</h></coordinates><panel_attributes>lt=-
+&lt;From</panel_attributes><additional_attributes>42;160;42;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>230</x><y>236</y><w>170</w><h>54</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..1
-&lt;Is placed in</panel_attributes><additional_attributes>150;39;20;29</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>550</x><y>10</y><w>80</w><h>200</h></coordinates><panel_attributes>lt=-
+&lt;Is placed in</panel_attributes><additional_attributes>150;34;20;34</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>510</x><y>60</y><w>150</w><h>170</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..1
-From&gt;</panel_attributes><additional_attributes>20;180;60;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>220</x><y>200</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=.
+From&gt;</panel_attributes><additional_attributes>20;150;20;80;130;80;130;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>525</x><y>310</y><w>255</w><h>100</h></coordinates><panel_attributes>lt=.
 m1=1..n
-m2=1
-&lt;Contains</panel_attributes><additional_attributes>20;80;130;20</additional_attributes></element><element><type>com.umlet.element.custom.EER_Entity</type><coordinates><x>270</x><y>420</y><w>380</w><h>100</h></coordinates><panel_attributes>Tag
+m2=  1
+Contains&gt;</panel_attributes><additional_attributes>235;80;55;80;55;20</additional_attributes></element><element><type>com.umlet.element.base.Class</type><coordinates><x>210</x><y>510</y><w>420</w><h>90</h></coordinates><panel_attributes>Tag
 --
 node1_id : integer
 node2_id : integer
 type : enum('person','place','number', 'measure', 'date')
-</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>560</x><y>130</y><w>190</w><h>80</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>590</x><y>186</y><w>200</w><h>54</h></coordinates><panel_attributes>lt=-
 m1=1..n
 m2=0..1
-Of genre&gt;</panel_attributes><additional_attributes>20;60;170;20</additional_attributes></element></umlet_diagram>
+Of genre&gt;</panel_attributes><additional_attributes>20;34;180;34</additional_attributes></element><element><type>com.umlet.element.base.Class</type><coordinates><x>100</x><y>360</y><w>160</w><h>90</h></coordinates><panel_attributes>Cuneiform
+--
+node1_id : integer
+node2_id : integer
+value : varchar(20)</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>240</x><y>310</y><w>215</w><h>100</h></coordinates><panel_attributes>lt=.
+m1=1..n
+m2=  1
+&lt;Contains</panel_attributes><additional_attributes>20;80;160;80;160;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>240</x><y>396</y><w>195</w><h>134</h></coordinates><panel_attributes>lt=-
+m1=1..n
+m2=0..n
+ 
+&lt;Contains</panel_attributes><additional_attributes>20;34;140;34;140;114</additional_attributes></element></umlet_diagram>

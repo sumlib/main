@@ -443,13 +443,14 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
  % pakiety.pdf: 585x300 pixel, 72dpi, 20.64x10.58 cm, bb=0 0 585 300
  \caption{Podział programu na moduły}
 \end{figure}
-Jednym z głównych założeń jakie miał spełniać język TQL jest niezależność od struktury danych.
+Jednym z głównych założeń języka TQL jest niezależność od struktury danych.
+W związku z tym istotną cechą translatora jest możliwość dostosowania do współpracy z różnymi bazami danych.
 %Jednym z głównych wymagań postawionych przed translatorem, żeby można było podłączyć różne bazy danych.
  Wynikiem tego jest podział translatora na 2 rodzaje modułów:
 \begin{enumerate}
- \item \textbf{Podstawowe}, które są niezależne od struktury danych i zajmują się głównie parsowaniem i analizą składniową zapytania.
- \item \textbf{Wymienne}, które zależą od struktury danych, tłumaczą zapytanie TQL na język odpowiedni dla używanej bazy danych
-i wywołują je.
+ \item \textbf{Podstawowe} -- niezależne od struktury danych i zajmujące się głównie parsowaniem i analizą składniową zapytania.
+ \item \textbf{Wymienne} -- zależne od struktury danych, tłumaczące zapytanie TQL na język odpowiedni dla używanej bazy danych
+i wywołujące je.
 \end{enumerate}
  Wybór modułu wymiennego odbywa się na poziomie kompilacji. 
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
@@ -478,7 +479,7 @@ Na parser składają się następujące pliki:
 Moduł analizuje drzewo struktury składniowej w następujący sposób:
 \begin{itemize}
  \item sprawdza, czy podano prawidłowe nazwy pól,  %to co jest po lewej w linii zapytania jest nazwą pola.
-\item upraszcza drzewo - z wywołania zapytania (wywołanie search in) tworzy zapytanie proste.
+\item upraszcza drzewo - z wywołania zapytania (wywołanie \textit{search in}) tworzy zapytanie proste.
 \end{itemize}
 Składa się z następujących plików:
 \begin{itemize}
@@ -528,7 +529,8 @@ typedef struct{
     char* subgenre;
     char* collection;
     char* text;
-    Tags *tags; // specjalnie oznaczone miejsca w tekscie (w pierwszej wersji frazy wyszukiwania)
+    Tags *tags; // specjalnie oznaczone miejsca w tekscie
+                // (w pierwszej wersji frazy wyszukiwania)
 } Tablet;
 
 typedef struct{
@@ -539,7 +541,7 @@ typedef struct{
 
 %//miejsca gdzie w tekście są wyniki wyszukiwania
 
-Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
+%Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
 \subsection{Pliki pomocnicze}
 Definicje struktur danych (wygenerowane za pomocą BNFC, następnie uproszczone):
@@ -590,7 +592,8 @@ w formie grafu,
  którego krawędziami są odczyty, kliny i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}).
 Natomiast w przypadku drugiego problemu narzuca się przechowywanie treści
 jako otwarty tekst.
-Zdecydowałyśmy się na połączenie obu sposobów. Odczyty, kliny i tagi przechowujemy w tabelach Reading, Cuneiform i Tag, natomiast otwarty tekst w kolumnie show_text tabeli Tablet.
+Zdecydowałyśmy się na połączenie obu sposobów. Odczyty, kliny i tagi przechowujemy w tabelach Reading, Cuneiform i Tag, 
+natomiast otwarty tekst w kolumnie show\_text tabeli Tablet.
 Aby zapewnić możliwość odwzorowania treści tabliczki między reprezentacjami, węzły są liczbami postaci:
 %Treść tabliczki jest przechowywana nie tylko jako otwarty tekst (kolumna w tabeli Tablet), ale także w formie grafu,
  %którego krawędziami są odczyty i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}) 
@@ -603,8 +606,9 @@ gdzie numer węzła w tabliczce to numer kolejnego słowa (słowa są oddzielone
 wstawienie kilku węzłów w jednym słowie np. pozwolić na przetłumaczenie jednego słowa na sekwencję trzech klinów). 
 
 
-Przerywane linie na diagramie encji oznaczają, że klucz obcy do tabeli Tablet nie występuje wprost w tabeli Reading, 
-jednak nie jest trudno go odczytać ;p 
+Przerywane linie na diagramie encji oznaczają opisany powyżej związek pomiędzy id węzła (node1\_id i node2\_id) 
+a id tabliczki (Tablet.id).
+
 % relacja
 % Stąd wzięły się przerywane linie na diagramie encji - nie ma bezpośredniego klucza obcego w tabeli Reading (czy Tag) do Tablet, 
 % jednak związek istnieje. Taki sposób przechowywania informacji o treści tabliczki umożliwia sprawniejsze wyszukiwanie nie tylko
@@ -616,19 +620,21 @@ jednak nie jest trudno go odczytać ;p
  
 
 \subsubsection{Translator\_config}
-Dostaje poszczególne fragmenty drzewa struktury zapytania i tłumaczy je na SQL. Przetłumaczone fragmenty zbiera do buforów (select, from, where), które następnie odpowiednio skleja.
-Każde proste zapytanie jest tłumaczone na jednego selecta; jak jest kilka prostych zapytań to są sklejane UNION.
+Tłumaczy otrzymane fragmenty drzewa struktury zapytania na język SQL. Przetłumaczone fragmenty zbiera do buforów 
+(\textit{select}, \textit{from}, \textit{where}), które następnie odpowiednio łączy.
+Każde proste zapytanie TQL jest tłumaczone na pojedyncze zapytanie SQL. Tłumaczenie kilku prostych zapytań
+łączone jest za pomocą UNION.
 
 \subsubsection{Inicjalizacja zapytania}
 Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL-a.
-Select jest inicjowany na 
+\textit{select} jest inicjowany na 
 \begin{verbatim}
 SELECT t.id, t.id_cdli, t.publication, t.measurements, t.origin_date, 
        p.value as provenience, pd.value as period,
        g1.value as genre, g2.value as subgenre, 
        c.value as collection, t.text
 \end{verbatim}
-From jest inicjowany
+\textit{from} jest inicjowany
 \begin{verbatim}
 FROM tablet t
   LEFT JOIN provenience p ON p.id=t.provenience_id
@@ -637,14 +643,12 @@ FROM tablet t
   LEFT JOIN genre g2 ON g2.id = t.subgenre_id
   LEFT JOIN period pd ON pd.id = t.period_id
 \end{verbatim}
-Where jest inicjowany na
-\begin{verbatim}
-WHERE
-\end{verbatim}
+\textit{where} początkowo zawiera pusty ciąg znaków.
+
 
 
 \subsubsection{Tłumaczenie konstrukcji prostych}
-Poniższe tłumaczenia są dodawane do klauzuli ''where`` i łączone ''AND``.
+Poniższe tłumaczenia są dodawane do bufora \textit{where} i łączone za pomocą AND.
 \begin{longtable}{|p{3in}|p{3in}|}
 \hline
 {\bf Konstrukcja} & {\bf Tłumaczenie na SQL}\\
@@ -716,26 +720,23 @@ c.value LIKE 'wartosc'
 
 
 \subsubsection{Tłumaczenie konstrukcji złożonych}
-Została zaimplementowana tylko jedna konstrukcja złożona - przy zapytaniu o treść tabliczki (pole ''text``).
-Korzystamy przy tym zapytaniu z przedstawienia treści tabliczki w formie grafu. 
-Krawędziami grafu są słowa, jedyną funkcją węzłów jest zachowanie kolejności. 
-Graf jest w tabeli readings.
-Id węzłów składają się z numeru tabliczki i kolejnego numeru węzła tabliczki (nr\_wezla * 1 000 000 + id\_tabliczki). 
-Uznajemy, że słowa są oddzielone spacjami.
+%Została zaimplementowana tylko jedna konstrukcja złożona - przy zapytaniu o treść tabliczki (pole ''text``).
+Przy tłumaczeniu konstrukcji złożonych
+korzystamy z przedstawienia treści tabliczki w formie grafu.
 
-Pojawienie się wyszukiwania po treści tabliczki niesie za sobą konieczność dodania do klauzuli ''from`` 
+Pojawienie się wyszukiwania po treści tabliczki niesie za sobą konieczność dodania do bufora \textit{from}:
 \begin{verbatim}
 INNER JOIN (
   <wynikowe zapytanie o treść tablczki>
 ) AS sequence ON sequence.id_tab = t.id
 \end{verbatim}
 
-Natomiast do select dodajemy:
+natomiast do \textit{select} dodajemy:
 \begin{verbatim}
 , sequence.nodes as nodes
 \end{verbatim}
 
-Gdzie $<$wynikowe zapytanie o treść tablczki$>$ to kombinacja zapytań typu:
+gdzie $<$wynikowe zapytanie o treść tablczki$>$ to kombinacja zapytań typu:
 \begin{verbatim}
   SELECT 
     id_tab, 
@@ -744,33 +745,34 @@ Gdzie $<$wynikowe zapytanie o treść tablczki$>$ to kombinacja zapytań typu:
     <id_seq> AS id_seq
   FROM (
     SELECT
-      r1.node1_id % 1000000 AS id_tab,
-      '{' || r1.node1_id || ',' || r<dl_sekw>.node2_id || '}' AS nodes,
+      t1.node1_id % 1000000 AS id_tab,
+      '{' || t1.node1_id || ',' || t<dl_sekw>.node2_id || '}' AS nodes,
       1 AS id_seq
     FROM
-      readings r1
-      LEFT JOIN readings r2 ON (r2.node1 = r1.node2)
-      LEFT JOIN readings r3 ON (r3.node1 = r2.node2)
+      <nazwa_tabeli> t1
+      LEFT JOIN <nazwa_tabeli> t2 ON (t2.node1 = t1.node2)
+      LEFT JOIN <nazwa_tabeli> t3 ON (t3.node1 = t2.node2)
       ...
-      LEFT JOIN readings r<dl_sekw> ON (r<dl_sekw>.node1 = r<dl_sekw-1>.node2)
+      LEFT JOIN <nazwa_tabeli> t<dl_sekw> ON (t<dl_sekw>.node1 = t<dl_sekw-1>.node2)
    WHERE
-      r1.value LIKE '<sekw[1]>'
+      t1.value LIKE '<sekw[1]>'
      AND
-      r2.value LIKE '<sekw[2]>'
+      t2.value LIKE '<sekw[2]>'
     AND
-      r3.value LIKE '<sekw[3]>'
+      t3.value LIKE '<sekw[3]>'
     AND
       ...
     AND
-      r<dl_sekw>.value LIKE '<sekw[<dl_sekw>]>'
+      t<dl_sekw>.value LIKE '<sekw[<dl_sekw>]>'
    ) AS a 
   GROUP BY id_tab
 \end{verbatim}
 Zmienne użyte w powyższym pseudo-kodzie:
 \begin{description}
- \item[id\_sekw] - kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu - do ich rozróżniania
+ \item[id\_sekw] - kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu - do rozróżniania podzapytań)
  \item[dl\_sekw] - ilość słów składających się na wyszukiwaną sekwencję
  \item[sekw] - tablica zawierająca słowa składające się na wyszukiwaną sekwencję
+\item[nazwa\_tabeli] - nazwa tabeli, w której wyszukujemy (Reading lub Cuneiform)
  \end{description}
 
 \begin{longtable}{|p{1in}|p{4.5in}|}
@@ -838,11 +840,13 @@ FROM
 
 
 \subsubsection{Database\_config}
-Odpowiada za wywołanie zapytania na konkretnej bazie. Korzysta z pliku database.conf, który zawiera dane dostępu do bazy. 
-Korzysta z biblioteki libpq-fe.h do postgresa. Zwrócony wynik zapisuje do struktury Tablets.
+
+Odpowiada za wywołanie zapytania na konkretnej bazie i zapisanie wyniku do struktury Tablets.
+ Korzysta z pliku database.conf, który zawiera dane dostępu do bazy (host, port, użytkownik, hasło, nazwa bazy)
+oraz biblioteki libpq-fe.h do PostgreSQL.
 
 \subsection{Baza XML}
-
+W budowie :)
 %\chapter{Dokumentacja użytkowa i opis implementacji}\label{r:impl}
 
 \chapter{Podsumowanie}

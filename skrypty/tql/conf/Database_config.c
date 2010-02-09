@@ -174,9 +174,10 @@ void setTabletInfo(PGresult *result, int rowId, Tablet* tab) {
     setFromResult(tab->publication, rowId, T_PUBLICATION);
     setFromResult(tab->subgenre, rowId, T_SUBGENRE);
     setFromResult(tab->year, rowId, T_YEAR);
+    tab->tags = NULL;
     setFromResult(tab->text, rowId, T_TEXT);
-    setFromResult(nodes, rowId, T_NODES);
-    tab->tags = parseNodes(nodes);
+    //setFromResult(nodes, rowId, T_NODES);
+    //tab->tags = parseNodes(nodes);
     //printf("\n\n");
     //printf("\n\n %s \n\n", nodes);
 

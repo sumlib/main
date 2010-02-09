@@ -47,7 +47,7 @@ int comparator(Tag *t1, Tag *t2){
         return 1;
     if(t2->beginNode > t1->beginNode)
         return -1;
-    //beginNode s± równe
+    //beginNode sï¿½ rï¿½wne
     if(t1->endNode > t2->endNode)
         return 1;
     if(t2->endNode > t1->endNode)
@@ -57,6 +57,8 @@ int comparator(Tag *t1, Tag *t2){
 
 void addNodes(Tablet tab){
     int i;
+    if(tab.tags==NULL)
+        return;
     qsort(tab.tags->tab, tab.tags->count, sizeof(Tag), comparator);
     for(i=0;i<tab.tags->count;i++){
       //  printf("Tag: from %d to %d, value %d\n", tab.tags->tab[i].beginNode, tab.tags->tab[i].endNode, tab.tags->tab[i].value);

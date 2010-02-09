@@ -35,12 +35,9 @@ int main(int argc, char ** argv)
   if (parse_tree)
   {
     contextZapZloz(parse_tree);
-  //  printf("\n[Abstract Syntax]\n");
-  //  printf("%s\n\n", showZapZloz(parse_tree));
-// 	 printf("[Linearized Tree]\n");
-//printf("%s\n\n", translateZapZloz(parse_tree));
+    //getXmlFromQuery(translateZapZloz(parse_tree));
     printf("%s\n\n", getXmlFromQuery(translateZapZloz(parse_tree)));
-//     translateZapZloz(parse_tree);
+
     return 0;
   }
   return 1;

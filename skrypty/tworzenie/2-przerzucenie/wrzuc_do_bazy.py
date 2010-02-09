@@ -27,12 +27,11 @@ if len(sys.argv)>4:
 if len(sys.argv)>5:
     host=sys.argv[5]
 if len(sys.argv)>6:
-    port=sys.argv[6]
+    port=int(sys.argv[6])
 if len(sys.argv)>7:
     current=sys.argv[7]    
 
-    
-  
+ 
 
 dane = current + "/../data/" + dane
 

@@ -165,7 +165,6 @@ for line_raw in input:
 				else:	
 					t = "broken"
 				node1 = str(i) + id_tabliczki
-				print node1
 				node2 = str(i+10) + id_tabliczki
 			
 				name = sl

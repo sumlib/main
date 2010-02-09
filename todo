@@ -1,3 +1,5 @@
+poprawić wrzucanie tabliczek do bazy + sprawdzić czy działa nowa wersja tql
+
 przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
 
 $blank -> nie wrzucać do sekwencji
@@ -7,20 +9,35 @@ lepsze wykrywanie uszkodzeń
 pojedyncze zapytanie moze miec sam text
 
 zmiana nazw stałych symboli - żeby wszystkie były znaczące
-zmiana nazwy symbols.h/c na Symbols.h/c
+
 zmiana nazw funkcji na takie jak na prezentacji
 
 usunąć @ z translatora
 
 sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć)
 
-zmienić nazwy tabel i pól na angielski w bazie danych
-
 plik Translator_config.c - funkcja replace jest używana na zasadzie copy-paste - użyć poprawnie (-;
 
+dodac wyszukiwanie po kolekcji i po muzeum
+(code)
 
-DO PRACY:
-obrazek z różnymi bazami (żeby pokazać, że można różnie implementować)
-semantyka na przykładach
-oddzielić tłumaczenia na SQL - proste i złożone
-wrzucić obrazek z prezentacji
+end of file dla inputu stdin
+
+w skryptach pythonowych - wydzielić funkcje do bazy i używać tylko dobrego modułu do pg!!
+
+
+zrobić tak, żeby można było stworzyć zapytanie z samym tekstem: nie inicjować bufora where i jak coś się tam pisze dodać
+
+umożliwić zapytanie typu: search in "zwierzaki" (bez zapytania w środku)
+
+zaimplementowac wyszukiwanie po klinach i tagach
+
+PRACA:
+ładniejszy obrazek dziedziny problemu
+Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
+ładniejszy obrazek do pakietów
+nazwa do wyszukiwania po klinach (cunetext??)
+pozmieniac nazwy (ZapZloz) w pakietach
+
+
+

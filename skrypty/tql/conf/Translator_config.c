@@ -28,7 +28,10 @@ void save_result(){
     bufAppendS(buf_result, buf_select->buf);
     bufAppendS(buf_result, "\n");
     bufAppendS(buf_result, buf_from->buf);
-    bufAppendS(buf_result, buf_where->buf);
+    if(buf_where->cur>0){
+        bufAppendS(buf_result, " WHERE \n");
+        bufAppendS(buf_result, buf_where->buf);
+    }
 }
 
 
@@ -51,7 +54,7 @@ void translator_initSingleQuery(){
     bufReset(buf_where);
     bufAppendS(buf_select, "SELECT t.id, t.id_cdli, t.publication, t.measurements, t.date_of_origin, p.value as provenience, pd.value as period, g1.value as genre, g2.value as subgenre, c.value as collection, t.show_text");
     bufAppendS(buf_from, "FROM tablet t \n LEFT JOIN provenience p ON p.id=t.provenience_id\n LEFT JOIN collection c ON c.id=t.collection_id\n LEFT JOIN genre g1 ON g1.id=t.genre_id\n LEFT JOIN genre g2 ON g2.id = t.subgenre_id\n LEFT JOIN period pd ON pd.id = t.period_id \n");
-    bufAppendS(buf_where, "WHERE \n  ");
+    bufAppendS(buf_where, "");
 }
 
 

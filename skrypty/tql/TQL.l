@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "Parser.h"
-#include "symbols.h"
+#include "Symbols.h"
 #define YY_BUFFER_LENGTH 4096
 char YY_PARSED_STRING[YY_BUFFER_LENGTH];
 void YY_BUFFER_APPEND(char *s)
@@ -49,15 +49,15 @@ WITHOUTSOME [a-zA-Z0-9'@]
 <YYINITIAL>"search"      	 return _SYMB_DWUKROPEK1;
 <YYINITIAL>"\""      	 BEGIN STRING;
 <STRING>\\      	 BEGIN ESCAPED;
-<STRING>\"      	 yylval.string_ = symbols_get_id(YY_PARSED_STRING); YY_BUFFER_RESET(); BEGIN YYINITIAL; return _STRING_;
+<STRING>\"      	 yylval.string_ = symbols_getId(YY_PARSED_STRING); YY_BUFFER_RESET(); BEGIN YYINITIAL; return _STRING_;
 <STRING>.      	 YY_BUFFER_APPEND(yytext);
 <ESCAPED>n      	 YY_BUFFER_APPEND("\n"); BEGIN STRING;
 <ESCAPED>\"      	 YY_BUFFER_APPEND("\""); BEGIN STRING ;
 <ESCAPED>\\      	 YY_BUFFER_APPEND("\\"); BEGIN STRING;
 <ESCAPED>t       	 YY_BUFFER_APPEND("\t"); BEGIN STRING;
 <ESCAPED>.       	 YY_BUFFER_APPEND(yytext); BEGIN STRING;
-<YYINITIAL>{LETTER}{IDENT}*      	 yylval.string_ = symbols_get_id(yytext); return _IDENT_;
-<YYINITIAL>{WITHOUTSOME}{TEKST}*     	 yylval.string_ = symbols_get_id(yytext); return _SYMB_DWUKROPEK2;
+<YYINITIAL>{LETTER}{IDENT}*      	 yylval.string_ = symbols_getId(yytext); return _IDENT_;
+<YYINITIAL>{WITHOUTSOME}{TEKST}*     	 yylval.string_ = symbols_getId(yytext); return _SYMB_DWUKROPEK2;
 <YYINITIAL>[ \t\r\f]      	 /* ignore white space. */;
 <YYINITIAL>.      	 return _ERROR_;
 %%

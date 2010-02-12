@@ -4,17 +4,36 @@
 #include <stdio.h>
 #include <string.h>
 #include "Absyn.h"
+#include "Symbols.h"
 #define initialize_lexer TQL_initialize_lexer
+#define YY_parse_ERROR_VERBOSE 1
 extern int yyparse(void);
 extern int yylex(void);
 extern int initialize_lexer(FILE * inp);
+int yyline = 1;
+
 void yyerror(const char *str)
 {
-  fprintf(stderr,"error: %s\n",str);
+  fprintf(stderr,"error in line %d: %s\n", yyline, str);
 }
 
-ZapZloz YY_RESULT_ZapZloz_ = 0;
-ZapZloz pZapZloz(FILE *inp)
+ComplexQuery YY_RESULT_ComplexQuery_ = 0;
+ComplexQuery pComplexQuery(FILE *inp)
+{
+  symbols_init();
+  initialize_lexer(inp);
+  if (yyparse())
+  { /* Failure */
+    return 0;
+  }
+  else
+  { /* Success */
+    return YY_RESULT_ComplexQuery_;
+  }
+}
+
+Query YY_RESULT_Query_ = 0;
+Query pQuery(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -23,12 +42,12 @@ ZapZloz pZapZloz(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_ZapZloz_;
+    return YY_RESULT_Query_;
   }
 }
 
-Zapytanie YY_RESULT_Zapytanie_ = 0;
-Zapytanie pZapytanie(FILE *inp)
+QueryLine YY_RESULT_QueryLine_ = 0;
+QueryLine pQueryLine(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -37,12 +56,12 @@ Zapytanie pZapytanie(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_Zapytanie_;
+    return YY_RESULT_QueryLine_;
   }
 }
 
-LiniaZapytania YY_RESULT_LiniaZapytania_ = 0;
-LiniaZapytania pLiniaZapytania(FILE *inp)
+Expr YY_RESULT_Expr_ = 0;
+Expr pExpr(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -51,12 +70,12 @@ LiniaZapytania pLiniaZapytania(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_LiniaZapytania_;
+    return YY_RESULT_Expr_;
   }
 }
 
-Wyraz YY_RESULT_Wyraz_ = 0;
-Wyraz pWyraz(FILE *inp)
+QueryList YY_RESULT_QueryList_ = 0;
+QueryList pQueryList(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -65,12 +84,12 @@ Wyraz pWyraz(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_Wyraz_;
+    return YY_RESULT_QueryList_;
   }
 }
 
-ListZapytanie YY_RESULT_ListZapytanie_ = 0;
-ListZapytanie pListZapytanie(FILE *inp)
+QueryLineList YY_RESULT_QueryLineList_ = 0;
+QueryLineList pQueryLineList(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -79,12 +98,12 @@ ListZapytanie pListZapytanie(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_ListZapytanie_;
+    return YY_RESULT_QueryLineList_;
   }
 }
 
-ListLiniaZapytania YY_RESULT_ListLiniaZapytania_ = 0;
-ListLiniaZapytania pListLiniaZapytania(FILE *inp)
+int YY_RESULT_Space_ = 0;
+int pSpace(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -93,12 +112,12 @@ ListLiniaZapytania pListLiniaZapytania(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_ListLiniaZapytania_;
+    return YY_RESULT_Space_;
   }
 }
 
-int YY_RESULT_Przerwa_ = 0;
-int pPrzerwa(FILE *inp)
+SpaceList YY_RESULT_SpaceList_ = 0;
+SpaceList pSpaceList(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -107,12 +126,12 @@ int pPrzerwa(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_Przerwa_;
+    return YY_RESULT_SpaceList_;
   }
 }
 
-ListPrzerwa YY_RESULT_ListPrzerwa_ = 0;
-ListPrzerwa pListPrzerwa(FILE *inp)
+Text YY_RESULT_Text_ = 0;
+Text pText(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -121,12 +140,12 @@ ListPrzerwa pListPrzerwa(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_ListPrzerwa_;
+    return YY_RESULT_Text_;
   }
 }
 
-Tekst YY_RESULT_Tekst_ = 0;
-Tekst pTekst(FILE *inp)
+Name YY_RESULT_Name_ = 0;
+Name pName(FILE *inp)
 {
   initialize_lexer(inp);
   if (yyparse())
@@ -135,59 +154,45 @@ Tekst pTekst(FILE *inp)
   }
   else
   { /* Success */
-    return YY_RESULT_Tekst_;
-  }
-}
-
-Nazwa YY_RESULT_Nazwa_ = 0;
-Nazwa pNazwa(FILE *inp)
-{
-  initialize_lexer(inp);
-  if (yyparse())
-  { /* Failure */
-    return 0;
-  }
-  else
-  { /* Success */
-    return YY_RESULT_Nazwa_;
+    return YY_RESULT_Name_;
   }
 }
 
 
-ListZapytanie reverseListZapytanie(ListZapytanie l)
+QueryList reverseQueryList(QueryList l)
 {
-  ListZapytanie prev = 0;
-  ListZapytanie tmp = 0;
+  QueryList prev = 0;
+  QueryList tmp = 0;
   while (l)
   {
-    tmp = l->listzapytanie_;
-    l->listzapytanie_ = prev;
+    tmp = l->querylist_;
+    l->querylist_ = prev;
     prev = l;
     l = tmp;
   }
   return prev;
 }
-ListLiniaZapytania reverseListLiniaZapytania(ListLiniaZapytania l)
+QueryLineList reverseQueryLineList(QueryLineList l)
 {
-  ListLiniaZapytania prev = 0;
-  ListLiniaZapytania tmp = 0;
+  QueryLineList prev = 0;
+  QueryLineList tmp = 0;
   while (l)
   {
-    tmp = l->listliniazapytania_;
-    l->listliniazapytania_ = prev;
+    tmp = l->querylinelist_;
+    l->querylinelist_ = prev;
     prev = l;
     l = tmp;
   }
   return prev;
 }
-ListPrzerwa reverseListPrzerwa(ListPrzerwa l)
+SpaceList reverseSpaceList(SpaceList l)
 {
-  ListPrzerwa prev = 0;
-  ListPrzerwa tmp = 0;
+  SpaceList prev = 0;
+  SpaceList tmp = 0;
   while (l)
   {
-    tmp = l->listprzerwa_;
-    l->listprzerwa_ = prev;
+    tmp = l->spacelist_;
+    l->spacelist_ = prev;
     prev = l;
     l = tmp;
   }
@@ -201,17 +206,17 @@ ListPrzerwa reverseListPrzerwa(ListPrzerwa l)
   int int_;
   char char_;
   double double_;
-  char* string_;
-  ZapZloz zapzloz_;
-  Zapytanie zapytanie_;
-  LiniaZapytania liniazapytania_;
-  Wyraz wyraz_;
-  ListZapytanie listzapytanie_;
-  ListLiniaZapytania listliniazapytania_;
-  int przerwa_;
-  ListPrzerwa listprzerwa_;
-  Tekst tekst_;
-  Nazwa nazwa_;
+  int string_;
+  ComplexQuery complexquery_;
+  Query query_;
+  QueryLine queryline_;
+  Expr expr_;
+  QueryList querylist_;
+  QueryLineList querylinelist_;
+  int space_;
+  SpaceList spacelist_;
+  Text text_;
+  Name name_;
 
 }
 
@@ -230,62 +235,62 @@ ListPrzerwa reverseListPrzerwa(ListPrzerwa l)
 %token _SYMB_SEARCH    /*   search   */
 %token<string_> _SYMB_DWUKROPEK2    /*   MyToken   */
 
-%type <zapzloz_> ZapZloz
-%type <zapytanie_> Zapytanie
-%type <liniazapytania_> LiniaZapytania
-%type <wyraz_> Wyraz
-%type <wyraz_> Wyraz1
-%type <wyraz_> Wyraz2
-%type <listzapytanie_> ListZapytanie
-%type <listliniazapytania_> ListLiniaZapytania
-%type <przerwa_> Przerwa
-%type <listprzerwa_> ListPrzerwa
-%type <tekst_> Tekst
-%type <nazwa_> Nazwa
+%type <complexquery_> ComplexQuery
+%type <query_> Query
+%type <queryline_> QueryLine
+%type <expr_> Expr
+%type <expr_> Expr1
+%type <expr_> Expr2
+%type <querylist_> QueryList
+%type <querylinelist_> QueryLineList
+%type <space_> Space
+%type <spacelist_> SpaceList
+%type <text_> Text
+%type <name_> Name
 
 %token<string_> _STRING_
 %token<string_> _IDENT_
 
 %%
-ZapZloz : ListZapytanie { $$ = make_ZapZloz($1); YY_RESULT_ZapZloz_= $$; } 
+ComplexQuery : QueryList { $$ = make_ComplexQuery($1); YY_RESULT_ComplexQuery_= $$; }
 ;
-Zapytanie : ListLiniaZapytania ListPrzerwa { $$ = make_ZapProste($1, reverseListPrzerwa($2)); YY_RESULT_Zapytanie_= $$; } 
-  | _SYMB_DEFINE _SYMB_NEWLINE Zapytanie _SYMB_AS Nazwa ListPrzerwa { $$ = make_ZapDef($3, $5, reverseListPrzerwa($6)); YY_RESULT_Zapytanie_= $$; }
-  | _SYMB_SEARCH _SYMB_NEWLINE Zapytanie _SYMB_IN Nazwa ListPrzerwa { $$ = make_ZapWyw($3, $5, reverseListPrzerwa($6)); YY_RESULT_Zapytanie_= $$; }
-  | ListPrzerwa { $$ = make_ZapPuste(reverseListPrzerwa($1)); YY_RESULT_Zapytanie_= $$; }
+Query : QueryLineList SpaceList { $$ = make_SimpleQuery($1, reverseSpaceList($2)); YY_RESULT_Query_= $$; }
+  | _SYMB_DEFINE _SYMB_NEWLINE Query _SYMB_AS Name SpaceList { $$ = make_DefQuery($3, $5, reverseSpaceList($6)); YY_RESULT_Query_= $$; }
+  | _SYMB_SEARCH _SYMB_NEWLINE Query _SYMB_IN Name SpaceList { $$ = make_CallQuery($3, $5, reverseSpaceList($6)); YY_RESULT_Query_= $$; }
+  | SpaceList { $$ = make_EmptyQuery(reverseSpaceList($1)); YY_RESULT_Query_= $$; }
 ;
-LiniaZapytania : _IDENT_ _SYMB_DWUKROPEK Wyraz { $$ = make_LiniaZap($1, $3); YY_RESULT_LiniaZapytania_= $$; } 
+QueryLine : _IDENT_ _SYMB_DWUKROPEK Expr { $$ = make_QueryLine($1, $3); YY_RESULT_QueryLine_= $$; }
 ;
-Wyraz : Wyraz _SYMB_AND Wyraz1 { $$ = make_WyrazAnd($1, $3); YY_RESULT_Wyraz_= $$; } 
-  | Wyraz _SYMB_OR Wyraz1 { $$ = make_WyrazOr($1, $3); YY_RESULT_Wyraz_= $$; }
-  | Wyraz _SYMB_NOT Wyraz1 { $$ = make_WyrazAnd($1, make_WyrazNeg($3)); YY_RESULT_Wyraz_= $$; }
-  | Wyraz1 { $$ = $1; YY_RESULT_Wyraz_= $$; }
+Expr : Expr _SYMB_AND Expr1 { $$ = make_AndExpr($1, $3); YY_RESULT_Expr_= $$; }
+  | Expr _SYMB_OR Expr1 { $$ = make_OrExpr($1, $3); YY_RESULT_Expr_= $$; }
+  | Expr _SYMB_NOT Expr1 { $$ = make_AndExpr($1, make_NotExpr($3)); YY_RESULT_Expr_= $$; }
+  | Expr1 { $$ = $1; YY_RESULT_Expr_= $$; }
 ;
-Wyraz1 : _SYMB_NOT Wyraz1 { $$ = make_WyrazNeg($2); YY_RESULT_Wyraz_= $$; } 
-  | Wyraz2 { $$ = $1; YY_RESULT_Wyraz_= $$; }
+Expr1 : _SYMB_NOT Expr1 { $$ = make_NotExpr($2); YY_RESULT_Expr_= $$; }
+  | Expr2 { $$ = $1; YY_RESULT_Expr_= $$; }
 ;
-Wyraz2 : Tekst _SYMB_ALL Tekst { $$ = make_WyrazFrag($1, $3); YY_RESULT_Wyraz_= $$; } 
-  | Tekst _SYMB_ALL { $$ = make_WyrazFragL($1); YY_RESULT_Wyraz_= $$; }
-  | _SYMB_ALL Tekst { $$ = make_WyrazFragP($2); YY_RESULT_Wyraz_= $$; }
-  | Tekst { $$ = make_WyrazTekst($1); YY_RESULT_Wyraz_= $$; }
-  | _SYMB_LEWIAS Wyraz _SYMB_PRAWIAS { $$ = $2; YY_RESULT_Wyraz_= $$; }
+Expr2 : Text _SYMB_ALL Text { $$ = make_PartExpr($1, $3); YY_RESULT_Expr_= $$; }
+  | Text _SYMB_ALL { $$ = make_LPartExpr($1); YY_RESULT_Expr_= $$; }
+  | _SYMB_ALL Text { $$ = make_RPartExpr($2); YY_RESULT_Expr_= $$; }
+  | Text { $$ = make_TextExpr($1); YY_RESULT_Expr_= $$; }
+  | _SYMB_LEWIAS Expr _SYMB_PRAWIAS { $$ = $2; YY_RESULT_Expr_= $$; }
 ;
-ListZapytanie : Zapytanie { $$ = make_ListZapytanie($1, 0); YY_RESULT_ListZapytanie_= $$; } 
-  | Zapytanie ListZapytanie { $$ = make_ListZapytanie($1, $2); YY_RESULT_ListZapytanie_= $$; }
+QueryList : Query { $$ = make_QueryList($1, 0); YY_RESULT_QueryList_= $$; }
+  | Query QueryList { $$ = make_QueryList($1, $2); YY_RESULT_QueryList_= $$; }
 ;
-ListLiniaZapytania : LiniaZapytania _SYMB_NEWLINE { $$ = make_ListLiniaZapytania($1, 0); YY_RESULT_ListLiniaZapytania_= $$; } 
-  | LiniaZapytania _SYMB_NEWLINE ListLiniaZapytania { $$ = make_ListLiniaZapytania($1, $3); YY_RESULT_ListLiniaZapytania_= $$; }
+QueryLineList : QueryLine _SYMB_NEWLINE { $$ = make_QueryLineList($1, 0); YY_RESULT_QueryLineList_= $$; }
+  | QueryLine _SYMB_NEWLINE QueryLineList { $$ = make_QueryLineList($1, $3); YY_RESULT_QueryLineList_= $$; }
 ;
-Przerwa : _SYMB_NEWLINE { $$ = 1; YY_RESULT_Przerwa_= $$; } 
+Space : _SYMB_NEWLINE { $$ = 1; YY_RESULT_Space_= $$; }
 ;
-ListPrzerwa : /* empty */ { $$ = 0; YY_RESULT_ListPrzerwa_= $$; } 
-  | ListPrzerwa Przerwa { $$ = make_ListPrzerwa($2, $1); YY_RESULT_ListPrzerwa_= $$; }
+SpaceList : /* empty */ { $$ = 0; YY_RESULT_SpaceList_= $$; }
+  | SpaceList Space { $$ = make_SpaceList($2, $1); YY_RESULT_SpaceList_= $$; }
 ;
-Tekst : _STRING_ { $$ = make_Tekst($1); YY_RESULT_Tekst_= $$; } 
-  | _IDENT_ { $$ = make_Tekst($1); YY_RESULT_Tekst_= $$; }
-  | _SYMB_DWUKROPEK2 { $$ = make_Tekst($1); YY_RESULT_Tekst_= $$; }
+Text : _STRING_ { $$ = make_Text($1); YY_RESULT_Text_= $$; }
+  | _IDENT_ { $$ = make_Text($1); YY_RESULT_Text_= $$; }
+  | _SYMB_DWUKROPEK2 { $$ = make_Text($1); YY_RESULT_Text_= $$; }
 ;
-Nazwa : _STRING_ { $$ = make_Nazwa($1); YY_RESULT_Nazwa_= $$; } 
+Name : _STRING_ { $$ = make_Name($1); YY_RESULT_Name_= $$; }
 ;
 
 

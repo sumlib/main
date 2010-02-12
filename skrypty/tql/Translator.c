@@ -12,6 +12,23 @@ char* buf_;
 int cur_;
 int buf_size;
 
+void tmpResizeBuffer(void)
+{
+  char* temp = (char*) malloc(buf_size);
+  if (!temp)
+  {
+    fprintf(stderr, "Error: Out of memory while attempting to grow buffer!\n");
+    exit(1);
+  }
+  if (buf_)
+  {
+    strncpy(temp, buf_, buf_size); /* peteg: strlcpy is safer, but not POSIX/ISO C. */
+    free(buf_);
+  }
+  buf_ = temp;
+}
+
+
 void tmpBufAppendS(const char* s)
 {
   int len = strlen(s);
@@ -46,21 +63,7 @@ void tmpBufReset(void)
   tmpResizeBuffer();
   memset(buf_, 0, buf_size);
 }
-void tmpResizeBuffer(void)
-{
-  char* temp = (char*) malloc(buf_size);
-  if (!temp)
-  {
-    fprintf(stderr, "Error: Out of memory while attempting to grow buffer!\n");
-    exit(1);
-  }
-  if (buf_)
-  {
-    strncpy(temp, buf_, buf_size); /* peteg: strlcpy is safer, but not POSIX/ISO C. */
-    free(buf_);
-  }
-  buf_ = temp;
-}
+
 char *buf_;
 int cur_, buf_size;
 
@@ -141,15 +144,15 @@ void backup(void)
     cur_--;
   }
 }
-char* translateZapZloz(ComplexQuery p)
+char* translateComplexQuery(ComplexQuery p)
 {
   _n_ = 0;
   tmpBufReset();
-  ppZapZloz(p, 0);
+  ppComplexQuery(p, 0);
   //printf("\n\n\n%s\n\n\n",  translator_wynik());
   return translator_getResult();
 }
-void ppZapZloz(ComplexQuery _p_, int _i_)
+void ppComplexQuery(ComplexQuery _p_, int _i_)
 {
     ppQueryList(_p_->querylist_, 0);
 }
@@ -268,10 +271,6 @@ void ppQueryLineList(QueryLineList querylinelist, int i)
   }
 }
 
-void ppPrzerwa(int _p_, int _i_)
-{
-}
-
 char* ppText(Text _p_)
 {
 
@@ -279,7 +278,7 @@ char* ppText(Text _p_)
 
 }
 
-void ppNazwa(Name _p_, int _i_)
+void ppName(Name _p_, int _i_)
 {
 }
 

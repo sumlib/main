@@ -17,17 +17,16 @@ void indent(void);
 void backup(void);
 
 
-char* translateZapZloz(ComplexQuery p);
+char* translateComplexQuery(ComplexQuery p);
 
-void ppZapZloz(ComplexQuery p, int i);
+void ppComplexQuery(ComplexQuery p, int i);
 void ppQuery(Query p, int i);
 char* ppQueryLine(QueryLine p, int i);
 char* ppExpr(Expr p, Ident id, int i);
 void ppQueryList(QueryList p, int i);
 void ppQueryLineList(QueryLineList p, int i);
-void ppPrzerwa(Przerwa p, int i);
 char* ppText(Text p);
-void ppNazwa(Name p, int i);
+void ppName(Name p, int i);
 
 
 #endif

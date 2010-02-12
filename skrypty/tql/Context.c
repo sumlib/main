@@ -9,12 +9,12 @@
 #include "Symbols.h"
 #include "Absyn.h"
 
-void contextZapZloz(ComplexQuery _p_)
+void contextComplexQuery(ComplexQuery _p_)
 {
   contextQueryList(_p_->querylist_);
 }
 
-Query polacz_zapytania(Query z1, Query z2){
+Query merge_queries(Query z1, Query z2){
     Query z = malloc(sizeof(struct Query_));
     int i;
     Expr w;
@@ -47,21 +47,21 @@ void contextQuery(Query _p_)
   case is_DefQuery:
     /* Code for DefQuery Goes Here */
     contextQuery(_p_->u.defquery_.query_);
-    contextNazwa(_p_->u.defquery_.name_);
+    contextName(_p_->u.defquery_.name_);
     symbols_setQuery(_p_->u.defquery_.name_, _p_->u.defquery_.query_);
     break;
   case is_CallQuery:
     /* Code for CallQuery Goes Here */
     //TODO: Połączyć linie zapytania z zap_def
     contextQuery(_p_->u.callquery_.query_);
-    contextNazwa(_p_->u.callquery_.name_);
+    contextName(_p_->u.callquery_.name_);
     zapyt = symbols_getQuery(_p_->u.callquery_.name_);
     if(zapyt==NULL){
 	//TODO: komunikat
 	exit(1);
     }
     //TODO: zdefiniować funkcję
-    zapyt = polacz_zapytania(_p_->u.callquery_.query_, zapyt);
+    zapyt = merge_queries(_p_->u.callquery_.query_, zapyt);
     if(zapyt)
       _p_->u.callquery_.query_ = zapyt;
     break;
@@ -151,7 +151,7 @@ void contextText(Text _p_)
 
 }
 
-void contextNazwa(Name _p_)
+void contextName(Name _p_)
 {
 
 }

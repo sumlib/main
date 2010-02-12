@@ -31,12 +31,12 @@ int main(int argc, char ** argv)
   }
   else input = stdin;
   /* The default entry point is used. For other options see Parser.h */
-  parse_tree = pZapZloz(input);
+  parse_tree = pComplexQuery(input);
   if (parse_tree)
   {
-    contextZapZloz(parse_tree);
-    //getXmlFromQuery(translateZapZloz(parse_tree));
-    printf("%s\n\n", getXmlFromQuery(translateZapZloz(parse_tree)));
+    contextComplexQuery(parse_tree);
+    //getXmlFromQuery(translateComplexQuery(parse_tree));
+    printf("%s\n\n", getXmlFromQuery(translateComplexQuery(parse_tree)));
 
     return 0;
   }

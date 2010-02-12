@@ -10,16 +10,16 @@ typedef union
   char char_;
   double double_;
   int string_;
-  ComplexQuery zapzloz_;
-  Query zapytanie_;
-  QueryLine liniazapytania_;
-  Expr wyraz_;
+  ComplexQuery complexquery_;
+  Query query_;
+  QueryLine queryline_;
+  Expr expr_;
   QueryList querylist_;
   QueryLineList querylinelist_;
-  int przerwa_;
-  SpaceList listprzerwa_;
-  Text tekst_;
-  Name nazwa_;
+  int space_;
+  SpaceList spacelist_;
+  Text text_;
+  Name name_;
 } YYSTYPE;
 
 #define _ERROR_ 258
@@ -41,16 +41,16 @@ typedef union
 
 extern YYSTYPE yylval;
 extern int yyline;
-ComplexQuery pZapZloz(FILE *inp);
+ComplexQuery pComplexQuery(FILE *inp);
 Query pQuery(FILE *inp);
 QueryLine pQueryLine(FILE *inp);
 Expr pExpr(FILE *inp);
 QueryList pQueryList(FILE *inp);
 QueryLineList pQueryLineList(FILE *inp);
-int pPrzerwa(FILE *inp);
-SpaceList pListPrzerwa(FILE *inp);
+int pSpace(FILE *inp);
+SpaceList pSpaceList(FILE *inp);
 Text pText(FILE *inp);
-Name pNazwa(FILE *inp);
+Name pName(FILE *inp);
 
 
 #endif

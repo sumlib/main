@@ -3,20 +3,28 @@ umożliwić zapytanie typu: search in "zwierzaki" (bez zapytania w środku)
 zaimplementowac wyszukiwanie po klinach
 parsowanie tagów w database_config.c
 
+dalsze tłumaczenie nazw funkcji
+
 Źle się wrzucają "IM —"
 lepsze wykrywanie uszkodzeń
 przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
 wyszukiwanie po tagach
+
+wrzucanie do bazy - co z numerem węzła "znaków specjalnych"? (koniec linii, tablet, seal, obverse itp)
+
+do zastanowienia: możliwość "*" w frazie np. "coś * coś2" => "coś bla bla bla coś2"
 
 zmiana nazw stałych symboli - żeby wszystkie były znaczące
 zmiana nazw funkcji na takie jak na prezentacji
 
 ??usunąć @ z translatora
 
-sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć)
+
 plik Translator_config.c - funkcja replace jest używana na zasadzie copy-paste - użyć poprawnie (-;
 end of file dla inputu stdin
 w skryptach pythonowych - wydzielić funkcje do bazy i używać tylko dobrego modułu do pg!!
+
+komentarze w języku
 
 PRACA:
 ładniejszy obrazek dziedziny problemu
@@ -25,5 +33,4 @@ Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
 nazwa do wyszukiwania po klinach (cunetext??)
 pozmieniac nazwy (ZapZloz) w pakietach
 
-
-
+sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć) => parser.c jest nie potrzebny - generuje się z TQL.y

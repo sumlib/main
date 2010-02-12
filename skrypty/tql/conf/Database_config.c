@@ -25,8 +25,9 @@
 #define T_GENRE 7
 #define T_SUBGENRE 8
 #define T_COLLECTION 9
-#define T_TEXT 10
-#define T_NODES 11
+#define T_MUSEUM 10
+#define T_TEXT 11
+#define T_NODES 12
 
 #define cut_newline(s) if (s[strlen(s)-1]=='\n') s[strlen(s)-1]=0
 #define setFromResult(v, rowId, i) v = PQgetisnull(result, rowId, i) ? "" : strdup(PQgetvalue(result, rowId, i))

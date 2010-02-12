@@ -11,8 +11,8 @@
 #define VAR "###"
 
 
-static char *fieldsNames[] = { "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "seal", NULL};
-static char *queries[] = {"p.value LIKE '###'", "t.publication LIKE '###'", "pd.value LIKE '###'", "t.date_of_origin LIKE '###'", "g1.value LIKE '###' OR g2.value LIKE '###'", "", "t.cdli_id LIKE '###'", TEXT, "", NULL};
+static char *fieldsNames[] = { "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "museum", "collection", NULL};
+static char *queries[] = {"p.value LIKE '###'", "t.publication LIKE '###'", "pd.value LIKE '###'", "t.date_of_origin LIKE '###'", "g1.value LIKE '###' OR g2.value LIKE '###'", "", "t.cdli_id LIKE '###'", TEXT, "t.museum LIKE '###'", "c.value LIKE '###'", NULL};
 int from_level=0, select_level=0;
 
 /************************************ buffory: *****************************************************/
@@ -52,7 +52,7 @@ void translator_initSingleQuery(){
     bufReset(buf_select);
     bufReset(buf_from);
     bufReset(buf_where);
-    bufAppendS(buf_select, "SELECT t.id, t.id_cdli, t.publication, t.measurements, t.date_of_origin, p.value as provenience, pd.value as period, g1.value as genre, g2.value as subgenre, c.value as collection, t.show_text");
+    bufAppendS(buf_select, "SELECT t.id, t.id_cdli, t.publication, t.measurements, t.date_of_origin, p.value as provenience, pd.value as period, g1.value as genre, g2.value as subgenre, c.value as collection, t.museum, t.show_text");
     bufAppendS(buf_from, "FROM tablet t \n LEFT JOIN provenience p ON p.id=t.provenience_id\n LEFT JOIN collection c ON c.id=t.collection_id\n LEFT JOIN genre g1 ON g1.id=t.genre_id\n LEFT JOIN genre g2 ON g2.id = t.subgenre_id\n LEFT JOIN period pd ON pd.id = t.period_id \n");
     bufAppendS(buf_where, "");
 }

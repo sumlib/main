@@ -1,36 +1,22 @@
-poprawić wrzucanie tabliczek do bazy + sprawdzić czy działa nowa wersja tql
+gwiazdki w " 
+umożliwić zapytanie typu: search in "zwierzaki" (bez zapytania w środku)
+zaimplementowac wyszukiwanie po klinach
+parsowanie tagów w database_config.c
 
-przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
-
-$blank -> nie wrzucać do sekwencji
 Źle się wrzucają "IM —"
-nie pozwala wstawić gwiazdki na początku
 lepsze wykrywanie uszkodzeń
-pojedyncze zapytanie moze miec sam text
+przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
+wyszukiwanie po tagach
 
 zmiana nazw stałych symboli - żeby wszystkie były znaczące
-
 zmiana nazw funkcji na takie jak na prezentacji
 
-usunąć @ z translatora
+??usunąć @ z translatora
 
 sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć)
-
 plik Translator_config.c - funkcja replace jest używana na zasadzie copy-paste - użyć poprawnie (-;
-
-dodac wyszukiwanie po kolekcji i po muzeum
-(code)
-
 end of file dla inputu stdin
-
 w skryptach pythonowych - wydzielić funkcje do bazy i używać tylko dobrego modułu do pg!!
-
-
-zrobić tak, żeby można było stworzyć zapytanie z samym tekstem: nie inicjować bufora where i jak coś się tam pisze dodać
-
-umożliwić zapytanie typu: search in "zwierzaki" (bez zapytania w środku)
-
-zaimplementowac wyszukiwanie po klinach i tagach
 
 PRACA:
 ładniejszy obrazek dziedziny problemu

@@ -163,11 +163,9 @@ void ppQuery(Query _p_, int _i_)
   case is_SingleQuery:
     translator_initSingleQuery();
     if (_i_ > 0) renderC(_L_PAREN);
-    b=0;
     for(j=0;j<fieldsCount();j++){
 	if(_p_->u.simplequery_.tabqueryline_[j]!=NULL){
-    		translator_mergeLines(ppQueryLine(_p_->u.simplequery_.tabqueryline_[j], 0), _p_->u.simplequery_.tabqueryline_[j]->ident_, b);
-		b++;
+    		translator_mergeLines(ppQueryLine(_p_->u.simplequery_.tabqueryline_[j], 0), _p_->u.simplequery_.tabqueryline_[j]->ident_);
 	}
     }
 //    ppListPrzerwa(_p_->u.zapproste_.listprzerwa_, 0);

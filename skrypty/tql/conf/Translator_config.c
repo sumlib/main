@@ -230,7 +230,7 @@ char *translator_star(char *frag1, char *frag2)  {
  return concat(frag1, "%", frag2, 0);
 }
 
-void translator_mergeLines(char *line, int id, int notFirstLine){
+void translator_mergeLines(char *line, int id){
   if(strcmp(queries[id],TEXT) == 0) {
     bufAppendS(buf_from, " INNER JOIN ");
     bufAppendS(buf_from, line);
@@ -239,10 +239,10 @@ void translator_mergeLines(char *line, int id, int notFirstLine){
     
   }
   else {
-    if(notFirstLine)
+    if(buf_where->cur>0)
       bufAppendS(buf_where, "AND\n");
-      bufAppendS(buf_where, line);
-      bufAppendS(buf_where, "\n");
+    bufAppendS(buf_where, line);
+    bufAppendS(buf_where, "\n");
   }
 }
 

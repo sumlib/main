@@ -12,6 +12,6 @@
   char *translator_not(int id, char *expr1);
   char *translator_star(char *frag1, char *frag2);
   void translator_initSingleQuery();
-  void translator_mergeLines(char *line, int id, int notFirstLine);
+  void translator_mergeLines(char *line, int id);
   char *translator_getResult();
 #endif

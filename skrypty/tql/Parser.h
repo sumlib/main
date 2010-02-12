@@ -24,18 +24,18 @@ typedef union
 
 #define _ERROR_ 258
 #define _SYMB_NEWLINE 259
-#define _SYMB_DWUKROPEK 260
+#define _SYMB_COLON 260
 #define _SYMB_AND 261
 #define _SYMB_OR 262
 #define _SYMB_NOT 263
-#define _SYMB_ALL 264
-#define _SYMB_LEWIAS 265
-#define _SYMB_PRAWIAS 266
+#define _SYMB_STAR 264
+#define _SYMB_LBRACKET 265
+#define _SYMB_RBRACKET 266
 #define _SYMB_AS 267
 #define _SYMB_DEFINE 268
-#define _SYMB_DWUKROPEK0 269
-#define _SYMB_DWUKROPEK1 270
-#define _SYMB_DWUKROPEK2 271
+#define _SYMB_IN 269
+#define _SYMB_SEARCH 270
+#define _SYMB_DIGIT_IDENT 271
 #define _STRING_ 272
 #define _IDENT_ 273
 

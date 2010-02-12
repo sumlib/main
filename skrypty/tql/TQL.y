@@ -222,18 +222,18 @@ SpaceList reverseSpaceList(SpaceList l)
 
 %token _ERROR_
 %token _SYMB_NEWLINE    /*   \n   */
-%token _SYMB_DWUKROPEK    /*   :   */
+%token _SYMB_COLON    /*   :   */
 %token _SYMB_AND    /*   +   */
 %token _SYMB_OR    /*   /   */
 %token _SYMB_NOT    /*   --   */
-%token _SYMB_ALL    /*   *   */
-%token _SYMB_LEWIAS    /*   (   */
-%token _SYMB_PRAWIAS    /*   )   */
+%token _SYMB_STAR    /*   *   */
+%token _SYMB_LBRACKET    /*   (   */
+%token _SYMB_RBRACKET    /*   )   */
 %token _SYMB_AS    /*   as   */
 %token _SYMB_DEFINE    /*   define   */
 %token _SYMB_IN    /*   in   */
 %token _SYMB_SEARCH    /*   search   */
-%token<string_> _SYMB_DWUKROPEK2    /*   MyToken   */
+%token<string_> _SYMB_DIGIT_IDENT    /*   MyToken   */
 
 %type <complexquery_> ComplexQuery
 %type <query_> Query

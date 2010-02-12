@@ -835,7 +835,7 @@ yyline++; return _SYMB_NEWLINE;
 case 2:
 YY_RULE_SETUP
 #line 39 "TQL.l"
-return _SYMB_DWUKROPEK;
+return _SYMB_COLON;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
@@ -855,17 +855,17 @@ return _SYMB_NOT;
 case 6:
 YY_RULE_SETUP
 #line 43 "TQL.l"
-return _SYMB_ALL;
+return _SYMB_STAR;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 44 "TQL.l"
-return _SYMB_LEWIAS;
+return _SYMB_LBRACKET;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 45 "TQL.l"
-return _SYMB_PRAWIAS;
+return _SYMB_RBRACKET;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
@@ -880,12 +880,12 @@ return _SYMB_DEFINE;
 case 11:
 YY_RULE_SETUP
 #line 48 "TQL.l"
-return _SYMB_DWUKROPEK0;
+return _SYMB_IN;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 49 "TQL.l"
-return _SYMB_DWUKROPEK1;
+return _SYMB_SEARCH;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
@@ -940,7 +940,7 @@ yylval.string_ = symbols_getId(TQLtext); return _IDENT_;
 case 23:
 YY_RULE_SETUP
 #line 60 "TQL.l"
-yylval.string_ = symbols_getId(TQLtext); return _SYMB_DWUKROPEK2;
+yylval.string_ = symbols_getId(TQLtext); return _SYMB_DIGIT_IDENT;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP

@@ -544,7 +544,7 @@ typedef
 #define	_SYMB_DEFINE	268
 #define	_SYMB_IN	269
 #define	_SYMB_SEARCH	270
-#define	_SYMB_DWUKROPEK2	271
+#define	_SYMB_DIGIT_IDENT	271
 #define	_STRING_	272
 #define	_IDENT_	273
 
@@ -609,7 +609,7 @@ static const int _SYMB_AS;
 static const int _SYMB_DEFINE;
 static const int _SYMB_IN;
 static const int _SYMB_SEARCH;
-static const int _SYMB_DWUKROPEK2;
+static const int _SYMB_DIGIT_IDENT;
 static const int _STRING_;
 static const int _IDENT_;
 
@@ -633,7 +633,7 @@ enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
 	,_SYMB_DEFINE=268
 	,_SYMB_IN=269
 	,_SYMB_SEARCH=270
-	,_SYMB_DWUKROPEK2=271
+	,_SYMB_DIGIT_IDENT=271
 	,_STRING_=272
 	,_IDENT_=273
 
@@ -685,7 +685,7 @@ const int YY_parse_CLASS::_SYMB_AS=267;
 const int YY_parse_CLASS::_SYMB_DEFINE=268;
 const int YY_parse_CLASS::_SYMB_IN=269;
 const int YY_parse_CLASS::_SYMB_SEARCH=270;
-const int YY_parse_CLASS::_SYMB_DWUKROPEK2=271;
+const int YY_parse_CLASS::_SYMB_DIGIT_IDENT=271;
 const int YY_parse_CLASS::_STRING_=272;
 const int YY_parse_CLASS::_IDENT_=273;
 
@@ -774,7 +774,7 @@ static const short yyrline[] = { 0,
 static const char * const yytname[] = {   "$","error","$illegal.","_ERROR_",
 "_SYMB_NEWLINE","_SYMB_DWUKROPEK","_SYMB_AND","_SYMB_OR","_SYMB_NOT","_SYMB_ALL",
 "_SYMB_LEWIAS","_SYMB_PRAWIAS","_SYMB_AS","_SYMB_DEFINE","_SYMB_IN","_SYMB_SEARCH",
-"_SYMB_DWUKROPEK2","_STRING_","_IDENT_","ComplexQuery","Query","QueryLine","Expr",
+"_SYMB_DIGIT_IDENT","_STRING_","_IDENT_","ComplexQuery","Query","QueryLine","Expr",
 "Expr1","Expr2","QueryList","QueryLineList","Space","SpaceList","Text","Name",
 ""
 };

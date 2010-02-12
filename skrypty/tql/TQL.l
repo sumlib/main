@@ -36,17 +36,17 @@ WITHOUTSOME [a-zA-Z0-9'@]
 %%
 
 <YYINITIAL>"\n"      	 yyline++; return _SYMB_NEWLINE;
-<YYINITIAL>":"      	 return _SYMB_DWUKROPEK;
+<YYINITIAL>":"      	 return _SYMB_COLON;
 <YYINITIAL>"+"      	 return _SYMB_AND;
 <YYINITIAL>"/"      	 return _SYMB_OR;
 <YYINITIAL>"--"      	 return _SYMB_NOT;
-<YYINITIAL>"*"      	 return _SYMB_ALL;
-<YYINITIAL>"("      	 return _SYMB_LEWIAS;
-<YYINITIAL>")"      	 return _SYMB_PRAWIAS;
+<YYINITIAL>"*"      	 return _SYMB_STAR;
+<YYINITIAL>"("      	 return _SYMB_LBRACKET;
+<YYINITIAL>")"      	 return _SYMB_RBRACKET;
 <YYINITIAL>"as"      	 return _SYMB_AS;
 <YYINITIAL>"define"      	 return _SYMB_DEFINE;
-<YYINITIAL>"in"      	 return _SYMB_DWUKROPEK0;
-<YYINITIAL>"search"      	 return _SYMB_DWUKROPEK1;
+<YYINITIAL>"in"      	 return _SYMB_IN;
+<YYINITIAL>"search"      	 return _SYMB_SEARCH;
 <YYINITIAL>"\""      	 BEGIN STRING;
 <STRING>\\      	 BEGIN ESCAPED;
 <STRING>\"      	 yylval.string_ = symbols_getId(YY_PARSED_STRING); YY_BUFFER_RESET(); BEGIN YYINITIAL; return _STRING_;
@@ -57,7 +57,7 @@ WITHOUTSOME [a-zA-Z0-9'@]
 <ESCAPED>t       	 YY_BUFFER_APPEND("\t"); BEGIN STRING;
 <ESCAPED>.       	 YY_BUFFER_APPEND(yytext); BEGIN STRING;
 <YYINITIAL>{LETTER}{IDENT}*      	 yylval.string_ = symbols_getId(yytext); return _IDENT_;
-<YYINITIAL>{WITHOUTSOME}{TEKST}*     	 yylval.string_ = symbols_getId(yytext); return _SYMB_DWUKROPEK2;
+<YYINITIAL>{WITHOUTSOME}{TEKST}*     	 yylval.string_ = symbols_getId(yytext); return _SYMB_DIGIT_IDENT;
 <YYINITIAL>[ \t\r\f]      	 /* ignore white space. */;
 <YYINITIAL>.      	 return _ERROR_;
 %%

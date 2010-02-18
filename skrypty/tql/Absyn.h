@@ -44,18 +44,20 @@ ComplexQuery make_ComplexQuery(QueryList p0);
 
 struct Query_
 {
-  enum { is_SingleQuery, is_DefQuery, is_CallQuery, is_EmptyQuery } kind;
+  enum { is_SingleQuery, is_DefQuery, is_CallQuery, is_SimpleCallQuery, is_EmptyQuery } kind;
   union
   {
     struct { QueryLine tabqueryline_[MAX_POL];} simplequery_;
     struct { Query query_;Name name_;} defquery_;
     struct { Query query_;Name name_;} callquery_;
+    struct { Name name_;} simplecallquery_;
   } u;
 };
 
 Query make_SimpleQuery(QueryLineList p0, SpaceList p1);
 Query make_DefQuery(Query p0, Name p1, SpaceList p2);
 Query make_CallQuery(Query p0, Name p1, SpaceList p2);
+Query make_SimpleCallQuery(Name p1, SpaceList p2);
 Query make_EmptyQuery(SpaceList p0);
 
 struct QueryLine_

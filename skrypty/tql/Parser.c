@@ -533,13 +533,13 @@ typedef
  #line 263 "/usr/share/bison++/bison.cc"
 #define	_ERROR_	258
 #define	_SYMB_NEWLINE	259
-#define	_SYMB_DWUKROPEK	260
+#define	_SYMB_COLON	260
 #define	_SYMB_AND	261
 #define	_SYMB_OR	262
 #define	_SYMB_NOT	263
-#define	_SYMB_ALL	264
-#define	_SYMB_LEWIAS	265
-#define	_SYMB_PRAWIAS	266
+#define	_SYMB_STAR	264
+#define	_SYMB_LBRACKET	265
+#define	_SYMB_RBRACKET	266
 #define	_SYMB_AS	267
 #define	_SYMB_DEFINE	268
 #define	_SYMB_IN	269
@@ -598,13 +598,13 @@ public:
  #line 307 "/usr/share/bison++/bison.cc"
 static const int _ERROR_;
 static const int _SYMB_NEWLINE;
-static const int _SYMB_DWUKROPEK;
+static const int _SYMB_COLON;
 static const int _SYMB_AND;
 static const int _SYMB_OR;
 static const int _SYMB_NOT;
-static const int _SYMB_ALL;
-static const int _SYMB_LEWIAS;
-static const int _SYMB_PRAWIAS;
+static const int _SYMB_STAR;
+static const int _SYMB_LBRACKET;
+static const int _SYMB_RBRACKET;
 static const int _SYMB_AS;
 static const int _SYMB_DEFINE;
 static const int _SYMB_IN;
@@ -622,13 +622,13 @@ enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
  #line 310 "/usr/share/bison++/bison.cc"
 	,_ERROR_=258
 	,_SYMB_NEWLINE=259
-	,_SYMB_DWUKROPEK=260
+	,_SYMB_COLON=260
 	,_SYMB_AND=261
 	,_SYMB_OR=262
 	,_SYMB_NOT=263
-	,_SYMB_ALL=264
-	,_SYMB_LEWIAS=265
-	,_SYMB_PRAWIAS=266
+	,_SYMB_STAR=264
+	,_SYMB_LBRACKET=265
+	,_SYMB_RBRACKET=266
 	,_SYMB_AS=267
 	,_SYMB_DEFINE=268
 	,_SYMB_IN=269
@@ -674,13 +674,13 @@ public:
  #line 341 "/usr/share/bison++/bison.cc"
 const int YY_parse_CLASS::_ERROR_=258;
 const int YY_parse_CLASS::_SYMB_NEWLINE=259;
-const int YY_parse_CLASS::_SYMB_DWUKROPEK=260;
+const int YY_parse_CLASS::_SYMB_COLON=260;
 const int YY_parse_CLASS::_SYMB_AND=261;
 const int YY_parse_CLASS::_SYMB_OR=262;
 const int YY_parse_CLASS::_SYMB_NOT=263;
-const int YY_parse_CLASS::_SYMB_ALL=264;
-const int YY_parse_CLASS::_SYMB_LEWIAS=265;
-const int YY_parse_CLASS::_SYMB_PRAWIAS=266;
+const int YY_parse_CLASS::_SYMB_STAR=264;
+const int YY_parse_CLASS::_SYMB_LBRACKET=265;
+const int YY_parse_CLASS::_SYMB_RBRACKET=266;
 const int YY_parse_CLASS::_SYMB_AS=267;
 const int YY_parse_CLASS::_SYMB_DEFINE=268;
 const int YY_parse_CLASS::_SYMB_IN=269;
@@ -706,7 +706,7 @@ YY_parse_CONSTRUCTOR_CODE;
  #line 352 "/usr/share/bison++/bison.cc"
 
 
-#define	YYFINAL		51
+#define	YYFINAL		53
 #define	YYFLAG		-32768
 #define	YYNTBASE	19
 
@@ -745,99 +745,101 @@ static const char yytranslate[] = {     0,
 
 #if YY_parse_DEBUG != 0
 static const short yyprhs[] = {     0,
-     0,     2,     5,    12,    19,    21,    25,    29,    33,    37,
-    39,    42,    44,    48,    51,    54,    56,    60,    62,    65,
-    68,    72,    74,    75,    78,    80,    82,    84
+     0,     2,     5,    12,    19,    23,    25,    29,    33,    37,
+    41,    43,    46,    48,    52,    55,    58,    60,    64,    66,
+    69,    72,    76,    78,    79,    82,    84,    86,    88
 };
 
 static const short yyrhs[] = {    25,
      0,    26,    28,     0,    13,     4,    20,    12,    30,    28,
-     0,    15,     4,    20,    14,    30,    28,     0,    28,     0,
-    18,     5,    22,     0,    22,     6,    23,     0,    22,     7,
-    23,     0,    22,     8,    23,     0,    23,     0,     8,    23,
-     0,    24,     0,    29,     9,    29,     0,    29,     9,     0,
-     9,    29,     0,    29,     0,    10,    22,    11,     0,    20,
-     0,    20,    25,     0,    21,     4,     0,    21,     4,    26,
-     0,     4,     0,     0,    28,    27,     0,    17,     0,    18,
-     0,    16,     0,    17,     0
+     0,    15,     4,    20,    14,    30,    28,     0,    15,    30,
+    28,     0,    28,     0,    18,     5,    22,     0,    22,     6,
+    23,     0,    22,     7,    23,     0,    22,     8,    23,     0,
+    23,     0,     8,    23,     0,    24,     0,    29,     9,    29,
+     0,    29,     9,     0,     9,    29,     0,    29,     0,    10,
+    22,    11,     0,    20,     0,    20,    25,     0,    21,     4,
+     0,    21,     4,    26,     0,     4,     0,     0,    28,    27,
+     0,    17,     0,    18,     0,    16,     0,    17,     0
 };
 
 #endif
 
 #if (YY_parse_DEBUG != 0) || defined(YY_parse_ERROR_VERBOSE) 
 static const short yyrline[] = { 0,
-   255,   257,   258,   259,   260,   262,   264,   265,   266,   267,
-   269,   270,   272,   273,   274,   275,   276,   278,   279,   281,
-   282,   284,   286,   287,   289,   290,   291,   293
+   255,   257,   258,   259,   260,   261,   263,   265,   266,   267,
+   268,   270,   271,   273,   274,   275,   276,   277,   279,   280,
+   282,   283,   285,   287,   288,   290,   291,   292,   294
 };
 
 static const char * const yytname[] = {   "$","error","$illegal.","_ERROR_",
-"_SYMB_NEWLINE","_SYMB_DWUKROPEK","_SYMB_AND","_SYMB_OR","_SYMB_NOT","_SYMB_ALL",
-"_SYMB_LEWIAS","_SYMB_PRAWIAS","_SYMB_AS","_SYMB_DEFINE","_SYMB_IN","_SYMB_SEARCH",
-"_SYMB_DIGIT_IDENT","_STRING_","_IDENT_","ComplexQuery","Query","QueryLine","Expr",
-"Expr1","Expr2","QueryList","QueryLineList","Space","SpaceList","Text","Name",
-""
+"_SYMB_NEWLINE","_SYMB_COLON","_SYMB_AND","_SYMB_OR","_SYMB_NOT","_SYMB_STAR",
+"_SYMB_LBRACKET","_SYMB_RBRACKET","_SYMB_AS","_SYMB_DEFINE","_SYMB_IN","_SYMB_SEARCH",
+"_SYMB_DIGIT_IDENT","_STRING_","_IDENT_","ComplexQuery","Query","QueryLine",
+"Expr","Expr1","Expr2","QueryList","QueryLineList","Space","SpaceList","Text",
+"Name",""
 };
 #endif
 
 static const short yyr1[] = {     0,
-    19,    20,    20,    20,    20,    21,    22,    22,    22,    22,
-    23,    23,    24,    24,    24,    24,    24,    25,    25,    26,
-    26,    27,    28,    28,    29,    29,    29,    30
+    19,    20,    20,    20,    20,    20,    21,    22,    22,    22,
+    22,    23,    23,    24,    24,    24,    24,    24,    25,    25,
+    26,    26,    27,    28,    28,    29,    29,    29,    30
 };
 
 static const short yyr2[] = {     0,
-     1,     2,     6,     6,     1,     3,     3,     3,     3,     1,
-     2,     1,     3,     2,     2,     1,     3,     1,     2,     2,
-     3,     1,     0,     2,     1,     1,     1,     1
+     1,     2,     6,     6,     3,     1,     3,     3,     3,     3,
+     1,     2,     1,     3,     2,     2,     1,     3,     1,     2,
+     2,     3,     1,     0,     2,     1,     1,     1,     1
 };
 
-static const short yydefact[] = {    23,
-     0,     0,     0,    18,     0,     1,    23,     5,    23,    23,
-     0,    19,    20,     2,    22,    24,     0,     0,     0,     0,
-     0,    27,    25,    26,     6,    10,    12,    16,    21,     0,
-     0,    11,    15,     0,     0,     0,     0,    14,    28,    23,
-    23,    17,     7,     8,     9,    13,     3,     4,     0,     0,
-     0
+static const short yydefact[] = {    24,
+     0,     0,     0,    19,     0,     1,    24,     6,    24,    24,
+    29,    24,     0,    20,    21,     2,    23,    25,     0,     0,
+     5,     0,     0,     0,    28,    26,    27,     7,    11,    13,
+    17,    22,     0,     0,    12,    16,     0,     0,     0,     0,
+    15,    24,    24,    18,     8,     9,    10,    14,     3,     4,
+     0,     0,     0
 };
 
-static const short yydefgoto[] = {    49,
-     4,     5,    25,    26,    27,     6,     7,    16,     8,    28,
-    40
+static const short yydefgoto[] = {    51,
+     4,     5,    28,    29,    30,     6,     7,    18,     8,    31,
+    12
 };
 
-static const short yypact[] = {    22,
-     0,     4,     7,    -2,    16,-32768,-32768,    24,    22,    22,
-    14,-32768,    -9,    24,-32768,-32768,    17,    25,    14,     9,
-    14,-32768,-32768,-32768,    35,-32768,-32768,    27,-32768,    21,
-    21,-32768,-32768,    -1,    14,    14,    14,     9,-32768,-32768,
--32768,-32768,-32768,-32768,-32768,-32768,    24,    24,    44,    45,
--32768
+static const short yypact[] = {    -9,
+     4,     3,     7,    -2,     6,-32768,-32768,    29,    -9,    -9,
+-32768,-32768,    14,-32768,    16,    29,-32768,-32768,    28,    27,
+    29,    14,     9,    14,-32768,-32768,-32768,    37,-32768,-32768,
+    38,-32768,    32,    32,-32768,-32768,    31,    14,    14,    14,
+     9,-32768,-32768,-32768,-32768,-32768,-32768,-32768,    29,    29,
+    46,    48,-32768
 };
 
 static const short yypgoto[] = {-32768,
-     5,-32768,    26,   -18,-32768,    42,    36,-32768,    -7,   -17,
-    19
+     5,-32768,    26,   -21,-32768,    47,    39,-32768,    -7,   -20,
+    -5
 };
 
 
-#define	YYLAST		50
+#define	YYLAST		54
 
 
-static const short yytable[] = {    14,
-    32,   -23,    33,     9,    35,    36,    37,    10,     3,    42,
-     1,    11,     2,    17,    18,     3,    43,    44,    45,    13,
-    46,    19,    20,    21,    22,    23,    24,    15,    30,    22,
-    23,    24,    47,    48,     1,    38,     2,    39,    31,     3,
-    35,    36,    37,    50,    51,    12,    34,     0,    29,    41
+static const short yytable[] = {    16,
+    35,   -24,    36,     1,    21,     2,    10,     9,     3,    15,
+     1,    13,     2,    19,    20,     3,    45,    46,    47,    11,
+    48,    22,    23,    24,    25,    26,    27,    42,    43,    25,
+    26,    27,    17,     3,    49,    50,    38,    39,    40,    33,
+    34,    44,    38,    39,    40,    52,    41,    53,    11,    37,
+    14,     0,     0,    32
 };
 
 static const short yycheck[] = {     7,
-    19,     4,    20,     4,     6,     7,     8,     4,    18,    11,
-    13,     5,    15,     9,    10,    18,    35,    36,    37,     4,
-    38,     8,     9,    10,    16,    17,    18,     4,    12,    16,
-    17,    18,    40,    41,    13,     9,    15,    17,    14,    18,
-     6,     7,     8,     0,     0,     4,    21,    -1,    13,    31
+    22,     4,    23,    13,    12,    15,     4,     4,    18,     4,
+    13,     5,    15,     9,    10,    18,    38,    39,    40,    17,
+    41,     8,     9,    10,    16,    17,    18,    33,    34,    16,
+    17,    18,     4,    18,    42,    43,     6,     7,     8,    12,
+    14,    11,     6,     7,     8,     0,     9,     0,    17,    24,
+     4,    -1,    -1,    15
 };
 
 #line 352 "/usr/share/bison++/bison.cc"
@@ -1351,87 +1353,87 @@ case 4:
     break;}
 case 5:
 #line 260 "TQL.y"
-{ yyval.query_ = make_EmptyQuery(reverseSpaceList(yyvsp[0].spacelist_)); YY_RESULT_Query_= yyval.query_; ;
+{ yyval.query_ = make_SimpleCallQuery(yyvsp[-1].name_, reverseSpaceList(yyvsp[0].spacelist_)); YY_RESULT_Query_= yyval.query_; ;
     break;}
 case 6:
-#line 262 "TQL.y"
-{ yyval.queryline_ = make_QueryLine(yyvsp[-2].string_, yyvsp[0].expr_); YY_RESULT_QueryLine_= yyval.queryline_; ;
+#line 261 "TQL.y"
+{ yyval.query_ = make_EmptyQuery(reverseSpaceList(yyvsp[0].spacelist_)); YY_RESULT_Query_= yyval.query_; ;
     break;}
 case 7:
-#line 264 "TQL.y"
-{ yyval.expr_ = make_AndExpr(yyvsp[-2].expr_, yyvsp[0].expr_); YY_RESULT_Expr_= yyval.expr_; ;
+#line 263 "TQL.y"
+{ yyval.queryline_ = make_QueryLine(yyvsp[-2].string_, yyvsp[0].expr_); YY_RESULT_QueryLine_= yyval.queryline_; ;
     break;}
 case 8:
 #line 265 "TQL.y"
-{ yyval.expr_ = make_OrExpr(yyvsp[-2].expr_, yyvsp[0].expr_); YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_AndExpr(yyvsp[-2].expr_, yyvsp[0].expr_); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 9:
 #line 266 "TQL.y"
-{ yyval.expr_ = make_AndExpr(yyvsp[-2].expr_, make_NotExpr(yyvsp[0].expr_)); YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_OrExpr(yyvsp[-2].expr_, yyvsp[0].expr_); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 10:
 #line 267 "TQL.y"
-{ yyval.expr_ = yyvsp[0].expr_; YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_AndExpr(yyvsp[-2].expr_, make_NotExpr(yyvsp[0].expr_)); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 11:
-#line 269 "TQL.y"
-{ yyval.expr_ = make_NotExpr(yyvsp[0].expr_); YY_RESULT_Expr_= yyval.expr_; ;
+#line 268 "TQL.y"
+{ yyval.expr_ = yyvsp[0].expr_; YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 12:
 #line 270 "TQL.y"
-{ yyval.expr_ = yyvsp[0].expr_; YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_NotExpr(yyvsp[0].expr_); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 13:
-#line 272 "TQL.y"
-{ yyval.expr_ = make_PartExpr(yyvsp[-2].text_, yyvsp[0].text_); YY_RESULT_Expr_= yyval.expr_; ;
+#line 271 "TQL.y"
+{ yyval.expr_ = yyvsp[0].expr_; YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 14:
 #line 273 "TQL.y"
-{ yyval.expr_ = make_LPartExpr(yyvsp[-1].text_); YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_PartExpr(yyvsp[-2].text_, yyvsp[0].text_); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 15:
 #line 274 "TQL.y"
-{ yyval.expr_ = make_RPartExpr(yyvsp[0].text_); YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_LPartExpr(yyvsp[-1].text_); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 16:
 #line 275 "TQL.y"
-{ yyval.expr_ = make_TextExpr(yyvsp[0].text_); YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_RPartExpr(yyvsp[0].text_); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 17:
 #line 276 "TQL.y"
-{ yyval.expr_ = yyvsp[-1].expr_; YY_RESULT_Expr_= yyval.expr_; ;
+{ yyval.expr_ = make_TextExpr(yyvsp[0].text_); YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 18:
-#line 278 "TQL.y"
-{ yyval.querylist_ = make_QueryList(yyvsp[0].query_, 0); YY_RESULT_QueryList_= yyval.querylist_; ;
+#line 277 "TQL.y"
+{ yyval.expr_ = yyvsp[-1].expr_; YY_RESULT_Expr_= yyval.expr_; ;
     break;}
 case 19:
 #line 279 "TQL.y"
-{ yyval.querylist_ = make_QueryList(yyvsp[-1].query_, yyvsp[0].querylist_); YY_RESULT_QueryList_= yyval.querylist_; ;
+{ yyval.querylist_ = make_QueryList(yyvsp[0].query_, 0); YY_RESULT_QueryList_= yyval.querylist_; ;
     break;}
 case 20:
-#line 281 "TQL.y"
-{ yyval.querylinelist_ = make_QueryLineList(yyvsp[-1].queryline_, 0); YY_RESULT_QueryLineList_= yyval.querylinelist_; ;
+#line 280 "TQL.y"
+{ yyval.querylist_ = make_QueryList(yyvsp[-1].query_, yyvsp[0].querylist_); YY_RESULT_QueryList_= yyval.querylist_; ;
     break;}
 case 21:
 #line 282 "TQL.y"
-{ yyval.querylinelist_ = make_QueryLineList(yyvsp[-2].queryline_, yyvsp[0].querylinelist_); YY_RESULT_QueryLineList_= yyval.querylinelist_; ;
+{ yyval.querylinelist_ = make_QueryLineList(yyvsp[-1].queryline_, 0); YY_RESULT_QueryLineList_= yyval.querylinelist_; ;
     break;}
 case 22:
-#line 284 "TQL.y"
-{ yyval.space_ = 1; YY_RESULT_Space_= yyval.space_; ;
+#line 283 "TQL.y"
+{ yyval.querylinelist_ = make_QueryLineList(yyvsp[-2].queryline_, yyvsp[0].querylinelist_); YY_RESULT_QueryLineList_= yyval.querylinelist_; ;
     break;}
 case 23:
-#line 286 "TQL.y"
-{ yyval.spacelist_ = 0; YY_RESULT_SpaceList_= yyval.spacelist_; ;
+#line 285 "TQL.y"
+{ yyval.space_ = 1; YY_RESULT_Space_= yyval.space_; ;
     break;}
 case 24:
 #line 287 "TQL.y"
-{ yyval.spacelist_ = make_SpaceList(yyvsp[0].space_, yyvsp[-1].spacelist_); YY_RESULT_SpaceList_= yyval.spacelist_; ;
+{ yyval.spacelist_ = 0; YY_RESULT_SpaceList_= yyval.spacelist_; ;
     break;}
 case 25:
-#line 289 "TQL.y"
-{ yyval.text_ = make_Text(yyvsp[0].string_); YY_RESULT_Text_= yyval.text_; ;
+#line 288 "TQL.y"
+{ yyval.spacelist_ = make_SpaceList(yyvsp[0].space_, yyvsp[-1].spacelist_); YY_RESULT_SpaceList_= yyval.spacelist_; ;
     break;}
 case 26:
 #line 290 "TQL.y"
@@ -1442,7 +1444,11 @@ case 27:
 { yyval.text_ = make_Text(yyvsp[0].string_); YY_RESULT_Text_= yyval.text_; ;
     break;}
 case 28:
-#line 293 "TQL.y"
+#line 292 "TQL.y"
+{ yyval.text_ = make_Text(yyvsp[0].string_); YY_RESULT_Text_= yyval.text_; ;
+    break;}
+case 29:
+#line 294 "TQL.y"
 { yyval.name_ = make_Name(yyvsp[0].string_); YY_RESULT_Name_= yyval.name_; ;
     break;}
 }
@@ -1649,4 +1655,4 @@ YYLABEL(yyerrhandle)
 /* END */
 
  #line 1038 "/usr/share/bison++/bison.cc"
-#line 297 "TQL.y"
+#line 298 "TQL.y"

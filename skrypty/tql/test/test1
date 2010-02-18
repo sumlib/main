@@ -4,6 +4,5 @@ text: {tt}nig2
 {museum: *"VAT 12"*} 
 as "cos"
 
-search
+search "cos"
 
-in "cos"

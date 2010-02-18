@@ -32,3 +32,18 @@ nazwa do wyszukiwania po klinach (cunetext??)
 pozmieniac nazwy (ZapZloz) w pakietach
 
 sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć) => parser.c jest nie potrzebny - generuje się z TQL.y
+
+UWAGI DĄBROWSKIEGO:
+opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
+Rozdział 1:
+=> podzielić definicje na pojęcia dziedzinowe, informatyczne i paradygmatowe??
+	-> DSL (paradygmat)
+	-> Gramatyka (informatyka)
+	-> Semantyka
+Rozdział 2: rozszerzyć
+Rozdział 3: być może wrzucić przed rozdział 1??
+	"obrazek" model dziedziny -> modele danych
+		  TQL             -> SQL, XQuery?
+	w ładnym obrazku brakowało jednego elementu - TQL-a
+	
+PREZENTACJA: 29 kwietnia

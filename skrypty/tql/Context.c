@@ -68,6 +68,22 @@ void contextQuery(Query _p_)
     if(zapyt)
       _p_->u.callquery_.query_ = zapyt;
     break;
+
+  case is_SimpleCallQuery:
+      contextName(_p_->u.simplecallquery_.name_);
+      zapyt = symbols_getQuery(_p_->u.simplecallquery_.name_);
+      if(zapyt==NULL){
+	//TODO: komunikat
+	exit(1);
+      }
+      _p_->kind = is_SingleQuery;
+      for(i=0;i<fieldsCount();i++)
+          _p_->u.simplequery_.tabqueryline_[i] = NULL;
+      zapyt = merge_queries(_p_, zapyt);
+      if(zapyt)
+          _p_ = zapyt;
+      break;
+
   case is_EmptyQuery:
     /* Code for EmptyQuery Goes Here */
     break;

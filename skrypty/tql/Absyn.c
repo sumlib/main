@@ -90,6 +90,22 @@ Query make_CallQuery(Query p1, Name p2, SpaceList p3)
 }
 
 
+/********************   CallQuery    ********************/
+Query make_SimpleCallQuery(Name p2, SpaceList p3)
+{
+  Query tmp = (Query) malloc(sizeof(*tmp));
+  if (!tmp)
+  {
+    fprintf(stderr, "Error: out of memory when allocating CallQuery!\n");
+    exit(1);
+  }
+  tmp->kind = is_SimpleCallQuery;
+  tmp->u.simplecallquery_.name_ = p2;
+
+  return tmp;
+}
+
+
 /********************   EmptyQuery    ********************/
 Query make_EmptyQuery(SpaceList p1)
 {

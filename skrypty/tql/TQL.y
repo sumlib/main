@@ -257,9 +257,10 @@ ComplexQuery : QueryList { $$ = make_ComplexQuery($1); YY_RESULT_ComplexQuery_= 
 Query : QueryLineList SpaceList { $$ = make_SimpleQuery($1, reverseSpaceList($2)); YY_RESULT_Query_= $$; }
   | _SYMB_DEFINE _SYMB_NEWLINE Query _SYMB_AS Name SpaceList { $$ = make_DefQuery($3, $5, reverseSpaceList($6)); YY_RESULT_Query_= $$; }
   | _SYMB_SEARCH _SYMB_NEWLINE Query _SYMB_IN Name SpaceList { $$ = make_CallQuery($3, $5, reverseSpaceList($6)); YY_RESULT_Query_= $$; }
+  | _SYMB_SEARCH Name SpaceList { $$ = make_SimpleCallQuery($2, reverseSpaceList($3)); YY_RESULT_Query_= $$; }
   | SpaceList { $$ = make_EmptyQuery(reverseSpaceList($1)); YY_RESULT_Query_= $$; }
 ;
-QueryLine : _IDENT_ _SYMB_DWUKROPEK Expr { $$ = make_QueryLine($1, $3); YY_RESULT_QueryLine_= $$; }
+QueryLine : _IDENT_ _SYMB_COLON Expr { $$ = make_QueryLine($1, $3); YY_RESULT_QueryLine_= $$; }
 ;
 Expr : Expr _SYMB_AND Expr1 { $$ = make_AndExpr($1, $3); YY_RESULT_Expr_= $$; }
   | Expr _SYMB_OR Expr1 { $$ = make_OrExpr($1, $3); YY_RESULT_Expr_= $$; }
@@ -269,11 +270,11 @@ Expr : Expr _SYMB_AND Expr1 { $$ = make_AndExpr($1, $3); YY_RESULT_Expr_= $$; }
 Expr1 : _SYMB_NOT Expr1 { $$ = make_NotExpr($2); YY_RESULT_Expr_= $$; }
   | Expr2 { $$ = $1; YY_RESULT_Expr_= $$; }
 ;
-Expr2 : Text _SYMB_ALL Text { $$ = make_PartExpr($1, $3); YY_RESULT_Expr_= $$; }
-  | Text _SYMB_ALL { $$ = make_LPartExpr($1); YY_RESULT_Expr_= $$; }
-  | _SYMB_ALL Text { $$ = make_RPartExpr($2); YY_RESULT_Expr_= $$; }
+Expr2 : Text _SYMB_STAR Text { $$ = make_PartExpr($1, $3); YY_RESULT_Expr_= $$; }
+  | Text _SYMB_STAR { $$ = make_LPartExpr($1); YY_RESULT_Expr_= $$; }
+  | _SYMB_STAR Text { $$ = make_RPartExpr($2); YY_RESULT_Expr_= $$; }
   | Text { $$ = make_TextExpr($1); YY_RESULT_Expr_= $$; }
-  | _SYMB_LEWIAS Expr _SYMB_PRAWIAS { $$ = $2; YY_RESULT_Expr_= $$; }
+  | _SYMB_LBRACKET Expr _SYMB_RBRACKET { $$ = $2; YY_RESULT_Expr_= $$; }
 ;
 QueryList : Query { $$ = make_QueryList($1, 0); YY_RESULT_QueryList_= $$; }
   | Query QueryList { $$ = make_QueryList($1, $2); YY_RESULT_QueryList_= $$; }
@@ -288,7 +289,7 @@ SpaceList : /* empty */ { $$ = 0; YY_RESULT_SpaceList_= $$; }
 ;
 Text : _STRING_ { $$ = make_Text($1); YY_RESULT_Text_= $$; }
   | _IDENT_ { $$ = make_Text($1); YY_RESULT_Text_= $$; }
-  | _SYMB_DWUKROPEK2 { $$ = make_Text($1); YY_RESULT_Text_= $$; }
+  | _SYMB_DIGIT_IDENT { $$ = make_Text($1); YY_RESULT_Text_= $$; }
 ;
 Name : _STRING_ { $$ = make_Name($1); YY_RESULT_Name_= $$; }
 ;

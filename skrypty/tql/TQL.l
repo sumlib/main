@@ -48,6 +48,10 @@ WITHOUTSOME [a-zA-Z0-9'@]
 <YYINITIAL>"in"      	 return _SYMB_IN;
 <YYINITIAL>"search"      	 return _SYMB_SEARCH;
 <YYINITIAL>"\""      	 BEGIN STRING;
+<YYINITIAL>"{"      	 BEGIN COMMENT; 
+<COMMENT>"}"             BEGIN YYINITIAL; 
+<COMMENT>"\n"      	 yyline++;
+<COMMENT>.                ;
 <STRING>\\      	 BEGIN ESCAPED;
 <STRING>\"      	 yylval.string_ = symbols_getId(YY_PARSED_STRING); YY_BUFFER_RESET(); BEGIN YYINITIAL; return _STRING_;
 <STRING>.      	 YY_BUFFER_APPEND(yytext);

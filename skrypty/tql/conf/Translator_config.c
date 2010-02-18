@@ -25,6 +25,8 @@ int id_seq = 0;
 
 
 void save_result(){
+    if(buf_result==NULL)
+        return;
     bufAppendS(buf_result, buf_select->buf);
     bufAppendS(buf_result, "\n");
     bufAppendS(buf_result, buf_from->buf);
@@ -248,5 +250,7 @@ void translator_mergeLines(char *line, int id){
 
 char *translator_getResult(){
     save_result();
-    return buf_result->buf;
+    if(buf_result!=NULL)
+        return buf_result->buf;
+    return "";
 }

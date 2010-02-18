@@ -18,6 +18,9 @@ Query merge_queries(Query z1, Query z2){
     Query z = malloc(sizeof(struct Query_));
     int i;
     Expr w;
+    if(z1->kind == is_EmptyQuery && z2->kind == is_SingleQuery){
+        z1->kind = is_SingleQuery;
+    }
     if(z1->kind == is_SingleQuery && z2->kind == is_SingleQuery){
         for(i=0;i<fieldsCount();i++){
 	  if(z2->u.simplequery_.tabqueryline_[i]!=NULL){

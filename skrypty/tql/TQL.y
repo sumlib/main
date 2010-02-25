@@ -74,6 +74,14 @@ Expr pExpr(FILE *inp)
   }
 }
 
+Part YY_RESULT_Part_ = 0;
+LPart YY_RESULT_LPart_ = 0;
+RPart YY_RESULT_RPart_ = 0;
+LPartList YY_RESULT_LPartList_ = 0;
+RPartList YY_RESULT_RPartList_ = 0;
+
+
+
 QueryList YY_RESULT_QueryList_ = 0;
 QueryList pQueryList(FILE *inp)
 {
@@ -211,6 +219,11 @@ SpaceList reverseSpaceList(SpaceList l)
   Query query_;
   QueryLine queryline_;
   Expr expr_;
+  Part part_;
+  LPart lpart_;
+  RPart rpart_;
+  LPartList lpartlist_;
+  RPartList rpartlist_;
   QueryList querylist_;
   QueryLineList querylinelist_;
   int space_;
@@ -247,6 +260,11 @@ SpaceList reverseSpaceList(SpaceList l)
 %type <spacelist_> SpaceList
 %type <text_> Text
 %type <name_> Name
+%type <part_> Part
+%type <lpart_> LPart
+%type <rpart_> RPart
+%type <lpartlist_> LPartList
+%type <rpartlist_> RPartList
 
 %token<string_> _STRING_
 %token<string_> _IDENT_
@@ -270,10 +288,35 @@ Expr : Expr _SYMB_AND Expr1 { $$ = make_AndExpr($1, $3); YY_RESULT_Expr_= $$; }
 Expr1 : _SYMB_NOT Expr1 { $$ = make_NotExpr($2); YY_RESULT_Expr_= $$; }
   | Expr2 { $$ = $1; YY_RESULT_Expr_= $$; }
 ;
-Expr2 : Text _SYMB_STAR Text { $$ = make_PartExpr($1, $3); YY_RESULT_Expr_= $$; }
-  | Text _SYMB_STAR { $$ = make_LPartExpr($1); YY_RESULT_Expr_= $$; }
-  | _SYMB_STAR Text { $$ = make_RPartExpr($2); YY_RESULT_Expr_= $$; }
-  | Text { $$ = make_TextExpr($1); YY_RESULT_Expr_= $$; }
+
+LPart : Text _SYMB_STAR { $$ = make_LPart($1); YY_RESULT_LPart_= $$; }
+
+LPartList : /* empty */ { $$ = 0; YY_RESULT_LPartList_= $$; }
+           | LPart LPartList { $$ = make_LPartList($1, $2); YY_RESULT_LPartList_ = $$; }
+
+RPart : _SYMB_STAR Text  { $$ = make_RPart($2); YY_RESULT_RPart_= $$; }
+
+RPartList : /* empty */ { $$ = 0; YY_RESULT_RPartList_= $$; }
+           | RPart RPartList { $$ = make_RPartList($1, $2); YY_RESULT_RPartList_ = $$; }
+
+Part : Text RPartList { $$ = make_MiddleStarPart($1, $2); YY_RESULT_Part_ = $$; }
+     | Text _SYMB_STAR LPartList { $$ = make_RightStarPart($1, $3); YY_RESULT_Part_ = $$; }
+     | _SYMB_STAR Text RPartList { $$ = make_LeftStarPart($2, $3); YY_RESULT_Part_ = $$; }
+     | _SYMB_STAR Text _SYMB_STAR LPartList { $$ = make_BothStarPart($2, $4); YY_RESULT_Part_ = $$; }
+
+
+/*
+Part : _SYMB_STAR LPartList Text { $$ = make_Part($2, $3);
+      | LPartList Text
+      | LPartList
+      | _SYMB_STAR LPartList
+
+Part : Text
+      | Text _SYMB_STAR
+      | _SYMB_STAR Part
+      | Text _SYMB_STAR Text
+*/
+Expr2 : Part {$$ = make_PartExpr($1); YY_RESULT_Expr_ = $$;}
   | _SYMB_LBRACKET Expr _SYMB_RBRACKET { $$ = $2; YY_RESULT_Expr_= $$; }
 ;
 QueryList : Query { $$ = make_QueryList($1, 0); YY_RESULT_QueryList_= $$; }

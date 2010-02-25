@@ -1,5 +1,5 @@
 define
-collection: Vorderas*
+collection: *deras*
 text: {tt}nig2
 {museum: *"VAT 12"*} 
 as "cos"

@@ -27,6 +27,16 @@ struct Query_;
 typedef struct Query_ *Query;
 struct QueryLine_;
 typedef struct QueryLine_ *QueryLine;
+struct Part_;
+typedef struct Part_ *Part;
+struct LPart_;
+typedef struct LPart_ *LPart;
+struct RPart_;
+typedef struct RPart_ *RPart;
+struct LPartList_;
+typedef struct LPartList_ *LPartList;
+struct RPartList_;
+typedef struct RPartList_ *RPartList;
 struct Expr_;
 typedef struct Expr_ *Expr;
 typedef int Text;
@@ -76,20 +86,64 @@ struct Expr_
     struct { Expr expr_1, expr_2; } andexpr_;
     struct { Expr expr_1, expr_2; } orexpr_;
     struct { Expr expr_; } notexpr_;
-    struct { Text text_1, text_2; } partexpr_;
-    struct { Text text_1; } lpartexpr_;
-    struct { Text text_; } rpartexpr_;
-    struct { Text text_; } textexpr_;
+    struct { Part part; } partexpr_;
   } u;
 };
 
 Expr make_AndExpr(Expr p0, Expr p1);
 Expr make_OrExpr(Expr p0, Expr p1);
 Expr make_NotExpr(Expr p0);
-Expr make_PartExpr(Text p0, Text p1);
-Expr make_LPartExpr(Text p0);
-Expr make_RPartExpr(Text p0);
-Expr make_TextExpr(Text p0);
+Expr make_PartExpr(Part p);
+
+
+struct LPart_
+{
+    Text text;
+};
+
+LPart make_LPart(Text t);
+
+struct RPart_
+{
+    Text text;
+};
+
+RPart make_RPart(Text t);
+
+struct LPartList_
+{
+    LPart lpart_;
+    LPartList lpartlist_;
+};
+
+LPartList make_LPartList(LPart p, LPartList l);
+
+struct RPartList_
+{
+    RPart rpart_;
+    RPartList rpartlist_;
+};
+
+RPartList make_RPartList(RPart p, RPartList l);
+
+struct Part_
+{
+  enum { is_MiddleStarPart, is_RightStarPart, is_LeftStarPart, is_BothStarPart } kind;
+  union
+  {
+    struct { Text text_; RPartList rpartlist_; } middlestar_;
+    struct { Text text_; LPartList lpartlist_; } rightstar_;
+    struct { Text text_; RPartList rpartlist_; } leftstar_;
+    struct { Text text_; LPartList lpartlist_; } bothstar_;
+  } u;
+};
+
+Part make_MiddleStarPart(Text t, RPartList l);
+Part make_RightStarPart(Text t, LPartList l);
+Part make_LeftStarPart(Text t, RPartList l);
+Part make_BothStarPart(Text t, LPartList l);
+
+
 
 struct QueryList_
 {

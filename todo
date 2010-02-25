@@ -1,6 +1,7 @@
+testować gwiazdki
+
 KONCEPCYJNE
 kilka gwiazdek możliwych (*coś*coś2*)
-umożliwić zapytanie typu: search in "zwierzaki" (bez zapytania w środku)
 zaimplementowac wyszukiwanie po klinach
 parsowanie tagów w database_config.c
 
@@ -30,6 +31,7 @@ Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
 ładniejszy obrazek do pakietów
 nazwa do wyszukiwania po klinach (cunetext??)
 pozmieniac nazwy (ZapZloz) w pakietach
+dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
 
 sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć) => parser.c jest nie potrzebny - generuje się z TQL.y
 

@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "Buffer.h"
 
 int _n_;
 char* buf_;
@@ -205,6 +206,61 @@ char *ppQueryLine(QueryLine _p_, int _i_)
 
 }
 
+
+char* ppLPart(LPart p){
+    return translator_star(ppText(p->text), NULL);
+}
+
+
+char* ppRPart(RPart p){
+    return translator_star(NULL, ppText(p->text));
+}
+
+
+void ppLPartList(bufor buf, LPartList l){
+    while(l){
+        bufAppendS(buf, ppLPart(l->lpart_));
+        l = l->lpartlist_;
+    }
+}
+
+
+void ppRPartList(bufor buf, RPartList l){
+    while(l){
+        bufAppendS(buf, ppLPart(l->rpart_));
+        l = l->rpartlist_;
+    }
+}
+
+
+char* ppPart(Part p) {
+    bufor buf = malloc(sizeof(_bufor));
+    bufReset(buf);
+    switch(p->kind){
+        case is_MiddleStarPart:
+            bufAppendS(buf, ppText(p->u.middlestar_.text_));
+            ppRPartList(buf, p->u.middlestar_.rpartlist_);
+            break;
+        case is_RightStarPart:
+            bufAppendS(buf, translator_star(ppText(p->u.rightstar_.text_), NULL));
+            ppLPartList(buf, p->u.rightstar_.lpartlist_);
+            break;
+        case is_LeftStarPart:
+            bufAppendS(buf, translator_star(NULL, ppText(p->u.leftstar_.text_)));
+            ppRPartList(buf, p->u.leftstar_.rpartlist_);
+            break;
+        case is_BothStarPart:
+            bufAppendS(buf, translator_star(NULL, translator_star(ppText(p->u.bothstar_.text_), NULL)));
+            ppLPartList(buf, p->u.bothstar_.lpartlist_);
+            break;
+        default:
+            fprintf(stderr, "Error: bad kind field when printing Part!\n");
+            exit(1);
+    }
+    return buf->buf;
+}
+
+
 char *ppExpr(Expr _p_, Ident id, int _i_)
 {
   //char *format = zapytanie(id);
@@ -218,20 +274,15 @@ char *ppExpr(Expr _p_, Ident id, int _i_)
     return translator_not(id, ppExpr(_p_->u.notexpr_.expr_, id, 1));
 
   case is_PartExpr:
-    return translator_simpleText(id, translator_star(ppText(_p_->u.partexpr_.text_1), ppText(_p_->u.partexpr_.text_2)));
+    return translator_simpleText(id, ppPart(_p_->u.partexpr_.part));
 
-  case is_LPartExpr:
-    return translator_simpleText(id, translator_star(ppText(_p_->u.lpartexpr_.text_1), NULL));
-
-  case is_RPartExpr:
-    return translator_simpleText(id, translator_star(NULL, ppText(_p_->u.rpartexpr_.text_)));
-  case is_TextExpr:
-    return translator_simpleText(id, ppText(_p_->u.textexpr_.text_));
   default:
     fprintf(stderr, "Error: bad kind field when translating Expr!\n");
     exit(1);
   }
 }
+
+
 
 void ppQueryList(QueryList querylist, int i)
 {

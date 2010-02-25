@@ -189,7 +189,7 @@ Expr make_NotExpr(Expr p1)
 
 
 /********************   PartExpr    ********************/
-Expr make_PartExpr(Text p1, Text p2)
+Expr make_PartExpr(Part p)
 {
   Expr tmp = (Expr) malloc(sizeof(*tmp));
   if (!tmp)
@@ -198,60 +198,116 @@ Expr make_PartExpr(Text p1, Text p2)
     exit(1);
   }
   tmp->kind = is_PartExpr;
-  tmp->u.partexpr_.text_1 = p1;
-  tmp->u.partexpr_.text_2 = p2;
-
+  tmp->u.partexpr_.part = p;
   return tmp;
 }
 
 
-/********************   LPartExpr    ********************/
-Expr make_LPartExpr(Text p1)
+LPart make_LPart(Text t)
 {
-  Expr tmp = (Expr) malloc(sizeof(*tmp));
+  LPart tmp = (LPart) malloc(sizeof(*tmp));
   if (!tmp)
   {
-    fprintf(stderr, "Error: out of memory when allocating LPartExpr!\n");
+    fprintf(stderr, "Error: out of memory when allocating LPart!\n");
     exit(1);
   }
-  tmp->kind = is_LPartExpr;
-  tmp->u.lpartexpr_.text_1 = p1;
-
-  return tmp;
+  tmp->text = t;
+  return tmp; 
 }
 
-
-/********************   RPartExpr    ********************/
-Expr make_RPartExpr(Text p1)
+RPart make_RPart(Text t)
 {
-  Expr tmp = (Expr) malloc(sizeof(*tmp));
+  RPart tmp = (RPart) malloc(sizeof(*tmp));
   if (!tmp)
   {
-    fprintf(stderr, "Error: out of memory when allocating RPartExpr!\n");
+    fprintf(stderr, "Error: out of memory when allocating RPart!\n");
     exit(1);
   }
-  tmp->kind = is_RPartExpr;
-  tmp->u.rpartexpr_.text_ = p1;
-
-  return tmp;
+  tmp->text = t;
+  return tmp; 
 }
 
-
-/********************   TextExpr    ********************/
-Expr make_TextExpr(Text p1)
+LPartList make_LPartList(LPart p, LPartList l)
 {
-  Expr tmp = (Expr) malloc(sizeof(*tmp));
+  LPartList tmp = (LPartList) malloc(sizeof(*tmp));
   if (!tmp)
   {
-    fprintf(stderr, "Error: out of memory when allocating TextExpr!\n");
+    fprintf(stderr, "Error: out of memory when allocating LPartList!\n");
     exit(1);
   }
-  tmp->kind = is_TextExpr;
-  tmp->u.textexpr_.text_ = p1;
+  tmp->lpart_ = p;
+  tmp->lpartlist_ = l;
+  return tmp; 
+}
 
+RPartList make_RPartList(RPart p, RPartList l)
+{
+  RPartList tmp = (RPartList) malloc(sizeof(*tmp));
+  if (!tmp)
+  {
+    fprintf(stderr, "Error: out of memory when allocating RPartList!\n");
+    exit(1);
+  }
+  tmp->rpart_ = p;
+  tmp->rpartlist_ = l;
+  return tmp; 
+}
+
+Part make_MiddleStarPart(Text t, RPartList l)
+{
+  Part tmp = (Part) malloc(sizeof(*tmp));
+  if (!tmp)
+  {
+    fprintf(stderr, "Error: out of memory when allocating MiddleStarPart!\n");
+    exit(1);
+  }
+  tmp->kind = is_MiddleStarPart;
+  tmp->u.middlestar_.text_ = t;
+  tmp->u.middlestar_.rpartlist_ = l;
   return tmp;
 }
 
+Part make_RightStarPart(Text t, LPartList l)
+{
+  Part tmp = (Part) malloc(sizeof(*tmp));
+  if (!tmp)
+  {
+    fprintf(stderr, "Error: out of memory when allocating RightStarPart!\n");
+    exit(1);
+  }
+  tmp->kind = is_RightStarPart;
+  tmp->u.rightstar_.text_ = t;
+  tmp->u.rightstar_.lpartlist_ = l;
+  return tmp;
+}
+
+Part make_LeftStarPart(Text t, RPartList l)
+{
+  Part tmp = (Part) malloc(sizeof(*tmp));
+  if (!tmp)
+  {
+    fprintf(stderr, "Error: out of memory when allocating LeftStarPart!\n");
+    exit(1);
+  }
+  tmp->kind = is_LeftStarPart;
+  tmp->u.leftstar_.text_ = t;
+  tmp->u.leftstar_.rpartlist_ = l;
+  return tmp;
+}
+
+Part make_BothStarPart(Text t, LPartList l)
+{
+  Part tmp = (Part) malloc(sizeof(*tmp));
+  if (!tmp)
+  {
+    fprintf(stderr, "Error: out of memory when allocating BothStarPart!\n");
+    exit(1);
+  }
+  tmp->kind = is_BothStarPart;
+  tmp->u.bothstar_.text_ = t;
+  tmp->u.bothstar_.lpartlist_ = l;
+  return tmp;
+}
 
 /********************   QueryList    ********************/
 QueryList make_QueryList(Query p1, QueryList p2)

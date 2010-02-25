@@ -123,25 +123,54 @@ void contextExpr(Expr _p_)
     break;
   case is_PartExpr:
     /* Code for PartExpr Goes Here */
-    contextText(_p_->u.partexpr_.text_1);
-    contextText(_p_->u.partexpr_.text_2);
+    contextPart(_p_->u.partexpr_.part);
     break;
-  case is_LPartExpr:
-    /* Code for LPartExpr Goes Here */
-    contextText(_p_->u.lpartexpr_.text_1);
-    break;
-  case is_RPartExpr:
-    /* Code for RPartExpr Goes Here */
-    contextText(_p_->u.rpartexpr_.text_);
-    break;
-  case is_TextExpr:
-    /* Code for TextExpr Goes Here */
-    contextText(_p_->u.textexpr_.text_);
-    break;
-
-  default:
+   default:
     fprintf(stderr, "Error: bad kind field when printing Expr!\n");
     exit(1);
+  }
+}
+
+void contextLPart(LPart p){
+
+}
+
+
+void contextRPart(RPart p){
+
+}
+
+
+void contextLPartList(LPartList l){
+
+}
+
+
+void contextRPartList(RPart l){
+
+}
+
+void contextPart(Part p){
+    switch(p->kind){
+        case is_MiddleStarPart:
+            contextText(p->u.middlestar_.text_);
+            contextRPartList(p->u.middlestar_.rpartlist_);
+            break;
+        case is_RightStarPart:
+            contextText(p->u.rightstar_.text_);
+            contextLPartList(p->u.rightstar_.lpartlist_);
+            break;
+        case is_LeftStarPart:
+            contextText(p->u.leftstar_.text_);
+            contextRPartList(p->u.leftstar_.rpartlist_);
+            break;
+        case is_BothStarPart:
+            contextText(p->u.bothstar_.text_);
+            contextLPartList(p->u.bothstar_.lpartlist_);
+            break;
+        default:
+            fprintf(stderr, "Error: bad kind field when printing Part!\n");
+            exit(1);
   }
 }
 

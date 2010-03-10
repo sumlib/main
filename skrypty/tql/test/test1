@@ -1,7 +1,6 @@
 define
 collection: *deras*
-text: {tt}nig2
-{museum: *"VAT 12"*} 
+text: "uruda bi"
 as "cos"
 
 search "cos"

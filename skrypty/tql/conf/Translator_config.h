@@ -1,8 +1,6 @@
 #define MAX_POL 9
 #ifndef _CONFIG_FILE_
 #define _CONFIG_FILE_
-#define ZMIENNA "###"
-
 
   int fieldsCount();
   char *fieldName(int i);

@@ -1,4 +1,5 @@
 #include "Translator_config.h"
+#include "Translator_common.c"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -11,7 +12,6 @@
 #define VAR "###"
 
 
-static char *fieldsNames[] = { "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "museum", "collection", NULL};
 static char *queries[] = {"p.value LIKE '###'", "t.publication LIKE '###'", "pd.value LIKE '###'", "t.date_of_origin LIKE '###'", "g1.value LIKE '###' OR g2.value LIKE '###'", "", "t.cdli_id LIKE '###'", TEXT, "t.museum LIKE '###'", "c.value LIKE '###'", NULL};
 int from_level=0, select_level=0;
 
@@ -59,17 +59,6 @@ void translator_initSingleQuery(){
     bufAppendS(buf_where, "");
 }
 
-
-int count =0;
-int fieldsCount(){
-  if(!count){
-	for(;fieldsNames[count]!=NULL;count++);
-  }
-  return count;
-}
-char *fieldName(int i){
-  return fieldsNames[i];
-}
 
 char *translateTextQuery(int id, char *text){
   _bufor tmp;

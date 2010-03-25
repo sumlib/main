@@ -10,7 +10,7 @@ BISON_OPTS = -t -pTQL
 LATEX = latex
 DVIPS = dvips
 
-OBJS = Absyn.o Lexer.o Parser.o Test.o Symbols.o Translator.o Context.o Cexplode.o Database.o Err.o Buffer.o
+OBJS = Absyn.o Lexer.o Parser.o main.o Symbols.o Translator.o Context.o Cexplode.o Database.o Err.o Buffer.o conf/Translator_common.o
 POSTGRES_OBJS = conf/Translator_postgres.o conf/Database_postgres.o
 
 all: postgresTQL
@@ -19,10 +19,10 @@ all: postgresTQL
 .PHONY: clean distclean
 
 clean:
-	rm -f *.o TQL.dvi TQL.aux TQL.log TQL.ps testTQL
+	rm -f *.o TQL.dvi TQL.aux TQL.log TQL.ps postgresTQL
 
-distclean: clean
-	rm -f *.o Absyn.c Absyn.h Test.c Parser.c Parser.h Lexer.c Translator.c Translator.h TQL.l TQL.y TQL.tex TQL.dvi TQL.aux TQL.log TQL.ps testTQL Makefile
+#distclean: clean
+#	rm -f *.o Absyn.c Absyn.h Test.c Parser.c Parser.h Lexer.c Translator.c Translator.h TQL.l TQL.y TQL.tex TQL.dvi TQL.aux TQL.log TQL.ps testTQL Makefile
 
 postgresTQL: ${OBJS} ${POSTGRES_OBJS}
 	@echo "Linking testTQL..."
@@ -51,15 +51,6 @@ Lexer.o: Lexer.c Parser.h  Symbols.h
 
 Parser.o: Parser.c Absyn.h Symbols.h
 	${CC} ${CCFLAGS} -c Parser.c
-
-Translator.o: Translator.c Absyn.h Symbols.h Translator.h conf/Translator_config.h
-	${CC} ${CCFLAGS} -c Translator.c
-
-Context.o: Context.c Absyn.h Symbols.h Context.h conf/Translator_config.h
-	${CC} ${CCFLAGS} -c Context.c
-
-Test.o: Test.c Parser.h Absyn.h  Symbols.h conf/Translator_config.h
-	${CC} ${CCFLAGS} -c Test.c
 
 TQL.dvi: TQL.tex
 	${LATEX} TQL.tex

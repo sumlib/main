@@ -7,3 +7,4 @@
 /manifest.mf
 /*.dep.inc
 /testTQL
+/postgresTQL

@@ -15,6 +15,7 @@ void contextQueryLineList(QueryLineList p);
 //void contextListPrzerwa(SpaceList p);
 void contextText(Text p);
 void contextName(Name p);
+void contextPart(Part p);
 
 void contextMytoken(MyToken p);
 void contextIdent(Ident i);

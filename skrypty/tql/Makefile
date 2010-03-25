@@ -10,7 +10,11 @@ BISON_OPTS = -t -pTQL
 LATEX = latex
 DVIPS = dvips
 
-all: testTQL TQL.ps
+OBJS = Absyn.o Lexer.o Parser.o Test.o Symbols.o Translator.o Context.o Cexplode.o Database.o Err.o Buffer.o
+POSTGRES_OBJS = conf/Translator_postgres.o conf/Database_postgres.o
+
+all: postgresTQL
+#TQL.ps
 
 .PHONY: clean distclean
 
@@ -20,37 +24,21 @@ clean:
 distclean: clean
 	rm -f *.o Absyn.c Absyn.h Test.c Parser.c Parser.h Lexer.c Translator.c Translator.h TQL.l TQL.y TQL.tex TQL.dvi TQL.aux TQL.log TQL.ps testTQL Makefile
 
-testTQL: Absyn.o Lexer.o Parser.o Test.o Symbols.o Translator.o conf/Translator_config.o Context.o Cexplode.o Database.o Err.o
+postgresTQL: ${OBJS} ${POSTGRES_OBJS}
 	@echo "Linking testTQL..."
-	${CC} ${CCFLAGS} *.o -o testTQL -lpq
+	${CC} ${CCFLAGS} *.o -o postgresTQL -lpq
 
-#Symbols_test: Symbols.o Symbols_test.o
+${POSTGRES_OBJS}: %_postgres.o: %_postgres.c %_config.h Buffer.o
+	@echo "compiling " $*
+	${CC} ${CCFLAGS} -c $<
 
-Symbols.o: Symbols.c Symbols.h
-	${CC} ${CCFLAGS} -c Symbols.c
+%.o : %.c %.h
+	${CC} ${CCFLAGS} -c $<
 
-conf/Translator_config.o: conf/Translator_config.c conf/Translator_config.h Buffer.o
-	${CC} ${CCFLAGS} -c conf/Translator_config.c
-
-conf/Database_config.o: conf/Database_config.c conf/Database_config.h Buffer.o
-	${CC} ${CCFLAGS} -c conf/Database_config.c
-	
-Database.o: Database.c  Database.h conf/Database_config.o
-	${CC} ${CCFLAGS} -c Database.c	
-	
-Cexplode.o: Cexplode.c Cexplode.h
-	${CC} ${CCFLAGS} -c Cexplode.c
-	
-Buffer.o: Buffer.c Buffer.h
-	${CC} ${CCFLAGS} -c Buffer.c
-
-Err.o: Err.c Err.h
-	${CC} ${CCFLAGS} -c Err.c
-	
 #Symbols_test.o: Symbols_test.c Symbols.h
 
-Absyn.o: Absyn.c Absyn.h conf/Translator_config.h
-	${CC} ${CCFLAGS} -c Absyn.c
+#Absyn.o: Absyn.c Absyn.h conf/Translator_config.h
+#	${CC} ${CCFLAGS} -c Absyn.c
 
 Lexer.c: TQL.l
 	${FLEX} ${FLEX_OPTS} -oLexer.c TQL.l

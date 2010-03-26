@@ -1,6 +1,7 @@
 #include "Database.h"
 #include "conf/Database_config.h"
 #include "Buffer.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 #define oneTab(n) tabs->tabs[n]

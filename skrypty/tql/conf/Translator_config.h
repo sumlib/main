@@ -1,4 +1,4 @@
-#define MAX_POL 9
+#define MAX_POL 10
 #ifndef _CONFIG_FILE_
 #define _CONFIG_FILE_
 

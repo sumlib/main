@@ -1,42 +1,42 @@
-testować gwiazdki
++> testować gwiazdki
 
 KONCEPCYJNE
-kilka gwiazdek możliwych (*coś*coś2*)
-zaimplementowac wyszukiwanie po klinach
-parsowanie tagów w database_config.c
++> kilka gwiazdek możliwych (*coś*coś2*)
+=> zaimplementowac wyszukiwanie po klinach
+=> parsowanie tagów w database_config.c
 
 
 
 PORZĄDKOWE
-??dalsze tłumaczenie nazw funkcji (zmiana nazw funkcji na takie jak na prezentacji)
+?> dalsze tłumaczenie nazw funkcji (zmiana nazw funkcji na takie jak na prezentacji)
 
-Źle się wrzucają "IM —"
-lepsze wykrywanie uszkodzeń
-przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
-wyszukiwanie po tagach
+=> Źle się wrzucają "IM —"
+=> lepsze wykrywanie uszkodzeń
+=> przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)
+=> wyszukiwanie po tagach
 
-wrzucanie do bazy - co z numerem węzła "znaków specjalnych"? (koniec linii, tablet, seal, obverse itp)
+=> wrzucanie do bazy - co z numerem węzła "znaków specjalnych"? (koniec linii, tablet, seal, obverse itp)
 
-??usunąć @ z translatora
+?> usunąć @ z translatora
 
-plik Translator_config.c - funkcja replace jest używana na zasadzie copy-paste - użyć poprawnie (-;
-end of file dla inputu stdin
-w skryptach pythonowych - wydzielić funkcje do bazy i używać tylko dobrego modułu do pg!!
+=> plik Translator_config.c - funkcja replace jest używana na zasadzie copy-paste - użyć poprawnie (-;
+=> end of file dla inputu stdin
+=> w skryptach pythonowych - wydzielić funkcje do bazy i używać tylko dobrego modułu do pg!!
 
-komentarze w języku - spytać Stępnia co o tym myśli (-;
+=> komentarze w języku - spytać Stępnia co o tym myśli (-;
 
 PRACA:
-ładniejszy obrazek dziedziny problemu
-Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
-ładniejszy obrazek do pakietów
-nazwa do wyszukiwania po klinach (cunetext??)
-pozmieniac nazwy (ZapZloz) w pakietach
-dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
+=> ładniejszy obrazek dziedziny problemu
+=> Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
+=> ładniejszy obrazek do pakietów
+=> nazwa do wyszukiwania po klinach (cunetext??)
+=> pozmieniac nazwy (ZapZloz) w pakietach
+=> dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
 
-sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć) => parser.c jest nie potrzebny - generuje się z TQL.y
++> sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć) -> parser.c jest nie potrzebny - generuje się z TQL.y
 
 UWAGI DĄBROWSKIEGO:
-opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
+=> opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
 Rozdział 1:
 => podzielić definicje na pojęcia dziedzinowe, informatyczne i paradygmatowe??
 	-> DSL (paradygmat)

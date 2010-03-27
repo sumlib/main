@@ -37,6 +37,7 @@ int main(int argc, char ** argv)
     contextComplexQuery(parse_tree);
     //getXmlFromQuery(translateComplexQuery(parse_tree));
     printf("%s\n\n", getXmlFromQuery(translateComplexQuery(parse_tree)));
+    //printf("%s\n\n", translateComplexQuery(parse_tree));
 
     return 0;
   }

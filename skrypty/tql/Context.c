@@ -81,7 +81,7 @@ void contextQuery(Query _p_)
           _p_->u.simplequery_.tabqueryline_[i] = NULL;
       zapyt = merge_queries(_p_, zapyt);
       if(zapyt)
-          _p_ = zapyt;
+          *_p_ = *zapyt;
       break;
 
   case is_EmptyQuery:

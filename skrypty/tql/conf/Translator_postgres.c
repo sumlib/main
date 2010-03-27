@@ -4,7 +4,6 @@
 #include <string.h>
 #include <stdio.h>
 #include "../Cexplode.h"
-#include "../Buffer.h"
 
 #define TEXT "??"
 //id_seq - id seqencji odczytów/klinów po której wyszukujemy
@@ -177,16 +176,7 @@ char *add_id_seq(const char *text){
 }
 
 char *concat(char *expr1, char *connector, char* expr2, int useBrackets){
-  _bufor buffer;
-  bufReset(&buffer);
-  if(useBrackets)  bufAppendS(&buffer, "   (\n ");
-  else bufAppendS(&buffer, "");
-  bufAppendS(&buffer, add_id_seq(expr1));
-  bufAppendS(&buffer, connector);
-  bufAppendS(&buffer, expr2);
-  if(useBrackets) bufAppendS(&buffer, "   )\n");
-  //fprintf(stderr, "bufor: %s\n", buffer);
-  return strdup(buffer.buf);
+    return concatenate(add_id_seq(expr1), connector, expr2, useBrackets);
 }
 char *translator_or(int id, char *expr1, char *expr2) {
   if (strcmp(queries[id],TEXT) == 0) {

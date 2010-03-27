@@ -1,0 +1,7 @@
+define
+collection: *deras*
+text: uruda
+as "cos"
+
+search "cos"
+

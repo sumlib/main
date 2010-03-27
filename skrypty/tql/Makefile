@@ -14,7 +14,8 @@ OBJS = Absyn.o Lexer.o Parser.o main.o Symbols.o Translator.o Context.o Cexplode
 POSTGRES_OBJS = conf/Translator_postgres.o conf/Database_postgres.o
 
 all: postgresTQL
-#TQL.ps
+
+test: testPostgresTQL
 
 .PHONY: clean distclean
 
@@ -23,6 +24,10 @@ clean:
 
 #distclean: clean
 #	rm -f *.o Absyn.c Absyn.h Test.c Parser.c Parser.h Lexer.c Translator.c Translator.h TQL.l TQL.y TQL.tex TQL.dvi TQL.aux TQL.log TQL.ps testTQL Makefile
+
+testPostgresTQL: postgresTQL
+	@echo "Testing postgresTQL..."
+	auto_test/auto_test.sh ./postgresTQL
 
 postgresTQL: ${OBJS} ${POSTGRES_OBJS}
 	@echo "Linking testTQL..."

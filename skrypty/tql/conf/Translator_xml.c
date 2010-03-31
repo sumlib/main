@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include "Translator_config.h"
 #include "../Buffer.h"
 
@@ -19,19 +21,19 @@ char *translator_simpleText(int i, char *text){
 }
 
 char *translator_or(int id, char *expr1, char *expr2){
-    return concat(expr1, " OR ", expr2, 0);
+    return concatenate(expr1, " OR ", expr2, 0);
 }
 
 char *translator_and(int id, char *expr1, char *expr2){
-    return concat(expr1, " AND ", expr2, 0);
+    return concatenate(expr1, " AND ", expr2, 0);
 }
 
 char *translator_not(int id, char *expr1){
-    return concat(NULL, " NOT ", expr1, 0);
+    return concatenate(NULL, " NOT ", expr1, 0);
 }
 
 char *translator_star(char *frag1, char *frag2){
-    return concat(frag1, " * ", frag2, 0);
+    return concatenate(frag1, " * ", frag2, 0);
 }
 
 void translator_mergeLines(char *line, int id){
@@ -39,5 +41,5 @@ void translator_mergeLines(char *line, int id){
 }
 
 char *translator_getResult(){
-    return buf_result.buf;
+    return buf_result->buf;
 }

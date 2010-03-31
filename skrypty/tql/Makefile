@@ -10,17 +10,18 @@ BISON_OPTS = -t -pTQL
 LATEX = latex
 DVIPS = dvips
 
-OBJS = Absyn.o Lexer.o Parser.o main.o Symbols.o Translator.o Context.o Cexplode.o Database.o Err.o Buffer.o conf/Translator_common.o
+OBJS = conf/Translator_common.o Absyn.o Lexer.o Parser.o main.o Symbols.o Translator.o Context.o Cexplode.o Database.o Err.o Buffer.o
 POSTGRES_OBJS = conf/Translator_postgres.o conf/Database_postgres.o
+XML_OBJS = conf/Translator_xml.o conf/Database_xml.o
 
-all: postgresTQL
+all: xmlTQL postgresTQL
 
-test: testPostgresTQL
+#test: testPostgresTQL
 
 .PHONY: clean distclean
 
 clean:
-	rm -f *.o TQL.dvi TQL.aux TQL.log TQL.ps postgresTQL
+	rm -f *.o conf/*.o TQL.dvi TQL.aux TQL.log TQL.ps postgresTQL xmlTQL
 
 #distclean: clean
 #	rm -f *.o Absyn.c Absyn.h Test.c Parser.c Parser.h Lexer.c Translator.c Translator.h TQL.l TQL.y TQL.tex TQL.dvi TQL.aux TQL.log TQL.ps testTQL Makefile
@@ -30,15 +31,24 @@ testPostgresTQL: postgresTQL
 	auto_test/auto_test.sh ./postgresTQL
 
 postgresTQL: ${OBJS} ${POSTGRES_OBJS}
-	@echo "Linking testTQL..."
-	${CC} ${CCFLAGS} *.o -o postgresTQL -lpq
+	@echo "Linking postgresTQL..."
+	${CC} ${CCFLAGS} ${OBJS} ${POSTGRES_OBJS} -o postgresTQL -lpq
+
+xmlTQL: ${OBJS} ${XML_OBJS}
+	@echo "Linking xmlTQL..."
+	${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lpq
+
 
 ${POSTGRES_OBJS}: %_postgres.o: %_postgres.c %_config.h Buffer.o
 	@echo "compiling " $*
-	${CC} ${CCFLAGS} -c $<
+	${CC} ${CCFLAGS} -c $< -o $*_postgres.o
+
+${XML_OBJS}: %_xml.o: %_xml.c %_config.h Buffer.o
+	@echo "compiling " $*
+	${CC} ${CCFLAGS} -c $< -o $*_xml.o
 
 %.o : %.c %.h
-	${CC} ${CCFLAGS} -c $<
+	${CC} ${CCFLAGS} -c $< -o $*.o
 
 #Symbols_test.o: Symbols_test.c Symbols.h
 

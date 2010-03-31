@@ -3,11 +3,12 @@
 #include "../Buffer.h"
 
 #include <stdlib.h>
+#include <string.h>
 
 static char *fieldsNames[] = {"provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "museum", "collection", NULL};
 
-int translator_count =0;
 int fieldsCount(){
+  int translator_count =0;
   if(!translator_count){
 	for(;fieldsNames[translator_count]!=NULL;translator_count++);
         if(translator_count > MAX_POL)

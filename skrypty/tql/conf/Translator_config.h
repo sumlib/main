@@ -1,9 +1,11 @@
 #define MAX_POL 10
 #ifndef _CONFIG_FILE_
 #define _CONFIG_FILE_
+#include "Translator_common.h"
 
   int fieldsCount();
   char *fieldName(int i);
+  char *concatenate(char *expr1, char *connector, char* expr2, int useBrackets);
 
   void translator_initSingleQuery();
 

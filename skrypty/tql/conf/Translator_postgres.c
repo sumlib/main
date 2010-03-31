@@ -1,9 +1,11 @@
 #include "Translator_config.h"
-#include "Translator_common.c"
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
 #include "../Cexplode.h"
+#include "../Buffer.h"
 
 #define TEXT "??"
 //id_seq - id seqencji odczytów/klinów po której wyszukujemy

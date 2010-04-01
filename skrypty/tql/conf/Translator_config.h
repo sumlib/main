@@ -1,7 +1,6 @@
 #define MAX_POL 10
 #ifndef _CONFIG_FILE_
 #define _CONFIG_FILE_
-#include "Translator_common.h"
 
   int fieldsCount();
   char *fieldName(int i);

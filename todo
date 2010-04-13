@@ -6,7 +6,14 @@ KONCEPCYJNE
 => parsowanie tagów w database_config.c
 
 
-=> XML!!!!!
+=> XML!!!
+A -> wypróbować bazę zorba
+O -> wyrzucić id ze strukturki i wynikowego xml-a
+O -> przetestować na bardziej skomplikowanych zapytaniach
+  
+A -> przepisywanie do strukturki
+
+
 
 PORZĄDKOWE
 ?> dalsze tłumaczenie nazw funkcji (zmiana nazw funkcji na takie jak na prezentacji)

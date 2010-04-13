@@ -6,7 +6,9 @@ tql_prog=$1
 function do_test(){
     out=`echo $1 | cut -d. -f1`
     out=`echo $out.out`
-     $tql_prog $1 | grep "<tablet " | cut -d\" -f2 | diff -wB - $out >/dev/null 
+    #ret=`$tql_prog $1 | grep "<tablet " | cut -d\" -f4`
+    #echo $ret
+      $tql_prog $1 | grep "<tablet " | cut -d\" -f4 | diff -wB - $out >/dev/null
     return $?    
 }
 

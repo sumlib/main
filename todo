@@ -6,6 +6,7 @@ KONCEPCYJNE
 => parsowanie tagów w database_config.c
 
 
+=> XML!!!!!
 
 PORZĄDKOWE
 ?> dalsze tłumaczenie nazw funkcji (zmiana nazw funkcji na takie jak na prezentacji)
@@ -20,7 +21,7 @@ PORZĄDKOWE
 ?> usunąć @ z translatora
 
 => plik Translator_config.c - funkcja replace jest używana na zasadzie copy-paste - użyć poprawnie (-;
-=> end of file dla inputu stdin
+?> end of file dla inputu stdin
 => w skryptach pythonowych - wydzielić funkcje do bazy i używać tylko dobrego modułu do pg!!
 
 => komentarze w języku - spytać Stępnia co o tym myśli (-;

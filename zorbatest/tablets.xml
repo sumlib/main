@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tablets>
+<tablet>
+<idCDLI>P011110</idCDLI>
+<publication>WF 151*, Deimel, Anton, 1924</publication>
+<provenience>Fara</provenience>
+<period>ED IIIa</period>
+<measurements>?x?x?</measurements>
+<genre>Administrative</genre>
+<subgenre></subgenre>
+<collection>Vorderasiatisches Museum, Berlin, Germany</collection>
+<museum>VAT 09115
+</museum>
+<text>
+<graph>
+<edge symbol="normal" node1="40" node2="50">
+1(u@c)</edge>
+<edge symbol="normal" node1="50" node2="60">
+2(asz@c)</edge>
+<edge symbol="normal" node1="60" node2="70">
+ma-na#</edge>
+<edge symbol="normal" node1="70" node2="80">
+uruda</edge>
+<edge symbol="normal" node1="90" node2="100">
+dub-dim2</edge>
+<edge symbol="normal" node1="110" node2="120">
+1(asz@c)</edge>
+<edge symbol="normal" node1="120" node2="130">
+1(barig@c)</edge>
+<edge symbol="normal" node1="130" node2="140">
+tug2</edge>
+<edge symbol="normal" node1="150" node2="160">
+1(asz@c)</edge>
+<edge symbol="normal" node1="160" node2="170">
+1(barig@c)</edge>
+<edge symbol="normal" node1="170" node2="180">
+tug2</edge>
+<edge symbol="normal" node1="190" node2="200">
+3(asz@c)</edge>
+<edge symbol="normal" node1="200" node2="210">
+ma-na</edge>
+<edge symbol="normal" node1="210" node2="220">
+uruda</edge>
+<edge symbol="normal" node1="220" node2="230">
+tug2</edge>
+<edge symbol="normal" node1="240" node2="250">
+5(asz@c)#</edge>
+<edge symbol="normal" node1="250" node2="260">
+ma-na</edge>
+<edge symbol="normal" node1="260" node2="270">
+uruda</edge>
+<edge symbol="normal" node1="280" node2="290">
+dub#-dim2#?</edge>
+<edge symbol="normal" node1="310" node2="320">
+2(asz@c)#</edge>
+<edge symbol="normal" node1="320" node2="330">
+ma#-na#</edge>
+<edge symbol="normal" node1="330" node2="340">
+uruda#</edge>
+<edge symbol="normal" node1="350" node2="360">
+2(asz@c)#</edge>
+<edge symbol="normal" node1="360" node2="370">
+ma-na#</edge>
+<edge symbol="normal" node1="370" node2="380">
+uruda</edge>
+<edge symbol="normal" node1="390" node2="400">
+USZ</edge>
+<edge symbol="normal" node1="400" node2="410">
+TUG2</edge>
+<edge symbol="normal" node1="420" node2="430">
+2(asz@c)#</edge>
+<edge symbol="normal" node1="430" node2="440">
+ma#-na#</edge>
+<edge symbol="normal" node1="440" node2="450">
+uruda</edge>
+<edge symbol="normal" node1="460" node2="470">
+2(asz@c)</edge>
+<edge symbol="normal" node1="470" node2="480">
+asz</edge>
+<edge symbol="normal" node1="480" node2="490">
+x-x</edge>
+<edge symbol="normal" node1="500" node2="510">
+2(asz@c)</edge>
+<edge symbol="normal" node1="510" node2="520">
+ma-na#</edge>
+<edge symbol="normal" node1="520" node2="530">
+uruda</edge>
+<edge symbol="normal" node1="540" node2="550">
+sukkal</edge>
+<edge symbol="normal" node1="560" node2="570">
+1(u@c)</edge>
+<edge symbol="normal" node1="570" node2="580">
+5(asz@c)</edge>
+<edge symbol="normal" node1="580" node2="590">
+i3</edge>
+<edge symbol="normal" node1="590" node2="600">
+sila3</edge>
+<edge symbol="normal" node1="610" node2="620">
+x</edge>
+<edge symbol="normal" node1="620" node2="630">
+x</edge>
+<edge symbol="broken" node1="630" node2="640">
+...</edge>
+<edge symbol="normal" node1="660" node2="670">
+1(gesz2@c)</edge>
+<edge symbol="normal" node1="670" node2="680">
+3(u@c)</edge>
+<edge symbol="normal" node1="680" node2="690">
+3(asz@c)</edge>
+<edge symbol="normal" node1="690" node2="700">
+i3-nun</edge>
+<edge symbol="normal" node1="710" node2="720">
+5(asz@c)</edge>
+<edge symbol="normal" node1="720" node2="730">
+siki#</edge>
+<edge symbol="normal" node1="730" node2="740">
+udu</edge>
+<edge symbol="normal" node1="750" node2="760">
+5(asz@c)</edge>
+<edge symbol="normal" node1="760" node2="770">
+siki#</edge>
+<edge symbol="normal" node1="770" node2="780">
+udu</edge>
+<edge symbol="normal" node1="790" node2="800">
+2/3(asz@c)</edge>
+<edge symbol="normal" node1="800" node2="810">
+munus#</edge>
+<edge symbol="normal" node1="810" node2="820">
+gir2</edge>
+<edge symbol="normal" node1="820" node2="830">
+uruda</edge>
+<edge symbol="normal" node1="840" node2="850">
+2(asz@c)</edge>
+<edge symbol="normal" node1="850" node2="860">
+1(ban2@c)</edge>
+<edge symbol="normal" node1="860" node2="870">
+sze</edge>
+<edge symbol="normal" node1="870" node2="880">
+szah</edge>
+<edge symbol="normal" node1="890" node2="900">
+3(asz@c)</edge>
+<edge symbol="normal" node1="900" node2="910">
+gin2</edge>
+<edge symbol="normal" node1="910" node2="920">
+ku3#</edge>
+<edge symbol="normal" node1="950" node2="960">
+GAR</edge>
+<edge symbol="normal" node1="960" node2="970">
+la</edge>
+<edge symbol="normal" node1="970" node2="980">
+DU</edge>
+<edge symbol="normal" node1="990" node2="1000">
+2(asz@c)</edge>
+<edge symbol="normal" node1="1000" node2="1010">
+sze</edge>
+<edge symbol="normal" node1="1010" node2="1020">
+szah</edge>
+<edge symbol="normal" node1="1030" node2="1040">
+3(asz@c)</edge>
+<edge symbol="normal" node1="1040" node2="1050">
+gin2</edge>
+<edge symbol="normal" node1="1050" node2="1060">
+ku3</edge>
+</graph>
+<show>
+@tablet
+
+
+@obverse
+
+
+@column 1
+
+
+1. 1(u@c) 2(asz@c) ma-na# uruda 
+2. dub-dim2 
+3. 1(asz@c) 1(barig@c) tug2 
+4. 1(asz@c) 1(barig@c) tug2 
+5. 3(asz@c) ma-na uruda tug2 
+6. 5(asz@c)# ma-na uruda 
+7. dub#-dim2#? 
+@column 2
+
+
+1. 2(asz@c)# ma#-na# uruda# 
+2. 2(asz@c)# ma-na# uruda 
+3. USZ TUG2 
+4. 2(asz@c)# ma#-na# uruda 
+5. 2(asz@c) asz x-x 
+6. 2(asz@c) ma-na# uruda 
+7. sukkal 
+8. 1(u@c) 5(asz@c) i3 sila3 
+9. x x [...] 
+@column 3
+
+
+1. 1(gesz2@c) 3(u@c) 3(asz@c) i3-nun 
+2. 5(asz@c) siki# udu 
+2. 5(asz@c) siki# udu 
+3. 2/3(asz@c) munus# gir2 uruda 
+4. 2(asz@c) 1(ban2@c) sze szah 
+5. 3(asz@c) gin2 ku3# 
+@reverse
+
+
+@column 1
+
+
+1. GAR la DU 
+2. 2(asz@c) sze szah 
+3. 3(asz@c) gin2 ku3 
+$blank 
+@column 2
+
+
+$blank 
+@column 3
+
+
+$blank 
+
+</show>
+</text>
+</tablet>
+<tablet>
+<idCDLI>P011111</idCDLI>
+<publication>WF 152, Deimel, Anton, 1924</publication>
+<provenience>Fara</provenience>
+<period>ED IIIa</period>
+<measurements>?x?x?</measurements>
+<genre>Administrative</genre>
+<subgenre></subgenre>
+<collection>Vorderasiatisches Museum, Berlin, Germany</collection>
+<museum>VAT 12620
+</museum>
+<text>
+<graph>
+<edge symbol="normal" node1="40" node2="50">
+3(asz@c)</edge>
+<edge symbol="normal" node1="50" node2="60">
+gu4</edge>
+<edge symbol="normal" node1="70" node2="80">
+3(u@c)</edge>
+<edge symbol="normal" node1="80" node2="90">
+udu</edge>
+<edge symbol="normal" node1="100" node2="110">
+1(asz@c)</edge>
+<edge symbol="normal" node1="110" node2="120">
+gukkal</edge>
+<edge symbol="normal" node1="130" node2="140">
+4(u@c)</edge>
+<edge symbol="normal" node1="140" node2="150">
+6(asz@c)</edge>
+<edge symbol="normal" node1="150" node2="160">
+i3-nun</edge>
+<edge symbol="normal" node1="160" node2="170">
+sila3</edge>
+<edge symbol="normal" node1="190" node2="200">
+8(asz@c)#</edge>
+<edge symbol="normal" node1="200" node2="210">
+2(barig@c)</edge>
+<edge symbol="normal" node1="210" node2="220">
+GA</edge>
+<edge symbol="normal" node1="220" node2="230">
+x</edge>
+<edge symbol="normal" node1="230" node2="240">
+NI</edge>
+<edge symbol="normal" node1="240" node2="250">
+URI</edge>
+<edge symbol="normal" node1="260" node2="270">
+8(asz@c)</edge>
+<edge symbol="normal" node1="270" node2="280">
+munu4?</edge>
+<edge symbol="normal" node1="280" node2="290">
+siki</edge>
+<edge symbol="normal" node1="290" node2="300">
+kasz</edge>
+<edge symbol="normal" node1="310" node2="320">
+2(asz@c)</edge>
+<edge symbol="normal" node1="320" node2="330">
+zabar</edge>
+<edge symbol="normal" node1="340" node2="350">
+2(asz@c)</edge>
+<edge symbol="normal" node1="350" node2="360">
+uruda</edge>
+<edge symbol="normal" node1="360" node2="370">
+bi</edge>
+<edge symbol="normal" node1="390" node2="400">
+1(asz@c)</edge>
+<edge symbol="normal" node1="400" node2="410">
+uruda#?</edge>
+<edge symbol="normal" node1="410" node2="420">
+DIB#?</edge>
+<edge symbol="normal" node1="420" node2="430">
+x</edge>
+<edge symbol="normal" node1="430" node2="440">
+x</edge>
+<edge symbol="normal" node1="450" node2="460">
+1(asz@c)</edge>
+<edge symbol="normal" node1="460" node2="470">
+gir2</edge>
+<edge symbol="normal" node1="480" node2="490">
+7(asz@c)</edge>
+<edge symbol="normal" node1="490" node2="500">
+nig2</edge>
+<edge symbol="normal" node1="500" node2="510">
+{gesz}pesz3</edge>
+<edge symbol="normal" node1="520" node2="530">
+7(asz@c)</edge>
+<edge symbol="normal" node1="530" node2="540">
+nig2</edge>
+<edge symbol="normal" node1="540" node2="550">
+{gesz}haszhur</edge>
+<edge symbol="normal" node1="580" node2="590">
+6(asz@c)</edge>
+<edge symbol="normal" node1="590" node2="600">
+sila3</edge>
+<edge symbol="normal" node1="600" node2="610">
+gesztin</edge>
+<edge symbol="normal" node1="620" node2="630">
+6(asz@c)</edge>
+<edge symbol="normal" node1="630" node2="640">
+LUM</edge>
+<edge symbol="normal" node1="640" node2="650">
+ka</edge>
+<edge symbol="normal" node1="660" node2="670">
+1(barig@c)</edge>
+<edge symbol="normal" node1="670" node2="680">
+szu#?</edge>
+<edge symbol="normal" node1="680" node2="690">
+tag</edge>
+<edge symbol="normal" node1="690" node2="700">
+LAK490</edge>
+<edge symbol="normal" node1="710" node2="720">
+1(asz@c)</edge>
+<edge symbol="normal" node1="720" node2="730">
+{d#}sud3#</edge>
+<edge symbol="normal" node1="730" node2="740">
+uruda#</edge>
+<edge symbol="normal" node1="740" node2="750">
+DU10#?</edge>
+<edge symbol="normal" node1="750" node2="760">
+x</edge>
+<edge symbol="normal" node1="760" node2="770">
+x</edge>
+</graph>
+<show>
+@tablet
+
+
+@obverse
+
+
+@column 1
+
+
+1. 3(asz@c) gu4 
+2. 3(u@c) udu 
+3. 1(asz@c) gukkal 
+4. 4(u@c) 6(asz@c) i3-nun sila3 
+@column 2
+
+
+1. 8(asz@c)# 2(barig@c) GA x NI URI 
+2. 8(asz@c) munu4? siki kasz 
+3. 2(asz@c) zabar 
+4. 2(asz@c) uruda bi 
+@column 3
+
+
+1. 1(asz@c) uruda#? DIB#? x x 
+2. 1(asz@c) gir2 
+3. 7(asz@c) nig2 {gesz}pesz3 
+4. 7(asz@c) nig2 {gesz}haszhur 
+@reverse
+
+
+@column 1
+
+
+1. 6(asz@c) sila3 gesztin 
+2. 6(asz@c) LUM ka 
+3. 1(barig@c) szu#? tag LAK490 
+4. 1(asz@c) {d#}sud3# uruda# DU10#? x x 
+@column 2
+
+
+$blank 
+@column 3
+
+
+$blank 
+
+</show>
+</text>
+</tablet>
+<tablet>
+<idCDLI>P011112</idCDLI>
+<publication>WF 153, Deimel, Anton, 1924</publication>
+<provenience>Fara</provenience>
+<period>ED IIIa</period>
+<measurements>?x?x?</measurements>
+<genre>Administrative</genre>
+<subgenre></subgenre>
+<collection>Vorderasiatisches Museum, Berlin, Germany</collection>
+<museum>VAT 12756
+</museum>
+<text>
+<graph>
+<edge symbol="normal" node1="40" node2="50">
+1(u@c)</edge>
+<edge symbol="normal" node1="50" node2="60">
+1(asz@c)</edge>
+<edge symbol="normal" node1="60" node2="70">
+udu</edge>
+<edge symbol="normal" node1="70" node2="80">
+gu4</edge>
+<edge symbol="normal" node1="90" node2="100">
+{d}nin-lil2</edge>
+<edge symbol="broken" node1="110" node2="120">
+...</edge>
+<edge symbol="normal" node1="120" node2="130">
+sze</edge>
+<edge symbol="normal" node1="130" node2="140">
+bi2#-dim2</edge>
+<edge symbol="broken" node1="150" node2="160">
+...</edge>
+<edge symbol="normal" node1="160" node2="170">
+x</edge>
+<edge symbol="broken" node1="180" node2="190">
+...</edge>
+<edge symbol="normal" node1="190" node2="200">
+x</edge>
+<edge symbol="broken" node1="210" node2="220">
+...</edge>
+<edge symbol="broken" node1="230" node2="240">
+...</edge>
+<edge symbol="broken" node1="250" node2="260">
+...</edge>
+<edge symbol="normal" node1="260" node2="270">
+PA#</edge>
+<edge symbol="broken" node1="280" node2="290">
+...</edge>
+<edge symbol="normal" node1="290" node2="300">
+e2#-gal#</edge>
+<edge symbol="normal" node1="300" node2="310">
+ZA7#</edge>
+<edge symbol="normal" node1="320" node2="330">
+1(asz@c)</edge>
+<edge symbol="normal" node1="330" node2="340">
+2(barig@c)</edge>
+<edge symbol="normal" node1="340" node2="350">
+sze</edge>
+<edge symbol="broken" node1="360" node2="370">
+n</edge>
+<edge symbol="normal" node1="370" node2="380">
+gurusz</edge>
+<edge symbol="normal" node1="400" node2="410">
+x</edge>
+<edge symbol="normal" node1="410" node2="420">
+sze</edge>
+<edge symbol="normal" node1="430" node2="440">
+3(asz@c)</edge>
+<edge symbol="normal" node1="440" node2="450">
+la2</edge>
+<edge symbol="normal" node1="450" node2="460">
+1(barig@c)</edge>
+<edge symbol="normal" node1="460" node2="470">
+sze</edge>
+<edge symbol="normal" node1="480" node2="490">
+{d}tu</edge>
+<edge symbol="normal" node1="500" node2="510">
+2(u@c)</edge>
+<edge symbol="normal" node1="510" node2="520">
+2(barig@c)</edge>
+<edge symbol="normal" node1="520" node2="530">
+sze</edge>
+<edge symbol="normal" node1="540" node2="550">
+1(u@c)</edge>
+<edge symbol="normal" node1="550" node2="560">
+1(asz@c)</edge>
+<edge symbol="normal" node1="560" node2="570">
+1(barig@c)</edge>
+<edge symbol="normal" node1="570" node2="580">
+sze</edge>
+<edge symbol="normal" node1="590" node2="600">
+1(u@c)</edge>
+<edge symbol="normal" node1="600" node2="610">
+1(asz@c)</edge>
+<edge symbol="normal" node1="610" node2="620">
+1(barig@c)</edge>
+<edge symbol="normal" node1="620" node2="630">
+ziz2#</edge>
+<edge symbol="broken" node1="640" node2="650">
+...</edge>
+<edge symbol="normal" node1="660" node2="670">
+1(u@c)</edge>
+<edge symbol="normal" node1="670" node2="680">
+la2</edge>
+<edge symbol="normal" node1="680" node2="690">
+1(asz@c)</edge>
+<edge symbol="normal" node1="690" node2="700">
+sze</edge>
+<edge symbol="normal" node1="710" node2="720">
+szu</edge>
+<edge symbol="normal" node1="720" node2="730">
+GAN2-TAB#</edge>
+<edge symbol="normal" node1="740" node2="750">
+lulu</edge>
+<edge symbol="normal" node1="760" node2="770">
+MI</edge>
+<edge symbol="normal" node1="780" node2="790">
+{d}nidaba</edge>
+<edge symbol="normal" node1="800" node2="810">
+1(asz@c)</edge>
+<edge symbol="normal" node1="810" node2="820">
+1(barig@c)</edge>
+<edge symbol="normal" node1="820" node2="830">
+sze</edge>
+<edge symbol="normal" node1="840" node2="850">
+szu</edge>
+<edge symbol="normal" node1="850" node2="860">
+GAN2-TAB#</edge>
+<edge symbol="normal" node1="870" node2="880">
+nam-mah</edge>
+<edge symbol="normal" node1="890" node2="900">
+dub#?</edge>
+<edge symbol="normal" node1="900" node2="910">
+x</edge>
+<edge symbol="normal" node1="930" node2="940">
+1(u@c)</edge>
+<edge symbol="normal" node1="940" node2="950">
+4(asz@c)</edge>
+<edge symbol="normal" node1="950" node2="960">
+sze</edge>
+<edge symbol="normal" node1="970" node2="980">
+4(asz@c)</edge>
+<edge symbol="normal" node1="980" node2="990">
+ziz2</edge>
+<edge symbol="normal" node1="1000" node2="1010">
+gu4</edge>
+<edge symbol="normal" node1="1010" node2="1020">
+apin</edge>
+<edge symbol="normal" node1="1030" node2="1040">
+4(asz@c)#</edge>
+<edge symbol="normal" node1="1040" node2="1050">
+sze</edge>
+<edge symbol="normal" node1="1060" node2="1070">
+szu</edge>
+<edge symbol="normal" node1="1070" node2="1080">
+GAN2-TAB</edge>
+<edge symbol="normal" node1="1090" node2="1100">
+AN#</edge>
+<edge symbol="normal" node1="1100" node2="1110">
+NUN</edge>
+<edge symbol="normal" node1="1110" node2="1120">
+TAG</edge>
+<edge symbol="normal" node1="1130" node2="1140">
+AN</edge>
+<edge symbol="normal" node1="1140" node2="1150">
+SZE3#</edge>
+<edge symbol="normal" node1="1150" node2="1160">
+NUN</edge>
+<edge symbol="normal" node1="1170" node2="1180">
+8(asz@c)</edge>
+<edge symbol="normal" node1="1180" node2="1190">
+sze</edge>
+<edge symbol="normal" node1="1200" node2="1210">
+AN#</edge>
+<edge symbol="broken" node1="1210" node2="1220">
+x</edge>
+<edge symbol="normal" node1="1220" node2="1230">
+x</edge>
+<edge symbol="normal" node1="1240" node2="1250">
+AN#</edge>
+<edge symbol="normal" node1="1250" node2="1260">
+nin#</edge>
+<edge symbol="normal" node1="1260" node2="1270">
+x</edge>
+<edge symbol="normal" node1="1270" node2="1280">
+x</edge>
+<edge symbol="normal" node1="1290" node2="1300">
+2(u@c)</edge>
+<edge symbol="normal" node1="1300" node2="1310">
+4(asz@c)</edge>
+<edge symbol="normal" node1="1310" node2="1320">
+x</edge>
+<edge symbol="normal" node1="1320" node2="1330">
+sze</edge>
+<edge symbol="normal" node1="1340" node2="1350">
+8(asz@c)</edge>
+<edge symbol="normal" node1="1350" node2="1360">
+2(barig@c)</edge>
+<edge symbol="normal" node1="1360" node2="1370">
+ziz2</edge>
+<edge symbol="normal" node1="1380" node2="1390">
+{d}nin-du10</edge>
+<edge symbol="normal" node1="1390" node2="1400">
+DA</edge>
+<edge symbol="normal" node1="1420" node2="1430">
+3(asz@c)</edge>
+<edge symbol="normal" node1="1430" node2="1440">
+sze</edge>
+<edge symbol="normal" node1="1450" node2="1460">
+SI-GISZGAL?</edge>
+<edge symbol="normal" node1="1470" node2="1480">
+1(asz@c)</edge>
+<edge symbol="normal" node1="1480" node2="1490">
+2(barig@c)</edge>
+<edge symbol="normal" node1="1490" node2="1500">
+sze</edge>
+<edge symbol="normal" node1="1510" node2="1520">
+munus</edge>
+<edge symbol="normal" node1="1520" node2="1530">
+a2</edge>
+<edge symbol="normal" node1="1530" node2="1540">
+nu-kusz2</edge>
+<edge symbol="normal" node1="1550" node2="1560">
+szu#</edge>
+<edge symbol="normal" node1="1560" node2="1570">
+GAN2-TAB</edge>
+<edge symbol="normal" node1="1580" node2="1590">
+AN#</edge>
+<edge symbol="normal" node1="1590" node2="1600">
+nin-SAR</edge>
+<edge symbol="normal" node1="1610" node2="1620">
+3(asz@c)</edge>
+<edge symbol="normal" node1="1620" node2="1630">
+sze</edge>
+<edge symbol="normal" node1="1640" node2="1650">
+1(asz@c)</edge>
+<edge symbol="normal" node1="1650" node2="1660">
+2(barig@c)#</edge>
+<edge symbol="broken" node1="1660" node2="1670">
+...</edge>
+<edge symbol="normal" node1="1670" node2="1680">
+x</edge>
+<edge symbol="normal" node1="1690" node2="1700">
+szu</edge>
+<edge symbol="normal" node1="1700" node2="1710">
+GAN2-TAB</edge>
+<edge symbol="normal" node1="1720" node2="1730">
+szubur#</edge>
+<edge symbol="normal" node1="1740" node2="1750">
+x</edge>
+<edge symbol="normal" node1="1750" node2="1760">
+dub#-sar#</edge>
+<edge symbol="normal" node1="1770" node2="1780">
+AN#</edge>
+<edge symbol="broken" node1="1780" node2="1790">
+...</edge>
+<edge symbol="normal" node1="1800" node2="1810">
+7(asz@c)</edge>
+<edge symbol="normal" node1="1810" node2="1820">
+x</edge>
+<edge symbol="normal" node1="1820" node2="1830">
+sze</edge>
+<edge symbol="normal" node1="1840" node2="1850">
+AN#</edge>
+<edge symbol="broken" node1="1850" node2="1860">
+...</edge>
+<edge symbol="normal" node1="1870" node2="1880">
+5(asz@c)</edge>
+<edge symbol="normal" node1="1880" node2="1890">
+sze</edge>
+<edge symbol="normal" node1="1910" node2="1920">
+lugal</edge>
+<edge symbol="normal" node1="1920" node2="1930">
+AN</edge>
+<edge symbol="normal" node1="1930" node2="1940">
+URU2</edge>
+<edge symbol="normal" node1="1950" node2="1960">
+1(u@c)</edge>
+<edge symbol="normal" node1="1960" node2="1970">
+la2</edge>
+<edge symbol="normal" node1="1970" node2="1980">
+1(barig@c)</edge>
+<edge symbol="normal" node1="1980" node2="1990">
+sze</edge>
+<edge symbol="normal" node1="2000" node2="2010">
+5(asz@c)</edge>
+<edge symbol="normal" node1="2010" node2="2020">
+2(barig@c)</edge>
+<edge symbol="normal" node1="2020" node2="2030">
+ziz2</edge>
+<edge symbol="normal" node1="2040" node2="2050">
+{d}nin#-pirig#</edge>
+<edge symbol="normal" node1="2060" node2="2070">
+1(u@c)</edge>
+<edge symbol="normal" node1="2070" node2="2080">
+5(asz@c)</edge>
+<edge symbol="normal" node1="2080" node2="2090">
+sze</edge>
+<edge symbol="normal" node1="2100" node2="2110">
+x</edge>
+<edge symbol="broken" node1="2110" node2="2120">
+...</edge>
+<edge symbol="normal" node1="2130" node2="2140">
+{d}sud3#</edge>
+<edge symbol="normal" node1="2140" node2="2150">
+har-tu</edge>
+<edge symbol="normal" node1="2160" node2="2170">
+AN</edge>
+<edge symbol="normal" node1="2170" node2="2180">
+KI#</edge>
+<edge symbol="normal" node1="2180" node2="2190">
+BAN?</edge>
+<edge symbol="normal" node1="2200" node2="2210">
+8(asz@c)</edge>
+<edge symbol="normal" node1="2210" node2="2220">
+1(barig@c)</edge>
+<edge symbol="normal" node1="2220" node2="2230">
+sze#</edge>
+<edge symbol="normal" node1="2240" node2="2250">
+{d}nin#-ka#-si</edge>
+<edge symbol="normal" node1="2260" node2="2270">
+1(u@c)</edge>
+<edge symbol="normal" node1="2270" node2="2280">
+sze</edge>
+<edge symbol="normal" node1="2290" node2="2300">
+3(asz@c)</edge>
+<edge symbol="normal" node1="2300" node2="2310">
+ziz2</edge>
+<edge symbol="normal" node1="2320" node2="2330">
+szu#</edge>
+<edge symbol="broken" node1="2330" node2="2340">
+GAN2#-TAB</edge>
+<edge symbol="normal" node1="2360" node2="2370">
+8(asz@c)</edge>
+<edge symbol="normal" node1="2370" node2="2380">
+sze#</edge>
+<edge symbol="normal" node1="2390" node2="2400">
+{d#}nin#-x</edge>
+<edge symbol="normal" node1="2410" node2="2420">
+2(asz@c)#</edge>
+<edge symbol="normal" node1="2420" node2="2430">
+2(barig@c)#</edge>
+<edge symbol="broken" node1="2430" node2="2440">
+...</edge>
+<edge symbol="normal" node1="2450" node2="2460">
+AN</edge>
+<edge symbol="normal" node1="2460" node2="2470">
+AN</edge>
+<edge symbol="normal" node1="2480" node2="2490">
+szu</edge>
+<edge symbol="normal" node1="2490" node2="2500">
+GAN2-TAB</edge>
+<edge symbol="normal" node1="2510" node2="2520">
+6(asz@c)</edge>
+<edge symbol="normal" node1="2520" node2="2530">
+2(barig@c)</edge>
+<edge symbol="normal" node1="2530" node2="2540">
+sze</edge>
+<edge symbol="normal" node1="2550" node2="2560">
+1(u@c)</edge>
+<edge symbol="normal" node1="2560" node2="2570">
+la2</edge>
+<edge symbol="normal" node1="2570" node2="2580">
+1(barig@c)</edge>
+<edge symbol="normal" node1="2580" node2="2590">
+ziz2#</edge>
+<edge symbol="normal" node1="2600" node2="2610">
+AN#</edge>
+<edge symbol="normal" node1="2610" node2="2620">
+UR#?</edge>
+<edge symbol="normal" node1="2620" node2="2630">
+gal</edge>
+<edge symbol="normal" node1="2630" node2="2640">
+APIN#?</edge>
+<edge symbol="normal" node1="2650" node2="2660">
+8(asz@c)</edge>
+<edge symbol="normal" node1="2660" node2="2670">
+2(barig@c)</edge>
+<edge symbol="normal" node1="2670" node2="2680">
+ziz2#</edge>
+<edge symbol="normal" node1="2690" node2="2700">
+4(asz@c)#</edge>
+<edge symbol="normal" node1="2700" node2="2710">
+2(barig@c)</edge>
+<edge symbol="normal" node1="2710" node2="2720">
+sze</edge>
+<edge symbol="normal" node1="2730" node2="2740">
+3(u@c)</edge>
+<edge symbol="normal" node1="2740" node2="2750">
+sze</edge>
+<edge symbol="normal" node1="2760" node2="2770">
+AN</edge>
+<edge symbol="normal" node1="2770" node2="2780">
+x</edge>
+<edge symbol="normal" node1="2780" node2="2790">
+x</edge>
+<edge symbol="broken" node1="2790" node2="2800">
+x</edge>
+<edge symbol="normal" node1="2930" node2="2940">
+AN</edge>
+<edge symbol="normal" node1="2940" node2="2950">
+SZE3</edge>
+<edge symbol="normal" node1="2950" node2="2960">
+GU2</edge>
+<edge symbol="normal" node1="2970" node2="2980">
+3(gesz2@c)</edge>
+<edge symbol="normal" node1="2980" node2="2990">
+3(u@c)</edge>
+<edge symbol="normal" node1="2990" node2="3000">
+3(asz@c)</edge>
+<edge symbol="normal" node1="3000" node2="3010">
+ziz2</edge>
+<edge symbol="normal" node1="3010" node2="3020">
+sze</edge>
+<edge symbol="normal" node1="3020" node2="3030">
+GA</edge>
+<edge symbol="normal" node1="3040" node2="3050">
+3(u@c)</edge>
+<edge symbol="normal" node1="3050" node2="3060">
+5(asz@c)</edge>
+<edge symbol="normal" node1="3060" node2="3070">
+2(barig@c)?</edge>
+<edge symbol="normal" node1="3070" node2="3080">
+x</edge>
+<edge symbol="normal" node1="3080" node2="3090">
+NI</edge>
+<edge symbol="normal" node1="3090" node2="3100">
+GA</edge>
+</graph>
+<show>
+@tablet
+
+
+@obverse
+
+
+@column 1
+
+
+1. 1(u@c) 1(asz@c) udu gu4 
+2. {d}nin-lil2 
+3. [...] sze bi2#-dim2 
+4. [...] x 
+5. [...] x 
+6. [...] 
+7. [...] 
+8. [...] PA# 
+9. [...] e2#-gal# ZA7# 
+10. 1(asz@c) 2(barig@c) sze 
+11. [n] gurusz 
+@column 2
+
+
+1. x sze 
+2. 3(asz@c) la2 1(barig@c) sze 
+3. {d}tu 
+4. 2(u@c) 2(barig@c) sze 
+5. 1(u@c) 1(asz@c) 1(barig@c) sze 
+6. 1(u@c) 1(asz@c) 1(barig@c) ziz2# 
+7. [...] 
+8. 1(u@c) la2 1(asz@c) sze 
+9. szu GAN2-TAB# 
+10. lulu 
+11. MI 
+12. {d}nidaba 
+13. 1(asz@c) 1(barig@c) sze 
+14. szu GAN2-TAB# 
+15. nam-mah 
+16. dub#? x 
+@column 3
+
+
+1. 1(u@c) 4(asz@c) sze 
+2. 4(asz@c) ziz2 
+3. gu4 apin 
+4. 4(asz@c)# sze 
+5. szu GAN2-TAB 
+6. AN# NUN TAG 
+7. AN SZE3# NUN 
+8. 8(asz@c) sze 
+9. AN# [x] x 
+10. AN# nin# x x 
+11. 2(u@c) 4(asz@c) x sze 
+12. 8(asz@c) 2(barig@c) ziz2 
+13. {d}nin-du10 DA 
+@column 4
+
+
+1. 3(asz@c) sze 
+2. SI-GISZGAL? 
+3. 1(asz@c) 2(barig@c) sze 
+4. munus a2 nu-kusz2 
+5. szu# GAN2-TAB 
+6. AN# nin-SAR 
+7. 3(asz@c) sze 
+8. 1(asz@c) 2(barig@c)# [...] x 
+9. szu GAN2-TAB 
+10. szubur# 
+11. x dub#-sar# 
+12. AN# [...] 
+13. 7(asz@c) x sze 
+14. AN# [...] 
+15. 5(asz@c) sze 
+@column 5
+
+
+1. lugal AN URU2 
+2. 1(u@c) la2 1(barig@c) sze 
+3. 5(asz@c) 2(barig@c) ziz2 
+4. {d}nin#-pirig# 
+5. 1(u@c) 5(asz@c) sze 
+6. x [...] 
+7. {d}sud3# har-tu 
+8. AN KI# BAN? 
+9. 8(asz@c) 1(barig@c) sze# 
+10. {d}nin#-ka#-si 
+11. 1(u@c) sze 
+12. 3(asz@c) ziz2 
+13. szu# GAN2#-[TAB] 
+@column 6
+
+
+1. 8(asz@c) sze# 
+2. {d#}nin#-x 
+3. 2(asz@c)# 2(barig@c)# [...] 
+4. AN AN 
+5. szu GAN2-TAB 
+6. 6(asz@c) 2(barig@c) sze 
+7. 1(u@c) la2 1(barig@c) ziz2# 
+8. AN# UR#? gal APIN#? 
+9. 8(asz@c) 2(barig@c) ziz2# 
+10. 4(asz@c)# 2(barig@c) sze 
+11. 3(u@c) sze 
+12. AN x x [x] 
+@reverse
+
+
+@column 1
+
+
+$blank 
+@column 2
+
+
+$blank 
+@column 3
+
+
+$blank 
+@column 4
+
+
+$blank 
+@column 5
+
+
+$blank 
+@column 6
+
+
+1. AN SZE3 GU2 
+2. 3(gesz2@c) 3(u@c) 3(asz@c) ziz2 sze GA 
+3. 3(u@c) 5(asz@c) 2(barig@c)? x NI GA 
+$blank 
+
+</show>
+</text>
+</tablet>
+</tablets>

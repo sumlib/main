@@ -17,7 +17,6 @@ typedef struct{
 } Tags;
 
 typedef struct{    
-    char* id;
     char* id_cdli;
     char* publication;
     char* measurements;
@@ -28,7 +27,7 @@ typedef struct{
     char* subgenre;
     char* collection;
     char* text;
-    Tags *tags; //miejsca gdzie w tekscie s± wyniki wyszukiwania
+    Tags *tags; //miejsca gdzie w tekscie sa wyniki wyszukiwania
 } Tablet;
 
 typedef struct{

@@ -18,9 +18,7 @@ char* getXmlFromQuery(char* query){
         for (i = 0; i < tabs->size; i++) {
            // printf(" id: %s\n id_cdli: %s\n kolekcja: %s\n prowiniencja: %s\n okres: %s\n typ: %s\n podtyp: %s\n publikacja: %s\n ==================================================================\n\n",
              //       oneTab(i).id, oneTab(i).id_cdli, oneTab(i).collection, oneTab(i).provenience, oneTab(i).period, oneTab(i).genre, oneTab(i).subgenre, oneTab(i).publication);
-            bufAppendS(&buf, "<tablet id=\"");
-            bufAppendS(&buf, oneTab(i).id);
-            bufAppendS(&buf, "\" id_cdli=\"");
+            bufAppendS(&buf, "<tablet id_cdli=\"");
             bufAppendS(&buf, oneTab(i).id_cdli);
             bufAppendS(&buf, "\" collection=\"");
             bufAppendS(&buf, oneTab(i).collection);

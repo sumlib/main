@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <postgresql/libpq-fe.h>
+//#include </usr/local/pgsql/include/libpq-fe.h> //dont commit!!!
 
 #include "../Cexplode.h"
 #include "Database_config.h"
@@ -15,7 +16,6 @@
 #define DB_USER "DB_USER"
 #define DB_PASS "DB_PASS"
 
-#define T_ID 0
 #define T_ID_CDLI 1
 #define T_PUBLICATION 2
 #define T_MEASUREMENTS 3
@@ -165,7 +165,6 @@ Tags* parseNodes(char *nodes) {
 
 void setTabletInfo(PGresult *result, int rowId, Tablet* tab) {
     char* nodes;
-    setFromResult(tab->id, rowId, T_ID);
     setFromResult(tab->id_cdli, rowId, T_ID_CDLI);
     setFromResult(tab->collection, rowId, T_COLLECTION);
     setFromResult(tab->genre, rowId, T_GENRE);

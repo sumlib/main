@@ -1,19 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
-#include <postgresql/libpq-fe.h>
 
 #include "../Cexplode.h"
 #include "Database_config.h"
 #include "../Err.h"
 
 #define MAX_LINE_SIZE 64
-#define CONFIG_FILE "conf/database.conf"
-#define DB_HOST "DB_HOST"
-#define DB_PORT "DB_PORT"
+#define CONFIG_FILE "conf/xml.conf"
 #define DB_NAME "DB_NAME"
 #define DB_USER "DB_USER"
 #define DB_PASS "DB_PASS"
+#define DB_PATH "DB_PATH"
 
 #define T_ID 0
 #define T_ID_CDLI 1
@@ -30,14 +28,12 @@
 #define T_NODES 12
 
 #define cut_newline(s) if (s[strlen(s)-1]=='\n') s[strlen(s)-1]=0
-#define setFromResult(v, rowId, i) v = PQgetisnull(result, rowId, i) ? "" : strdup(PQgetvalue(result, rowId, i))
 
 typedef struct {
     char* name;
-    char* host;
-    char* port;
     char* user;
     char* pass;
+    char* path;
 } db_config;
 
 #define MAX_NODE_SIZE 11;
@@ -72,8 +68,6 @@ db_config parseConfigFile() {
     CexplodeStrings strings;
     db_config dbc;
     dbc.name = "";
-    dbc.host = "";
-    dbc.port = "";
     dbc.user = "";
     dbc.pass = "";
 
@@ -90,18 +84,15 @@ db_config parseConfigFile() {
         if (strcmp(strings.strings[0], DB_NAME) == 0) {
             dbc.name = strdup(strings.strings[1]);
             cut_newline(dbc.name);
-        } else if (strcmp(strings.strings[0], DB_HOST) == 0) {
-            dbc.host = strdup(strings.strings[1]);
-            cut_newline(dbc.host);
-        } else if (strcmp(strings.strings[0], DB_PORT) == 0) {
-            dbc.port = strdup(strings.strings[1]);
-            cut_newline(dbc.port);
         } else if (strcmp(strings.strings[0], DB_USER) == 0) {
             dbc.user = strdup(strings.strings[1]);
             cut_newline(dbc.user);
         } else if (strcmp(strings.strings[0], DB_PASS) == 0) {
             dbc.pass = strdup(strings.strings[1]);
             cut_newline(dbc.pass);
+        } else if (strcmp(strings.strings[0], DB_PATH) == 0) {
+            dbc.path = strdup(strings.strings[1]);
+            cut_newline(dbc.path);
         }
     }
 
@@ -163,6 +154,7 @@ Tags* parseNodes(char *nodes) {
     return tags;
 }
 
+/*
 void setTabletInfo(PGresult *result, int rowId, Tablet* tab) {
     char* nodes;
     setFromResult(tab->id, rowId, T_ID);
@@ -183,32 +175,30 @@ void setTabletInfo(PGresult *result, int rowId, Tablet* tab) {
     //printf("\n\n %s \n\n", nodes);
 
 }
+*/
 
 Tablets *getTablets(char* query) {
-    PGconn *psql;
-    PGresult *result;
+
     db_config dbc = parseConfigFile();
     int size, i;
     Tablet* tabs;
     Tablets *retVal = malloc(sizeof (Tablets));
     char conninfo[128];
-    sprintf(conninfo, "host = '%s' port = '%s' dbname = '%s' user = '%s' password = '%s' connect_timeout = '10'",
-            dbc.host, dbc.port, dbc.name, dbc.user, dbc.pass);
+    sprintf(conninfo, "dbpath = '%s' dbname = '%s' user = '%s' password = '%s' connect_timeout = '10'",
+            dbc.path, dbc.name, dbc.user, dbc.pass);
+
+    char *command;
+    command = malloc(sizeof(char)*(strlen(query) + 1024));
+    if (command == NULL) fatal("not enough memory");
+
+    sprintf(command,"cd %s ; java -cp BaseX6.jar org.basex.BaseXClient -U %s -P %s -c 'open %s ; xquery %s'",
+            dbc.path, dbc.user, dbc.pass, dbc.name, query);
+    //printf(command);
+    system(command);
+    free(command);
 
 
-    psql = PQconnectdb(conninfo);
-    /* init connection */
-    if (!psql) {
-        fprintf(stderr, "libpq error: PQconnectdb returned NULL.\n\n");
-        exit(0);
-    }
-    if (PQstatus(psql) != CONNECTION_OK) {
-        fprintf(stderr, "libpq error: PQstatus(psql) != CONNECTION_OK\n%s\n", PQerrorMessage(psql));
-        exit(0);
-    }
-
-
-
+/*
     result = PQexec(psql, query);
     //for (i = 0; i j; i++) { printf("Time: %s\n", PQgetvalue(result, i, 0)); printf("MD5: %s\n", PQgetvalue(result, i, 1)); } PQclear(result); if (argc > 1) { data_safe = pq_escape(argv[1]); result = pq_query("SELECT MD5('%s');", data_safe); if (!result || PQntuples(result)< 1) { fprintf(stderr, "libpq error: no results returned or NULL resultset pointer.\n\n"); PQfinish(psql); exit(0); } printf("data: %s (data safe: %s)\n", argv[0]); printf("MD5: %s\n", PQgetvalue(result, 0, 0));  }
     if (!result) {
@@ -232,6 +222,7 @@ Tablets *getTablets(char* query) {
 
     retVal->size = size;
     retVal->tabs = tabs;
+*/
     return retVal;
 
 }

@@ -8,12 +8,12 @@
 #define TEXT "??"
 #define VAR "###"
 
-static char *queries[] = {"fn:matches($tablet/provenience,'^###$')",
-"fn:matches($tablet/publication,'^###$')", "fn:matches($tablet/period,'^###$')",
-"fn:matches($tablet/date_of_origin,'^###$')",
-"(fn:matches($tablet/genre,'^###$') or fn:matches($tablet/subgenre,'^###$'))",
-"", "fn:matches($tablet/idCDLI,'^###$')", TEXT, "fn:matches($tablet/museum,'^###$')",
-"fn:matches($tablet/collection,'^###$')", NULL};
+static char *queries[] = {"fn:matches($tablet/provenience,\"^###$\")",
+"fn:matches($tablet/publication,\"^###$\")", "fn:matches($tablet/period,\"^###$\")",
+"fn:matches($tablet/date_of_origin,\"^###$\")",
+"(fn:matches($tablet/genre,\"^###$\") or fn:matches($tablet/subgenre,\"^###$\"))",
+"", "fn:matches($tablet/idCDLI,\"^###$\")", TEXT, "fn:matches($tablet/museum,\"^###$\")",
+"fn:matches($tablet/collection,\"^###$\")", NULL};
 
 
 bufor buf_result=NULL, buf_where=NULL, buf_seq_let=NULL, buf_seq_result=NULL;
@@ -32,6 +32,10 @@ void save_result(){
         bufAppendS(buf_result, "where \n");
         bufAppendS(buf_result, buf_where->buf);
     }
+
+
+    /* return wersja 1*/
+/*
     bufAppendS(buf_result, "return <tablet>\n  {$tablet/idCDLI} \n");
     bufAppendS(buf_result, "  {$tablet/publication}\n  {$tablet/provenience}\n");
     bufAppendS(buf_result, "  {$tablet/period}\n  {$tablet/measurements}\n");
@@ -41,6 +45,15 @@ void save_result(){
     if (buf_seq_result->cur>0)
         bufAppendS(buf_result, buf_seq_result->buf);
     bufAppendS(buf_result, "  </seq> \n</tablet>\n");
+*/
+
+    /* return wersja 2*/
+    bufAppendS(buf_result, "return <tablet id=\"{$tablet/idCDLI}\" idCDLI=\"{$tablet/idCDLI}\"");
+    bufAppendS(buf_result, "  collection=\"{$tablet/collection}\" provenience=\"{$tablet/provenience}\"");
+    bufAppendS(buf_result, "  period=\"{$tablet/period}\" genre=\"{$tablet/genre}\"");
+    bufAppendS(buf_result, "  subgenre=\"{$tablet/subgenre}\" publication=\"{$tablet/publication}\">");
+    bufAppendS(buf_result, "  {$tablet/text/show/text()}");
+    bufAppendS(buf_result, "</tablet>");
 }
 
 
@@ -112,9 +125,9 @@ char *translateTextQuery(char *text){
   bufAppendS(buf_seq_let," := (\n  for $edge_end in $tablet//edge\n");
   bufAppendS(buf_seq_let,"  for $edge_start in $tablet//edge\n  where\n");
 
-  bufAppendS(buf_seq_let,"  (\n    fn:matches($edge_start,'^");
+  bufAppendS(buf_seq_let,"  (\n    fn:matches($edge_start,\"^");
   bufAppendS(buf_seq_let,escape(expString.strings[0]));
-  bufAppendS(buf_seq_let,"$')");
+  bufAppendS(buf_seq_let,"$\")");
 
   if (expString.amnt > 1) {
     for (i = 1; i < expString.amnt - 1; i++) {
@@ -127,9 +140,9 @@ char *translateTextQuery(char *text){
             bufAppendInt(buf_seq_let,i-1);
 	bufAppendS(buf_seq_let,"/@node2] satisfies (fn:matches($edge");
 	bufAppendInt(buf_seq_let,i);
-	bufAppendS(buf_seq_let,",'^");
+	bufAppendS(buf_seq_let,",\"^");
         bufAppendS(buf_seq_let,escape(expString.strings[i]));
-        bufAppendS(buf_seq_let,"$')\n");
+        bufAppendS(buf_seq_let,"$\")\n");
     }
 
     bufAppendS(buf_seq_let,"    and (");
@@ -139,9 +152,9 @@ char *translateTextQuery(char *text){
     else
         bufAppendInt(buf_seq_let,expString.amnt-2);
     bufAppendS(buf_seq_let, "/@node2] \n    and ");
-    bufAppendS(buf_seq_let,"fn:matches($edge_end,'^");
+    bufAppendS(buf_seq_let,"fn:matches($edge_end,\"^");
     bufAppendS(buf_seq_let,escape(expString.strings[expString.amnt-1]));
-    bufAppendS(buf_seq_let,"$'");
+    bufAppendS(buf_seq_let,"$\"");
 
     for (i = 0; i < expString.amnt - 1; i++) {
         bufAppendS(buf_seq_let, "))");

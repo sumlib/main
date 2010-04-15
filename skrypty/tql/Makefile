@@ -30,13 +30,21 @@ testPostgresTQL: postgresTQL
 	@echo "Testing postgresTQL..."
 	auto_test/auto_test.sh ./postgresTQL
 
+testXmlTQL: xmlTQL
+	@echo "Testing xmlTQL..."
+	auto_test/auto_test.sh ./xmlTQL
+
 postgresTQL: ${OBJS} ${POSTGRES_OBJS}
 	@echo "Linking postgresTQL..."
 	${CC} ${CCFLAGS} ${OBJS} ${POSTGRES_OBJS} -o postgresTQL -lpq
+	#${CC} ${CCFLAGS} ${OBJS} ${POSTGRES_OBJS} -o postgresTQL -lpq -L/usr/local/pgsql/lib #dont commit!!!
+
 
 xmlTQL: ${OBJS} ${XML_OBJS}
 	@echo "Linking xmlTQL..."
 	${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lpq
+	#${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lpq -L/usr/local/pgsql/lib #dont commit!!!
+
 
 
 ${POSTGRES_OBJS}: %_postgres.o: %_postgres.c %_config.h Buffer.o

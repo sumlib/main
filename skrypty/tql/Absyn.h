@@ -43,6 +43,8 @@ typedef int Text;
 typedef int Name;
 
 
+typedef enum { is_SingleQuery, is_DefQuery, is_CallQuery, is_SimpleCallQuery, is_EmptyQuery } QueryKind;
+
 /********************   Abstract Syntax Classes    ********************/
 
 struct ComplexQuery_
@@ -54,7 +56,7 @@ ComplexQuery make_ComplexQuery(QueryList p0);
 
 struct Query_
 {
-  enum { is_SingleQuery, is_DefQuery, is_CallQuery, is_SimpleCallQuery, is_EmptyQuery } kind;
+  QueryKind kind;
   union
   {
     struct { QueryLine tabqueryline_[MAX_POL];} simplequery_;
@@ -78,9 +80,11 @@ struct QueryLine_
 
 QueryLine make_QueryLine(Ident p0, Expr p1);
 
+typedef enum { is_AndExpr, is_OrExpr, is_NotExpr, is_PartExpr, is_LPartExpr, is_RPartExpr, is_TextExpr } ExprKind;
+
 struct Expr_
 {
-  enum { is_AndExpr, is_OrExpr, is_NotExpr, is_PartExpr, is_LPartExpr, is_RPartExpr, is_TextExpr } kind;
+  ExprKind kind;
   union
   {
     struct { Expr expr_1, expr_2; } andexpr_;
@@ -126,9 +130,11 @@ struct RPartList_
 
 RPartList make_RPartList(RPart p, RPartList l);
 
+typedef enum { is_MiddleStarPart, is_RightStarPart, is_LeftStarPart, is_BothStarPart } PartKind;
+
 struct Part_
 {
-  enum { is_MiddleStarPart, is_RightStarPart, is_LeftStarPart, is_BothStarPart } kind;
+  PartKind kind;
   union
   {
     struct { Text text_; RPartList rpartlist_; } middlestar_;

@@ -65,8 +65,8 @@ void tmpBufReset(void)
   memset(buf_, 0, buf_size);
 }
 
-char *buf_;
-int cur_, buf_size;
+//char *buf_;
+//int cur_, buf_size;
 
 
 
@@ -227,14 +227,14 @@ void ppLPartList(bufor buf, LPartList l){
 
 void ppRPartList(bufor buf, RPartList l){
     while(l){
-        bufAppendS(buf, ppLPart(l->rpart_));
+        bufAppendS(buf, ppRPart(l->rpart_));
         l = l->rpartlist_;
     }
 }
 
 
 char* ppPart(Part p) {
-    bufor buf = malloc(sizeof(_bufor));
+    bufor buf = (bufor) malloc(sizeof(_bufor));
     bufReset(buf);
     switch(p->kind){
         case is_MiddleStarPart:

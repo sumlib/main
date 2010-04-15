@@ -46,10 +46,10 @@ void translator_initSingleQuery(){
 	bufAppendS(buf_result, "\n  UNION\n");
 //	printf("INIT:\n%s\n", buf_wynik->buf);
     }else{
-	buf_select = malloc(sizeof(_bufor));
-	buf_from = malloc(sizeof(_bufor));
-	buf_where = malloc(sizeof(_bufor));
-	buf_result = malloc(sizeof(_bufor));
+	buf_select = (bufor) malloc(sizeof(_bufor));
+	buf_from = (bufor) malloc(sizeof(_bufor));
+	buf_where = (bufor) malloc(sizeof(_bufor));
+	buf_result = (bufor) malloc(sizeof(_bufor));
 	bufReset(buf_result);
     }
     bufReset(buf_select);

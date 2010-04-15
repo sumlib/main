@@ -2,7 +2,7 @@
 #define _BUFFER_
 
 
-typedef struct bufor{
+typedef struct{
   int cur, size;
   char *buf;
 } _bufor;

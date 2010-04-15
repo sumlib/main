@@ -58,8 +58,8 @@ void addNodes(Tablet tab){
     int i;
     if(tab.tags==NULL)
         return;
-    qsort(tab.tags->tab, tab.tags->count, sizeof(Tag), comparator);
-    for(i=0;i<tab.tags->count;i++){
+    //qsort(tab.tags->tab, tab.tags->count, sizeof(Tag), comparator);
+    //for(i=0;i<tab.tags->count;i++){
       //  printf("Tag: from %d to %d, value %d\n", tab.tags->tab[i].beginNode, tab.tags->tab[i].endNode, tab.tags->tab[i].value);
-    }
+    //}
 }

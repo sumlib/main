@@ -30,32 +30,24 @@ testPostgresTQL: postgresTQL
 	@echo "Testing postgresTQL..."
 	auto_test/auto_test.sh ./postgresTQL
 
-testXmlTQL: xmlTQL
-	@echo "Testing xmlTQL..."
-	auto_test/auto_test.sh ./xmlTQL
-
 postgresTQL: ${OBJS} ${POSTGRES_OBJS}
 	@echo "Linking postgresTQL..."
 	${CC} ${CCFLAGS} ${OBJS} ${POSTGRES_OBJS} -o postgresTQL -lpq
-	#${CC} ${CCFLAGS} ${OBJS} ${POSTGRES_OBJS} -o postgresTQL -lpq -L/usr/local/pgsql/lib #dont commit!!!
-
 
 xmlTQL: ${OBJS} ${XML_OBJS}
 	@echo "Linking xmlTQL..."
 	${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lpq
-	#${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lpq -L/usr/local/pgsql/lib #dont commit!!!
 
 
-
-${POSTGRES_OBJS}: %_postgres.o: %_postgres.cpp %_config.h Buffer.o
+${POSTGRES_OBJS}: %_postgres.o: %_postgres.c %_config.h Buffer.o
 	@echo "compiling " $*
 	${CC} ${CCFLAGS} -c $< -o $*_postgres.o
 
-${XML_OBJS}: %_xml.o: %_xml.cpp %_config.h Buffer.o
+${XML_OBJS}: %_xml.o: %_xml.c %_config.h Buffer.o
 	@echo "compiling " $*
 	${CC} ${CCFLAGS} -c $< -o $*_xml.o
 
-%.o : %.cpp %.h
+%.o : %.c %.h
 	${CC} ${CCFLAGS} -c $< -o $*.o
 
 #Symbols_test.o: Symbols_test.c Symbols.h
@@ -69,10 +61,10 @@ Lexer.c: TQL.l
 Parser.c: TQL.y
 	${BISON} ${BISON_OPTS} TQL.y -o Parser.c
 
-Lexer.o: Lexer.cpp Parser.h  Symbols.h
+Lexer.o: Lexer.c Parser.h  Symbols.h
 	${CC} ${CCFLAGS} -c Lexer.c 
 
-Parser.o: Parser.cpp Absyn.h Symbols.h
+Parser.o: Parser.c Absyn.h Symbols.h
 	${CC} ${CCFLAGS} -c Parser.c
 
 TQL.dvi: TQL.tex

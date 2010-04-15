@@ -19,7 +19,7 @@ Symbol* symbols;
 void symbols_init(){
 	int i;
 	symbols_size = 128;
-	symbols = malloc(symbols_size * sizeof(Symbol));
+	symbols = (Symbol*) malloc(symbols_size * sizeof(Symbol));
 	for(i=0;i<fieldsCount();i++)
 		symbols_getId(fieldName(i));
 	
@@ -33,7 +33,7 @@ int symbols_getId(char* name){
 		if(strcmp(name, symbols[i].name)==0) return i;
 	if(symbols_size == symbols_count){
 		symbols_size*=2;
-		tmp = malloc(symbols_size * sizeof(Symbol*));
+		tmp = (Symbol*) malloc(symbols_size * sizeof(Symbol*));
 		for(i=0;i<symbols_count;i++)
 			tmp[i] = symbols[i];
 		free(symbols);

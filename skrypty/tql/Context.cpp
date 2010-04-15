@@ -15,7 +15,7 @@ void contextComplexQuery(ComplexQuery _p_)
 }
 
 Query merge_queries(Query z1, Query z2){
-    Query z = malloc(sizeof(struct Query_));
+    Query z = (Query) malloc(sizeof(struct Query_));
     int i;
     Expr w;
     if(z1->kind == is_EmptyQuery && z2->kind == is_SingleQuery){
@@ -146,7 +146,7 @@ void contextLPartList(LPartList l){
 }
 
 
-void contextRPartList(RPart l){
+void contextRPartList(RPartList l){
 
 }
 

@@ -73,16 +73,16 @@ int Cexplode
               */
               pieces++;
               if(NULL==tmp)
-                  tmp=malloc(sizeof(char *));
+                  tmp=(char**) malloc(sizeof(char *));
               else
-                  tmp=realloc(tmp,sizeof(char *)*pieces);
+                  tmp=(char**) realloc(tmp,sizeof(char *)*pieces);
               if(NULL==tmp)
               {
                   printf("Cexplode: Malloc failed!\n");
                   return ECexplodeRet_InternalFailure;
               }
               //alloc also for \0
-              tmp[pieces-1]=malloc
+              tmp[pieces-1]=(char*) malloc
               (
                 sizeof(char *)*(index-string_start+1)
               );
@@ -110,15 +110,15 @@ int Cexplode
   {
       pieces++;
       if(NULL==tmp)
-          tmp=malloc(sizeof(char *));
+          tmp=(char**) malloc(sizeof(char *));
       else
-          tmp=realloc(tmp,sizeof(char *)*pieces);
+          tmp=(char**) realloc(tmp,sizeof(char *)*pieces);
       if(NULL==tmp)
       {
           printf("Cexplode: Malloc failed!\n");
           return ECexplodeRet_InternalFailure;
       }
-          tmp[pieces-1]=malloc
+          tmp[pieces-1]=(char*) malloc
          (
             sizeof(char *)*(index-string_start+1)
          );

@@ -17,16 +17,16 @@ typedef struct{
 } Tags;
 
 typedef struct{    
-    char* id_cdli;
-    char* publication;
-    char* measurements;
-    char* year;
-    char* provenience;
-    char* period;
-    char* genre;
-    char* subgenre;
-    char* collection;
-    char* text;
+    const char* id_cdli;
+    const char* publication;
+    const char* measurements;
+    const char* year;
+    const char* provenience;
+    const char* period;
+    const char* genre;
+    const char* subgenre;
+    const char* collection;
+    const char* text;
     Tags *tags; //miejsca gdzie w tekscie sa wyniki wyszukiwania
 } Tablet;
 

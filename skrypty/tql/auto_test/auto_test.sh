@@ -8,7 +8,7 @@ function do_test(){
     out=`echo $out.out`
     #ret=`$tql_prog $1 | grep "<tablet " | cut -d\" -f4`
     #echo $ret
-      $tql_prog $1 | grep "<tablet " | cut -d\" -f4 | diff -wB - $out >/dev/null
+      $tql_prog $1 | grep "<tablet " | cut -d\" -f2 | diff -wB - $out >/dev/null
     return $?    
 }
 

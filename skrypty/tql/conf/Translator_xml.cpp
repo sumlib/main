@@ -59,7 +59,7 @@ void translator_initSingleQuery(){
         save_result();
         bufAppendS(buf_result, "\n,\n");
     }
-    bufAppendS(buf_result, "for $tablet in //tablet\n");
+    bufAppendS(buf_result, "for $tablet in .//tablet\n");
     bufAppendS(buf_where, "");
     bufAppendS(buf_seq_result,"");
     bufAppendS(buf_seq_let,"");

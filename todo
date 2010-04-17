@@ -7,11 +7,16 @@ KONCEPCYJNE
 
 
 => XML!!!
-A -> wypróbować bazę zorba
-O -> wyrzucić id ze strukturki i wynikowego xml-a
+A +> wypróbować bazę zorba
+A +> przepisywanie do strukturki
+
+O +> wyrzucić id ze strukturki i wynikowego xml-a
 O -> przetestować na bardziej skomplikowanych zapytaniach
+O(?) -> nie działają zapytania o text (coś jest nie tak z przeglądaniem sekwencji)
+
+-> dodać muzeum??
   
-A -> przepisywanie do strukturki
+
 
 
 

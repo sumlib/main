@@ -18,7 +18,26 @@ using namespace zorba;
 #define CONFIG_FILE "conf/xml.conf"
 #define DOC_URI "DOC_URI"
 
+
+#define T_ID_CDLI "idCDLI"
+#define T_PUBLICATION "publication"
+#define T_PROVENIENCE "provenience"
+#define T_PERIOD "period"
+#define T_MEASUREMENTS "measurements"
+#define T_GENRE "genre"
+#define T_SUBGENRE "subgenre"
+#define T_COLLECTION "collection"
+#define T_MUSEUM "museum"
+#define T_TEXT "show"
+#define T_NODES "seq"
+
 #define cut_newline(s) if (s[strlen(s)-1]=='\n') s[strlen(s)-1]=0
+
+#define setFromResult(v, nodeName) if(lNodeName.getStringValue().compare(nodeName) == 0){ \
+                                        v = (const char*) strdup(lChild.getStringValue().c_str()); \
+                                    } else
+
+//                                        std::cout << "set value for " << nodeName << ": " << v << std::endl; \
 
 typedef struct {
     char* uri;
@@ -73,8 +92,6 @@ doc_config parseConfigFile() {
         }
     }
 
-    //printf("host: %s\nname: %s\nport: %s\nuser: %s\npass: %s\n", dbc.host, dbc.name, dbc.port, dbc.user, dbc.pass);
-
     return dbc;
 
 }
@@ -82,39 +99,85 @@ doc_config parseConfigFile() {
 #define takeRealNode(node)   node[strlen(node)-7] = 0;
 #define charIsDigit(c) ('0' <= c && c <= '9')
 
+
+Tablet* resizeTablet(Tablet* t, int size){
+    return (Tablet*) realloc(t, size);
+}
+
+
 Tablets *getTablets(char* query) {
     doc_config doc = parseConfigFile();
-    //printf("%s\n\n%s\n\n", query, doc.uri);
+    Tablets* retVal = (Tablets*) malloc(sizeof(Tablets));
+    int size = 10;
+    int count = 0;
+    Tablet* tabs = (Tablet*) malloc(size * sizeof(Tablet));
 
     simplestore::SimpleStore* lStore = simplestore::SimpleStoreManager::getStore();
     Zorba *lZorba = Zorba::getInstance(lStore);
 
     try {
-       std::cout << "compiling query" << std::endl;
-      //XQuery_t lQuery = lZorba->compileQuery("doc('/home/asia/Dokumenty/zorbatest/tablets.xml')/tablets/tablet", lStaticContext);
-       XQuery_t lQuery = lZorba->compileQuery(query);
-       DynamicContext* lDynamicContext = lQuery->getDynamicContext();
+        XQuery_t lQuery = lZorba->compileQuery(query);
+        DynamicContext* lDynamicContext = lQuery->getDynamicContext();
 
-       lDynamicContext->setContextItemAsDocument("file:///home/asia/Dokumenty/zorbatest/tablets.xml");
+        //ustawianie dokumentu z bazą danych:
+        lDynamicContext->setContextItemAsDocument(doc.uri);
+
+        try {
+
+            Iterator_t lIterator = lQuery->iterator();
+            lIterator->open();
+
+            Item lItem;
+            while (lIterator->next(lItem)) {
+                //nowa tabliczka:
+                if(count >= size){
+                    size*=2;
+                    tabs = resizeTablet(tabs, size);
+                }
+
+                Iterator_t lChildIter = lItem.getChildren();
+
+                lChildIter->open();
+                Item lChild;
+                while (lChildIter->next(lChild)) {
+                    //węzeł w tabliczce
+                    Item lNodeName;
+                    lChild.getNodeName(lNodeName);
+//                    std::cout << "node name " << lNodeName.getStringValue() << " = " << lChild.getStringValue() << std::endl;
+                    setFromResult(tabs[count].id_cdli, T_ID_CDLI)
+                    setFromResult(tabs[count].collection, T_COLLECTION)
+                    setFromResult(tabs[count].genre, T_GENRE)
+                    setFromResult(tabs[count].subgenre, T_SUBGENRE)
+                    setFromResult(tabs[count].measurements, T_MEASUREMENTS)
+                    setFromResult(tabs[count].period, T_PERIOD)
+                    setFromResult(tabs[count].provenience, T_PROVENIENCE)
+                    setFromResult(tabs[count].publication, T_PUBLICATION)
+                    setFromResult(tabs[count].text, T_TEXT)
+                    //jeśli nie pasuje do żadnego:
+                     ;
+//                            std::cout << "node name " << lNodeName.getStringValue() << " = " << lChild.getStringValue() << std::endl;
+                    }
+                lChildIter->close();
+                count++;
+            }
+
+            lIterator->close();
 
 
-      std::cout << "compiled" << std::endl;
-	  try {
-
-	    std::cout << lQuery << std::endl;
-
-	  } catch (DynamicException &e) {
-	    std::cerr << e << std::endl;
-	    return false;
-	  }
+        } catch (DynamicException &e) {
+            std::cerr << e << std::endl;
+            return false;
+        }
 
     } catch (StaticException &se) {
-      std::cerr << se << std::endl;
-      return NULL;
+        std::cerr << se << std::endl;
+        return NULL;
     }
 
     lZorba->shutdown();
     simplestore::SimpleStoreManager::shutdownStore(lStore);
-    
-    return NULL;
+
+    retVal->size = count;
+    retVal->tabs = tabs;
+    return retVal;
 }

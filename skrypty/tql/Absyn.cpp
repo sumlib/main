@@ -5,6 +5,7 @@
 #include "Absyn.h"
 #include "conf/Translator_config.h"
 #include "Symbols.h"
+#include "Err.h"
 
 /********************   ZapZloz    ********************/
 ComplexQuery make_ComplexQuery(QueryList p1)
@@ -36,21 +37,21 @@ Query make_SimpleQuery(QueryLineList p1, SpaceList p2)
   //tmp->u.zapproste_.querylinelist_ = p1;
   for(i=0;i<fieldsCount();i++){
 	tmp->u.simplequery_.tabqueryline_[i] = NULL;
-  }
-  for(;p1;p1=p1->querylinelist_){
-	linia = p1->queryline_;
-	id = linia->ident_;
-	id = symbols_toFieldId(id);
-	if(id>=0){
-		if(tmp->u.simplequery_.tabqueryline_[id] == NULL)
-			tmp->u.simplequery_.tabqueryline_[id] = linia;
-		else
-			fprintf(stderr, "Warning: field '%s' was already used\n", symbols_getName(linia->ident_));
-	}
-	else
-	 fprintf(stderr, "Warning: '%s' is not a valid name of field\n", symbols_getName(linia->ident_));
-  }
-  return tmp;
+    }
+    for (; p1; p1 = p1->querylinelist_) {
+        linia = p1->queryline_;
+        id = linia->ident_;
+        id = symbols_toFieldId(id);
+        if (id >= 0) {
+            if (tmp->u.simplequery_.tabqueryline_[id] == NULL)
+                tmp->u.simplequery_.tabqueryline_[id] = linia;
+            else
+                fprintf(stderr, "Warning: field '%s' was already used\n", symbols_getName(linia->ident_));
+        } else {
+            fatal("Warning: '%s' is not a valid name of field\n", symbols_getName(linia->ident_))
+        }
+    }
+    return tmp;
 }
 
 

@@ -13,7 +13,7 @@
 #define VAR "###"
 
 
-static char *queries[] = {"p.value LIKE '###'", "t.publication LIKE '###'", "pd.value LIKE '###'", "t.date_of_origin LIKE '###'", "g1.value LIKE '###' OR g2.value LIKE '###'", "", "t.cdli_id LIKE '###'", TEXT, "t.museum LIKE '###'", "c.value LIKE '###'", NULL};
+static char *queries[] = {"p.value LIKE '###'", "t.publication LIKE '###'", "pd.value LIKE '###'", "t.date_of_origin LIKE '###'", "g1.value LIKE '###' OR g2.value LIKE '###'", "", "t.id_cdli LIKE '###'", TEXT, "t.museum LIKE '###'", "c.value LIKE '###'", NULL};
 int from_level=0, select_level=0;
 
 /************************************ buffory: *****************************************************/

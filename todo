@@ -23,6 +23,8 @@ O(?) -> nie działają zapytania o text (coś jest nie tak z przeglądaniem sekw
 PORZĄDKOWE
 ?> dalsze tłumaczenie nazw funkcji (zmiana nazw funkcji na takie jak na prezentacji)
 
+=> ujednolicić nazewnictwo id_cdli
+
 => Źle się wrzucają "IM —"
 => lepsze wykrywanie uszkodzeń
 => przy wrzucaniu tabliczki do bazy trzeba sprawdzić czy ilość węzłów nie przekracza 9999 (-; (bo mamy tylko 5 cyfr na id_wezla)

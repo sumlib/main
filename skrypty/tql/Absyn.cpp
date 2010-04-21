@@ -48,7 +48,7 @@ Query make_SimpleQuery(QueryLineList p1, SpaceList p2)
             else
                 fprintf(stderr, "Warning: field '%s' was already used\n", symbols_getName(linia->ident_));
         } else {
-            fatal("Warning: '%s' is not a valid name of field\n", symbols_getName(linia->ident_));
+            fatal("'%s' is not a valid name of field\n", symbols_getName(linia->ident_));
         }
     }
     return tmp;

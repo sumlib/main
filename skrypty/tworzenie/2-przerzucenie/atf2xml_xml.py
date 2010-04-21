@@ -150,7 +150,7 @@ for line in input:
 						reading = reading + "broken"
 					reading = reading + '\" node1=\"'
 					reading = reading + str(i) + '\" node2=\"'
-					reading = reading + str(i+10) + "\">\n"
+					reading = reading + str(i+10) + "\">"
 					reading = reading + sl 
 					reading = reading + "</edge>\n"
 				else: sl = "@newline"
@@ -161,7 +161,7 @@ for line in input:
 				i = i + 10
 			else:
 
-				show = show + line + "\n"
+				show = show + line.strip()
 
 				i = i + 10	
 

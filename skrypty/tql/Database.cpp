@@ -3,10 +3,11 @@
 #include "Buffer.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define oneTab(n) tabs->tabs[n]
 
-void addNodes(Tablet tab);
+const char* addNodes(Tablet tab);
 
 char* getXmlFromQuery(char* query){
     Tablets *tabs = getTablets(query);
@@ -33,15 +34,17 @@ char* getXmlFromQuery(char* query){
             bufAppendS(&buf, "\" publication=\"");
             bufAppendS(&buf, oneTab(i).publication);
             bufAppendS(&buf, "\">");
-            bufAppendS(&buf, oneTab(i).text);
-            addNodes(oneTab(i));
+            bufAppendS(&buf, addNodes(oneTab(i)));
             bufAppendS(&buf, "</tablet>\n");
         }
 	return buf.buf;
     }
 }
 
-int comparator(Tag *t1, Tag *t2){
+int comparator(const void *v1, const void *v2){
+    Tag *t1, *t2;
+    t1 = (Tag*) v1;
+    t2 = (Tag*) v2;
     if(t1->beginNode > t2->beginNode)
         return 1;
     if(t2->beginNode > t1->beginNode)
@@ -54,12 +57,29 @@ int comparator(Tag *t1, Tag *t2){
     return 0;
 }
 
-void addNodes(Tablet tab){
-    int i;
+const char* addNodes(Tablet tab){
+    int i, nodenr=0;
+    char *line, *text = strdup(tab.text), *node;
+    char *saveptr1, *saveptr2;
+
     if(tab.tags==NULL)
-        return;
-    //qsort(tab.tags->tab, tab.tags->count, sizeof(Tag), comparator);
-    //for(i=0;i<tab.tags->count;i++){
-      //  printf("Tag: from %d to %d, value %d\n", tab.tags->tab[i].beginNode, tab.tags->tab[i].endNode, tab.tags->tab[i].value);
-    //}
+        return tab.text;
+    
+    qsort(tab.tags->tab, tab.tags->count, sizeof(Tag), comparator);
+
+
+    line = strtok_r(text, "\n", &saveptr1);
+    while(line){
+        node = strtok_r(line, " ", &saveptr2);
+        while(node){
+            printf("%d => %s\n", nodenr, node);
+            node = strtok_r(NULL, " ", &saveptr2);
+            nodenr++;
+        }
+        line = strtok_r(NULL, "\n", &saveptr1);
+    }
+    for(i=0;i<tab.tags->count;i++){
+        printf("Tag: from %d to %d, value %d\n", tab.tags->tab[i].beginNode, tab.tags->tab[i].endNode, tab.tags->tab[i].value);
+    }
+    return tab.text;
 }

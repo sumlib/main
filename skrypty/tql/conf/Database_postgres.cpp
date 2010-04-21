@@ -114,7 +114,7 @@ db_config parseConfigFile() {
 #define takeRealNode(node)   node[strlen(node)-7] = 0;
 #define charIsDigit(c) ('0' <= c && c <= '9')
 
-Tags* parseNodes(char *nodes) {
+Tags* parseNodes(const char *nodes) {
     Tags* tags = (Tags*) malloc(sizeof(Tags));
     Tag tag;
     int i, ni = 0, level = 0;
@@ -164,7 +164,7 @@ Tags* parseNodes(char *nodes) {
 }
 
 void setTabletInfo(PGresult *result, int rowId, Tablet* tab) {
-    char* nodes;
+    const char* nodes;
     setFromResult(tab->id_cdli, rowId, T_ID_CDLI);
     setFromResult(tab->collection, rowId, T_COLLECTION);
     setFromResult(tab->genre, rowId, T_GENRE);
@@ -176,9 +176,9 @@ void setTabletInfo(PGresult *result, int rowId, Tablet* tab) {
     setFromResult(tab->year, rowId, T_YEAR);
     tab->tags = NULL;
     setFromResult(tab->text, rowId, T_TEXT);
-    //setFromResult(nodes, rowId, T_NODES);
-    //tab->tags = parseNodes(nodes);
-    //printf("\n\n");
+    setFromResult(nodes, rowId, T_NODES);
+    //printf("%s\n\n", nodes);
+    tab->tags = parseNodes(nodes);
     //printf("\n\n %s \n\n", nodes);
 
 }

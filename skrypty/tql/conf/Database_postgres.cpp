@@ -118,6 +118,7 @@ db_config parseConfigFile() {
 Tags* parseNodes(const char *nodes) {
     Tags* tags = (Tags*) malloc(sizeof(Tags));
     Tag tag;
+    int tag_id = 0;
     int i, ni = 0, level = 0;
     int group = 0;
     char node[12];
@@ -140,6 +141,7 @@ Tags* parseNodes(const char *nodes) {
                 tag.endNode = atoi(node);
                 tag.value = group;
                 tag.type = results;
+                tag.id = tag_id++;
                 addTag(tags,tag);
                 ni = 0;
             }

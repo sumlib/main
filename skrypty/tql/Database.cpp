@@ -6,6 +6,8 @@
 #include <string.h>
 
 #define oneTab(n) tabs->tabs[n]
+#define BEGIN_TAG "<tag "
+#define END_TAG "</tag>"
 
 const char* addNodes(Tablet tab);
 
@@ -41,45 +43,135 @@ char* getXmlFromQuery(char* query){
     }
 }
 
+
+typedef struct{
+    int id;
+    Tag* tag;
+} TagNode;
+
 int comparator(const void *v1, const void *v2){
-    Tag *t1, *t2;
-    t1 = (Tag*) v1;
-    t2 = (Tag*) v2;
-    if(t1->beginNode > t2->beginNode)
+    TagNode *tn1, *tn2;
+    tn1 = (TagNode*) v1;
+    tn2 = (TagNode*) v2;
+    if(tn1->id == tn2->id){
+        return 0;
+    }
+    if(tn1->id > tn2->id){
         return 1;
-    if(t2->beginNode > t1->beginNode)
-        return -1;
-    //beginNode s� r�wne
-    if(t1->endNode > t2->endNode)
-        return 1;
-    if(t2->endNode > t1->endNode)
-        return -1;
-    return 0;
+    }
+    return -1;
+//    if(t1->beginNode > t2->beginNode)
+//        return 1;
+//    if(t2->beginNode > t1->beginNode)
+//        return -1;
+//    //beginNode s� r�wne
+//    if(t1->endNode > t2->endNode)
+//        return 1;
+//    if(t2->endNode > t1->endNode)
+//        return -1;
+//    return 0;
+}
+
+void printTag(Tag *tag, char* info){
+    printf("%s: tag id: %d, value: %d, from: %d, to: %d\n", info, tag->id, tag->value, tag->beginNode, tag->endNode);
+}
+
+void makeTagNode(TagNode *tagNode, Tag *tag, bool begin){
+    tagNode->tag = tag;
+//    printTag(tagNode->tag, "In makeTagNode");
+    if(begin)
+        tagNode->id = tag->beginNode;
+    else
+        tagNode->id = tag->endNode;
 }
 
 const char* addNodes(Tablet tab){
     int i, nodenr=0;
-    char *line, *text = strdup(tab.text), *node;
+    char *line, *textbuf = strdup(tab.text), *node;
     char *saveptr1, *saveptr2;
+    _bufor rettextbuf, tagIdsBuf, tagValsBuf;
+    
+    int openedTagsCount=0;
 
     if(tab.tags==NULL)
         return tab.text;
-    
-    qsort(tab.tags->tab, tab.tags->count, sizeof(Tag), comparator);
 
 
-    line = strtok_r(text, "\n", &saveptr1);
+    bufReset(&rettextbuf);
+    bufReset(&tagIdsBuf);
+    bufReset(&tagValsBuf);
+    Tag* openedTags[tab.tags->count];
+   
+    int size = tab.tags->count*2;
+    TagNode tagNodes[size];
+    for(i=0; i<tab.tags->count; i++){
+        makeTagNode(&tagNodes[2*i], &(tab.tags->tab[i]), true);
+        makeTagNode(&tagNodes[2*i+1], &(tab.tags->tab[i]), false);
+    }
+    qsort(tagNodes, size, sizeof(TagNode), comparator);
+
+    for(i=0;i<tab.tags->count;i++){
+        printTag(&tab.tags->tab[i], "show");
+    }
+
+    i = 0;
+    line = strtok_r(textbuf, "\n", &saveptr1);
     while(line){
         node = strtok_r(line, " ", &saveptr2);
         while(node){
-            printf("%d => %s\n", nodenr, node);
+           if (nodenr == tagNodes[i].id) {
+               printf("Opened tags count = %d\n", openedTagsCount);
+                if (openedTagsCount > 0)
+                    bufAppendS(&rettextbuf, END_TAG);
+                for(int j=0; j<openedTagsCount; j++){
+                    if(openedTags[j]->endNode == nodenr){
+                        printTag(openedTags[j], "closing");
+                        if(j<openedTagsCount-1){
+                            openedTags[j] = openedTags[openedTagsCount-1];
+
+                        }
+                        openedTagsCount--;
+                    }
+                }
+                do {
+                    if (tagNodes[i].id == tagNodes[i].tag->beginNode) {
+                        openedTags[openedTagsCount++] = tagNodes[i].tag;
+                        printTag(tagNodes[i].tag, "opening");
+                    }
+                    i++;
+                } while (nodenr == tagNodes[i].id) ;
+
+                for(int j=0; j<openedTagsCount;j++){
+                        bufAppendS(&tagIdsBuf, " ");
+                        bufAppendInt(&tagIdsBuf, openedTags[j]->id);
+                        bufAppendS(&tagValsBuf, " ");
+                        bufAppendInt(&tagValsBuf, openedTags[j]->value);
+                }
+
+               if (openedTagsCount > 0) {
+                    bufAppendS(&rettextbuf, BEGIN_TAG);
+                    bufAppendS(&rettextbuf, "ids=\"");
+                    bufAppendS(&rettextbuf, tagIdsBuf.buf);
+                    bufAppendS(&rettextbuf, "\" values=\"");
+                    bufAppendS(&rettextbuf, tagValsBuf.buf);
+                    bufAppendS(&rettextbuf, "\" >");
+                    bufClean(&tagIdsBuf);
+                    bufClean(&tagValsBuf);
+                }
+               
+            }
+            bufAppendS(&rettextbuf, node);
+            bufAppendS(&rettextbuf, " ");
             node = strtok_r(NULL, " ", &saveptr2);
             nodenr++;
         }
+        bufAppendS(&rettextbuf, "\n");
         line = strtok_r(NULL, "\n", &saveptr1);
     }
-    for(i=0;i<tab.tags->count;i++){
-        printf("Tag: from %d to %d, value %d\n", tab.tags->tab[i].beginNode, tab.tags->tab[i].endNode, tab.tags->tab[i].value);
+    for(i=0;i<size;i++){
+        //printf("Tag: from %d to %d, value %d\n", tab.tags->tab[i].beginNode, tab.tags->tab[i].endNode, tab.tags->tab[i].value);
+        printf("TagNode %d: tagId = %d, value = %d, beginNode = %d, endNode = %d \n", tagNodes[i].tag->id, tagNodes[i].id, tagNodes[i].tag->value, tagNodes[i].tag->beginNode, tagNodes[i].tag->endNode);
     }
-    return tab.text;
+
+    return rettextbuf.buf;
 }

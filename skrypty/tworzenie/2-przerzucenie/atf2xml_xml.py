@@ -4,9 +4,9 @@ import sys
 import re
 
 current=sys.argv[4]
-plik_wejsciowy = current  + "/../data/" + sys.argv[1]
-plik_z_danymi = current + "/../data/" + sys.argv[2]
-prefiks_plikow_wyjsciowych = current  + "/../data/" + sys.argv[3]
+plik_wejsciowy = current  + "/data/" + sys.argv[1]
+plik_z_danymi = current + "/data/" + sys.argv[2]
+plik_wyjsciowy = current  + "/data/" + sys.argv[3]
 
 
 def struktura_tabliczki(slowo):
@@ -178,7 +178,7 @@ tablet = tablet + text + '</tablet>\n' + "</tablets>\n"
 input.close()
 input_dane.close()
 
-output_show = open(prefiks_plikow_wyjsciowych+'_tablets.xml','w')
+output_show = open(plik_wyjsciowy,'w')
 output_show.write(tablet)
 output_show.close()
 

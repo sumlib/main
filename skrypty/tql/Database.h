@@ -6,6 +6,7 @@ typedef enum{results, number, name, place, date} tag_type;
 typedef struct{
     int beginNode;
     int endNode;
+    int id;
     int value;
     tag_type type;
 } Tag;

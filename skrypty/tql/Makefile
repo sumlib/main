@@ -63,17 +63,17 @@ ${XML_OBJS}: %_xml.o: %_xml.cpp %_config.h Buffer.o
 #Absyn.o: Absyn.c Absyn.h conf/Translator_config.h
 #	${CC} ${CCFLAGS} -c Absyn.c
 
-Lexer.c: TQL.l
-	${FLEX} ${FLEX_OPTS} -oLexer.c TQL.l
+Lexer.cpp: TQL.l
+	${FLEX} ${FLEX_OPTS} -oLexer.cpp TQL.l
 
-Parser.c: TQL.y
-	${BISON} ${BISON_OPTS} TQL.y -o Parser.c
+Parser.cpp: TQL.y
+	${BISON} ${BISON_OPTS} TQL.y -o Parser.cpp
 
 Lexer.o: Lexer.cpp Parser.h  Symbols.h
-	${CC} ${CCFLAGS} -c Lexer.c 
+	${CC} ${CCFLAGS} -c Lexer.cpp
 
 Parser.o: Parser.cpp Absyn.h Symbols.h
-	${CC} ${CCFLAGS} -c Parser.c
+	${CC} ${CCFLAGS} -c Parser.cpp
 
 TQL.dvi: TQL.tex
 	${LATEX} TQL.tex

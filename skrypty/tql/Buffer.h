@@ -15,7 +15,7 @@ void bufAppendC(bufor b, const char c);
 void bufAppendInt(bufor b, int i);
 
 void bufReset(bufor b);
-
+void bufClean(bufor b);
 
 
 #endif 

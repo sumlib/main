@@ -73,3 +73,7 @@ void bufReset(bufor b)
 //     b->buf[i] = 0;
 }
 
+void bufClean(bufor b){
+    b->cur = 0;
+    memset(b->buf, 0, b->size);
+}

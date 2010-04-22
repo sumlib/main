@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <postgresql/libpq-fe.h>
+//#include </usr/local/pgsql/include/libpq-fe.h>
 
 #include "../Cexplode.h"
 #include "Database_config.h"

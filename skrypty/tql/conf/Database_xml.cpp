@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
-#include <postgresql/libpq-fe.h>
 #include <iostream>
 
 
@@ -36,6 +35,9 @@ using namespace zorba;
 #define setFromResult(v, nodeName) if(lNodeName.getStringValue().compare(nodeName) == 0){ \
                                         v = (const char*) strdup(lChild.getStringValue().c_str()); \
                                     } else
+#define setNodesFromResult(v, nodeName) if(lNodeName.getStringValue().compare(nodeName) == 0){ \
+                                        v = parseNodes(lChild); \
+                                    }
 
 //                                        std::cout << "set value for " << nodeName << ": " << v << std::endl; \
 
@@ -96,8 +98,58 @@ doc_config parseConfigFile() {
 
 }
 
-#define takeRealNode(node)   node[strlen(node)-7] = 0;
-#define charIsDigit(c) ('0' <= c && c <= '9')
+
+Tags* parseNodes(Item nodes) {
+    Tags* tags = (Tags*) malloc(sizeof(Tags));
+    Tag tag;
+    int tag_id = 0;
+
+    initTags(tags);
+
+    Iterator_t nodesIter = nodes.getChildren();
+    Item tagItem;
+
+    nodesIter->open();
+
+    while (nodesIter->next(tagItem)) {
+        Item tagNodeName;
+        tagItem.getNodeName(tagNodeName);
+        const char * seq_string = tagNodeName.getStringValue().c_str() + 3; //pomijamy "seq"
+        int seq_id = atoi(seq_string);
+
+        tag.beginNode=0;
+        tag.endNode=0;
+
+        Iterator_t attrIter = tagItem.getAttributes();
+        attrIter->open();
+        Item attr;
+        while (attrIter->next(attr)) {
+            Item attr_name_item;
+            attr.getNodeName(attr_name_item);
+            const char* attrValue = attr.getStringValue().c_str();
+            if (attr_name_item.getStringValue().compare("node1") == 0) {
+                tag.beginNode=atoi(attrValue);
+
+            }
+            else if (attr_name_item.getStringValue().compare("node2") == 0) {
+                tag.endNode=atoi(attrValue);
+            }
+
+        }
+        attrIter->close();
+
+        tag.id=tag_id;
+        tag.value=seq_id;
+        tag.type=results;;
+        addTag(tags,tag);
+
+        tag_id++;
+    }
+    
+    nodesIter->close();
+
+    return tags;
+}
 
 
 Tablet* resizeTablet(Tablet* t, int size){
@@ -135,6 +187,7 @@ Tablets *getTablets(char* query) {
                     tabs = resizeTablet(tabs, size);
                 }
 
+
                 Iterator_t lChildIter = lItem.getChildren();
 
                 lChildIter->open();
@@ -153,10 +206,12 @@ Tablets *getTablets(char* query) {
                     setFromResult(tabs[count].provenience, T_PROVENIENCE)
                     setFromResult(tabs[count].publication, T_PUBLICATION)
                     setFromResult(tabs[count].text, T_TEXT)
+                    setNodesFromResult(tabs[count].tags, T_NODES)
                     //jeśli nie pasuje do żadnego:
                      ;
 //                            std::cout << "node name " << lNodeName.getStringValue() << " = " << lChild.getStringValue() << std::endl;
                     }
+
                 lChildIter->close();
                 count++;
             }

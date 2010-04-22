@@ -43,7 +43,7 @@ postgresTQL: ${OBJS} ${POSTGRES_OBJS}
 xmlTQL: ${OBJS} ${XML_OBJS}
 	@echo "Linking xmlTQL..."
 	${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lzorba
-	#${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lpq -L/usr/local/pgsql/lib #dont commit!!!
+	#${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lzorba_simplestore
 
 
 

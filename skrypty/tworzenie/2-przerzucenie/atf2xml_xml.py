@@ -163,7 +163,7 @@ for line in input:
 
 				show = show + line.strip()
 
-				i = i + 10	
+				i = i + 10*(len(line.split()))	
 
 				break	
 	

@@ -151,7 +151,7 @@ char *translateTextQuery(char *text){
 
   }
   else {
-      bufAppendS(buf_seq_let,"\n    and $edge_start = $edge_end\n  )\n");
+      bufAppendS(buf_seq_let,"\n    and $edge_start/@node1 = $edge_end/@node1\n  )\n");
   }
 
   bufAppendS(buf_seq_let,"  return <seq");

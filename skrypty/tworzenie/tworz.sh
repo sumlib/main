@@ -9,6 +9,7 @@ function bledneUzycie(){
 }
 
 function bigInfo(){
+    #echo "BIG INFO: $1" 
     debug "BIG INFO: $1" 
 }	
 
@@ -21,10 +22,10 @@ fi
 # włączenie pomocy
 if [ $1 = "help" ]; then
   echo "Options:"
-  echo " -p : prepare serwer"
-  echo " -d : install database"
+  echo " -p : prepare serwer (only postgres)"
+  echo " -d : install database (only postgres)"
   echo " -g : get data from web"
-  echo " -i : insert into database"
+  echo " -i database: insert into database (postgres, xml or both)"
   echo " -f : force (overwrite data)"
   echo " -s n, -e m: start from tablet nr n to m"
 #  echo " -sf n, -ef m: start from folder n to m"
@@ -42,6 +43,7 @@ insert=0
 log=debug.log
 options=""
 db_name=sumlib
+#db_port=5432
 db_port=5433
 db_host=localhost
 db_user=asia
@@ -63,7 +65,7 @@ done
 if echo "$1" | grep -v "\-.*" > /dev/null; then log=$1; shift 1; fi 
 
 # pobieram opcje
-while getopts pdgfis:e: opcja 
+while getopts pdgfi:s:e: opcja 
 do 
  case $opcja in
   s) start=$OPTARG;;
@@ -72,7 +74,7 @@ do
   d) database=1;;
   g) get=1;;
   f) force=1;;
-  i) insert=1;;
+  i) insert=1 ; db_kind=$OPTARG;;
   ?) bledneUzycie;;
  esac
 done
@@ -114,11 +116,18 @@ if [ $get -eq 1 ]; then
 fi
 
 if [ $insert -eq 1 ]; then
-  2-przerzucenie/zapisz.sh $start $end 2-przerzucenie -d data.txt -a tekst.atf -c 2>>$log
-  python 2-przerzucenie/wrzuc_do_bazy.py data.txt $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
-  #python 2-przerzucenie/atf2xml.py tekst.atf show.xml 2-przerzucenie 2>>$log
-  python 2-przerzucenie/wrzuc_tekst.py tekst.atf $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
-  python 2-przerzucenie/wrzuc_sekwencje.py tekst.atf $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
+	2-przerzucenie/zapisz.sh $start $end 2-przerzucenie -d data.txt -a tekst.atf -c 2>>$log
+	if [ "$db_kind" = "postgres" -o "$db_kind" = "both" ]; then
+		echo postgres
+		python 2-przerzucenie/wrzuc_do_bazy.py data.txt $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
+		#python 2-przerzucenie/atf2xml.py tekst.atf show.xml 2-przerzucenie 2>>$log
+		python 2-przerzucenie/wrzuc_tekst.py tekst.atf $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
+		python 2-przerzucenie/wrzuc_sekwencje.py tekst.atf $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
+	fi
+	if [ "$db_kind" = "xml" -o "$db_kind" = "both" ]; then
+		echo xml
+		python 2-przerzucenie/atf2xml_xml.py tekst.atf data.txt sumlib.xml .
+	fi
 fi
 
 # Potrzebne opcje:

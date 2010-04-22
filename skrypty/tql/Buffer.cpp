@@ -77,3 +77,9 @@ void bufClean(bufor b){
     b->cur = 0;
     memset(b->buf, 0, b->size);
 }
+
+char bufPop(bufor b){
+    char c = b->buf[--b->cur];
+    b->buf[b->cur] = 0;
+    return c;
+}

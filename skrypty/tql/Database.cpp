@@ -72,13 +72,12 @@ int comparator(const void *v1, const void *v2){
 //    return 0;
 }
 
-void printTag(Tag *tag, char* info){
-    printf("%s: tag id: %d, value: %d, from: %d, to: %d\n", info, tag->id, tag->value, tag->beginNode, tag->endNode);
-}
+//void printTag(Tag *tag, char* info){
+//    printf("%s: tag id: %d, value: %d, from: %d, to: %d\n", info, tag->id, tag->value, tag->beginNode, tag->endNode);
+//}
 
 void makeTagNode(TagNode *tagNode, Tag *tag, bool begin){
     tagNode->tag = tag;
-//    printTag(tagNode->tag, "In makeTagNode");
     if(begin)
         tagNode->id = tag->beginNode;
     else
@@ -86,10 +85,11 @@ void makeTagNode(TagNode *tagNode, Tag *tag, bool begin){
 }
 
 const char* addNodes(Tablet tab){
-    int i, nodenr=0;
+    int i, nodenr=0, closed;
     char *line, *textbuf = strdup(tab.text), *node;
     char *saveptr1, *saveptr2;
     _bufor rettextbuf, tagIdsBuf, tagValsBuf;
+    char c;
     
     int openedTagsCount=0;
 
@@ -110,33 +110,31 @@ const char* addNodes(Tablet tab){
     }
     qsort(tagNodes, size, sizeof(TagNode), comparator);
 
-    for(i=0;i<tab.tags->count;i++){
-        printTag(&tab.tags->tab[i], "show");
-    }
-
     i = 0;
     line = strtok_r(textbuf, "\n", &saveptr1);
     while(line){
         node = strtok_r(line, " ", &saveptr2);
         while(node){
            if (nodenr == tagNodes[i].id) {
-               printf("Opened tags count = %d\n", openedTagsCount);
-                if (openedTagsCount > 0)
+                if (openedTagsCount > 0){
+                    c = bufPop(&rettextbuf);
                     bufAppendS(&rettextbuf, END_TAG);
+                    bufAppendC(&rettextbuf, c);
+                }
+               closed = 0;
                 for(int j=0; j<openedTagsCount; j++){
                     if(openedTags[j]->endNode == nodenr){
-                        printTag(openedTags[j], "closing");
                         if(j<openedTagsCount-1){
                             openedTags[j] = openedTags[openedTagsCount-1];
 
                         }
-                        openedTagsCount--;
+                        closed++;
                     }
                 }
+               openedTagsCount -= closed;
                 do {
                     if (tagNodes[i].id == tagNodes[i].tag->beginNode) {
                         openedTags[openedTagsCount++] = tagNodes[i].tag;
-                        printTag(tagNodes[i].tag, "opening");
                     }
                     i++;
                 } while (nodenr == tagNodes[i].id) ;
@@ -168,10 +166,6 @@ const char* addNodes(Tablet tab){
         bufAppendS(&rettextbuf, "\n");
         line = strtok_r(NULL, "\n", &saveptr1);
     }
-    for(i=0;i<size;i++){
-        //printf("Tag: from %d to %d, value %d\n", tab.tags->tab[i].beginNode, tab.tags->tab[i].endNode, tab.tags->tab[i].value);
-        printf("TagNode %d: tagId = %d, value = %d, beginNode = %d, endNode = %d \n", tagNodes[i].tag->id, tagNodes[i].id, tagNodes[i].tag->value, tagNodes[i].tag->beginNode, tagNodes[i].tag->endNode);
-    }
-
+    
     return rettextbuf.buf;
 }

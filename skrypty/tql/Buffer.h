@@ -16,6 +16,7 @@ void bufAppendInt(bufor b, int i);
 
 void bufReset(bufor b);
 void bufClean(bufor b);
+char bufPop(bufor b);
 
 
 #endif 

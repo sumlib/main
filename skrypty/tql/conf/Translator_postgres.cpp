@@ -75,9 +75,9 @@ char *translateTextQuery(int id, char *text){
   bufReset(&tmp);
   bufAppendS(&tmp,"       (\n         SELECT id_tab, CAST(array_accum(nodes) as TEXT) as nodes, COUNT(DISTINCT id_seq) AS seq, ");
   bufAppendInt(&tmp,ID_SEQ);
-  bufAppendS(&tmp," AS id_seq \n         FROM (\n            SELECT \n               r1.node1_id % 1000000 AS id_tab, \n               '{' || r1.node1_id || ',' || r");
+  bufAppendS(&tmp," AS id_seq \n         FROM (\n            SELECT \n               r1.node1_id % 1000000 AS id_tab, \n               '{' || r1.node1_id/1000000 || ',' || r");
   bufAppendInt(&tmp,expString.amnt);
-  bufAppendS(&tmp,".node2_id || '}'AS nodes, \n               1 AS id_seq\n            FROM \n               reading r1 \n");
+  bufAppendS(&tmp,".node2_id/1000000 || '}'AS nodes, \n               1 AS id_seq\n            FROM \n               reading r1 \n");
   for (i = 1; i < expString.amnt; i++) {
 	bufAppendS(&tmp,"               LEFT JOIN reading r");
 	bufAppendInt(&tmp,i+1);

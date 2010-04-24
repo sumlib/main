@@ -137,8 +137,8 @@ Tags* parseNodes(const char *nodes) {
                 group++;
             }
             if (ni > 0) {
-                takeRealNode(node);
-                tag.endNode = atoi(node);
+//                takeRealNode(node);
+                tag.endNode = atoi(node)/10;
                 tag.value = group;
                 tag.type = results;
                 tag.id = tag_id++;
@@ -150,8 +150,8 @@ Tags* parseNodes(const char *nodes) {
         }
         if (nodes[i] == ',') {
             if(ni>0){
-                takeRealNode(node);
-                tag.beginNode = atoi(node);
+//                takeRealNode(node);
+                tag.beginNode = atoi(node)/10;
                 ni = 0;
             }
             continue;

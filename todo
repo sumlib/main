@@ -19,9 +19,40 @@ O +> nie działają zapytania o text (coś jest nie tak z przeglądaniem sekwenc
 -> dodać muzeum??
   
 PRACA DOMOWA:
-Asia - poprawić nody, poprawki na stronę (żeby pokazywało nody)
-Ola - przykłady na prezentację, poprawić database xml
+Asia - strona,
+Ola - przykłady na prezentację, skrypt, 
 
+
+PREZENTACJA:
+ - wejscie i wyjscie na górze i pogrubione
+ - baza: podpunkty do komunikacja z modulem wymiennym
+ - Asia podzieli na pliki
+
+plan:
+A1) wprowadzenie
+ - dsl
+ - tabliczki, sumerowie 
+ - obrazek Dąbrowskiego 
+ - przykład zapytania z omówieniem ustnym (może osobny punkt?)
+O2) implementacja
+ - struktura ogólna
+ - podział na moduły
+ - parser i analizator
+ - translator
+ - baza
+ - struktura tablets
+ - kompilacja - make all robi oba
+A3) postgres
+ - diagram encji
+ - tłumaczenie zapytania
+O4) xml
+ - schemat
+ - tłumaczenie
+ - krótko o zorbie, przerobienie z c na c++
+A5) plany na przyszłość ?
+ - NAPISAC PRACE MAGISTERSKA
+ - wielka refaktoryzacja
+ - znalezienie zespołu na ZPP, który nam zrobi ładny interfejs
 
 
 PORZĄDKOWE

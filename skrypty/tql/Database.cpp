@@ -15,7 +15,7 @@ char* getXmlFromQuery(char* query){
     Tablets *tabs = getTablets(query);
     int i;
     _bufor buf;
-    if(tabs==NULL) return "No results";
+    if(tabs==NULL || tabs->size == 0) return "No results";
     else {
         bufReset(&buf);
         for (i = 0; i < tabs->size; i++) {

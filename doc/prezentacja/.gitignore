@@ -4,3 +4,10 @@
 /tql.out
 /tql.snm
 /tql.toc
+/*.aux
+/*.log
+/*.nav
+/*.out
+/*.snm
+/*.tex~
+/*.toc

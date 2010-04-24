@@ -1,0 +1,87 @@
+\section{Implementacja}
+% Struktura translatora, opisać co się dzieje, dlaczego jest niezależne 
+% itp., przepływ zapytania przez program
+\begin{frame}
+     \frametitle{Struktura}
+\begin{center}
+\includegraphics[height=70mm]{diagramy/struktura.pdf}
+%\includegraphics[height=70mm]{moduly.pdf}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+     \frametitle{Podział na moduły}
+    
+\begin{center}
+\includegraphics[width=100mm]{diagramy/pakiety.pdf}
+%\includegraphics[height=70mm]{moduly.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Parser i analizator składniowy}
+\begin{itemize}
+\item moduły niezależne od bazy danych i języka wyszukiwania
+\item wspólne dla wszystkich  implementacji TQL
+\item napisane za pomocą narzędzia BNFC, potem uporządkowane
+\item wejście - zapytanie w języku TQL
+\item wyjście - drzewo składni abstrakcyjnej
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Translator}
+\begin{itemize}
+\item wejście - drzewo składni abstrakcyjnej
+\item wyjście - zapytanie w odpowiednim języku
+\item buduje zapytanie:
+\begin{itemize}
+ \item przechodzi strukturę drzewa
+ \item wywołuje funkcje z fragmentów zależnych od bazy danych (Translator\_interface.h)
+ \item zwraca wynik (getResult())
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+     \frametitle{Baza}
+\begin{itemize}
+\item wejście - zapytanie w języku docelowym
+\item wyjście - XML zawierający informacje o znalezionych tabliczkach i ich treść
+\item przekazuje zapytanie do części zależnej od bazy danych (Database\_interface.h)
+\item dostaje strukturę
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Baza}
+\begin{columns}[t]
+\column{.5\textwidth}
+\begin{block}{Struktura Tablet}
+typedef struct\{ \\
+~~~~char* id; \\
+~~~~char* id\_cdli; \\
+~~~~char* publication; \\
+~~~~char* measurements; \\
+~~~~char* year; \\
+~~~~char* provenience; \\
+~~~~char* period; \\
+~~~~char* genre; \\
+~~~~char* subgenre; \\
+~~~~char* collection; \\
+~~~~char* text; \\
+~~~~Tags *tags; \\
+\} Tablet; \\
+\end{block}
+\column{.5\textwidth}
+\begin{block}{Struktura Tablets}
+typedef struct\{ \\
+~~~~int size; \\
+~~~~Tablet *tabs; \\
+\} Tablets;
+\end{block}
+\end{columns}
+
+\end{frame}

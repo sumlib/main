@@ -1,0 +1,73 @@
+\documentclass[xcolor=dvipsnames,10pt]{beamer}
+
+\beamersetaveragebackground{blue!10}
+
+\mode<presentation>
+{
+     \usetheme{Warsaw}
+}
+
+\usepackage{polski}
+\RequirePackage[utf8]{inputenc}
+
+\author{Joanna Kotuła, Aleksandra Mogielska}
+\institute[...]{Wydział Matematyki, Informatyki i Mechaniki\\
+Uniwersytet Warszawski}
+
+\subject{...}
+
+\title[Intuicyjny język wyszukiwania TQL (Tablets Query Language)]{\bf  Intuicyjny język wyszukiwania TQL \\
+Tablets Query Language}
+%\subtitle{...}
+
+\date{\today}
+
+
+
+\begin{document}
+
+
+\begin{frame}
+     \titlepage
+\end{frame}
+
+\begin{frame}
+     \frametitle{Spis treści}
+     \tableofcontents
+\end{frame}
+
+
+
+
+
+
+% \begin{frame}
+%      \frametitle{Aplikacja wykorzystująca translator}
+%    
+% \begin{itemize}
+% \item umożliwa użytkownikowi wprowadzenie zapytania jako tekstu lub za pomocą graficznego interfejsu
+% \item odpowiednio wyświetla zwracanego XML-a, pokazując wyszukiwane sekwencje
+% \end{itemize}
+% 
+% \end{frame}
+% 
+
+\include{wprowadzenie.tex}
+\include{implementacja.tex}
+\include{postgres.tex}
+\include{xml.tex}
+\include{plany.tex}
+
+% 
+%\section{Pokaz działania}
+
+%\begin{frame}
+%     \frametitle{Pokaz działania}
+%\end{frame}
+
+
+\end{document}
+
+
+
+

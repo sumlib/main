@@ -35,7 +35,7 @@ char* getXmlFromQuery(char* query){
             bufAppendS(&buf, oneTab(i).subgenre);
             bufAppendS(&buf, "\" publication=\"");
             bufAppendS(&buf, oneTab(i).publication);
-            bufAppendS(&buf, "\">");
+            bufAppendS(&buf, "\">\n");
             bufAppendS(&buf, addNodes(oneTab(i)));
             bufAppendS(&buf, "</tablet>\n");
         }
@@ -72,9 +72,9 @@ int comparator(const void *v1, const void *v2){
 //    return 0;
 }
 
-//void printTag(Tag *tag, char* info){
-//    printf("%s: tag id: %d, value: %d, from: %d, to: %d\n", info, tag->id, tag->value, tag->beginNode, tag->endNode);
-//}
+void printTag(Tag *tag, char* info){
+    printf("%s: tag id: %d, value: %d, from: %d, to: %d\n", info, tag->id, tag->value, tag->beginNode, tag->endNode);
+}
 
 void makeTagNode(TagNode *tagNode, Tag *tag, bool begin){
     tagNode->tag = tag;
@@ -104,7 +104,9 @@ const char* addNodes(Tablet tab){
    
     int size = tab.tags->count*2;
     TagNode tagNodes[size];
+
     for(i=0; i<tab.tags->count; i++){
+//        printTag(&tab.tags->tab[i], "info");
         makeTagNode(&tagNodes[2*i], &(tab.tags->tab[i]), true);
         makeTagNode(&tagNodes[2*i+1], &(tab.tags->tab[i]), false);
     }
@@ -115,6 +117,7 @@ const char* addNodes(Tablet tab){
     while(line){
         node = strtok_r(line, " ", &saveptr2);
         while(node){
+//           printf("node %d: %s\n", nodenr, node);
            if (nodenr == tagNodes[i].id) {
                 if (openedTagsCount > 0){
                     c = bufPop(&rettextbuf);

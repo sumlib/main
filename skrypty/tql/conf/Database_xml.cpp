@@ -128,11 +128,11 @@ Tags* parseNodes(Item nodes) {
             attr.getNodeName(attr_name_item);
             const char* attrValue = attr.getStringValue().c_str();
             if (attr_name_item.getStringValue().compare("node1") == 0) {
-                tag.beginNode=atoi(attrValue);
+                tag.beginNode=atoi(attrValue)/10;
 
             }
             else if (attr_name_item.getStringValue().compare("node2") == 0) {
-                tag.endNode=atoi(attrValue);
+                tag.endNode=atoi(attrValue)/10;
             }
 
         }

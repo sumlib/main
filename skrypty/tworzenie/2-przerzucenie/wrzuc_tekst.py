@@ -41,9 +41,14 @@ cur = conn.cursor()
 
 
 def update(q,a=()):
-	#sys.stderr.write(q % a)
-	#sys.stderr.write("\n");
-	cur.execute(q,a)
+
+	try:
+		cur.execute(q,a)
+	except:
+		sys.stderr.write("nie udalo sie wrzucic: ")
+		sys.stderr.write(q % a)
+		sys.stderr.write("\n");		
+	
 #	conn.query(q,a)         # odkomentowac!!!
 
 

@@ -50,7 +50,10 @@ def fetch(r):
 def insert(q,a=()):
 	sys.stderr.write(q % a)
 	sys.stderr.write("\n");
-	conn.query(q % a)
+	try:
+		conn.query(q % a)
+	except:
+		sys.stderr.write("nie udalo sie wrzucic\n")
 	#print q % a
 	#cr.execute("SELECT id FROM %s WHERE value = %s",a)
 	#t = cr.fetchone()

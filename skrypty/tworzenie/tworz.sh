@@ -116,7 +116,13 @@ if [ $get -eq 1 ]; then
 fi
 
 if [ $insert -eq 1 ]; then
-	2-przerzucenie/zapisz.sh $start $end 2-przerzucenie -d data.txt -a tekst.atf -c 2>>$log
+	if [ $force -eq 1 ]; then
+		python 2-przerzucenie/wyczysc_baze.py $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log
+		2-przerzucenie/zapisz.sh $start $end 2-przerzucenie -d data.txt -a tekst.atf -c 2>>$log
+	else
+		2-przerzucenie/zapisz.sh $start $end 2-przerzucenie -d data.txt -a tekst.atf 2>>$log
+	fi
+	
 	if [ "$db_kind" = "postgres" -o "$db_kind" = "both" ]; then
 		echo postgres
 		python 2-przerzucenie/wrzuc_do_bazy.py data.txt $db_name $db_user $db_pass $db_host $db_port 2-przerzucenie 2>>$log

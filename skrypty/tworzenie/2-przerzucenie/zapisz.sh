@@ -8,7 +8,7 @@ atffile=tekst.atf
 start=1
 end=999999
 current=.
-clear=1
+clear=0
 
 if echo "$1" | grep -v "^\-.*" > /dev/null; then start=$1; shift 1; fi 
 if echo "$1" | grep -v "^\-.*" > /dev/null; then end=$1; shift 1; fi 

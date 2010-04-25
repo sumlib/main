@@ -42,7 +42,12 @@ cur = conn.cursor()
 def insert(q,a=()):
 	#sys.stderr.write(q % a)
 	#sys.stderr.write("\n");
-	cur.execute(q,a)
+	try:
+		cur.execute(q,a)
+	except:
+		sys.stderr.write("nie udalo sie wrzucic: ")
+		sys.stderr.write(q % a)
+		sys.stderr.write("\n");		
 	#conn.query(q % a)
 	#print q % a
 	#cr.execute("SELECT id FROM %s WHERE wartosc = %s",a)

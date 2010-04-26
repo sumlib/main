@@ -106,6 +106,7 @@ input_dane = open(plik_z_danymi,'r',1)
 show = ""
 reading = ""
 tablet="<tablets>\n"
+tablet="<tablets xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'\nxsi:noNamespaceSchemaLocation='file:/Users/ola/Desktop/sumlib.xs'>\n"
 bylo = 0
 i = 0
 przerwa = 0

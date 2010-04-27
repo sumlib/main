@@ -20,23 +20,24 @@
 \begin{frame}
 \frametitle{Parser i analizator składniowy}
 \begin{itemize}
+\item \textbf{wejście} - zapytanie w języku TQL
+\item \textbf{wyjście} - drzewo składni abstrakcyjnej
 \item moduły niezależne od bazy danych i języka wyszukiwania
-\item wspólne dla wszystkich  implementacji TQL
-\item napisane za pomocą narzędzia BNFC, potem uporządkowane
-\item wejście - zapytanie w języku TQL
-\item wyjście - drzewo składni abstrakcyjnej
+\item wspólne dla wszystkich implementacji TQL
+\item napisane za pomocą narzędzia BNFC, następnie uporządkowane
+
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Translator}
 \begin{itemize}
-\item wejście - drzewo składni abstrakcyjnej
-\item wyjście - zapytanie w odpowiednim języku
+\item \textbf{wejście} - drzewo składni abstrakcyjnej
+\item \textbf{wyjście} - zapytanie w odpowiednim języku
 \item buduje zapytanie:
 \begin{itemize}
  \item przechodzi strukturę drzewa
- \item wywołuje funkcje z fragmentów zależnych od bazy danych (Translator\_interface.h)
+ \item wywołuje funkcje zależne od bazy danych (Translator\_interface.h)
  \item zwraca wynik (getResult())
 \end{itemize}
 \end{itemize}
@@ -44,17 +45,21 @@
 
 
 \begin{frame}
-     \frametitle{Baza}
+     \frametitle{Baza danych}
 \begin{itemize}
-\item wejście - zapytanie w języku docelowym
-\item wyjście - XML zawierający informacje o znalezionych tabliczkach i ich treść
+\item \textbf{wejście} - zapytanie w języku docelowym
+\item \textbf{wyjście} - XML zawierający informacje o znalezionych tabliczkach i ich treść
+\item wykonuje zapytanie i tworzy wynik:
+\begin{itemize}
 \item przekazuje zapytanie do części zależnej od bazy danych (Database\_interface.h)
-\item dostaje strukturę
+\item dostaje strukturę (Tablets)
+\item otrzymaną strukturę przedstawia w postaci XML
+\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
- \frametitle{Baza}
+ \frametitle{Baza danych}
 \begin{columns}[t]
 \column{.5\textwidth}
 \begin{block}{Struktura Tablet}
@@ -83,3 +88,24 @@ typedef struct\{ \\
 \end{columns}
 
 \end{frame}
+
+\begin{frame}
+ \frametitle{Dostosowanie do różnych baz danych}
+\begin{itemize}
+\item pliki zależne od bazy danych implementują interfejsy
+\begin{itemize}
+\item Translator\_interface.h
+\item Database\_interface.h
+\end{itemize}
+\item istnieją dwie implementacje
+\begin{itemize}
+\item dla bazy relacyjnej PostgreSQL
+\item dla bazy XML (Zorba)
+\end{itemize}
+\item równoczesna kompilacja poleceniem make
+\end{itemize}
+\end{frame}
+
+
+
+

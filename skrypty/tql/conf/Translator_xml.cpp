@@ -60,14 +60,14 @@ void translator_initSingleQuery(){
         bufAppendS(buf_result, "\n,\n");
     }
     bufAppendS(buf_result, "for $tablet in .//tablet\n");
-    bufAppendS(buf_where, "");
-    bufAppendS(buf_seq_result,"");
-    bufAppendS(buf_seq_let,"");
+    bufReset(buf_where);
+    bufReset(buf_seq_result);
+    bufReset(buf_seq_let);
 }
 
 
 char *escape(char *text) {
-    //.()*^$
+    //.()*^${}
     _bufor *tmp;
 
     tmp = (bufor) malloc(sizeof(_bufor));
@@ -82,7 +82,7 @@ char *escape(char *text) {
             i++;
         }
         else {
-          if (c == '.' || c == '(' || c == ')'
+          if (c == '.' || c == '(' || c == ')' || c == '{' || c == '}'
                 || c == '*' || c == '^' || c == '$' ) {
             bufAppendS(tmp,"\\");
           }
@@ -90,7 +90,7 @@ char *escape(char *text) {
         }
     }
 
-    return tmp->buf;
+    return strdup(tmp->buf);
 }
 
 char *translateTextQuery(char *text){
@@ -173,7 +173,7 @@ char *translateTextQuery(char *text){
   bufAppendS(&tmp2,"\n");
 
 
-  return tmp2.buf;
+  return strdup(tmp2.buf);
 }
 
 char *translator_simpleText(int i, char *text){
@@ -183,12 +183,12 @@ char *translator_simpleText(int i, char *text){
   int ile;
 //   fprintf(stderr, "Format: %s\n", f);
   if(strcmp(format,TEXT) == 0) {
-    return translateTextQuery(text);
+    return strdup(translateTextQuery(text));
   }
 
   tmp_format = strdup(format);
   if(!(position = strstr(tmp_format, VAR)))  // is VAR even in format?
-    return tmp_format;
+    return strdup(tmp_format);
   strcpy(buffer, "(");
 
  while(position){

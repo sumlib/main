@@ -1,5 +1,77 @@
 \subsection{PostgreSQL}
+
 \begin{frame}
  \frametitle{Diagram encji}
  \includegraphics[width=100mm]{../diagramy/diagram-encji-maly.pdf}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Tłumaczenie zapytań: inicjalizacja}
+ \begin{block}{Select}
+SELECT t.id, t.id\_cdli, t.publication, t.measurements, t.origin\_date, \\
+~~~~~~~p.value as provenience, pd.value as period, \\
+~~~~~~~g1.value as genre, g2.value as subgenre, \\
+~~~~~~~c.value as collection, t.text 
+ \end{block}
+\begin{block}{From}
+FROM tablet t \\
+~~LEFT JOIN provenience p ON p.id=t.provenience\_id \\
+~~LEFT JOIN collection c ON c.id=t.collection\_id \\
+~~LEFT JOIN genre g1 ON g1.id=t.genre\_id \\
+~~LEFT JOIN genre g2 ON g2.id = t.subgenre\_id \\
+~~LEFT JOIN period pd ON pd.id = t.period\_id \\
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{Tłumaczenie zapytań: zapytania proste}
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{Tłumaczenie zapytań: treść tabliczki}
+
+% \begin{block}{From}
+% 
+% INNER JOIN ( \\
+% 
+% ) AS sequence ON sequence.id\_tab = t.id \\
+%  \end{block}
+
+ \begin{block}{wynikowe zapytanie o treść tablczki}
+\begin{scriptsize}
+SELECT \\
+~~id\_tab, \\
+~~CAST(array\_accum(nodes) as TEXT) as nodes,\\
+~~COUNT(DISTINCT id\_seq) AS seq,\\
+~~$<$id\_seq$>$ AS id\_seq\\
+FROM (\\
+~~SELECT\\
+~~~~t1.node1\_id \% 1000000 AS id\_tab,\\
+~~~~’\{’ $||$ t1.node1\_id $||$ ’,’ $||$ t$<$dl\_sekw$>$.node2\_id $||$ ’\}’ AS nodes,\\
+~~~~1 AS id\_seq\\
+~~FROM\\
+~~~~readings t1\\
+~~~~LEFT JOIN readings t2 ON (t2.node1 = t1.node2)\\
+~~~~LEFT JOIN $<$nazwa\_tabeli$>$ t3 ON (t3.node1 = t2.node2)\\
+~~~~...\\
+~~~~LEFT JOIN $<$nazwa\_tabeli$>$ t$<$dl\_sekw$>$ ON (t$<$dl\_sekw$>$.node1 = t$<$dl\_sekw-1$>$.node2)\\
+~~WHERE\\
+~~~~t1.value LIKE ’$<$sekw[1]$>$’\\
+~~~AND\\
+~~~~t2.value LIKE ’$<$sekw[2]$>$’\\
+~~~AND\\
+~~~~t3.value LIKE ’$<$sekw[3]$>$’\\
+~~~AND\\
+~~~~...\\
+~~~AND\\
+~~~~t$<$dl\_sekw$>$.value LIKE ’$<$sekw[$<$dl\_sekw$>$]$>$’\\
+) AS a
+GROUP BY id\_tab
+
+\end{scriptsize}
+ \end{block}
+
+
 \end{frame}

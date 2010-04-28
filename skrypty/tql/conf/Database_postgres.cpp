@@ -44,6 +44,13 @@ typedef struct {
 #define MAX_NODE_SIZE 11;
 #define nodeReset for(ni=0;ni<11;ni++) node[ni] = 0;
 
+#define newTag tags->tab[tags->count-1]
+
+
+void printTag2(Tag *tag, char* info){
+    printf("%s: tag id: %d, value: %d, from: %d, to: %d\n", info, tag->id, tag->value, tag->beginNode, tag->endNode);
+}
+
 
 void initTags(Tags* tags) {
 
@@ -54,15 +61,17 @@ void initTags(Tags* tags) {
 
 void resizeTags(Tags* tags) {
     tags->size*=2;
-    tags->tab= (Tag*) realloc(tags->tab,tags->size);
+    tags->tab= (Tag*) realloc(tags->tab,tags->size*sizeof(Tag));
 }
 
-void addTag(Tags* tags, Tag tag) {
+void addTag(Tags* tags) {
     if (tags->size <= tags->count) {
         resizeTags(tags);
     }
-    tags->tab[tags->count++]=tag;
+    tags->count++;
 }
+
+
 
 db_config parseConfigFile() {
     FILE* f = fopen(CONFIG_FILE, "r");
@@ -115,14 +124,15 @@ db_config parseConfigFile() {
 #define takeRealNode(node)   node[strlen(node)-7] = 0;
 #define charIsDigit(c) ('0' <= c && c <= '9')
 
+#define zerujNode(size) for(int j=0; j<size;j++) node[j] = 0;
+
 Tags* parseNodes(const char *nodes) {
     Tags* tags = (Tags*) malloc(sizeof(Tags));
-    Tag tag;
     int tag_id = 0;
     int i, ni = 0, level = 0;
     int group = 0;
     char node[12];
-    node[11] = 0;
+    zerujNode(12);
 
     initTags(tags);
     for (i = 0; i < strlen(nodes); i++) {
@@ -138,11 +148,13 @@ Tags* parseNodes(const char *nodes) {
             }
             if (ni > 0) {
 //                takeRealNode(node);
-                tag.endNode = atoi(node)/10;
-                tag.value = group;
-                tag.type = results;
-                tag.id = tag_id++;
-                addTag(tags,tag);
+                
+                newTag.endNode = atoi(node)/10;
+ //               printf("node: '%s' => '%d'\n", node, tag.endNode);
+                zerujNode(ni);
+                newTag.value = group;
+                newTag.type = results;
+                newTag.id = tag_id++;
                 ni = 0;
             }
             level--;
@@ -151,7 +163,10 @@ Tags* parseNodes(const char *nodes) {
         if (nodes[i] == ',') {
             if(ni>0){
 //                takeRealNode(node);
-                tag.beginNode = atoi(node)/10;
+                addTag(tags);
+                newTag.beginNode = atoi(node)/10;
+//                printf("node: '%s' => '%d'\n", node, tag.beginNode);
+                zerujNode(ni);
                 ni = 0;
             }
             continue;
@@ -182,6 +197,11 @@ void setTabletInfo(PGresult *result, int rowId, Tablet* tab) {
     setFromResult(nodes, rowId, T_NODES);
     //printf("%s\n\n", nodes);
     tab->tags = parseNodes(nodes);
+
+//    for(int i = 0; i<tab->tags->count;i++){
+//         printTag2(&tab->tags->tab[i], "info");
+//    }
+
     //printf("\n\n %s \n\n", nodes);
 
 }

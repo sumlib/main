@@ -58,7 +58,7 @@ void initTags(Tags* tags) {
 
 void resizeTags(Tags* tags) {
     tags->size*=2;
-    tags->tab=(Tag*) realloc(tags->tab,tags->size);
+    tags->tab=(Tag*) realloc(tags->tab,sizeof(Tag)*tags->size);
 }
 
 void addTag(Tags* tags, Tag tag) {

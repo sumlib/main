@@ -26,6 +26,26 @@ FROM tablet t \\
 
 \begin{frame}
  \frametitle{Tłumaczenie zapytań: zapytania proste}
+\begin{block}{provenience: wartosc}
+p.value LIKE 'wartosc'
+\end{block}
+
+\begin{block}{publication: wartosc}
+t.publication LIKE ’wartosc’
+\end{block}
+
+\begin{block}{period: wartosc}
+pd.value LIKE 'wartosc'
+\end{block}
+
+\begin{block}{genre: wartosc}
+g1.value LIKE 'wartosc' OR g2.value LIKE 'wartosc'
+\end{block}
+
+\begin{block}{cdli\_id: wartosc}
+ t.cdli\_id LIKE 'wartosc'
+\end{block}
+
 
 \end{frame}
 
@@ -39,12 +59,11 @@ FROM tablet t \\
 % ) AS sequence ON sequence.id\_tab = t.id \\
 %  \end{block}
 
- \begin{block}{wynikowe zapytanie o treść tablczki}
+ \begin{block}{Zapytanie o treść tablczki}
 \begin{scriptsize}
 SELECT \\
 ~~id\_tab, \\
 ~~CAST(array\_accum(nodes) as TEXT) as nodes,\\
-~~COUNT(DISTINCT id\_seq) AS seq,\\
 ~~$<$id\_seq$>$ AS id\_seq\\
 FROM (\\
 ~~SELECT\\
@@ -61,9 +80,9 @@ FROM (\\
 ~~~~t1.value LIKE ’$<$sekw[1]$>$’\\
 ~~~AND\\
 ~~~~t2.value LIKE ’$<$sekw[2]$>$’\\
-~~~AND\\
-~~~~t3.value LIKE ’$<$sekw[3]$>$’\\
-~~~AND\\
+% ~~~AND\\
+% ~~~~t3.value LIKE ’$<$sekw[3]$>$’\\
+% ~~~AND\\
 ~~~~...\\
 ~~~AND\\
 ~~~~t$<$dl\_sekw$>$.value LIKE ’$<$sekw[$<$dl\_sekw$>$]$>$’\\
@@ -73,5 +92,62 @@ GROUP BY id\_tab
 \end{scriptsize}
  \end{block}
 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Tłumaczenie zapytań: operatory}
+\begin{block}{/ -- or}
+SELECT \\
+~~id\_tab, \\
+~~CAST(array\_accum(nodes) as TEXT) as nodes, \\
+~~$<$id\_sekw$>$ as id\_seq\\
+FROM \\
+(\\
+~~$<$zapytanie1$>$\\
+~~\textbf{UNION}\\
+~~$<$zapytanie2$>$\\
+)\\
+as c\\
+GROUP BY id\_tab
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Tłumaczenie zapytań: operatory}
+\begin{block}{+ -- and}
+SELECT id\_tab, \\
+~~~~~~ CAST(array\_accum(nodes) as TEXT) as nodes, \\
+~~~~~~ $<$id\_sekw$>$ as id\_seq\\
+FROM\\
+(\\
+~~$<$zapytanie1$>$\\
+~~UNION\\
+~~$<$zapytanie2$>$\\
+) as c \\
+GROUP BY id\_tab\\
+\textbf{HAVING COUNT(DISTINCT id\_seq)=2} \\
+
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Tłumaczenie zapytań: operatory}
+\begin{block}{$--$ -- not}
+SELECT \\
+~~id\_tab, \\
+~~'' as nodes, \\
+~~$<$id\_sekw$>$ as id\_seq\\
+FROM\\
+(\\
+~~(SELECT id as id\_tab from tablet)\\
+~~~~\textbf{EXCEPT}\\
+~~(SELECT id\_tab from\\
+~~~~$<$zapytanie\_negowane$>$ as a\\
+~~)   \\
+) as b
+\end{block}
 
 \end{frame}

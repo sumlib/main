@@ -63,7 +63,7 @@ def napisNull(keyname):
 	
 
 def zapisz_tabliczke_do_bazy(id_tabliczki,tekst):
-	print id_tabliczki
+	#print id_tabliczki
 	update("""UPDATE tablet SET show_text = %s WHERE id_cdli=%s;""", (napisNull(tekst), id_tabliczki))
 	
 

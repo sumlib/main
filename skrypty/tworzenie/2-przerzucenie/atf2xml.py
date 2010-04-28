@@ -48,19 +48,19 @@ def filtruj(linia):
 				nowe = re.sub(r'\]','',nowe)
 				retVal[i] = (nowe,sl,1)  #0-normalne, 1-uszkodzenia
 				i = i + 1
-				sys.stderr.write(sl + " uszkodzone\n")
+#				sys.stderr.write(sl + " uszkodzone\n")
 
 			elif (pasuje2):
 				nowe = re.sub(r'\[','',sl)
 				retVal[i] = (nowe,sl,1)  #0-normalne, 1-uszkodzenia
 				i = i + 1
 				bylo = 1
-				sys.stderr.write(sl + " uszkodzone\n")
+#				sys.stderr.write(sl + " uszkodzone\n")
 
 			else:
 				retVal[i] = (sl,sl,0)  #0-normalne, 1-uszkodzenia
 				i = i + 1
-				sys.stderr.write(sl + " normalne\n")
+#				sys.stderr.write(sl + " normalne\n")
 
 		elif (bylo == 1):
 			pasuje = re.match(r'[^][]*\][^][]*$',sl)

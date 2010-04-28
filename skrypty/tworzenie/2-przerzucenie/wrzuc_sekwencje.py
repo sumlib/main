@@ -4,7 +4,7 @@ import sys
 import re
 import psycopg2
 import cgi
-
+from traceback import print_tb
 
 if len(sys.argv)==1:
     print "USAGE: %s <filename> <dbname> [<folder> [<user> <password> <host> <port>]]" 
@@ -44,10 +44,14 @@ def insert(q,a=()):
 	#sys.stderr.write("\n");
 	try:
 		cur.execute(q,a)
-	except:
-		sys.stderr.write("nie udalo sie wrzucic: ")
+	except Exception as e:
+                print "ERROR: %s" % str(e)
+                print print_tb(sys.exc_info()[2])
+         	sys.stderr.write("nie udalo sie wrzucic: ")
 		sys.stderr.write(q % a)
-		sys.stderr.write("\n");		
+		sys.stderr.write("\n");
+		sys.stderr.write("ERROR: %s\n" % str(e))
+
 	#conn.query(q % a)
 	#print q % a
 	#cr.execute("SELECT id FROM %s WHERE wartosc = %s",a)

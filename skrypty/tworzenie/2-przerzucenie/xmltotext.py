@@ -27,6 +27,6 @@ for graph in tabliczki[0].getElementsByTagName("graph"):
 			symbol = symbol[:-1]
 			symbol+= "<br>"
 		tab+=symbol + "||"
-	print id_ + ")" + tab
-	print "**********************"
+#	print id_ + ")" + tab
+#	print "**********************"
 	conn.query("Update tabliczka set tekst='%s' where id=%s" % (tab, id_))

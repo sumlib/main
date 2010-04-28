@@ -7,6 +7,7 @@
 #include "../Cexplode.h"
 #include "Database_config.h"
 #include "../Err.h"
+#include "../Buffer.h"
 
 #include <zorba/zorba.h>
 #include <simplestore/simplestore.h>
@@ -33,7 +34,7 @@ using namespace zorba;
 #define cut_newline(s) if (s[strlen(s)-1]=='\n') s[strlen(s)-1]=0
 
 #define setFromResult(v, nodeName) if(lNodeName.getStringValue().compare(nodeName) == 0){ \
-                                        v = (const char*) strdup(lChild.getStringValue().c_str()); \
+                                        v = escapeXML((const char*) strdup(lChild.getStringValue().c_str())); \
                                     } else
 #define setNodesFromResult(v, nodeName) if(lNodeName.getStringValue().compare(nodeName) == 0){ \
                                         v = parseNodes(lChild); \
@@ -48,6 +49,33 @@ typedef struct {
 //#define MAX_NODE_SIZE 11;
 //#define nodeReset for(ni=0;ni<11;ni++) node[ni] = 0;
 
+
+char *escapeXML(const char *text) {
+    //&<>
+    _bufor *tmp;
+
+    tmp = (bufor) malloc(sizeof(_bufor));
+    bufReset(tmp);
+
+
+    int i;
+    for (i=0;i<strlen(text);i++) {
+        char c = text[i];
+        if (c == '&')  {
+            bufAppendS(tmp,"&amp;");
+        }
+        else if (c == '<') {
+            bufAppendS(tmp,"&lt;");
+        }
+        else if (c == '>') {
+            bufAppendS(tmp,"&gt;");
+        }
+        else bufAppendC(tmp,c);
+
+    }
+
+    return strdup(tmp->buf);
+}
 
 void initTags(Tags* tags) {
 

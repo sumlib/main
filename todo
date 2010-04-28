@@ -1,6 +1,7 @@
 +> testować gwiazdki
 => Zmienić tłumaczenie + -> zamienić where i podzapytanie na "Having count"
 
+
 KONCEPCYJNE
 +> kilka gwiazdek możliwych (*coś*coś2*)
 => zaimplementowac wyszukiwanie po klinach
@@ -44,8 +45,8 @@ O2) implementacja
  - struktura tablets
  - kompilacja - make all robi oba
 A3) postgres
- - diagram encji
- - tłumaczenie zapytania
+ + diagram encji
+ + tłumaczenie zapytania
 O4) xml
  - schemat
  - tłumaczenie
@@ -77,6 +78,7 @@ PORZĄDKOWE
 => komentarze w języku - spytać Stępnia co o tym myśli (-;
 
 PRACA:
+=> zmienić nazwy na angielskie w zapytaniach postgres (not)
 => ładniejszy obrazek dziedziny problemu
 => Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
 => ładniejszy obrazek do pakietów

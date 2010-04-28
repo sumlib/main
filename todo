@@ -32,10 +32,10 @@ PREZENTACJA:
 
 plan:
 A1) wprowadzenie
- - dsl
- - tabliczki, sumerowie 
- - obrazek Dąbrowskiego 
- - przykład zapytania z omówieniem ustnym (może osobny punkt?)
+ + dsl
+ + tabliczki, sumerowie 
+ + obrazek Dąbrowskiego 
+ + przykład zapytania z omówieniem ustnym (może osobny punkt?)
 O2) implementacja
  - struktura ogólna
  - podział na moduły

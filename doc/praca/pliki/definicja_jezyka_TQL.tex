@@ -1,0 +1,234 @@
+\chapter{Definicja języka TQL}
+\section{Gramatyka}
+\subsection{Struktura leksykalna}
+
+\subsubsection*{String}
+Literał \nonterminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\terminal{"} ). Nie może zawierać jedynie znaków 
+``\terminal{"}`` niepoprzedzonych ''\verb6\6``.
+
+% ma postać
+% \terminal{"}$x$\terminal{"}, gdzie $x$ jest dowolnym ciągiem znaków
+% poza \terminal{"}\ niepoprzedzonymi \verb6\6.
+
+
+\subsubsection*{Słowo Od Litery}
+Literał \nonterminal{Słowo Od Litery} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od litery,
+z wyjątkiem słów kluczowych.
+
+
+
+\subsubsection*{Słowo Od Liczby}
+Literał \nonterminal{Słowo Od Liczby} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od cyfry.
+
+
+
+\subsection{Słowa kluczowe}
+\begin{tabular}{lll}
+{\reserved{as}} &{\reserved{define}} &{\reserved{in}} \\
+{\reserved{search}} & & \\
+\end{tabular}\\
+
+\subsection{Znaki specjalne}
+\begin{tabular}{lll}
+{\symb{(}} &{\symb{)}} &{\symb{{$+$}}} \\
+{\symb{/}} &{\symb{{$-$}{$-$}}} &{\symb{*}} \\
+{\symb{:}} & &{\symb{$\backslash$n}} (koniec linii)\\
+\end{tabular}\\
+
+\subsection{Komentarze}
+W chwili obecnej język nie zawiera komentarzy.
+
+\subsection{Struktura syntaktyczna języka}
+Nieterminale są pomiędzy ''$\langle$`` a ''$\rangle$``. 
+Symbole  ''{\arrow}``  (produkcja),  ''{\delimit}``  (lub) 
+i ''{\emptyP}`` (pusta reguła) należą do notacji BNF. 
+Wszystkie pozostałe symbole to terminale.\\
+
+\begin{tabular}{lll}
+{\nonterminal{Zapytanie Złożone}} & {\arrow}  &{\nonterminal{Lista Zapytań}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Zapytanie}} & {\arrow}  &{\nonterminal{Lista Linii Zapytania}} {\nonterminal{Lista Pustych Linii}}  \\
+ & {\delimit}  &{\terminal{define}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{as}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
+ & {\delimit}  &{\terminal{search}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{in}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
+ & {\delimit}  &{\nonterminal{Lista Pustych Linii}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Linia Zapytania}} & {\arrow}  &{\nonterminal{Identyfikator}} {\terminal{:}} {\nonterminal{Wyrażenie}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Wyrażenie}} & {\arrow}  &{\nonterminal{Wyrażenie}} {\terminal{{$+$}}} {\nonterminal{Wyrażenie1}}  \\
+ & {\delimit}  &{\nonterminal{Wyrażenie}} {\terminal{/}} {\nonterminal{Wyrażenie1}}  \\
+ & {\delimit}  &{\nonterminal{Wyrażenie1}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Wyrażenie1}} & {\arrow}  &{\terminal{{$-$}{$-$}}} {\nonterminal{Wyrażenie1}}  \\
+ & {\delimit}  &{\nonterminal{Wyrażenie2}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Wyrażenie2}} & {\arrow}  &{\nonterminal{Tekst}} {\terminal{*}} {\nonterminal{Tekst}}  \\
+ & {\delimit}  &{\nonterminal{Tekst}} {\terminal{*}}  \\
+ & {\delimit}  &{\terminal{*}} {\nonterminal{Tekst}}  \\
+ & {\delimit}  &{\nonterminal{Tekst}}  \\
+ & {\delimit}  &{\terminal{(}} {\nonterminal{Wyrażenie}} {\terminal{)}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Lista Zapytań}} & {\arrow}  &{\nonterminal{Zapytanie}}  \\
+ & {\delimit}  &{\nonterminal{Zapytanie}} {\nonterminal{Lista Zapytań}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Lista Linii Zapytania}} & {\arrow}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}}  \\
+ & {\delimit}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}} {\nonterminal{Lista Linii Zapytania}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Pusta Linia}} & {\arrow}  &{\terminal{$\backslash$n}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Lista Pustych Linii}} & {\arrow}  &{\emptyP} \\
+ & {\delimit}  &{\nonterminal{Pusta Linia}} {\nonterminal{Lista Pustych Linii}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Tekst}} & {\arrow}  &{\nonterminal{String}}  \\
+ & {\delimit}  &{\nonterminal{Słowo}}  \\
+\end{tabular}\\
+
+
+\begin{tabular}{lll}
+{\nonterminal{Słowo}} & {\arrow}  &{\nonterminal{Słowo Od Litery}}  \\
+ & {\delimit}  &{\nonterminal{Słowo Od Liczby}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Identyfikator}} & {\arrow}  &{\nonterminal{Słowo Od Litery}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Nazwa}} & {\arrow}  &{\nonterminal{String}}  \\
+\end{tabular}\\
+
+\section{Semantyka}
+%możliwe pola
+%W zapytaniu TQL można pytać o następujące dane:
+Język TQL umożliwia wyszukiwanie na podstawie następujących danych:
+\begin{longtable}{|p{3in}|p{3in}|}
+\hline
+{\bf Opis} & {\bf Nazwa pola w TQL}\\
+\hline
+\endhead
+numer tabliczki w bazie CDLI & cdli\_id
+\\
+\hline
+miejsce pochodzenia (proweniencja) & provenience
+\\
+\hline
+okres powstania & period
+\\
+\hline
+typ i podtyp & genre
+\\
+\hline
+rok powstania & year 
+\\
+\hline
+publikacja & publication
+\\
+\hline
+treść (po odczytach)& text
+\\
+\hline
+treść (po klinach) & cunetext
+\\
+\hline
+kolekcja & collection
+\\
+\hline
+muzeum & museum
+\\
+\hline
+\end{longtable}
+% \item kliny 
+% \item treść na pieczęci (seal)
+%  \item kod tematyczny (code)
+% "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "seal"
+Język można łatwo rozszerzać, aby umożliwić pytanie o inne dane (np. wyszukiwać po klinach czy po zawartości pieczęci).
+
+%Semantykę przedstawimy na wybranych przykładach. 
+Poniżej przedstawiamy semantykę wybranych przykładów.
+\subsection{Zapytania proste}
+\begin{verbatim}
+provenience: Gar*
+period: "Ur III"
+genre: Administrative
+text: udu + (masz2/ugula) --szabra
+\end{verbatim}
+Wynikiem zapytania będą wszystkie tabliczki, które:
+\begin{itemize}
+ \item pochodzą z miejscowości o nazwie zaczynającej się na ``Gar''
+\item pochodzą z okresu Ur III
+\item są dokumentami administracyjnymi
+\item zawierają słowo ``udu'' oraz conajmniej jedno ze słów ``masz2'' lub ``ugula''
+\item nie zawierają słowa ``szabra''
+\end{itemize}
+
+
+\subsection{Zapytania złożone}
+\begin{verbatim}
+provenience: Ur
+period: "Ur III"/"Ur IV"
+text: udu --szabra
+
+text: masz2/ugula
+publication: *tan
+provenience: Ur
+\end{verbatim}
+Wynikiem zapytania będą wszystkie tabliczki, które:
+\begin{itemize}
+ \item pochodzą z miejscowości Ur
+ \item pochodzą z okresu Ur III lub Ur IV
+ \item zawierają słowo ``udu''
+ \item nie zawierają słowa ``szabra``
+\end{itemize}
+oraz wszystkie tabliczki, które:
+\begin{itemize}
+ \item zawierają słowo ''masz2`` lub ''ugula``
+ \item zostały opublikowane w pracy, której nazwa kończy się na ''tan``
+ \item pochodzą z miejscowości Ur
+\end{itemize}
+
+
+\subsection{Zapytanie zdefiniowane}
+\begin{verbatim}
+ define
+  provenience: Gar*a
+  period: Ur III
+  text: "udu ban"/mash2
+as "zwierzęta w Gar*a"
+\end{verbatim}
+Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
+\begin{itemize}
+\item pochodzą z miejscowości, których nazwy zaczynają się na ''Gar`` i kończą na ''a''
+\item pochodzą z okresu Ur III
+\item zawierają conajmniej jedną z fraz ''udu ban`` lub ''mash2``
+\end{itemize}
+
+\subsection{Wywołanie zapytania zdefiniowanego}
+\begin{verbatim}
+search
+  text: adad-tilati
+in "zwierzęta w Gar*a"
+\end{verbatim}
+Wynikiem zapytania będą wszystkie tabliczki, które:
+\begin{itemize}
+ \item spełniają wszystkie warunki zapytania ''zwierzęta w Gar*a``
+\item zawierają słowo ''adad-tilati``
+\end{itemize}

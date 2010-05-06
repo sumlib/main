@@ -31,17 +31,19 @@ PORZĄDKOWE
 => komentarze w języku - spytać Stępnia co o tym myśli (-;
 
 PRACA:
-=> zmienić nazwy na angielskie w zapytaniach postgres (not)
++> zmienić nazwy na angielskie w zapytaniach postgres (not)
 => ładniejszy obrazek dziedziny problemu
 => Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
 => ładniejszy obrazek do pakietów
 => nazwa do wyszukiwania po klinach (cunetext??)
 => dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
-=>  obrazek "po co?" -> strzałki?
+=> obrazek "po co?" -> strzałki?
 => zastanowić się co z xml-schema - atrybut symbol
+=> zmienić pliki na cpp
 
 UWAGI DĄBROWSKIEGO:
-=> opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
++> opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
+    -> co jeszcze poza tym, że jest?
 Rozdział 1:
 => podzielić definicje na pojęcia dziedzinowe, informatyczne i paradygmatowe??
 	-> DSL (paradygmat)

@@ -244,12 +244,12 @@ WHERE b.seq=2
 \begin{verbatim}
 SELECT 
   id_tab, 
-  '' as wezly, 
-  0 as sekw,
-  <id_sekw> as id_sekw
+  '' as nodes, 
+  0 as seq,
+  <id_sekw> as id_seq
 FROM
 (
- (SELECT id as id_tab from tabliczka)
+ (SELECT id as id_tab from tablet)
  EXCEPT
  (SELECT id_tab from
     <zapytanie_negowane> as a

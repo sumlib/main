@@ -39,7 +39,7 @@ PRACA:
 => dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
 => obrazek "po co?" -> strzałki?
 => zastanowić się co z xml-schema - atrybut symbol
-=> zmienić pliki na cpp
++> zmienić pliki na cpp
 
 UWAGI DĄBROWSKIEGO:
 +> opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Absyn.h"
-#include "conf/Translator_config.h"
+#include "conf/Translator_interface.h"
 #include "Symbols.h"
 #include "Err.h"
 

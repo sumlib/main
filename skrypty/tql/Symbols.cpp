@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Symbols.h"
-#include "conf/Translator_config.h"
+#include "conf/Translator_interface.h"
 
 /* plik definiujący tablicę symboli */
 

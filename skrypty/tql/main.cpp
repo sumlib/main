@@ -12,7 +12,7 @@
 #include "Translator.h"
 #include "Absyn.h"
 #include "Context.h"
-#include "conf/Translator_config.h"
+#include "conf/Translator_interface.h"
 #include "Database.h"
 
 int main(int argc, char ** argv)

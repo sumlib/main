@@ -1,4 +1,4 @@
-#include "Translator_config.h"
+#include "Translator_interface.h"
 #include "../Err.h"
 #include "../Buffer.h"
 

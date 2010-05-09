@@ -5,7 +5,7 @@
 //#include </usr/local/pgsql/include/libpq-fe.h>
 
 #include "../Cexplode.h"
-#include "Database_config.h"
+#include "Database_interface.h"
 #include "../Err.h"
 
 #define MAX_LINE_SIZE 64

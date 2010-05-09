@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "Translator_config.h"
+#include "Translator_interface.h"
 #include "../Buffer.h"
 #include "../Cexplode.h"
 

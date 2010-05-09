@@ -1,5 +1,5 @@
 #include "Database.h"
-#include "conf/Database_config.h"
+#include "conf/Database_interface.h"
 #include "Buffer.h"
 #include <stdio.h>
 #include <stdlib.h>

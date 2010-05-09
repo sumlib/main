@@ -2,7 +2,7 @@
 
 #include "Translator.h"
 #include "Symbols.h"
-#include "conf/Translator_config.h"
+#include "conf/Translator_interface.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

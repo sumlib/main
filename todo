@@ -7,55 +7,8 @@ KONCEPCYJNE
 => zaimplementowac wyszukiwanie po klinach
 => parsowanie tagów w database_config.c
 
-
-=> XML!!!
-A +> wypróbować bazę zorba
-A +> przepisywanie do strukturki
-
-O +> wyrzucić id ze strukturki i wynikowego xml-a
-O -> przetestować na bardziej skomplikowanych zapytaniach
-O +> nie działają zapytania o text (coś jest nie tak z przeglądaniem sekwencji)
-
-
-
 -> dodać muzeum??
   
-PRACA DOMOWA:
-Asia - strona,
-Ola - przykłady na prezentację, skrypt, 
-
-
-PREZENTACJA:
- - wejscie i wyjscie na górze i pogrubione
- - baza: podpunkty do komunikacja z modulem wymiennym
- - Asia podzieli na pliki
-
-plan:
-A1) wprowadzenie
- + dsl
- + tabliczki, sumerowie 
- + obrazek Dąbrowskiego 
- + przykład zapytania z omówieniem ustnym (może osobny punkt?)
-O2) implementacja
- - struktura ogólna
- - podział na moduły
- - parser i analizator
- - translator
- - baza
- - struktura tablets
- - kompilacja - make all robi oba
-A3) postgres
- + diagram encji
- + tłumaczenie zapytania
-O4) xml
- - schemat
- - tłumaczenie
- - krótko o zorbie, przerobienie z c na c++
-A5) plany na przyszłość ?
- - NAPISAC PRACE MAGISTERSKA
- - wielka refaktoryzacja
- - znalezienie zespołu na ZPP, który nam zrobi ładny interfejs
-
 
 PORZĄDKOWE
 ?> dalsze tłumaczenie nazw funkcji (zmiana nazw funkcji na takie jak na prezentacji)
@@ -78,18 +31,19 @@ PORZĄDKOWE
 => komentarze w języku - spytać Stępnia co o tym myśli (-;
 
 PRACA:
-=> zmienić nazwy na angielskie w zapytaniach postgres (not)
++> zmienić nazwy na angielskie w zapytaniach postgres (not)
 => ładniejszy obrazek dziedziny problemu
 => Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
 => ładniejszy obrazek do pakietów
 => nazwa do wyszukiwania po klinach (cunetext??)
-=> pozmieniac nazwy (ZapZloz) w pakietach
 => dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
-
-+> sprawdzić zależność Parser.c - TQL.y (może coś da się usunąć) -> parser.c jest nie potrzebny - generuje się z TQL.y
+=> obrazek "po co?" -> strzałki?
+=> zastanowić się co z xml-schema - atrybut symbol
+=> zmienić pliki na cpp
 
 UWAGI DĄBROWSKIEGO:
-=> opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
++> opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
+    -> co jeszcze poza tym, że jest?
 Rozdział 1:
 => podzielić definicje na pojęcia dziedzinowe, informatyczne i paradygmatowe??
 	-> DSL (paradygmat)

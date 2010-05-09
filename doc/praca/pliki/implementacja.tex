@@ -38,7 +38,7 @@ Parser został utworzony za pomocą narzędzia BNFC. Następnie zostały w nim w
 Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h.
 Na parser składają się następujące pliki:
 \begin{itemize}
- \item Parser.c
+ \item Parser.cpp
  \item Parser.h
  \item TQL.y % tłumaczony na Parser.c
  \item TQL.l % tłumaczony na Lexer.c
@@ -52,7 +52,7 @@ Moduł analizuje drzewo struktury składniowej w następujący sposób:
 \end{itemize}
 Składa się z następujących plików:
 \begin{itemize}
- \item Context.c
+ \item Context.cpp
  \item Context.h
 \end{itemize}
 
@@ -60,27 +60,27 @@ Składa się z następujących plików:
 Zadaniem translatora jest przetłumaczenie drzewa składni abstrakcyjnej na zapytanie w docelowym języku. 
 Składa się z następujących plików:
 \begin {itemize}
- \item Translator.c
+ \item Translator.cpp
  \item Translator.h
- \item Translator\_config.h (interfejs modułu translatora zależnego od bazy danych)
+ \item Translator\_interface.h (interfejs modułu translatora zależnego od bazy danych)
  %\item Translator\_config.c (implementacja interfejsu z Translator\_config.h, zależny od wyboru bazy danych itp)
 \end {itemize}
 
-Tłumaczenie poszczególnych elementów drzewa zależy od implementacji interfejsu zawartego w pliku Translator\_config.h. 
-Funkcja translate() przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_config.
+Tłumaczenie poszczególnych elementów drzewa zależy od implementacji interfejsu zawartego w pliku Translator\_interface.h. 
+Funkcja translate() przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_interface.
 Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult(), aby przekazać je do modułu bazy.
 
 \subsection{Baza}
 Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - jako XML.
 Składa się z następujących plików:
 \begin {itemize}
- \item Database.c
+ \item Database.cpp
  \item Database.h
- \item Database\_config.h (interfejs modułu bazy zależnego od bazy danych)
+ \item Database\_interface.h (interfejs modułu bazy zależnego od bazy danych)
 % \item Database\_config.c (implementacja interfejsu z Database\_conf.h, zależny od wyboru bazy danych itp)
 \end {itemize}
 
-Wywołuje funkcję getTablets() z Database\_config.h, jako parametr podając przetłumaczoną treść zapytania. 
+Wywołuje funkcję getTablets() z Database\_interface.h, jako parametr podając przetłumaczoną treść zapytania. 
 Funkcja ta zwraca strukturę danych Tablets, wypełnioną informacjami o wyszukanych tabliczkach.
 Następnie na podstawie otrzymanej struktury tworzony jest dokument XML.
 \newline
@@ -115,22 +115,22 @@ typedef struct{
 \subsection{Pliki pomocnicze}
 Definicje struktur danych (wygenerowane za pomocą BNFC, następnie uproszczone):
 \begin{itemize}
- \item Absyn.c
+ \item Absyn.cpp
 \item Absyn.h
 \end{itemize}
 Tablica symboli:
 \begin{itemize}
- \item Symbols.c
+ \item Symbols.cpp
 \item Symbols.h
 \end{itemize}
 Obsługa błędów:
 \begin{itemize}
- \item Err.c
+ \item Err.cpp
 \item Err.h
 \end{itemize}
 Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexplode}:
 \begin{itemize}
- \item Cexplode.c
+ \item Cexplode.cpp
  \item Cexplode.h
 \end{itemize}
 
@@ -138,7 +138,7 @@ Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexpl
 \section{Moduły wymienne}
 Pliki zależne od wyboru konkretnej bazy danych to:
 \begin{itemize}
- \item Translator\_$<$nazwa$>$.c - dla modułu translatora
-\item Database\_$<$nazwa$>$.c - dla modułu bazy
+ \item Translator\_$<$nazwa$>$.cpp - dla modułu translatora
+\item Database\_$<$nazwa$>$.cpp - dla modułu bazy
 \end{itemize}
 Ich interfejsy są wspólne dla wszystkich baz danych.

@@ -47,11 +47,11 @@ xmlTQL: ${OBJS} ${XML_OBJS}
 
 
 
-${POSTGRES_OBJS}: %_postgres.o: %_postgres.cpp %_config.h Buffer.o
+${POSTGRES_OBJS}: %_postgres.o: %_postgres.cpp %_interface.h Buffer.o
 	@echo "compiling " $*
 	${CC} ${CCFLAGS} -c $< -o $*_postgres.o
 
-${XML_OBJS}: %_xml.o: %_xml.cpp %_config.h Buffer.o
+${XML_OBJS}: %_xml.o: %_xml.cpp %_interface.h Buffer.o
 	@echo "compiling " $*
 	${CC} ${CCFLAGS} -c $< -o $*_xml.o
 
@@ -60,7 +60,7 @@ ${XML_OBJS}: %_xml.o: %_xml.cpp %_config.h Buffer.o
 
 #Symbols_test.o: Symbols_test.c Symbols.h
 
-#Absyn.o: Absyn.c Absyn.h conf/Translator_config.h
+#Absyn.o: Absyn.c Absyn.h conf/Translator_interface.h
 #	${CC} ${CCFLAGS} -c Absyn.c
 
 Lexer.cpp: TQL.l

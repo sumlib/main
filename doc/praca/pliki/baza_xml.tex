@@ -3,27 +3,27 @@
 
 
 \subsubsection{Schemat dokumentu}
-\begin{figure}[h]
- \centering
- \includegraphics[width=250px]{../diagramy/schema_text.pdf}
- \caption{Schemat elementu text (kolor pomarańczowy oznacza atrybuty, a niebieski elementy)}
-\end{figure}
+
 
 
 \begin{figure}[h]
  \centering
- \includegraphics[width=250px]{../diagramy/schema_tablet.pdf}
- \caption{Schemat elementu tablet}
+ \subfigure[element text]{
+ \includegraphics[width=120px]{../diagramy/schema_text.pdf}
+ }
+   \subfigure[element tablet]{
+  \includegraphics[width=120px]{../diagramy/schema_tablet.pdf}
+ }
+ \subfigure[element tablets]{
+  \includegraphics[width=120px]{../diagramy/schema_tablets.pdf}
+ }
+ \caption{Schematy poszczególnych elementów (kolor pomarańczowy oznacza atrybuty, a niebieski elementy)}
 \end{figure}
 
-\begin{figure}[h]
- \centering
- \includegraphics[width=250px]{../diagramy/schema_tablets.pdf}
- \caption{Schemat elementu tablets}
-\end{figure}
 
-Schemat dokumentu przedstawiony na obrazkach jest graficznym przedstawieniem dokumentu XML Schema (dodatek A) wygenerowanym przez program Oxygen.\\
-Schemat XML jest częściowo przepisaniem diagramu encji bazy PostgreSQL. Przy tworzeniu schematu, podobnie jak w bazie relacyjnej, skorzystałyśmy z pomysłu dra Wojciecha Jaworskiego, aby przedstawić treść tabliczki w formie grafu. Każda krawędź tego grafu (odpowiadająca odczytowi) jest oddzielnym elementem, zawierającym atrybuty node1 oraz node2 - numery węzłów grafu, pomiędzy którymi się znajduje. Dodatkowo przechowujemy treść w formie napisu (element show). Metadane tabliczek przechowywane są w postaci podelementu elementu tablet. Powoduje to wielokrotne powtórzenie tych samych informacji, ale ułatwia tworzenie zapytań (?).
+
+Schemat dokumentu zamieszczony powyżej jest graficznym przedstawieniem dokumentu XML Schema (dodatek A) wygenerowanym przez program Oxygen.\\
+Schemat XML jest częściowo przepisaniem diagramu encji bazy PostgreSQL na język XML Schema. Przy tworzeniu schematu, podobnie jak w bazie relacyjnej, skorzystałyśmy z pomysłu dra Wojciecha Jaworskiego, aby przedstawić treść tabliczki w formie grafu. Każda krawędź tego grafu (odpowiadająca odczytowi) jest oddzielnym elementem, zawierającym atrybuty node1 oraz node2 - numery węzłów grafu, pomiędzy którymi się znajduje oraz atrybut symbol oznaczający typ symbolu znajdującego się na danej krawędzi. Dodatkowo przechowujemy treść tabliczki w formie napisu (element show). Metadane tabliczek przechowywane są w postaci podelementów elementu tablet.
 
 
 \subsubsection{Tłumaczenie zapytań}
@@ -128,5 +128,4 @@ $seq<id_sekw>
 Zapytanie złożone, składające się z wielu zapytań prostych tłumaczymy na sekwencję zapytań XQuery połączonych znakiem ','.
 
 \subsubsection{Baza}
-Jako bazę danych wykorzystujemy plik XML, w którym wyszukujemy za pomocą procesora XQuery Zorba. Zorba implementuje XQuery zgodnie z rekomendacją W3C.
-Korzystamy z API do C++.
+Jako bazę danych wykorzystujemy plik XML, określony w pliku konfiguracyjnym xml.conf. Do wyszukiwania wykorzystujemy procesor XQuery Zorba. Posiada on API m.in. do C++, które pozwala na przekazanie zapytania do bazy oraz przetworzenie wyniku.

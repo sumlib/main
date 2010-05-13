@@ -1,8 +1,7 @@
-\chapter{Definicja języka TQL}
-\section{Gramatyka}
-\subsection{Struktura leksykalna}
+\chapter{Gramatyka}
+\section{Struktura leksykalna}
 
-\subsubsection*{String}
+\subsection*{String}
 Literał \nonterminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\terminal{"} ). Nie może zawierać jedynie znaków 
 ``\terminal{"}`` niepoprzedzonych ''\verb6\6``.
 
@@ -11,34 +10,34 @@ Literał \nonterminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\
 % poza \terminal{"}\ niepoprzedzonymi \verb6\6.
 
 
-\subsubsection*{Słowo Od Litery}
+\subsection*{Słowo Od Litery}
 Literał \nonterminal{Słowo Od Litery} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od litery,
 z wyjątkiem słów kluczowych.
 
 
 
-\subsubsection*{Słowo Od Liczby}
+\subsection*{Słowo Od Liczby}
 Literał \nonterminal{Słowo Od Liczby} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od cyfry.
 
 
 
-\subsection{Słowa kluczowe}
+\section{Słowa kluczowe}
 \begin{tabular}{lll}
 {\reserved{as}} &{\reserved{define}} &{\reserved{in}} \\
 {\reserved{search}} & & \\
 \end{tabular}\\
 
-\subsection{Znaki specjalne}
+\section{Znaki specjalne}
 \begin{tabular}{lll}
 {\symb{(}} &{\symb{)}} &{\symb{{$+$}}} \\
 {\symb{/}} &{\symb{{$-$}{$-$}}} &{\symb{*}} \\
 {\symb{:}} & &{\symb{$\backslash$n}} (koniec linii)\\
 \end{tabular}\\
 
-\subsection{Komentarze}
+\section{Komentarze}
 W chwili obecnej język nie zawiera komentarzy.
 
-\subsection{Struktura syntaktyczna języka}
+\section{Struktura syntaktyczna języka}
 Nieterminale są pomiędzy ''$\langle$`` a ''$\rangle$``. 
 Symbole  ''{\arrow}``  (produkcja),  ''{\delimit}``  (lub) 
 i ''{\emptyP}`` (pusta reguła) należą do notacji BNF. 
@@ -116,7 +115,7 @@ Wszystkie pozostałe symbole to terminale.\\
 {\nonterminal{Nazwa}} & {\arrow}  &{\nonterminal{String}}  \\
 \end{tabular}\\
 
-\section{Semantyka}
+\chapter{Semantyka}
 %możliwe pola
 %W zapytaniu TQL można pytać o następujące dane:
 Język TQL umożliwia wyszukiwanie na podstawie następujących danych:
@@ -164,7 +163,7 @@ Język można łatwo rozszerzać, aby umożliwić pytanie o inne dane (np. wyszu
 
 %Semantykę przedstawimy na wybranych przykładach. 
 Poniżej przedstawiamy semantykę wybranych przykładów.
-\subsection{Zapytania proste}
+\section{Zapytania proste}
 \begin{verbatim}
 provenience: Gar*
 period: "Ur III"
@@ -181,7 +180,7 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
 \end{itemize}
 
 
-\subsection{Zapytania złożone}
+\section{Zapytania złożone}
 \begin{verbatim}
 provenience: Ur
 period: "Ur III"/"Ur IV"
@@ -206,7 +205,7 @@ oraz wszystkie tabliczki, które:
 \end{itemize}
 
 
-\subsection{Zapytanie zdefiniowane}
+\section{Zapytanie zdefiniowane}
 \begin{verbatim}
  define
   provenience: Gar*a
@@ -221,7 +220,7 @@ Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
 \item zawierają conajmniej jedną z fraz ''udu ban`` lub ''mash2``
 \end{itemize}
 
-\subsection{Wywołanie zapytania zdefiniowanego}
+\section{Wywołanie zapytania zdefiniowanego}
 \begin{verbatim}
 search
   text: adad-tilati

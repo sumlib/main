@@ -1,4 +1,3 @@
-\chapter{Implementacja}
 \begin{figure}[h]
  \centering
  \includegraphics[width=450px,bb=0 0 608 517]{../diagramy/struktura2.pdf}
@@ -25,9 +24,9 @@ i wywołujące je.
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
 
-\section{Moduły podstawowe}
+\chapter{Moduły podstawowe}
 
-\subsection{Parser}
+\section{Parser}
 Parser został utworzony za pomocą narzędzia BNFC. Następnie zostały w nim wprowadzone modyfikacje:
 \begin{itemize}
 \item poprawienie nazw stałych oznaczających symbole na bardziej intuicyjne,
@@ -44,7 +43,7 @@ Na parser składają się następujące pliki:
  \item TQL.l % tłumaczony na Lexer.c
 \end{itemize}
 
-\subsection{Analizator kontekstowy}
+\section{Analizator kontekstowy}
 Moduł analizuje drzewo struktury składniowej w następujący sposób:
 \begin{itemize}
  \item sprawdza, czy podano prawidłowe nazwy pól,  %to co jest po lewej w linii zapytania jest nazwą pola.
@@ -56,7 +55,7 @@ Składa się z następujących plików:
  \item Context.h
 \end{itemize}
 
-\subsection{Translator}
+\section{Translator}
 Zadaniem translatora jest przetłumaczenie drzewa składni abstrakcyjnej na zapytanie w docelowym języku. 
 Składa się z następujących plików:
 \begin {itemize}
@@ -70,7 +69,7 @@ Tłumaczenie poszczególnych elementów drzewa zależy od implementacji interfej
 Funkcja translate() przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_interface.
 Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult(), aby przekazać je do modułu bazy.
 
-\subsection{Baza}
+\section{Baza}
 Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - jako XML.
 Składa się z następujących plików:
 \begin {itemize}
@@ -112,7 +111,7 @@ typedef struct{
 
 %Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
-\subsection{Pliki pomocnicze}
+\section{Pliki pomocnicze}
 Definicje struktur danych (wygenerowane za pomocą BNFC, następnie uproszczone):
 \begin{itemize}
  \item Absyn.cpp
@@ -135,7 +134,7 @@ Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexpl
 \end{itemize}
 
 
-\section{Moduły wymienne}
+\chapter{Moduły wymienne}
 Pliki zależne od wyboru konkretnej bazy danych to:
 \begin{itemize}
  \item Translator\_$<$nazwa$>$.cpp - dla modułu translatora

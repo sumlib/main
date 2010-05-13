@@ -49,7 +49,7 @@ Tłumaczy otrzymane fragmenty drzewa struktury zapytania na język SQL. Przetłu
 Każde proste zapytanie TQL jest tłumaczone na pojedyncze zapytanie SQL. Tłumaczenie kilku prostych zapytań
 łączone jest za pomocą UNION.
 
-\subsubsection{Inicjalizacja zapytania}
+\subsubsection{Stałe fragmenty zapytania}
 Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL-a.
 \textit{select} jest inicjowany na 
 \begin{verbatim}
@@ -71,7 +71,7 @@ FROM tablet t
 
 
 
-\subsubsection{Tłumaczenie konstrukcji prostych}
+\subsubsection{Tłumaczenie zapytań o atrybuty tabliczki}
 Poniższe tłumaczenia są dodawane do bufora \textit{where} i łączone za pomocą AND.
 \begin{longtable}{|p{3in}|p{3in}|}
 \hline
@@ -143,9 +143,9 @@ c.value LIKE 'wartosc'
 \end{longtable}
 
 
-\subsubsection{Tłumaczenie konstrukcji złożonych}
+\subsubsection{Tłumaczenie zapytań o treść tabliczki}
 %Została zaimplementowana tylko jedna konstrukcja złożona - przy zapytaniu o treść tabliczki (pole ''text``).
-Przy tłumaczeniu konstrukcji złożonych
+Przy tłumaczeniu zapytań o treść tabliczki
 korzystamy z przedstawienia treści tabliczki w formie grafu.
 
 Pojawienie się wyszukiwania po treści tabliczki niesie za sobą konieczność dodania do bufora \textit{from}:

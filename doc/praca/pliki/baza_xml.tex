@@ -1,10 +1,6 @@
 \section{Baza XML}
 
-
-
 \subsection{Schemat dokumentu}
-
-
 
 \begin{figure}[h]
  \centering
@@ -22,15 +18,25 @@
 
 
 
-Schemat dokumentu zamieszczony powyżej jest graficznym przedstawieniem dokumentu XML Schema (dodatek A) wygenerowanym przez program Oxygen.\\
-Schemat XML jest częściowo przepisaniem diagramu encji bazy PostgreSQL na język XML Schema. Przy tworzeniu schematu, podobnie jak w bazie relacyjnej, skorzystałyśmy z pomysłu dra Wojciecha Jaworskiego, aby przedstawić treść tabliczki w formie grafu. Każda krawędź tego grafu (odpowiadająca odczytowi) jest oddzielnym elementem, zawierającym atrybuty node1 oraz node2 - numery węzłów grafu, pomiędzy którymi się znajduje oraz atrybut symbol oznaczający typ symbolu znajdującego się na danej krawędzi. Dodatkowo przechowujemy treść tabliczki w formie napisu (element show). Metadane tabliczek przechowywane są w postaci podelementów elementu tablet.
+Schemat dokumentu zamieszczony powyżej jest graficznym przedstawieniem dokumentu XML Schema (dodatek A) 
+wygenerowanym przez program Oxygen.
+
+Przy jego tworzeniu, podobnie jak w bazie relacyjnej, skorzystałyśmy z pomysłu dra Wojciecha Jaworskiego, 
+aby przedstawić treść tabliczki w formie grafu. 
+Każda krawędź tego grafu (odpowiadająca odczytowi) jest oddzielnym elementem, zawierającym atrybuty \textit{node1}, \textit{node2} 
+i \textit{symbol}.
+Atrybuty \textit{node1} oraz \textit{node2} oznaczają numery węzłów grafu,
+natomiast atrybut \textit{symbol} to typ symbolu znajdującego się na danej krawędzi. 
+Dodatkowo przechowujemy treść tabliczki w formie napisu (element \textit{show}). 
+
+Metadane tabliczek przechowywane są w postaci podelementów elementu \textit{tablet}.
 
 
 \subsection{Translator\_xml}
 Do przeszukiwania dokumentu XML wykorzystujemy język XQuery, który jest częścią rekomendacji W3C dotyczącej XML.\\
-Proste zapytanie TQL tłumaczymy na pojedynczą konstrukcję FLWOR (For Let Where Order by Return).\\
+Proste zapytanie TQL jest tłumaczone na pojedynczą konstrukcję FLWOR (For Let Where Order by Return).\\
 
-\subsubsection{Stałe fragmenty}
+\subsubsection{Stałe fragmenty zapytania}
 Każde zapytanie w części For zawiera:
 	\begin{verbatim}
 	FOR $tablet IN .//tablet
@@ -52,7 +58,7 @@ a w części Return:
 \end{verbatim}
 Zawartość elementu seq zależy od ilości sekwencji, po których wyszukujemy. 
 
-\subsubsection{Zapytania proste}
+\subsubsection{Tłumaczenie zapytań o atrybuty tabliczki}
 
 \begin{longtable}{|p{2.5in}|p{3.5in}|}
 \hline
@@ -78,7 +84,7 @@ cdli\_id: wartosc & \begin{verbatim}fn:matches($tablet/idCDLI,'^wartosc$')\end{v
 \end{longtable}
 
 
-\subsubsection{Treść tabliczki}
+\subsubsection{Tłumaczenie zapytań o treść tabliczki}
 Każda sekwencja, po której wyszukujemy powoduje dodanie do zapytania następujących konstrukcji:
 \begin{itemize}
 \item{do części Let:}
@@ -108,7 +114,9 @@ $seq<id_sekw>
 
 
 
-\subsubsection{Operatory}
+\subsubsection{Tłumaczenie operatorów}
+Poniższe tłumaczenia dotyczą zarówno konstrukcji prostych jak i złożonych.
+
 \begin{longtable}{|p{1in}|p{3in}|}
 \hline
 {\bf Operator} & {\bf Tłumaczenie}\\
@@ -128,4 +136,7 @@ $seq<id_sekw>
 Zapytanie złożone, składające się z wielu zapytań prostych tłumaczymy na sekwencję zapytań XQuery połączonych znakiem ','.
 
 \subsection{Database\_xml}
-Jako bazę danych wykorzystujemy plik XML, określony w pliku konfiguracyjnym xml.conf. Do wyszukiwania wykorzystujemy procesor XQuery Zorba. Posiada on API m.in. do C++, które pozwala na przekazanie zapytania do bazy oraz przetworzenie wyniku.
+Odpowiada za wywołanie zapytania i zapisanie wyniku do struktury Tablets.
+Jako bazę danych wykorzystujemy plik XML, określony w pliku konfiguracyjnym xml.conf. 
+Do wyszukiwania wykorzystujemy procesor XQuery Zorba. 
+Posiada on API m.in. do C++, które pozwala na przekazanie zapytania do bazy oraz przetworzenie wyniku.

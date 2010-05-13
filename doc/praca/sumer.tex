@@ -29,6 +29,8 @@
 %\usepackage{hyperref}
 %\usepackage{url}
 \definecolor{gray}{RGB}{50,50,50}
+\usepackage[toc,page]{appendix}
+\renewcommand{\appendixtocname}{Dodatki} 
 
 \usepackage[colorlinks=true,linkcolor=gray,urlcolor=blue]{hyperref}  
 
@@ -148,19 +150,20 @@ i zmieniać tak, by mógł służyć też do innych zastosowań.
 %\chapter{Dokumentacja użytkowa i opis implementacji}\label{r:impl}
 \include{pliki/podsumowanie}
 
-\part*{Dodatki}
-\addcontentsline{toc}{part}{Dodatki}
+%\part*{Dodatki}
+%\addcontentsline{toc}{part}{Dodatki}
+\begin{appendix}
+\appendixpage
 
-\appendix
 
 \chapter{Schemat bazy danych xml}
-
+\label{appendix:xmlsch}
 
 \include{pliki/sumlib_xs}
 
 
 
-
+\end{appendix}
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}

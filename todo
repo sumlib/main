@@ -42,17 +42,9 @@ PRACA:
 +> zmienić pliki na cpp
 
 UWAGI DĄBROWSKIEGO:
-+> opowiedzieć we wprowadzeniu o DSL (zamiast tego, że jest nakładką)
-    -> co jeszcze poza tym, że jest?
-Rozdział 1:
-=> podzielić definicje na pojęcia dziedzinowe, informatyczne i paradygmatowe??
-	-> DSL (paradygmat)
-	-> Gramatyka (informatyka)
-	-> Semantyka
 Rozdział 2: rozszerzyć
 Rozdział 3: być może wrzucić przed rozdział 1??
-	"obrazek" model dziedziny -> modele danych
+	"obrazek" model dziedziny -> modele danych => podpisy
 		  TQL             -> SQL, XQuery?
 	w ładnym obrazku brakowało jednego elementu - TQL-a
-	
-PREZENTACJA: 29 kwietnia
+

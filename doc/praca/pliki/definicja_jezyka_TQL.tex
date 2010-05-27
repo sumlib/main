@@ -1,7 +1,8 @@
 \chapter{Gramatyka}
 \section{Struktura leksykalna}
+\subsection{Symbole pomocnicze (nieterminale)}
 
-\subsection*{String}
+\subsubsection{String}
 Literał \nonterminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\terminal{"} ). Nie może zawierać jedynie znaków 
 ``\terminal{"}`` niepoprzedzonych ''\verb6\6``.
 
@@ -10,31 +11,31 @@ Literał \nonterminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\
 % poza \terminal{"}\ niepoprzedzonymi \verb6\6.
 
 
-\subsection*{Słowo Od Litery}
+\subsubsection{Słowo Od Litery}
 Literał \nonterminal{Słowo Od Litery} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od litery,
 z wyjątkiem słów kluczowych.
 
 
 
-\subsection*{Słowo Od Liczby}
+\subsubsection{Słowo Od Liczby}
 Literał \nonterminal{Słowo Od Liczby} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od cyfry.
 
 
-
-\section{Słowa kluczowe}
+\subsection{Słowa kluczowe}
 \begin{tabular}{lll}
 {\reserved{as}} &{\reserved{define}} &{\reserved{in}} \\
 {\reserved{search}} & & \\
 \end{tabular}\\
 
-\section{Znaki specjalne}
+\subsection{Znaki specjalne}
 \begin{tabular}{lll}
 {\symb{(}} &{\symb{)}} &{\symb{{$+$}}} \\
 {\symb{/}} &{\symb{{$-$}{$-$}}} &{\symb{*}} \\
 {\symb{:}} & &{\symb{$\backslash$n}} (koniec linii)\\
 \end{tabular}\\
 
-\section{Komentarze}
+\subsection{Komentarze}
+%TODO: komentarze??
 W chwili obecnej język nie zawiera komentarzy.
 
 \section{Struktura składniowa języka}

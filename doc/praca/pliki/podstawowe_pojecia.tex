@@ -8,20 +8,23 @@
 		  glinianej tabliczce, będziemy używać pojęcia \textbf{gliniana tabliczka}
  \item[Prowiniencja] - pojęcie używane przez sumerologów, oznacza miejsce pochodzenia/znalezienia glinianej tabliczki
  \item[Kliny] - znaki występujące na glinianych tabliczkach.
- \item[Odczyty] - sposób transkrypcji klinów. Tabliczki elektroniczne są zapisane za pomocą odczytów. Jeden klin może zostać odczytany na wiele różnych sposobów, podobnie jeden odczyt może być zapisany różnymi sekwencjami klinów.
+ \item[Odczyty] - sposób transkrypcji klinów. Tabliczki elektroniczne są zapisane za pomocą odczytów. Na ogół jeden klin odpowiada jednemu odczytowi, ale może odpowiadać wielu różnym sekwencjom odczytów.
  \item[Pieczęć] - część tabliczki zawierająca znak rozpoznawczy autora
 \end{description}
 
 \section{Pojęcia informatyczne}
 \begin{description}
- \item[Język] - nie mamy pojęcia jak to zdefiniować
- \item[Gramatyka] - formalny opis struktury składniowej i leksykalnej języka
-%TODO: nieterminale??
- \item[Struktura leksykalna języka] - opis słów kluczowych, znaków specjalnych i symboli pomocniczych (nieterminali).
- \item[Struktura składniowa języka] - opis składni języka, dozwolonych konstrukcji.
- \item[Semantyka] - znaczenie konkretnych konstrukcji języka.
+ \item[Alfabet (zbiór \Sigma)] - zbiór symboli (np. słów kluczowych, znaków specjalnych, literałów), z których zbudowane są słowa - konstrukcje języka.
+ \item[Słowo nad alfabetem \Sigma] - skończony ciąg symboli należących do zbioru $\Sigma $.
+ \item[Język nad alfabetem \Sigma] - zbiór słów nad alfabetem $\Sigma $.
+ \item[Gramatyka] - formalny sposób definiowania języka. Składa się z czterech elementów: zbioru symboli terminalnych, zbioru symboli nieterminalnych (rozłącznego ze zbiorem symboli terminalnych), symbolu startowego (należącego do zbioru symboli nieterminalnych) oraz zbioru reguł gramatyki. Zbiór symboli terminalnych jest to alfabet, nad którym zdefiniowany jest język. Reguły gramatyki są postaci $S1 \rightarrow S2$, gdzie $S1$ i $S2$ to ciągi symboli terminalnych i nieterminalnych, przy czym w ciągu $S1$ musi wystąpić przynajmniej jeden symbol nieterminalny. Reguły określają możliwe podstawienia symboli w wyprowadzanym słowie - ciąg $S1$ można zastąpić przez $S2$. Wyprowadzanie rozpoczynamy od symbolu startowego i kończymy, gdy wszystkie symbole w danym słowie należą do zbioru symboli terminalnych. Język określony przez gramatykę jest to zbiór słów, które są możliwe do wyprowadzenia z symbolu startowego za pomocą reguł gramatyki.
+ \item[Struktura leksykalna języka] - definicja symboli terminalnych (alfabetu) oraz symboli nieterminalnych (pomocniczych).
+ \item[Struktura składniowa języka] - opis składni języka, zapisany np. za pomocą reguł gramatyki.
+ \item[Semantyka] - znaczenie i funkcja poszczególnych konstrukcji języka.
  \end{description}
 \section{Pojęcia paradygmatyczne}
 \begin{description}
- \item[Język dziedzinowy (Domain Specific Language, DSL)] - język programowania dostosowany do dziedziny problemu, którym się zajmuje. 
+ \item[Język dziedzinowy (ang. domain-specific language, DSL)] - język programowania szczególnego zastosowania, rozwiązujący specyficzny problem lub zajmujący się wąską dziedziną, stworzony specjalnie na potrzeby danej dziedziny i do niej dostosowany.
+ 
+ %język programowania dostosowany do dziedziny problemu, którym się zajmuje. 
  \end{description}

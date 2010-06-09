@@ -3,7 +3,6 @@
 
 
 KONCEPCYJNE
-+> kilka gwiazdek możliwych (*coś*coś2*)
 => zaimplementowac wyszukiwanie po klinach
 => parsowanie tagów w database_config.c
 
@@ -31,15 +30,15 @@ PORZĄDKOWE
 => komentarze w języku - spytać Stępnia co o tym myśli (-;
 
 PRACA:
-+> zmienić nazwy na angielskie w zapytaniach postgres (not)
-=> ładniejszy obrazek dziedziny problemu
-=> Definicje - tabliczka, sumeryjska, odczyty, kliny, tagi
+A> ładniejszy obrazek dziedziny problemu (co powinna zawierać tabliczka w wersji elektronicznej)
 => ładniejszy obrazek do pakietów
-=> nazwa do wyszukiwania po klinach (cunetext??)
+?> nazwa do wyszukiwania po klinach (cunetext??)
 => dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
-=> obrazek "po co?" -> strzałki?
-=> zastanowić się co z xml-schema - atrybut symbol
+O> obrazek "po co?" -> strzałki?
+?> zastanowić się co z xml-schema - atrybut symbol
 +> zmienić pliki na cpp
+A> poprzednie rozwiązania
+O> podsumowanie
 
 UWAGI DĄBROWSKIEGO:
 Rozdział 2: rozszerzyć
@@ -47,4 +46,16 @@ Rozdział 3: być może wrzucić przed rozdział 1??
 	"obrazek" model dziedziny -> modele danych => podpisy
 		  TQL             -> SQL, XQuery?
 	w ładnym obrazku brakowało jednego elementu - TQL-a
+	
+
+PRACA DOMOWA:
+Ola:
+  -> przeczytać dziedzinę problemu
+  => obrazek "po co?" -> strzałki?
+  -> napisać do cdli
+  -> podsumowanie
+Asia:
+  -> przeczytać pojęcia
+  => załatwić konto na postgresie i wrzucić tql-a
+  -> ładniejszy obrazek dziedziny problemu (co powinna zawierać tabliczka w wersji elektronicznej)
 

@@ -20,7 +20,7 @@
    version="1.1"
    inkscape:version="0.47 r22583"
    width="810"
-   height="370"
+   height="475.43683"
    sodipodi:docname="Model-dziedziny.svg"
    style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Dialog">
   <metadata
@@ -44,12 +44,12 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1280"
-     inkscape:window-height="726"
+     inkscape:window-height="952"
      id="namedview3550"
      showgrid="false"
      inkscape:zoom="1.2837838"
-     inkscape:cx="405"
-     inkscape:cy="403.10526"
+     inkscape:cx="403.44211"
+     inkscape:cy="228.62105"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -66,626 +66,668 @@
        id="perspective3554" />
   </defs>
   <rect
-     x="30.5"
+     x="28.942106"
      width="209"
      height="199"
-     y="0.5"
+     y="0"
      id="rect3358"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
   <rect
-     x="31.288593"
+     x="29.7307"
      width="208.98071"
      height="206.77019"
-     y="5.1833291"
+     y="4.6833291"
      id="rect3360"
      style="font-size:14px;fill:none;stroke:#000000;stroke-width:1.01928914;font-family:sans-serif" />
   <text
-     x="103.72106"
+     x="102.16317"
      xml:space="preserve"
-     y="24.510527"
+     y="24.010527"
      font-weight="bold"
      id="text3362"
      style="font-size:14px;font-weight:bold;fill:#000000;stroke:none;font-family:sans-serif">Tabliczka</text>
   <line
-     y2="32.963158"
-     x1="31.278948"
-     x2="240.27895"
-     y1="32.963158"
+     y2="32.463158"
+     x1="29.721054"
+     x2="238.72105"
+     y1="32.463158"
      id="line3364"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="49.963158"
+     y="49.463158"
      id="text3366"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Id CDLI</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="66.963158"
+     y="66.463158"
      id="text3368"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Publikacja</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="83.963158"
+     y="83.463158"
      id="text3370"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Prowiniencja</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="100.96316"
+     y="100.46316"
      id="text3372"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Okres powstania</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="117.96316"
+     y="117.46316"
      id="text3374"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Typ</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="134.96317"
+     y="134.46317"
      id="text3376"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Podtyp</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="151.96317"
+     y="151.46317"
      id="text3378"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Muzeum</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="168.96317"
+     y="168.46317"
      id="text3380"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Kolekcja</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="185.96317"
+     y="184.6842"
      id="text3382"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Język</text>
   <text
-     x="38.278946"
+     x="36.72105"
      xml:space="preserve"
-     y="202.96317"
+     y="201.6842"
      id="text3384"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Wymiary</text>
   <rect
-     x="360.5"
-     y="10.5"
+     x="358.94211"
+     y="10"
      width="339"
      height="79"
      id="rect3386"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="360.5192"
-     y="4.2876205"
-     width="338.96161"
-     height="85.193176"
-     id="rect3388"
-     style="font-size:14px;fill:none;stroke:#000000;stroke-width:1.03839898;font-family:sans-serif" />
-  <text
-     x="479.38419"
-     y="22.047367"
-     font-weight="bold"
-     xml:space="preserve"
-     id="text3390"
-     style="font-size:14px;font-weight:bold;fill:#000000;stroke:none;font-family:sans-serif">Treść tabliczki</text>
-  <line
-     x1="360.5"
-     x2="699.5"
-     y1="30.5"
-     y2="30.5"
-     id="line3392"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="367.5"
-     xml:space="preserve"
-     y="47.5"
-     id="text3394"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Miejsce na tabliczce: (przód, tył, bok, pieczęć)</text>
-  <text
-     x="367.5"
-     xml:space="preserve"
-     y="64.5"
-     id="text3396"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Tekst</text>
+  <g
+     id="g3169"
+     transform="translate(-2.3368421,31.436842)">
+    <text
+       style="font-size:14px;font-weight:bold;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3390"
+       xml:space="preserve"
+       font-weight="bold"
+       y="22.047367"
+       x="479.38419">Treść tabliczki</text>
+    <g
+       id="g3163">
+      <rect
+         x="360.5192"
+         y="4.2876205"
+         width="338.96161"
+         height="85.193176"
+         id="rect3388"
+         style="font-size:14px;fill:none;stroke:#000000;stroke-width:1.03839898;font-family:sans-serif" />
+      <line
+         x1="360.5"
+         x2="699.5"
+         y1="30.5"
+         y2="30.5"
+         id="line3392"
+         style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
+      <text
+         x="367.5"
+         xml:space="preserve"
+         y="47.5"
+         id="text3394"
+         style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Miejsce na tabliczce: (przód, tył, bok, pieczęć)</text>
+      <text
+         x="367.5"
+         xml:space="preserve"
+         y="64.5"
+         id="text3396"
+         style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Tekst</text>
+    </g>
+  </g>
   <rect
      x="370.5"
-     y="190.5"
+     y="295.93683"
      width="229"
      height="29"
      id="rect3398"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="370.5"
-     y="190.5"
-     width="229"
-     height="29"
-     id="rect3400"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="390.5"
-     xml:space="preserve"
-     y="207.5"
-     id="text3402"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Charakterystyczny fragment</text>
+  <g
+     id="g3139"
+     transform="translate(0,105.43684)">
+    <g
+       id="g3095">
+      <rect
+         x="370.5"
+         y="190.5"
+         width="229"
+         height="29"
+         id="rect3400"
+         style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
+    </g>
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3402"
+       y="207.5"
+       xml:space="preserve"
+       x="390.5">Charakterystyczny fragment</text>
+  </g>
   <rect
      x="700.5"
-     y="180.5"
+     y="285.93683"
      width="99"
      height="29"
      id="rect3404"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="700.5"
-     y="180.5"
-     width="99"
-     height="29"
-     id="rect3406"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="728.5"
-     xml:space="preserve"
-     y="197.5"
-     id="text3408"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Postać</text>
+  <g
+     id="g3135"
+     transform="translate(0,105.43684)">
+    <rect
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="rect3406"
+       height="29"
+       width="99"
+       y="180.5"
+       x="700.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3408"
+       y="197.5"
+       xml:space="preserve"
+       x="728.5">Postać</text>
+  </g>
   <rect
      x="410.5"
-     y="340.5"
+     y="445.93683"
      width="99"
      height="29"
      id="rect3410"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="410.5"
-     y="340.5"
-     width="99"
-     height="29"
-     id="rect3412"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="436.5"
-     xml:space="preserve"
-     y="357.5"
-     id="text3414"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Miejsce</text>
+  <g
+     id="g3121"
+     transform="translate(0,105.43684)">
+    <rect
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="rect3412"
+       height="29"
+       width="99"
+       y="340.5"
+       x="410.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3414"
+       y="357.5"
+       xml:space="preserve"
+       x="436.5">Miejsce</text>
+  </g>
   <rect
      x="230.5"
-     y="320.5"
+     y="425.93683"
      width="129"
      height="49"
      id="rect3416"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="230.5"
-     y="320.5"
-     width="129"
-     height="49"
-     id="rect3418"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="279.5"
-     xml:space="preserve"
-     y="337.5"
-     id="text3420"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Miara</text>
-  <line
-     x1="230.5"
-     x2="359.5"
-     y1="340.5"
-     y2="340.5"
-     id="line3422"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="237.5"
-     xml:space="preserve"
-     y="357.5"
-     id="text3424"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Wartość w SI</text>
+  <g
+     id="g3115"
+     transform="translate(0,105.43684)">
+    <rect
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="rect3418"
+       height="49"
+       width="129"
+       y="320.5"
+       x="230.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3420"
+       y="337.5"
+       xml:space="preserve"
+       x="279.5">Miara</text>
+    <line
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="line3422"
+       y2="340.5"
+       y1="340.5"
+       x2="359.5"
+       x1="230.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3424"
+       y="357.5"
+       xml:space="preserve"
+       x="237.5">Wartość w SI</text>
+  </g>
   <rect
      x="560.5"
-     y="320.5"
+     y="425.93683"
      width="249"
      height="49"
      id="rect3426"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="560.5"
-     y="320.5"
-     width="249"
-     height="49"
-     id="rect3428"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="665.5"
-     xml:space="preserve"
-     y="337.5"
-     id="text3430"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Liczba</text>
-  <line
-     x1="560.5"
-     x2="809.5"
-     y1="340.5"
-     y2="340.5"
-     id="line3432"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="567.5"
-     xml:space="preserve"
-     y="357.5"
-     id="text3434"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Wartość w systemie dziesiętnym</text>
+  <g
+     id="g3125"
+     transform="translate(0,105.43684)">
+    <rect
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="rect3428"
+       height="49"
+       width="249"
+       y="320.5"
+       x="560.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3430"
+       y="337.5"
+       xml:space="preserve"
+       x="665.5">Liczba</text>
+    <line
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="line3432"
+       y2="340.5"
+       y1="340.5"
+       x2="809.5"
+       x1="560.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3434"
+       y="357.5"
+       xml:space="preserve"
+       x="567.5">Wartość w systemie dziesiętnym</text>
+  </g>
   <rect
      x="650.5"
-     y="270.5"
+     y="375.93683"
      width="149"
      height="29"
      id="rect3436"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="650.5"
-     y="270.5"
-     width="149"
-     height="29"
-     id="rect3438"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="662.5"
-     y="287.5"
-     font-style="italic"
-     xml:space="preserve"
-     id="text3440"
-     style="font-size:14px;font-style:italic;fill:#000000;stroke:none;font-family:sans-serif">Wyszukiwana fraza</text>
+  <g
+     id="g3131"
+     transform="translate(0,105.43684)">
+    <rect
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="rect3438"
+       height="29"
+       width="149"
+       y="270.5"
+       x="650.5" />
+    <text
+       style="font-size:14px;font-style:italic;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3440"
+       xml:space="preserve"
+       font-style="italic"
+       y="287.5"
+       x="662.5">Wyszukiwana fraza</text>
+  </g>
   <rect
      x="0.5"
-     y="230.5"
+     y="335.93683"
      width="279"
      height="59"
      id="rect3442"
      style="font-size:14px;opacity:0;fill:#ffffff;stroke:none;font-family:sans-serif" />
-  <rect
-     x="0.5"
-     y="230.5"
-     width="279"
-     height="59"
-     id="rect3444"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="126.5"
-     xml:space="preserve"
-     y="247.5"
-     id="text3446"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Data</text>
+  <g
+     id="g3098"
+     transform="translate(0,105.43684)">
+    <rect
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="rect3444"
+       height="59"
+       width="279"
+       y="230.5"
+       x="0.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3446"
+       y="247.5"
+       xml:space="preserve"
+       x="126.5">Data</text>
+    <line
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="line3448"
+       y2="250.5"
+       y1="250.5"
+       x2="279.5"
+       x1="0.5" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3450"
+       y="267.5"
+       xml:space="preserve"
+       x="7.5">Wartość w kalendarzu gregoriańskim</text>
+  </g>
   <line
-     x1="0.5"
-     x2="279.5"
-     y1="250.5"
-     y2="250.5"
-     id="line3448"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="7.5"
-     xml:space="preserve"
-     y="267.5"
-     id="text3450"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">Wartość w kalendarzu gregoriańskim</text>
-  <line
-     x1="240.5"
-     x2="300.5"
-     y1="40.5"
-     y2="40.5"
+     x1="238.94211"
+     x2="298.94211"
+     y1="40"
+     y2="40"
      id="line3452"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
-     x1="300.5"
-     x2="360.5"
-     y1="40.5"
-     y2="40.5"
+     x1="298.94211"
+     x2="358.94211"
+     y1="40"
+     y2="40"
      id="line3454"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <text
-     x="253.5"
+     x="251.94211"
      xml:space="preserve"
-     y="55.5"
+     y="55"
      id="text3456"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">1</text>
   <text
-     x="323.5"
+     x="321.94211"
      xml:space="preserve"
-     y="55.5"
+     y="55"
      id="text3458"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">1..n</text>
-  <line
-     x1="450.5"
-     x2="450.5"
-     y1="90.5"
-     y2="140.5"
-     id="line3460"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <line
-     x1="450.5"
-     x2="450.5"
-     y1="140.5"
-     y2="190.5"
-     id="line3462"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
+  <g
+     id="g3177"
+     transform="matrix(1,0,0,1.7176302,-6.2315789,-31.611256)">
+    <line
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="line3460"
+       y2="140.5"
+       y1="90.5"
+       x2="450.5"
+       x1="450.5" />
+    <line
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="line3462"
+       y2="190.5"
+       y1="140.5"
+       x2="450.5"
+       x1="450.5" />
+  </g>
   <text
-     x="441.5"
+     x="439.16315"
      xml:space="preserve"
-     y="123.5"
+     y="141.69473"
      id="text3464"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">   1</text>
   <text
      x="422.5"
      xml:space="preserve"
-     y="186.5"
+     y="291.93683"
      id="text3466"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">        0..n</text>
   <line
      x1="370.5"
      x2="320.5"
-     y1="210.5"
-     y2="210.5"
+     y1="315.93683"
+     y2="315.93683"
      id="line3468"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="320.5"
      x2="320.5"
-     y1="210.5"
-     y2="235.5"
+     y1="315.93683"
+     y2="340.93683"
      id="line3470"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="320.5"
      x2="320.5"
-     y1="235.5"
-     y2="260.5"
+     y1="340.93683"
+     y2="365.93683"
      id="line3472"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="320.5"
      x2="280.5"
-     y1="260.5"
-     y2="260.5"
+     y1="365.93683"
+     y2="365.93683"
      id="line3474"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="369.5"
      x2="357.5"
-     y1="210.5"
-     y2="216.5"
+     y1="315.93683"
+     y2="321.93683"
      id="line3476"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="369.5"
      x2="357.5"
-     y1="210.5"
-     y2="204.5"
+     y1="315.93683"
+     y2="309.93683"
      id="line3478"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <polygon
-     transform="translate(250.5,180.5)"
-     points="107,36 107,24 119,30 "
+     transform="translate(250.5,285.93684)"
+     points="107,24 119,30 107,36 "
      id="polygon3480"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif" />
   <polygon
-     transform="translate(250.5,180.5)"
-     points="107,36 107,24 119,30 "
+     transform="translate(250.5,285.93684)"
+     points="107,24 119,30 107,36 "
      id="polygon3482"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="400.5"
      x2="400.5"
-     y1="220.5"
-     y2="350.5"
+     y1="325.93683"
+     y2="455.93683"
      id="line3484"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="400.5"
      x2="380.5"
-     y1="350.5"
-     y2="350.5"
+     y1="455.93683"
+     y2="455.93683"
      id="line3486"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="380.5"
      x2="360.5"
-     y1="350.5"
-     y2="350.5"
+     y1="455.93683"
+     y2="455.93683"
      id="line3488"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="400.5"
      x2="406.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3490"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="400.5"
      x2="394.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3492"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <polygon
-     transform="translate(330.5,190.5)"
-     points="76,42 64,42 70,30 "
+     transform="translate(330.5,295.93684)"
+     points="64,42 70,30 76,42 "
      id="polygon3494"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif" />
   <polygon
-     transform="translate(330.5,190.5)"
-     points="76,42 64,42 70,30 "
+     transform="translate(330.5,295.93684)"
+     points="64,42 70,30 76,42 "
      id="polygon3496"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="520.5"
      x2="520.5"
-     y1="220.5"
-     y2="350.5"
+     y1="325.93683"
+     y2="455.93683"
      id="line3498"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="520.5"
      x2="540.5"
-     y1="350.5"
-     y2="350.5"
+     y1="455.93683"
+     y2="455.93683"
      id="line3500"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="540.5"
      x2="560.5"
-     y1="350.5"
-     y2="350.5"
+     y1="455.93683"
+     y2="455.93683"
      id="line3502"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="520.5"
      x2="526.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3504"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="520.5"
      x2="514.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3506"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <polygon
-     transform="translate(490.5,190.5)"
-     points="36,42 24,42 30,30 "
+     transform="translate(490.5,295.93684)"
+     points="24,42 30,30 36,42 "
      id="polygon3508"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif" />
   <polygon
-     transform="translate(490.5,190.5)"
-     points="36,42 24,42 30,30 "
+     transform="translate(490.5,295.93684)"
+     points="24,42 30,30 36,42 "
      id="polygon3510"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="570.5"
      x2="570.5"
-     y1="220.5"
-     y2="280.5"
+     y1="325.93683"
+     y2="385.93683"
      id="line3512"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="570.5"
      x2="610.5"
-     y1="280.5"
-     y2="280.5"
+     y1="385.93683"
+     y2="385.93683"
      id="line3514"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="610.5"
      x2="650.5"
-     y1="280.5"
-     y2="280.5"
+     y1="385.93683"
+     y2="385.93683"
      id="line3516"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="570.5"
      x2="576.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3518"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="570.5"
      x2="564.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3520"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <polygon
-     transform="translate(540.5,190.5)"
-     points="36,42 24,42 30,30 "
+     transform="translate(540.5,295.93684)"
+     points="24,42 30,30 36,42 "
      id="polygon3522"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif" />
   <polygon
-     transform="translate(540.5,190.5)"
-     points="36,42 24,42 30,30 "
+     transform="translate(540.5,295.93684)"
+     points="24,42 30,30 36,42 "
      id="polygon3524"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="600.5"
      x2="650.5"
-     y1="200.5"
-     y2="200.5"
+     y1="305.93683"
+     y2="305.93683"
      id="line3526"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="650.5"
      x2="700.5"
-     y1="200.5"
-     y2="200.5"
+     y1="305.93683"
+     y2="305.93683"
      id="line3528"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="600.5"
      x2="612.5"
-     y1="200.5"
-     y2="194.5"
+     y1="305.93683"
+     y2="299.93683"
      id="line3530"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="600.5"
      x2="612.5"
-     y1="200.5"
-     y2="206.5"
+     y1="305.93683"
+     y2="311.93683"
      id="line3532"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <polygon
-     transform="translate(570.5,170.5)"
-     points="42,24 42,36 30,30 "
+     transform="translate(570.5,275.93684)"
+     points="42,36 30,30 42,24 "
      id="polygon3534"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif" />
   <polygon
-     transform="translate(570.5,170.5)"
-     points="42,24 42,36 30,30 "
+     transform="translate(570.5,275.93684)"
+     points="42,36 30,30 42,24 "
      id="polygon3536"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="470.5"
      x2="470.5"
-     y1="220.5"
-     y2="280.5"
+     y1="325.93683"
+     y2="385.93683"
      id="line3538"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="470.5"
      x2="470.5"
-     y1="280.5"
-     y2="340.5"
+     y1="385.93683"
+     y2="445.93683"
      id="line3540"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="470.5"
      x2="476.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3542"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <line
      x1="470.5"
      x2="464.5"
-     y1="220.5"
-     y2="232.5"
+     y1="325.93683"
+     y2="337.93683"
      id="line3544"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
   <polygon
-     transform="translate(440.5,190.5)"
-     points="36,42 24,42 30,30 "
+     transform="translate(440.5,295.93684)"
+     points="24,42 30,30 36,42 "
      id="polygon3546"
      style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif" />
   <polygon
-     transform="translate(440.5,190.5)"
-     points="36,42 24,42 30,30 "
+     transform="translate(440.5,295.93684)"
+     points="24,42 30,30 36,42 "
      id="polygon3548"
      style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
 </svg>

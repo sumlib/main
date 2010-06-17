@@ -30,15 +30,9 @@ PORZĄDKOWE
 => komentarze w języku - spytać Stępnia co o tym myśli (-;
 
 PRACA:
-A> ładniejszy obrazek dziedziny problemu (co powinna zawierać tabliczka w wersji elektronicznej)
-=> ładniejszy obrazek do pakietów
 ?> nazwa do wyszukiwania po klinach (cunetext??)
-=> dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
-O> obrazek "po co?" -> strzałki?
+
 ?> zastanowić się co z xml-schema - atrybut symbol
-+> zmienić pliki na cpp
-A> poprzednie rozwiązania
-O> podsumowanie
 
 UWAGI DĄBROWSKIEGO:
 Rozdział 2: rozszerzyć
@@ -47,25 +41,26 @@ Rozdział 3: być może wrzucić przed rozdział 1??
 		  TQL             -> SQL, XQuery?
 	w ładnym obrazku brakowało jednego elementu - TQL-a
 	
+	
+Do przeczytania:
+=> gramatyka i semantyka
+=> moduły podstawowe
+=> postgres
+=> xml
+=> bibliografia
 
 PRACA DOMOWA:
 Ola:
-  => obrazek "po co?" -> strzałki?
-		- dwie wersje
-  -> napisać do cdli 
-		- prawie
-  -> podsumowanie
+  => poprawić obrazek "po co"
+  => podstawowe pojęcia:dodać tłumaczenia na angielski? (provenience, readings, seal?)
+  => wydzielić definicje z gramatyki
+  => dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
+  => gramatyka i semantyka
 Asia:
-  -> przeczytać pojęcia
-        -> prowiniencja ==> proweniencja
-        -> [Odczyty] nie ma nic, że wiele klinów może być jednym odczytem
-        -> dodać tłumaczenia na angielski? (provenience, readings, seal?)
-        -> pogrubić lub wydzielić terminale itp?
+  -> podsumowanie
   => załatwić konto na postgresie i wrzucić tql-a
         -> czekam na odpowiedź Bassy
-  -> ładniejszy obrazek dziedziny problemu (co powinna zawierać tabliczka w wersji elektronicznej)
-        -> coś tam zrobiłam, pytanie czy ładniejsze (-;
+  -> poprawki obrazka dziedziny problemu (co powinna zawierać tabliczka w wersji elektronicznej)
+  => wcześniejsze rozwiązania
+  => zmienić pliki na cpp
 
-
-Nowa:
-=> poprawić obrazek "po co"

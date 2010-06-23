@@ -56,6 +56,9 @@ Ola:
   => wydzielić definicje z gramatyki
   => dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
   => gramatyka i semantyka
+     -> w defincji sktruktury leksykalnej: definicja symboli terminalnych oraz literałów
+     -> zmienić symbole pomocnicze na literały i dać je po słowach kluczowych i znakach specjalnych
+     -> dodać search "zwierzaki" w regułach gramatyki, przerobić wyrażenia2 - można już więcej gwiazdek
 Asia:
   -> podsumowanie
   => załatwić konto na postgresie i wrzucić tql-a

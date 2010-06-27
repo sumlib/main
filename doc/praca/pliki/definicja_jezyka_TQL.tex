@@ -119,7 +119,7 @@ Wszystkie pozostałe symbole to terminale.\\
 \chapter{Semantyka}
 %możliwe pola
 %W zapytaniu TQL można pytać o następujące dane:
-Język TQL umożliwia wyszukiwanie na podstawie następujących danych:
+Język TQL umożliwia wyszukiwanie na podstawie kryteriów dotyczących następujących danych:
 \begin{longtable}{|p{3in}|p{3in}|}
 \hline
 {\bf Opis} & {\bf Nazwa pola w TQL}\\
@@ -143,10 +143,10 @@ rok powstania & year
 publikacja & publication
 \\
 \hline
-treść (po odczytach)& text
+treść (odczyty)& text
 \\
 \hline
-treść (po klinach) & cunetext
+treść (kliny) & cunetext
 \\
 \hline
 kolekcja & collection
@@ -160,11 +160,11 @@ muzeum & museum
 % \item treść na pieczęci (seal)
 %  \item kod tematyczny (code)
 % "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "seal"
-Język można łatwo rozszerzać, aby umożliwić pytanie o inne dane (np. wyszukiwać po klinach czy po zawartości pieczęci).
+Język można łatwo rozszerzać, aby umożliwić tworzenie kryteriów wyszukiwania w oparciu o inne dane (np. zawartość pieczęci).
 
 %Semantykę przedstawimy na wybranych przykładach. 
 Poniżej przedstawiamy semantykę wybranych przykładów.
-\section{Zapytania proste}
+\section{Zapytanie proste}
 \begin{verbatim}
 provenience: Gar*
 period: "Ur III"
@@ -181,7 +181,7 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
 \end{itemize}
 
 
-\section{Zapytania złożone}
+\section{Zapytanie złożone}
 \begin{verbatim}
 provenience: Ur
 period: "Ur III"/"Ur IV"
@@ -226,7 +226,7 @@ Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
 \begin{verbatim}
 search "zwierzęta w Gar*a"
 \end{verbatim}
-Wynikiem zapytania będą dokładnie te same tabliczki, które spełniają wszystkie warunki zapytania ''zwierzęta w Gar*a``.
+Wynikiem zapytania będą dokładnie te tabliczki, które spełniają wszystkie warunki zapytania ''zwierzęta w Gar*a``.
 \subsection{Z dodatkowym warunkiem wyszukiwania}
 \begin{verbatim}
 search

@@ -21,7 +21,7 @@
    inkscape:version="0.47 r22583"
    width="810"
    height="475.43683"
-   sodipodi:docname="Model-dziedziny.svg"
+   sodipodi:docname="Model-dziedziny.pdf"
    style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Dialog">
   <metadata
      id="metadata3552">
@@ -31,6 +31,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -411,32 +412,36 @@
        xml:space="preserve"
        x="7.5">Wartość w kalendarzu gregoriańskim</text>
   </g>
-  <line
-     x1="238.94211"
-     x2="298.94211"
-     y1="40"
-     y2="40"
-     id="line3452"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <line
-     x1="298.94211"
-     x2="358.94211"
-     y1="40"
-     y2="40"
-     id="line3454"
-     style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif" />
-  <text
-     x="251.94211"
-     xml:space="preserve"
-     y="55"
-     id="text3456"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">1</text>
-  <text
-     x="321.94211"
-     xml:space="preserve"
-     y="55"
-     id="text3458"
-     style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif">1..n</text>
+  <g
+     id="g2918"
+     transform="translate(0.77894734,38.16842)">
+    <line
+       style="font-size:14px;fill:none;stroke:#000000;font-family:sans-serif"
+       id="line3452"
+       y2="40.778946"
+       y1="40.778946"
+       x2="297.38422"
+       x1="237.38422" />
+    <line
+       style="font-size:14px;fill:none;stroke:#000000;stroke-width:0.99358052;font-family:sans-serif"
+       id="line3454"
+       y2="40.778946"
+       y1="40.778946"
+       x2="356.61081"
+       x1="297.37866" />
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3456"
+       y="55"
+       xml:space="preserve"
+       x="251.94211">1</text>
+    <text
+       style="font-size:14px;fill:#000000;stroke:none;font-family:sans-serif"
+       id="text3458"
+       y="55"
+       xml:space="preserve"
+       x="321.94211">1..n</text>
+  </g>
   <g
      id="g3177"
      transform="matrix(1,0,0,1.7176302,-6.2315789,-31.611256)">

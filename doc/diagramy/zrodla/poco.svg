@@ -10,14 +10,52 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="882.63611"
-   height="1047.3848"
-   id="svg2"
    version="1.1"
+   width="1744.9392"
+   height="1053.8727"
+   id="svg2"
    inkscape:version="0.47 r22583"
    sodipodi:docname="poco.svg">
+  <metadata
+     id="metadata233">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="694"
+     id="namedview231"
+     showgrid="false"
+     inkscape:zoom="0.31714785"
+     inkscape:cx="1136.0053"
+     inkscape:cy="661.87697"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1-6" />
   <defs
      id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective235" />
     <inkscape:path-effect
        effect="spiro"
        id="path-effect3910"
@@ -55,707 +93,86 @@
        id="path-effect3838"
        is_visible="true" />
     <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 526.18109 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="744.09448 : 526.18109 : 1"
-       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
-       id="perspective10" />
-    <inkscape:perspective
-       id="perspective3607"
+       id="perspective3109"
        inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
        inkscape:vp_z="1 : 0.5 : 1"
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
     <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective4091" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective4060" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective4038" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective4007" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3985" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3936-8" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3936-1" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3936" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3905" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3874" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3819" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3788-9" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3788" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3766" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3744" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3722" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3687-1" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective3687" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective2884" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective2826-6" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective2826-9" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective2826-0" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective2826" />
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       id="perspective2902" />
-    <inkscape:perspective
-       id="perspective10-9"
-       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
-       inkscape:vp_z="744.09448 : 526.18109 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_x="0 : 526.18109 : 1"
-       sodipodi:type="inkscape:persp3d" />
-    <inkscape:perspective
-       id="perspective3638"
+       id="perspective3183"
        inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
        inkscape:vp_z="1 : 0.5 : 1"
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
     <inkscape:perspective
-       id="perspective4147"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_x="0 : 0.5 : 1"
-       sodipodi:type="inkscape:persp3d" />
-    <inkscape:perspective
-       id="perspective4239"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_x="0 : 0.5 : 1"
-       sodipodi:type="inkscape:persp3d" />
-    <inkscape:perspective
-       id="perspective4261"
-       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
-       inkscape:vp_z="1 : 0.5 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_x="0 : 0.5 : 1"
-       sodipodi:type="inkscape:persp3d" />
-    <inkscape:perspective
-       id="perspective4286"
+       id="perspective3257"
        inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
        inkscape:vp_z="1 : 0.5 : 1"
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.2242574"
-     inkscape:cx="458.32901"
-     inkscape:cy="656.76383"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="694"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:snap-object-midpoints="true" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+  <image
+     y="431.73285"
+     x="1475.2041"
+     id="image3259"
+     height="262.27594"
+     width="269.73508"
+     xlink:href="file:///Users/ola/main.git/doc/diagramy/cc_computer_rdax_65.jpg" />
+  <image
+     y="436.20792"
+     x="-259.6358"
+     id="image3185"
+     height="308.30023"
+     width="259.6358"
+     xlink:href="file:///Users/ola/main.git/doc/diagramy/naukowiec.jpg"
+     transform="scale(-1,1)" />
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(55.600549,4.1887527)">
+     transform="translate(440.93723,-2.8825254)">
     <rect
-       style="fill:#000000;fill-opacity:1;stroke:none"
-       id="rect2821"
        width="2"
-       height="1047.3848"
+       height="1053.8727"
        x="374.28574"
-       y="-4.1887527" />
+       y="2.8825254"
+       id="rect2821"
+       style="fill:#000000;fill-opacity:1;stroke:none" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke:none"
+       width="1.9999998"
+       height="755.10925"
+       x="500.99258"
+       y="-750.78931"
+       transform="matrix(4.3886116e-4,0.9999999,-0.99999959,9.025057e-4,0,0)"
        id="rect2821-4"
-       width="1.9999999"
-       height="882.63538"
-       x="500.95337"
-       y="-826.77783"
-       transform="matrix(5.1297796e-4,0.99999987,-0.9999997,7.7210865e-4,0,0)" />
+       style="fill:#000000;fill-opacity:1;stroke:none" />
     <g
-       transform="matrix(0.86803717,0,0,0.86803717,-39.459489,-50.507669)"
-       id="layer1-6"
-       inkscape:label="Layer 1">
-      <image
-         xlink:href="file:///Users/ola/main.git/doc/diagramy/tabliczka.gif"
-         width="300"
-         height="499"
-         id="image2904"
-         x="65"
-         y="97.147896" />
-      <text
-         id="text2814"
-         y="105.10793"
-         x="89.862289"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="105.10793"
-           x="89.862289"
-           id="tspan2816"
-           sodipodi:role="line">Góra</tspan></text>
-      <text
-         id="text2814-2"
-         y="167.74854"
-         x="121.65311"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="167.74854"
-           x="121.65311"
-           id="tspan2816-5"
-           sodipodi:role="line">Przód</tspan></text>
-      <text
-         id="text2814-4"
-         y="397.16168"
-         x="94.16584"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Keyfont V2;-inkscape-font-specification:Tiresias Keyfont V2"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus Bold"
-           y="397.16168"
-           x="94.16584"
-           id="tspan2816-1"
-           sodipodi:role="line">Dół</tspan></text>
-      <text
-         id="text2814-7"
-         y="447.90741"
-         x="103.68063"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="447.90741"
-           x="103.68063"
-           id="tspan2816-2"
-           sodipodi:role="line">Tył</tspan></text>
-      <text
-         transform="matrix(0.02776624,0.99961444,-0.99961444,0.02776624,0,0)"
-         id="text2814-1"
-         y="-357.85919"
-         x="213.00981"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="-357.85919"
-           x="213.00981"
-           id="tspan2816-55"
-           sodipodi:role="line">Prawy bok</tspan></text>
-      <text
-         transform="matrix(-0.03142605,-0.99950608,0.99950608,-0.03142605,0,0)"
-         id="text2814-1-8"
-         y="56.458111"
-         x="-284.11505"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="56.458111"
-           x="-284.11505"
-           id="tspan2816-55-4"
-           sodipodi:role="line">Lewy bok</tspan></text>
-      <path
-         transform="matrix(0.51764602,0,0,0.38737826,84.147391,130.71559)"
-         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 243.15678,250.4734 c 0,16.05663 -17.51307,29.0731 -39.11653,29.0731 -21.60346,0 -39.11652,-13.01647 -39.11652,-29.0731 0,-16.05662 17.51306,-29.07309 39.11652,-29.07309 21.60346,0 39.11653,13.01647 39.11653,29.07309 z"
-         sodipodi:ry="29.073093"
-         sodipodi:rx="39.116524"
-         sodipodi:cy="250.4734"
-         sodipodi:cx="204.04025"
-         id="path2901"
-         sodipodi:type="arc" />
-      <path
-         transform="matrix(0.51764602,0,0,0.38737826,142.82218,211.06304)"
-         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 243.15678,250.4734 c 0,16.05663 -17.51307,29.0731 -39.11653,29.0731 -21.60346,0 -39.11652,-13.01647 -39.11652,-29.0731 0,-16.05662 17.51306,-29.07309 39.11652,-29.07309 21.60346,0 39.11653,13.01647 39.11653,29.07309 z"
-         sodipodi:ry="29.073093"
-         sodipodi:rx="39.116524"
-         sodipodi:cy="250.4734"
-         sodipodi:cx="204.04025"
-         id="path2901-8"
-         sodipodi:type="arc" />
-      <path
-         inkscape:transform-center-y="-74.136028"
-         inkscape:transform-center-x="9.2848858"
-         transform="matrix(0.50513598,0,0,0.73418294,185.54846,370.52608)"
-         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 243.15678,250.4734 c 0,16.05663 -17.51307,29.0731 -39.11653,29.0731 -21.60346,0 -39.11652,-13.01647 -39.11652,-29.0731 0,-16.05662 17.51306,-29.07309 39.11652,-29.07309 21.60346,0 39.11653,13.01647 39.11653,29.07309 z"
-         sodipodi:ry="29.073093"
-         sodipodi:rx="39.116524"
-         sodipodi:cy="250.4734"
-         sodipodi:cx="204.04025"
-         id="path2901-81"
-         sodipodi:type="arc" />
+       transform="matrix(0.40800784,0,0,0.40800784,354.06603,7.4964275)"
+       id="g3334">
       <g
-         transform="matrix(0.86767598,0.57519031,0.49713017,-1.0039198,-90.852184,146.46384)"
-         id="g3839">
-        <rect
-           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712"
-           width="117.28729"
-           height="0.84292722"
-           x="377.29794"
-           y="-56.743233"
-           transform="scale(1,-1)" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7"
-           width="17.645557"
-           height="1.635514"
-           x="333.44504"
-           y="-185.83951"
-           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
-           inkscape:transform-center-y="4.3293987" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-0"
-           width="17.877476"
-           height="1.811268"
-           x="376.73929"
-           y="-95.97747"
-           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
-           inkscape:transform-center-y="-4.8581985"
-           inkscape:transform-center-x="1.4095929e-05" />
-      </g>
-      <g
-         transform="matrix(0.86767598,-0.49713017,0.49713017,0.86767598,-154.22516,359.6595)"
-         id="g3839-6">
-        <rect
-           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-8"
-           width="117.28729"
-           height="0.84292722"
-           x="377.29794"
-           y="-56.743233"
-           transform="scale(1,-1)" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-72"
-           width="17.645557"
-           height="1.635514"
-           x="333.44504"
-           y="-185.83951"
-           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
-           inkscape:transform-center-y="4.3293987" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-0-8"
-           width="17.877476"
-           height="1.811268"
-           x="376.73929"
-           y="-95.97747"
-           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
-           inkscape:transform-center-y="-4.8581985"
-           inkscape:transform-center-x="1.4095929e-05" />
-      </g>
-      <g
-         transform="matrix(0.86767598,-0.49713017,0.49713017,0.86767598,-48.819808,684.09866)"
-         id="g3839-6-2">
-        <rect
-           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-8-7"
-           width="117.28729"
-           height="0.84292722"
-           x="377.29794"
-           y="-56.743233"
-           transform="scale(1,-1)" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-72-4"
-           width="17.645557"
-           height="1.635514"
-           x="333.44504"
-           y="-185.83951"
-           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
-           inkscape:transform-center-y="4.3293987" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-0-8-4"
-           width="17.877476"
-           height="1.811268"
-           x="376.73929"
-           y="-95.97747"
-           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
-           inkscape:transform-center-y="-4.8581985"
-           inkscape:transform-center-x="1.4095929e-05" />
-      </g>
-      <text
-         id="text2814-2-2"
-         y="153.49692"
-         x="299.55695"
-         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="153.49692"
-           x="299.55695"
-           id="tspan2816-5-4"
-           sodipodi:role="line">Imię</tspan></text>
-      <text
-         id="text2814-2-5"
-         y="393.46228"
-         x="354.87604"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="393.46228"
-           x="354.87604"
-           id="tspan2816-5-6"
-           sodipodi:role="line">Nazwa miejsca</tspan><tspan
-           id="tspan3975"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="415.96228"
-           x="354.87604"
-           sodipodi:role="line" /></text>
-      <text
-         inkscape:transform-center-y="-16.446225"
-         inkscape:transform-center-x="24.566233"
-         id="text2814-2-0"
-         y="486.15918"
-         x="410.94275"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="486.15918"
-           x="410.94275"
-           id="tspan2816-5-9"
-           sodipodi:role="line">Data</tspan></text>
-      <path
-         transform="matrix(0.51764602,0,0,0.38737826,144.81053,157.69231)"
-         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 243.15678,250.4734 c 0,16.05663 -17.51307,29.0731 -39.11653,29.0731 -21.60346,0 -39.11652,-13.01647 -39.11652,-29.0731 0,-16.05662 17.51306,-29.07309 39.11652,-29.07309 21.60346,0 39.11653,13.01647 39.11653,29.07309 z"
-         sodipodi:ry="29.073093"
-         sodipodi:rx="39.116524"
-         sodipodi:cy="250.4734"
-         sodipodi:cx="204.04025"
-         id="path2901-1"
-         sodipodi:type="arc" />
-      <g
-         transform="matrix(0.47800389,-0.72025169,0.70028347,0.49163392,39.261753,491.91901)"
-         id="g3839-6-0">
-        <rect
-           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-8-72"
-           width="117.28729"
-           height="0.84292722"
-           x="377.29794"
-           y="-56.743233"
-           transform="scale(1,-1)" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-72-6"
-           width="17.645557"
-           height="1.635514"
-           x="333.44504"
-           y="-185.83951"
-           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
-           inkscape:transform-center-y="4.3293987" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-0-8-6"
-           width="17.877476"
-           height="1.811268"
-           x="376.73929"
-           y="-95.97747"
-           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
-           inkscape:transform-center-y="-4.8581985"
-           inkscape:transform-center-x="1.4095929e-05" />
-      </g>
-      <path
-         transform="matrix(0.51764602,0,0,0.38737826,121.6363,375.23102)"
-         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 243.15678,250.4734 c 0,16.05663 -17.51307,29.0731 -39.11653,29.0731 -21.60346,0 -39.11652,-13.01647 -39.11652,-29.0731 0,-16.05662 17.51306,-29.07309 39.11652,-29.07309 21.60346,0 39.11653,13.01647 39.11653,29.07309 z"
-         sodipodi:ry="29.073093"
-         sodipodi:rx="39.116524"
-         sodipodi:cy="250.4734"
-         sodipodi:cx="204.04025"
-         id="path2901-8-1"
-         sodipodi:type="arc" />
-      <g
-         transform="matrix(0.96450789,-0.28633643,0.2694055,0.98223251,-133.49985,522.23568)"
-         id="g3839-6-3">
-        <rect
-           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-8-6"
-           width="117.28729"
-           height="0.84292722"
-           x="377.29794"
-           y="-56.743233"
-           transform="scale(1,-1)" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-72-2"
-           width="17.645557"
-           height="1.635514"
-           x="333.44504"
-           y="-185.83951"
-           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
-           inkscape:transform-center-y="4.3293987" />
-        <rect
-           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect3712-7-7-7-0-8-2"
-           width="17.877476"
-           height="1.811268"
-           x="376.73929"
-           y="-95.97747"
-           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
-           inkscape:transform-center-y="-4.8581985"
-           inkscape:transform-center-x="1.4095929e-05" />
-      </g>
-      <text
-         inkscape:transform-center-y="-16.446225"
-         inkscape:transform-center-x="24.566233"
-         id="text2814-2-0-3"
-         y="438.29187"
-         x="363.07724"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"
-         xml:space="preserve"><tspan
-           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus"
-           y="438.29187"
-           x="363.07724"
-           id="tspan2816-5-9-8"
-           sodipodi:role="line">Liczba</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         x="252.23778"
-         y="728.85797"
-         id="text3058"
-         transform="scale(1.0806376,0.92537959)"><tspan
-           sodipodi:role="line"
-           id="tspan3060"
-           x="252.23778"
-           y="728.85797">JĘZYK WYSZUKIWANIA</tspan></text>
-      <text
-         transform="scale(1.0806376,0.9253796)"
-         id="text3922"
-         y="102.76231"
-         x="390.05515"
-         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         xml:space="preserve"><tspan
-           y="102.76231"
-           x="390.05515"
-           id="tspan3924"
-           sodipodi:role="line">DANE</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         x="-513.95587"
-         y="158.45734"
-         id="text3926"
-         transform="matrix(1.1520244,0,0,1.1520244,45.458294,58.186067)"><tspan
-           sodipodi:role="line"
-           id="tspan3928"
-           x="-513.95587"
-           y="158.45734" /></text>
-      <text
-         transform="matrix(-0.01341668,-1.0805543,0.92530829,-0.01148907,0,0)"
-         id="text4241"
-         y="31.437561"
-         x="-745.14722"
-         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         xml:space="preserve"><tspan
-           y="31.437561"
-           x="-745.14722"
-           id="tspan4243"
-           sodipodi:role="line">DLA SUMEROLOGA</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         x="415.96072"
-         y="-1024.1543"
-         id="text4246"
-         transform="matrix(-0.00458012,1.0806279,-0.92537129,-0.00392209,0,0)"><tspan
-           sodipodi:role="line"
-           id="tspan4248"
-           x="415.96072"
-           y="-1024.1543">DLA INFORMATYKA</tspan></text>
-    </g>
-    <g
-       id="g3334"
-       transform="matrix(0.40800784,0,0,0.40800784,354.06603,7.4964275)">
-      <g
-         id="g3336"
-         color-interpolation="linearRGB"
-         image-rendering="optimizeSpeed"
-         color-rendering="optimizeQuality"
-         text-rendering="geometricPrecision"
          transform="translate(370,20)"
-         font-size="14"
+         id="g3336"
          style="font-size:14px;fill:#ffffff;stroke:#ffffff;font-family:sans-serif">
         <rect
-           id="rect3338"
-           y="0"
-           height="49"
            width="179"
+           height="49"
            x="0"
+           y="0"
+           id="rect3338"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3340"
-           y="0"
-           height="49"
            width="179"
+           height="49"
            x="0"
+           y="0"
+           id="rect3340"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3342"
-           y="17"
-           xml:space="preserve"
            x="49"
+           y="17"
+           id="text3342"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Provenience</text>
         <line
            id="line3344"
@@ -765,33 +182,33 @@
            y2="20"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3346"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           id="text3346"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(100)</text>
         <rect
-           id="rect3348"
-           height="49"
            width="179"
-           transform="translate(-270,90)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(-270,90)"
+           id="rect3348"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3350"
-           height="49"
            width="179"
-           transform="translate(-270,90)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(-270,90)"
+           id="rect3350"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3352"
-           transform="translate(-270,90)"
-           y="17"
-           xml:space="preserve"
            x="58"
+           y="17"
+           transform="translate(-270,90)"
+           id="text3352"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Collection</text>
         <line
            id="line3354"
@@ -802,34 +219,34 @@
            transform="translate(-270,90)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3356"
-           transform="translate(-270,90)"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           transform="translate(-270,90)"
+           id="text3356"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(100)</text>
         <rect
-           id="rect3358"
-           height="49"
            width="179"
-           transform="translate(-300,220)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(-300,220)"
+           id="rect3358"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3360"
-           height="49"
            width="179"
-           transform="translate(-300,220)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(-300,220)"
+           id="rect3360"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3362"
-           transform="translate(-300,220)"
-           y="17"
-           xml:space="preserve"
            x="61"
+           y="17"
+           transform="translate(-300,220)"
+           id="text3362"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Museum</text>
         <line
            id="line3364"
@@ -840,34 +257,34 @@
            transform="translate(-300,220)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3366"
-           transform="translate(-300,220)"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           transform="translate(-300,220)"
+           id="text3366"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(100)</text>
         <rect
-           id="rect3368"
-           height="49"
            width="179"
-           transform="translate(400,190)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(400,190)"
+           id="rect3368"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3370"
-           height="49"
            width="179"
-           transform="translate(400,190)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(400,190)"
+           id="rect3370"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3372"
-           transform="translate(400,190)"
-           y="17"
-           xml:space="preserve"
            x="70"
+           y="17"
+           transform="translate(400,190)"
+           id="text3372"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Genre</text>
         <line
            id="line3374"
@@ -878,34 +295,34 @@
            transform="translate(400,190)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3376"
-           transform="translate(400,190)"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           transform="translate(400,190)"
+           id="text3376"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(100)</text>
         <rect
-           id="rect3378"
-           height="49"
            width="169"
-           transform="translate(250,10)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(250,10)"
+           id="rect3378"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3380"
-           height="49"
            width="169"
-           transform="translate(250,10)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(250,10)"
+           id="rect3380"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3382"
-           transform="translate(250,10)"
-           y="17"
-           xml:space="preserve"
            x="65"
+           y="17"
+           transform="translate(250,10)"
+           id="text3382"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Period</text>
         <line
            id="line3384"
@@ -916,11 +333,11 @@
            transform="translate(250,10)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3386"
-           transform="translate(250,10)"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           transform="translate(250,10)"
+           id="text3386"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(100)</text>
         <line
            id="line3388"
@@ -947,37 +364,37 @@
            transform="translate(220,220)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3394"
-           transform="translate(220,220)"
-           y="85"
-           xml:space="preserve"
            x="33"
+           y="85"
+           transform="translate(220,220)"
+           id="text3394"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3396"
-           transform="translate(220,220)"
-           y="53"
-           xml:space="preserve"
            x="239"
+           y="53"
+           transform="translate(220,220)"
+           id="text3396"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..1</text>
         <text
-           id="text3398"
-           transform="translate(220,220)"
-           y="67"
-           xml:space="preserve"
            x="250"
+           y="67"
+           transform="translate(220,220)"
+           id="text3398"
+           xml:space="preserve"
            style="fill:#000000;stroke:none"> </text>
         <polygon
-           id="polygon3400"
-           points="290,76 297,80 290,84 "
+           points="297,80 290,84 290,76 "
            transform="translate(220,220)"
+           id="polygon3400"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3402"
-           transform="translate(220,220)"
-           y="84"
-           xml:space="preserve"
            x="202"
+           y="84"
+           transform="translate(220,220)"
+           id="text3402"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Of subgenre</text>
         <line
            id="line3404"
@@ -996,53 +413,53 @@
            transform="translate(240,506)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3408"
-           transform="translate(240,506)"
-           y="49"
-           xml:space="preserve"
            x="33"
+           y="49"
+           transform="translate(240,506)"
+           id="text3408"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3410"
-           transform="translate(240,506)"
-           y="49"
-           xml:space="preserve"
            x="123"
+           y="49"
+           transform="translate(240,506)"
+           id="text3410"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..n</text>
         <polygon
-           id="polygon3412"
-           points="120,23 127,27 120,31 "
+           points="127,27 120,31 120,23 "
            transform="translate(240,506)"
+           id="polygon3412"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3414"
-           transform="translate(240,506)"
-           y="31"
-           xml:space="preserve"
            x="52"
+           y="31"
+           transform="translate(240,506)"
+           id="text3414"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Has value </text>
         <rect
-           id="rect3416"
-           height="49"
            width="179"
-           transform="translate(400,510)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(400,510)"
+           id="rect3416"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3418"
-           height="49"
            width="179"
-           transform="translate(400,510)"
-           y="0"
+           height="49"
            x="0"
+           y="0"
+           transform="translate(400,510)"
+           id="rect3418"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3420"
-           transform="translate(400,510)"
-           y="17"
-           xml:space="preserve"
            x="59"
+           y="17"
+           transform="translate(400,510)"
+           id="text3420"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">TagValue</text>
         <line
            id="line3422"
@@ -1053,34 +470,34 @@
            transform="translate(400,510)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3424"
-           transform="translate(400,510)"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           transform="translate(400,510)"
+           id="text3424"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(255)</text>
         <rect
-           id="rect3426"
-           height="89"
            width="159"
-           transform="translate(390,360)"
-           y="0"
+           height="89"
            x="0"
+           y="0"
+           transform="translate(390,360)"
+           id="rect3426"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3428"
-           height="89"
            width="159"
-           transform="translate(390,360)"
-           y="0"
+           height="89"
            x="0"
+           y="0"
+           transform="translate(390,360)"
+           id="rect3428"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3430"
-           transform="translate(390,360)"
-           y="17"
-           xml:space="preserve"
            x="53"
+           y="17"
+           transform="translate(390,360)"
+           id="text3430"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Reading</text>
         <line
            id="line3432"
@@ -1091,25 +508,25 @@
            transform="translate(390,360)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3434"
-           transform="translate(390,360)"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           transform="translate(390,360)"
+           id="text3434"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">node1_id : integer</text>
         <text
-           id="text3436"
-           transform="translate(390,360)"
-           y="54"
-           xml:space="preserve"
            x="7"
+           y="54"
+           transform="translate(390,360)"
+           id="text3436"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">node2_id : integer</text>
         <text
-           id="text3438"
-           transform="translate(390,360)"
-           y="71"
-           xml:space="preserve"
            x="7"
+           y="71"
+           transform="translate(390,360)"
+           id="text3438"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(20)</text>
         <line
            id="line3440"
@@ -1136,48 +553,42 @@
            transform="translate(125,396)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3446"
-           transform="translate(125,396)"
-           y="49"
-           xml:space="preserve"
            x="228"
+           y="49"
+           transform="translate(125,396)"
+           id="text3446"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3448"
-           transform="translate(125,396)"
-           y="90"
-           xml:space="preserve"
            x="44"
+           y="90"
+           transform="translate(125,396)"
+           id="text3448"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..n</text>
         <text
-           id="text3450"
-           transform="translate(125,396)"
-           y="31"
-           xml:space="preserve"
            x="55"
+           y="31"
+           transform="translate(125,396)"
+           id="text3450"
+           xml:space="preserve"
            style="fill:#000000;stroke:none"> </text>
         <polygon
-           id="polygon3452"
-           points="82,40 89,44 82,48 "
+           points="89,44 82,48 82,40 "
            transform="translate(125,396)"
+           id="polygon3452"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3454"
-           transform="translate(125,396)"
-           y="48"
-           xml:space="preserve"
            x="20"
+           y="48"
+           transform="translate(125,396)"
+           id="text3454"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Contains</text>
       </g>
       <g
-         id="g3456"
-         stroke-miterlimit="5"
-         color-interpolation="linearRGB"
-         image-rendering="optimizeSpeed"
-         color-rendering="optimizeQuality"
-         text-rendering="geometricPrecision"
          transform="translate(395,310)"
-         font-size="14"
+         id="g3456"
          style="font-size:14px;stroke-linecap:butt;stroke-miterlimit:5;stroke-dasharray:8, 5;font-family:sans-serif">
         <line
            id="line3458"
@@ -1194,60 +605,51 @@
            y2="20"
            style="fill:none" />
         <text
-           id="text3462"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="196"
            x="44"
+           y="196"
+           id="text3462"
+           xml:space="preserve"
            style="stroke:none">1..n</text>
         <text
-           id="text3464"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="53"
            x="48"
+           y="53"
+           id="text3464"
+           xml:space="preserve"
            style="stroke:none">  1</text>
         <polygon
+           points="89,103 82,107 82,99 "
            id="polygon3466"
-           points="82,99 89,103 82,107 "
-           stroke-miterlimit="10"
            style="stroke:none" />
         <text
-           id="text3468"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="107"
            x="20"
+           y="107"
+           id="text3468"
+           xml:space="preserve"
            style="stroke:none">Contains</text>
       </g>
       <g
-         id="g3470"
-         color-interpolation="linearRGB"
-         image-rendering="optimizeSpeed"
-         color-rendering="optimizeQuality"
-         text-rendering="geometricPrecision"
          transform="translate(380,210)"
-         font-size="14"
+         id="g3470"
          style="font-size:14px;fill:#ffffff;stroke:#ffffff;font-family:sans-serif">
         <rect
-           id="rect3472"
-           y="0"
-           height="119"
            width="229"
+           height="119"
            x="0"
+           y="0"
+           id="rect3472"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3474"
-           y="0"
-           height="119"
            width="229"
+           height="119"
            x="0"
+           y="0"
+           id="rect3474"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3476"
-           y="17"
-           xml:space="preserve"
            x="94"
+           y="17"
+           id="text3476"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Tablet</text>
         <line
            id="line3478"
@@ -1257,34 +659,34 @@
            y2="20"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3480"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           id="text3480"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">ID_CDLI : varchar(10)</text>
         <text
-           id="text3482"
-           y="54"
-           xml:space="preserve"
            x="7"
+           y="54"
+           id="text3482"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">publication : varchar(100)</text>
         <text
-           id="text3484"
-           y="71"
-           xml:space="preserve"
            x="7"
+           y="71"
+           id="text3484"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">measurements : varchar(15)</text>
         <text
-           id="text3486"
-           y="88"
-           xml:space="preserve"
            x="7"
+           y="88"
+           id="text3486"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">date_of_origin : varchar(100)</text>
         <text
-           id="text3488"
-           y="105"
-           xml:space="preserve"
            x="7"
+           y="105"
+           id="text3488"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">show_text : text</text>
         <line
            id="line3490"
@@ -1311,30 +713,30 @@
            transform="translate(-120,-104)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3496"
-           transform="translate(-120,-104)"
-           y="100"
-           xml:space="preserve"
            x="119"
+           y="100"
+           transform="translate(-120,-104)"
+           id="text3496"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3498"
-           transform="translate(-120,-104)"
-           y="49"
-           xml:space="preserve"
            x="33"
+           y="49"
+           transform="translate(-120,-104)"
+           id="text3498"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..1</text>
         <polygon
-           id="polygon3500"
-           points="128,23 121,27 128,31 "
+           points="121,27 128,31 128,23 "
            transform="translate(-120,-104)"
+           id="polygon3500"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3502"
-           transform="translate(-120,-104)"
-           y="31"
-           xml:space="preserve"
            x="132"
+           y="31"
+           transform="translate(-120,-104)"
+           id="text3502"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">In</text>
         <line
            id="line3504"
@@ -1353,30 +755,30 @@
            transform="translate(28,-160)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3508"
-           transform="translate(28,-160)"
-           y="156"
-           xml:space="preserve"
            x="31"
+           y="156"
+           transform="translate(28,-160)"
+           id="text3508"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3510"
-           transform="translate(28,-160)"
-           y="53"
-           xml:space="preserve"
            x="31"
+           y="53"
+           transform="translate(28,-160)"
+           id="text3510"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..1</text>
         <polygon
-           id="polygon3512"
-           points="28,79 21,83 28,87 "
+           points="21,83 28,87 28,79 "
            transform="translate(28,-160)"
+           id="polygon3512"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3514"
-           transform="translate(28,-160)"
-           y="87"
-           xml:space="preserve"
            x="32"
+           y="87"
+           transform="translate(28,-160)"
+           id="text3514"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">From</text>
         <line
            id="line3516"
@@ -1395,30 +797,30 @@
            transform="translate(-150,26)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3520"
-           transform="translate(-150,26)"
-           y="49"
-           xml:space="preserve"
            x="113"
+           y="49"
+           transform="translate(-150,26)"
+           id="text3520"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3522"
-           transform="translate(-150,26)"
-           y="49"
-           xml:space="preserve"
            x="33"
+           y="49"
+           transform="translate(-150,26)"
+           id="text3522"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..1</text>
         <polygon
-           id="polygon3524"
-           points="50,23 43,27 50,31 "
+           points="43,27 50,31 50,23 "
            transform="translate(-150,26)"
+           id="polygon3524"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3526"
-           transform="translate(-150,26)"
-           y="31"
-           xml:space="preserve"
            x="54"
+           y="31"
+           transform="translate(-150,26)"
+           id="text3526"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Is placed in</text>
         <line
            id="line3528"
@@ -1453,41 +855,35 @@
            transform="translate(130,-150)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3536"
-           transform="translate(130,-150)"
-           y="146"
-           xml:space="preserve"
            x="9"
+           y="146"
+           transform="translate(130,-150)"
+           id="text3536"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3538"
-           transform="translate(130,-150)"
-           y="53"
-           xml:space="preserve"
            x="119"
+           y="53"
+           transform="translate(130,-150)"
+           id="text3538"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..1</text>
         <polygon
-           id="polygon3540"
-           points="89,69 96,73 89,77 "
+           points="96,73 89,77 89,69 "
            transform="translate(130,-150)"
+           id="polygon3540"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3542"
-           transform="translate(130,-150)"
-           y="77"
-           xml:space="preserve"
            x="53"
+           y="77"
+           transform="translate(130,-150)"
+           id="text3542"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">From</text>
       </g>
       <g
-         id="g3544"
-         stroke-miterlimit="5"
-         color-interpolation="linearRGB"
-         image-rendering="optimizeSpeed"
-         color-rendering="optimizeQuality"
-         text-rendering="geometricPrecision"
          transform="translate(525,310)"
-         font-size="14"
+         id="g3544"
          style="font-size:14px;stroke-linecap:butt;stroke-miterlimit:5;stroke-dasharray:8, 5;font-family:sans-serif">
         <line
            id="line3546"
@@ -1511,60 +907,51 @@
            y2="20"
            style="fill:none" />
         <text
-           id="text3552"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="95"
            x="198"
+           y="95"
+           id="text3552"
+           xml:space="preserve"
            style="stroke:none">1..n</text>
         <text
-           id="text3554"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="53"
            x="48"
+           y="53"
+           id="text3554"
+           xml:space="preserve"
            style="stroke:none">  1</text>
         <polygon
+           points="89,73 82,77 82,69 "
            id="polygon3556"
-           points="82,69 89,73 82,77 "
-           stroke-miterlimit="10"
            style="stroke:none" />
         <text
-           id="text3558"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="77"
            x="20"
+           y="77"
+           id="text3558"
+           xml:space="preserve"
            style="stroke:none">Contains</text>
       </g>
       <g
-         id="g3560"
-         color-interpolation="linearRGB"
-         image-rendering="optimizeSpeed"
-         color-rendering="optimizeQuality"
-         text-rendering="geometricPrecision"
          transform="translate(210,510)"
-         font-size="14"
+         id="g3560"
          style="font-size:14px;fill:#ffffff;stroke:#ffffff;font-family:sans-serif">
         <rect
-           id="rect3562"
-           y="0"
-           height="89"
            width="419"
+           height="89"
            x="0"
+           y="0"
+           id="rect3562"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3564"
-           y="0"
-           height="89"
            width="419"
+           height="89"
            x="0"
+           y="0"
+           id="rect3564"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3566"
-           y="17"
-           xml:space="preserve"
            x="198"
+           y="17"
+           id="text3566"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Tag</text>
         <line
            id="line3568"
@@ -1574,22 +961,22 @@
            y2="20"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3570"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           id="text3570"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">node1_id : integer</text>
         <text
-           id="text3572"
-           y="54"
-           xml:space="preserve"
            x="7"
+           y="54"
+           id="text3572"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">node2_id : integer</text>
         <text
-           id="text3574"
-           y="71"
-           xml:space="preserve"
            x="7"
+           y="71"
+           id="text3574"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">type : enum('person','place','number', 'measure', 'date')</text>
         <line
            id="line3576"
@@ -1608,53 +995,53 @@
            transform="translate(380,-324)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3580"
-           transform="translate(380,-324)"
-           y="49"
-           xml:space="preserve"
            x="33"
+           y="49"
+           transform="translate(380,-324)"
+           id="text3580"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">1..n</text>
         <text
-           id="text3582"
-           transform="translate(380,-324)"
-           y="49"
-           xml:space="preserve"
            x="143"
+           y="49"
+           transform="translate(380,-324)"
+           id="text3582"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">0..1</text>
         <polygon
-           id="polygon3584"
-           points="127,23 134,27 127,31 "
+           points="134,27 127,31 127,23 "
            transform="translate(380,-324)"
+           id="polygon3584"
            style="fill:#000000;stroke:none" />
         <text
-           id="text3586"
-           transform="translate(380,-324)"
-           y="31"
-           xml:space="preserve"
            x="65"
+           y="31"
+           transform="translate(380,-324)"
+           id="text3586"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Of genre</text>
         <rect
-           id="rect3588"
-           height="89"
            width="159"
-           transform="translate(-110,-150)"
-           y="0"
+           height="89"
            x="0"
+           y="0"
+           transform="translate(-110,-150)"
+           id="rect3588"
            style="opacity:0;stroke:none" />
         <rect
-           id="rect3590"
-           height="89"
            width="159"
-           transform="translate(-110,-150)"
-           y="0"
+           height="89"
            x="0"
+           y="0"
+           transform="translate(-110,-150)"
+           id="rect3590"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3592"
-           transform="translate(-110,-150)"
-           y="17"
-           xml:space="preserve"
            x="46"
+           y="17"
+           transform="translate(-110,-150)"
+           id="text3592"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">Cuneiform</text>
         <line
            id="line3594"
@@ -1665,36 +1052,30 @@
            transform="translate(-110,-150)"
            style="fill:none;stroke:#000000" />
         <text
-           id="text3596"
-           transform="translate(-110,-150)"
-           y="37"
-           xml:space="preserve"
            x="7"
+           y="37"
+           transform="translate(-110,-150)"
+           id="text3596"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">node1_id : integer</text>
         <text
-           id="text3598"
-           transform="translate(-110,-150)"
-           y="54"
-           xml:space="preserve"
            x="7"
+           y="54"
+           transform="translate(-110,-150)"
+           id="text3598"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">node2_id : integer</text>
         <text
-           id="text3600"
-           transform="translate(-110,-150)"
-           y="71"
-           xml:space="preserve"
            x="7"
+           y="71"
+           transform="translate(-110,-150)"
+           id="text3600"
+           xml:space="preserve"
            style="fill:#000000;stroke:none">value : varchar(20)</text>
       </g>
       <g
-         id="g3602"
-         stroke-miterlimit="5"
-         color-interpolation="linearRGB"
-         image-rendering="optimizeSpeed"
-         color-rendering="optimizeQuality"
-         text-rendering="geometricPrecision"
          transform="translate(240,310)"
-         font-size="14"
+         id="g3602"
          style="font-size:14px;stroke-linecap:butt;stroke-miterlimit:5;stroke-dasharray:8, 5;font-family:sans-serif">
         <line
            id="line3604"
@@ -1718,30 +1099,26 @@
            y2="20"
            style="fill:none" />
         <text
-           id="text3610"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="95"
            x="33"
+           y="95"
+           id="text3610"
+           xml:space="preserve"
            style="stroke:none">1..n</text>
         <text
-           id="text3612"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="53"
            x="153"
+           y="53"
+           id="text3612"
+           xml:space="preserve"
            style="stroke:none">  1</text>
         <polygon
+           points="126,73 133,77 133,69 "
            id="polygon3614"
-           points="133,69 126,73 133,77 "
-           stroke-miterlimit="10"
            style="stroke:none" />
         <text
-           id="text3616"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           y="77"
            x="137"
+           y="77"
+           id="text3616"
+           xml:space="preserve"
            style="stroke:none">Contains</text>
         <line
            id="line3618"
@@ -1771,85 +1148,450 @@
            transform="translate(0,86)"
            style="fill:none;stroke-linecap:square;stroke-miterlimit:10;stroke-dasharray:none" />
         <text
-           id="text3624"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           transform="translate(0,86)"
-           y="49"
            x="33"
+           y="49"
+           transform="translate(0,86)"
+           id="text3624"
+           xml:space="preserve"
            style="stroke:none">1..n</text>
         <text
-           id="text3626"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           transform="translate(0,86)"
-           y="110"
            x="129"
+           y="110"
+           transform="translate(0,86)"
+           id="text3626"
+           xml:space="preserve"
            style="stroke:none">0..n</text>
         <text
-           id="text3628"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           transform="translate(0,86)"
-           y="31"
            x="140"
+           y="31"
+           transform="translate(0,86)"
+           id="text3628"
+           xml:space="preserve"
            style="stroke:none"> </text>
         <polygon
-           id="polygon3630"
-           points="113,40 106,44 113,48 "
+           points="106,44 113,48 113,40 "
            transform="translate(0,86)"
-           stroke-miterlimit="10"
+           id="polygon3630"
            style="stroke:none" />
         <text
-           id="text3632"
-           stroke-miterlimit="10"
-           xml:space="preserve"
-           transform="translate(0,86)"
-           y="48"
            x="117"
+           y="48"
+           transform="translate(0,86)"
+           id="text3632"
+           xml:space="preserve"
            style="stroke:none">Contains</text>
       </g>
     </g>
     <image
+       xlink:href="file:///Users/ola/main.git/doc/diagramy/schema_tablets.png"
+       x="435.88724"
        y="285.15646"
-       x="437.88724"
-       id="image4241"
-       height="192.66443"
        width="275.29904"
-       xlink:href="file:///Users/ola/main.git/doc/diagramy/schema_tablets.png" />
+       height="192.66443"
+       id="image4241" />
     <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        x="412.47244"
        y="680.02216"
-       id="text4245"><tspan
-         sodipodi:role="line"
-         id="tspan4247"
+       id="text4245"
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
          x="412.47244"
          y="680.02216"
+         id="tspan4247"
          style="font-size:120px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Hillock BRK;-inkscape-font-specification:Hillock BRK">SQL</tspan></text>
     <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        x="-303.58417"
        y="1070.9777"
+       transform="matrix(0.77872931,-0.62736008,0.62736008,0.77872931,0,0)"
        id="text4245-4"
-       transform="matrix(0.77872931,-0.62736008,0.62736008,0.77872931,0,0)"><tspan
-         sodipodi:role="line"
-         id="tspan4247-1"
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
          x="-303.58417"
          y="1070.9777"
+         id="tspan4247-1"
          style="font-size:100px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Hillock BRK;-inkscape-font-specification:Hillock BRK">XQuery</tspan></text>
     <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        x="38.500957"
        y="957.7674"
-       id="text4245-4-6"><tspan
-         sodipodi:role="line"
-         id="tspan4247-1-2"
+       id="text4245-4-6"
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
          x="38.500957"
          y="957.7674"
+         id="tspan4247-1-2"
          style="font-size:500px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Hillock BRK;-inkscape-font-specification:Hillock BRK">?</tspan></text>
+    <g
+       transform="matrix(0.86803717,0,0,0.86803717,-39.459489,-50.507669)"
+       id="layer1-6">
+      <image
+         xlink:href="file:///Users/ola/main.git/doc/diagramy/tabliczka.gif"
+         x="65"
+         y="97.147896"
+         width="300"
+         height="499"
+         id="image2904" />
+      <text
+         x="89.862289"
+         y="105.10793"
+         id="text2814"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="89.862289"
+           y="105.10793"
+           id="tspan2816"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Góra</tspan></text>
+      <text
+         x="121.65311"
+         y="167.74854"
+         id="text2814-2"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="121.65311"
+           y="167.74854"
+           id="tspan2816-5"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Przód</tspan></text>
+      <text
+         x="94.16584"
+         y="397.16168"
+         id="text2814-4"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Keyfont V2;-inkscape-font-specification:Tiresias Keyfont V2"><tspan
+           x="94.16584"
+           y="397.16168"
+           id="tspan2816-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus Bold">Dół</tspan></text>
+      <text
+         x="103.68063"
+         y="447.90741"
+         id="text2814-7"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="103.68063"
+           y="447.90741"
+           id="tspan2816-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Tył</tspan></text>
+      <text
+         x="213.00981"
+         y="-357.85919"
+         transform="matrix(0.02776624,0.99961444,-0.99961444,0.02776624,0,0)"
+         id="text2814-1"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="213.00981"
+           y="-357.85919"
+           id="tspan2816-55"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Prawy bok</tspan></text>
+      <text
+         x="-284.11505"
+         y="56.458111"
+         transform="matrix(-0.03142605,-0.99950608,0.99950608,-0.03142605,0,0)"
+         id="text2814-1-8"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="-284.11505"
+           y="56.458111"
+           id="tspan2816-55-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Lewy bok</tspan></text>
+      <path
+         d="m 243.15678,250.4734 a 39.116525,29.073094 0 1 1 -78.23305,0 39.116525,29.073094 0 1 1 78.23305,0 z"
+         transform="matrix(0.51764602,0,0,0.38737826,84.147391,130.71559)"
+         id="path2901"
+         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <path
+         d="m 243.15678,250.4734 a 39.116525,29.073094 0 1 1 -78.23305,0 39.116525,29.073094 0 1 1 78.23305,0 z"
+         transform="matrix(0.51764602,0,0,0.38737826,142.82218,211.06304)"
+         id="path2901-8"
+         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <path
+         d="m 243.15678,250.4734 a 39.116525,29.073094 0 1 1 -78.23305,0 39.116525,29.073094 0 1 1 78.23305,0 z"
+         transform="matrix(0.50513598,0,0,0.73418294,185.54846,370.52608)"
+         id="path2901-81"
+         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <g
+         transform="matrix(0.86767598,0.57519031,0.49713017,-1.0039198,-90.852184,146.46384)"
+         id="g3839">
+        <rect
+           width="117.28729"
+           height="0.84292722"
+           x="377.29794"
+           y="-56.743233"
+           transform="scale(1,-1)"
+           id="rect3712"
+           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.645557"
+           height="1.635514"
+           x="333.44504"
+           y="-185.83951"
+           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
+           id="rect3712-7-7-7"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.877476"
+           height="1.811268"
+           x="376.73929"
+           y="-95.97747"
+           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
+           id="rect3712-7-7-7-0"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <g
+         transform="matrix(0.86767598,-0.49713017,0.49713017,0.86767598,-154.22516,359.6595)"
+         id="g3839-6">
+        <rect
+           width="117.28729"
+           height="0.84292722"
+           x="377.29794"
+           y="-56.743233"
+           transform="scale(1,-1)"
+           id="rect3712-8"
+           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.645557"
+           height="1.635514"
+           x="333.44504"
+           y="-185.83951"
+           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
+           id="rect3712-7-7-7-72"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.877476"
+           height="1.811268"
+           x="376.73929"
+           y="-95.97747"
+           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
+           id="rect3712-7-7-7-0-8"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <g
+         transform="matrix(0.86767598,-0.49713017,0.49713017,0.86767598,-48.819808,684.09866)"
+         id="g3839-6-2">
+        <rect
+           width="117.28729"
+           height="0.84292722"
+           x="377.29794"
+           y="-56.743233"
+           transform="scale(1,-1)"
+           id="rect3712-8-7"
+           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.645557"
+           height="1.635514"
+           x="333.44504"
+           y="-185.83951"
+           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
+           id="rect3712-7-7-7-72-4"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.877476"
+           height="1.811268"
+           x="376.73929"
+           y="-95.97747"
+           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
+           id="rect3712-7-7-7-0-8-4"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         x="299.55695"
+         y="153.49692"
+         id="text2814-2-2"
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="299.55695"
+           y="153.49692"
+           id="tspan2816-5-4"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Imię</tspan></text>
+      <text
+         x="354.87604"
+         y="393.46228"
+         id="text2814-2-5"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="354.87604"
+           y="393.46228"
+           id="tspan2816-5-6"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Nazwa miejsca</tspan><tspan
+           x="354.87604"
+           y="415.96228"
+           id="tspan3975"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus" /></text>
+      <text
+         x="410.94275"
+         y="486.15918"
+         id="text2814-2-0"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="410.94275"
+           y="486.15918"
+           id="tspan2816-5-9"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Data</tspan></text>
+      <path
+         d="m 243.15678,250.4734 a 39.116525,29.073094 0 1 1 -78.23305,0 39.116525,29.073094 0 1 1 78.23305,0 z"
+         transform="matrix(0.51764602,0,0,0.38737826,144.81053,157.69231)"
+         id="path2901-1"
+         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <g
+         transform="matrix(0.47800389,-0.72025169,0.70028347,0.49163392,39.261753,491.91901)"
+         id="g3839-6-0">
+        <rect
+           width="117.28729"
+           height="0.84292722"
+           x="377.29794"
+           y="-56.743233"
+           transform="scale(1,-1)"
+           id="rect3712-8-72"
+           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.645557"
+           height="1.635514"
+           x="333.44504"
+           y="-185.83951"
+           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
+           id="rect3712-7-7-7-72-6"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.877476"
+           height="1.811268"
+           x="376.73929"
+           y="-95.97747"
+           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
+           id="rect3712-7-7-7-0-8-6"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <path
+         d="m 243.15678,250.4734 a 39.116525,29.073094 0 1 1 -78.23305,0 39.116525,29.073094 0 1 1 78.23305,0 z"
+         transform="matrix(0.51764602,0,0,0.38737826,121.6363,375.23102)"
+         id="path2901-8-1"
+         style="fill:none;stroke:#ab0000;stroke-width:6.07190752;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <g
+         transform="matrix(0.96450789,-0.28633643,0.2694055,0.98223251,-133.49985,522.23568)"
+         id="g3839-6-3">
+        <rect
+           width="117.28729"
+           height="0.84292722"
+           x="377.29794"
+           y="-56.743233"
+           transform="scale(1,-1)"
+           id="rect3712-8-6"
+           style="fill:none;stroke:#ab0000;stroke-width:1.7240895;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.645557"
+           height="1.635514"
+           x="333.44504"
+           y="-185.83951"
+           transform="matrix(0.93632595,-0.35113204,-0.35113204,-0.93632595,0,0)"
+           id="rect3712-7-7-7-72-2"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.9315027;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <rect
+           width="17.877476"
+           height="1.811268"
+           x="376.73929"
+           y="-95.97747"
+           transform="matrix(0.9212765,0.38890824,-0.31606456,0.94873768,0,0)"
+           id="rect3712-7-7-7-0-8-2"
+           style="fill:#ab0000;fill-opacity:1;stroke:#ab0000;stroke-width:0.98649573;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      </g>
+      <text
+         x="363.07724"
+         y="438.29187"
+         id="text2814-2-0-3"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
+           x="363.07724"
+           y="438.29187"
+           id="tspan2816-5-9-8"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Liczba</tspan></text>
+      <text
+         x="-92.371284"
+         y="1283.5463"
+         transform="matrix(0.93791575,0.52711165,-0.45537519,0.81027153,0,0)"
+         id="text3058"
+         xml:space="preserve"
+         style="font-size:34.08268738px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
+           x="-92.371284"
+           y="1283.5463"
+           id="tspan3060" /></text>
+      <text
+         x="-513.95587"
+         y="158.45734"
+         transform="matrix(1.1520244,0,0,1.1520244,45.458294,58.186067)"
+         id="text3926"
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
+           x="-513.95587"
+           y="158.45734"
+           id="tspan3928" /></text>
+      <text
+         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"
+         id="text3263"
+         transform="matrix(0.80438976,-0.72161953,0.61794259,0.688821,0,0)"
+         y="406.17822"
+         x="-442.8508"><tspan
+           id="tspan3265"
+           y="406.17822"
+           x="-442.8508">DANE</tspan></text>
+      <text
+         x="1021.3961"
+         y="-388.01361"
+         transform="matrix(0.8110645,0.70689959,-0.61069516,0.70068391,0,0)"
+         id="text4073"
+         xml:space="preserve"
+         style="font-size:34.08268738px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
+           x="1021.3961"
+           y="-388.01361"
+           id="tspan4075">DANE</tspan><tspan
+           x="1021.3961"
+           y="-388.01361"
+           id="tspan4077" /></text>
+      <text
+         x="70.009361"
+         y="940.94012"
+         transform="matrix(0.98748168,0.42709785,-0.36897262,0.85309186,0,0)"
+         xml:space="preserve"
+         style="font-size:34.08268738px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         id="text4079"><tspan
+           x="70.009361"
+           y="940.94012"
+           id="tspan4081">JĘZYK WYSZUKIWANIA</tspan></text>
+      <text
+         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"
+         id="text3267"
+         transform="matrix(0.98610135,-0.44202009,0.37851392,0.84442562,0,0)"
+         y="1288.9763"
+         x="434.44385"><tspan
+           id="tspan3269"
+           y="1288.9763"
+           x="434.44385">JĘZYK WYSZUKIWANIA</tspan></text>
+    </g>
   </g>
+  <path
+     style="opacity:0.98999999;fill:#000000;stroke:#000000;stroke-width:1.11479044;stroke-opacity:1"
+     d=""
+     id="path3273" />
+  <path
+     style="opacity:0.98999999;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.11479044;stroke-opacity:1"
+     d=""
+     id="path3275" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:4.03170109;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 174.16318,631.6192 154.46898,66.39638 183.26795,78.77524 0.0446,-0.0449 -19.95415,-17.55052 19.93354,17.66946 -31.12093,-4.16195 0,0"
+     id="path3289"
+     sodipodi:nodetypes="cccccccc" />
+  <path
+     sodipodi:nodetypes="ccccccc"
+     id="path4067"
+     d="m 192.81812,587.8401 282.01452,-243.95546 0.009,-0.0706 -20.67935,9.06398 20.71939,-8.97292 -21.86085,27.97262 0,0"
+     style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 1502.1353,510.71305 -282.0144,-243.95546 -0.01,-0.0706 20.6794,9.06398 -20.7194,-8.97292 21.8608,27.97262 0,0"
+     id="path4093"
+     sodipodi:nodetypes="ccccccc" />
+  <path
+     sodipodi:nodetypes="cccccccc"
+     id="path4095"
+     d="m 1495.7266,544.66885 -154.469,66.39638 -183.268,78.77527 -0.045,-0.045 19.9542,-17.5506 -19.9336,17.6695 31.121,-4.1619 0,0"
+     style="fill:none;stroke:#000000;stroke-width:4.03170109;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
 </svg>

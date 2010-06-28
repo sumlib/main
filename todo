@@ -43,28 +43,22 @@ Rozdział 3: być może wrzucić przed rozdział 1??
 	
 	
 Do przeczytania:
-=> gramatyka i semantyka
-=> moduły podstawowe
-=> postgres
-=> xml
-=> bibliografia
+
+
+
 
 PRACA DOMOWA:
 Ola:
   => poprawić obrazek "po co"
-  => podstawowe pojęcia:dodać tłumaczenia na angielski? (provenience, readings, seal?)
-  => wydzielić definicje z gramatyki
-  => dodać zapytanie typu: search "zwierzaki" (bez zapytania w środku)
-  => gramatyka i semantyka
-     -> w defincji sktruktury leksykalnej: definicja symboli terminalnych oraz literałów
-     -> zmienić symbole pomocnicze na literały i dać je po słowach kluczowych i znakach specjalnych
-     -> dodać search "zwierzaki" w regułach gramatyki, przerobić wyrażenia2 - można już więcej gwiazdek
-	 -> może zmienić "identyfikator" na "nazwa pola"?
+  => zapytać Krzyśka o konto na postgresie
+  => [przeczytać] postgres
+  => [przeczytać] moduły podstawowe  
+  => język należy do jakiejś klasy
+  => [Gramatyka] dodać search "zwierzaki" w regułach gramatyki, przerobić wyrażenia2 - można już więcej gwiazdek
 Asia:
-  -> podsumowanie
-  => załatwić konto na postgresie i wrzucić tql-a
-        -> czekam na odpowiedź Bassy
-  -> poprawki obrazka dziedziny problemu (co powinna zawierać tabliczka w wersji elektronicznej)
+  => podsumowanie
+  => załatwić konto na postgresie i wrzucić tql-a => napisać jeszcze raz
   => wcześniejsze rozwiązania
   => zmienić pliki na cpp
-
+  => [przeczytać] xml
+  => bibliografia

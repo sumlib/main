@@ -56,9 +56,9 @@ Ola:
   => język należy do jakiejś klasy
   => [Gramatyka] dodać search "zwierzaki" w regułach gramatyki, przerobić wyrażenia2 - można już więcej gwiazdek
 Asia:
-  => podsumowanie
-  => załatwić konto na postgresie i wrzucić tql-a => napisać jeszcze raz
-  => wcześniejsze rozwiązania
+  +> podsumowanie
+  +> załatwić konto na postgresie i wrzucić tql-a => napisać jeszcze raz
+  +-> wcześniejsze rozwiązania
   => zmienić pliki na cpp
   => [przeczytać] xml
   => bibliografia

@@ -13,29 +13,33 @@
 
 \section*{Podsumowanie projektu}
 %cel osiągnięty
-Udało nam się zaprojektować i zaimplementować język TQL, który spełnia założone przez nas wymagania. Jest intuicyjny i prosty w użyciu dla osób znających jedynie dziedzinę problemu, co potwierdza opinia dr hab. Marka Stępnia. Jednocześnie minimalnie ogranicza siłę wyrazu - pozwala tworzyć skomplikowane zapytania. Zatem cel naszego projektu został osiągnięty.
-
+Przedstawiona w niniejszej pracy realizacja języka TQL spełnia najważniejsze postulaty. Po pierwsze jest on intuicyjny i prosty w użyciu dla osób znających jedynie dziedzinę problemu (co potwierdza opinia dr hab. Marka Stępnia). Po drugie minimalnie ogranicza siłę wyrazu pozwalając na tworzenie skomplikowanych zapytań.
 
 %wady
+Język TQL ma jednak kilka ograniczeń w stosunku do typowych języków zapytań. Największym z nich jest brak wpływu na postać wyniku, co utrudnia np. zbieranie danych statystycznych (m. in. nie da się spytać o ilość tabliczek spełniających dane kryteria). Można jednak stworzyć narzędzia do samej prezentacji wyników zapytań, które pokonają to ograniczenie. 
 
-Język TQL ma kilka ograniczeń w stosunku do typowych języków zapytań. Przede wszystkim nie pozwala wpływać na postać wyniku, co utrudnia np. zbieranie danych statystycznych. Można jednak stworzyć narzędzia do samej prezentacji wyników zapytań, które pokonają to ograniczenie. Poza tym TQL jest jedynie językiem wyszukiwania - nie można z jego pomocą zmieniać danych znajdujących się w bazie, ani dodawać nowych. Akceptujemy to, gdyż zgodnie z definicją języków dziedzinowych, TQL jest językiem wąskiego zastosowania.
+% Poza tym TQL jest jedynie językiem wyszukiwania - nie można z jego pomocą zmieniać danych znajdujących się w bazie, ani dodawać nowych. Akceptujemy to, gdyż zgodnie z definicją języków dziedzinowych, TQL jest językiem wąskiego zastosowania.
 
 %zalety
-
-Jednak, dzięki swoim specyficznym cechom, można również dostosować go do wykorzystania w innych dziedzinach. Należy tu wspomnieć o braku ograniczenia ilości i nazw pól, po których można wyszukiwać oraz przystosowaniu do wyszukiwania wg kryteriów dotyczących danych tekstowych. Na podstawie TQL można łatwo stworzyć rodzinę języków dla różnych dziedzin zajmujących się przeszukiwaniem tekstów.
-
+Dzięki specyficznym cechom języka TQL, można również dostosować go do wykorzystania w innych dziedzinach. Należy tu wspomnieć o braku ograniczenia takich jak ilość i nazwy pól, po których można wyszukiwać oraz przystosowaniu do wyszukiwania wg kryteriów dotyczących danych tekstowych. Na podstawie TQL można łatwo stworzyć rodzinę języków dla różnych dziedzin zajmujących się przeszukiwaniem tekstów.
 
 %luźne uwagi
+W ramach niniejszej pracy zaprezentowane zostały dwie implementacje języka TQL. Po stworzeniu pierwszej nakład czasu poświęconego na drugą był już niewielki. Należało jedynie przetłumaczyć poszczególne konstrukcje TQL na XQuery. Pozwala to sądzić, że każda kolejna implementacja, dla różnych typów baz i różnych schematów danych, nie będzie wymagała dużego wysiłku. 
 
-W ramach niniejszej pracy prezentujemy dwie implementacje języka TQL. Pierwsza wymagała dużo pracy, gdyż należało stworzyć zarówno moduły niezależne od bazy danych, jak i zależne. Jednak druga implementacja była łatwa. Pomimo tego, że docelowe bazy danych bardzo się różnią, wymagała jedynie przetłumaczenia poszczególnych konstrukcji TQL na XQuery. Pozwala to sądzić, że każda kolejna implementacja, dla różnych typów baz i różnych schematów danych, nie będzie wymagała dużego wysiłku. 
+% Pierwsza wymagała dużo pracy, gdyż należało stworzyć zarówno moduły niezależne od bazy danych, jak i zależne. Jednak druga implementacja była łatwa. Pomimo tego, że docelowe bazy danych bardzo się różnią, 
 
 
 \section*{Możliwości rozwoju}
 %co dalej
 
-W pierwszej kolejności chcemy stworzyć własną stronę z wyszukiwarką tabliczek, która byłaby dostępna dla Wydziału Historii UW i rozwijana we współpracy z naukowcami z tego wydziału. Myślimy również o nawiązaniu współpracy z projektem CDLI, opisanym w rozdziale 3. Implementacja TQL dla bazy CDLI, wraz z interfejsem webowym, mogłaby być przydatnym narzędziem dla sumerologów na całym świecie.
+W pierwszej kolejności chcemy stworzyć własną stronę internetową z wyszukiwarką tabliczek, która byłaby dostępna dla Wydziału Historii UW i rozwijana z pomocą z naukowców z tej instytucji. Planujemy nawiązać współpracę z projektem CDLI, (zob. rozdział 3.) Implementacja TQL dla bazy CDLI, wraz z interfejsem www, z pewnością byłaby przydatnym narzędziem dla sumerologów na całym świecie.
 
-Gdy TQL spotka się z zainteresowaniem naukowców, będziemy rozwijać język dodając przede wszystkim wyszukiwanie po klinach i po tagach. Dodatkowo chciałybyśmy stworzyć narzędzie do analizy uszkodzonych fragmentów i wykrywania pomyłek (np. literówek) w odczytanych tekstach. Bez takiego narzędzia można przy wyszukiwaniu pominąć cenne tabliczki zawierające pożądaną treść. Dalszy rozwój projektu będzie zależał przede wszystkim od potrzeb zgłaszanych przez sumerologów.
+W dalszej perspektywie język TQL rozwinąć można między innymi o wyszukiwanie wg klinów i wg tagów. Dodatkowo warto stworzyć narzędzie do analizy uszkodzonych fragmentów i wykrywania błędów w odczytach tekstów. Dzięki niemu m.in. podczas wyszukiwania  zmniejsza się ryzyko pominięcia istotnych tabliczek. 
+
+Rozwój projektu będzie zależał również od potrzeb zgłaszanych przez samych sumerologów.
+
+
+% Jeśli TQL spotka się z zainteresowaniem naukowców, będziemy rozwijać język dodając przede wszystkim wyszukiwanie po klinach i po tagach. Dodatkowo chciałybyśmy stworzyć narzędzie do analizy uszkodzonych fragmentów i wykrywania pomyłek (np. literówek) w odczytanych tekstach. Bez takiego narzędzia można przy wyszukiwaniu pominąć cenne tabliczki zawierające pożądaną treść. Dalszy rozwój projektu będzie zależał przede wszystkim od potrzeb zgłaszanych przez sumerologów.
 
 
 

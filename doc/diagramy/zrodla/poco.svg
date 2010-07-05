@@ -40,13 +40,13 @@
      inkscape:window-height="694"
      id="namedview231"
      showgrid="false"
-     inkscape:zoom="0.31714785"
-     inkscape:cx="1136.0053"
-     inkscape:cy="661.87697"
+     inkscape:zoom="0.51859523"
+     inkscape:cx="1006.2632"
+     inkscape:cy="667.47154"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer1-6" />
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
   <defs
      id="defs4">
     <inkscape:perspective
@@ -113,22 +113,27 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3138"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <image
-     y="431.73285"
-     x="1475.2041"
-     id="image3259"
-     height="262.27594"
+     sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/computer.jpg"
+     xlink:href="computer.jpg"
      width="269.73508"
-     xlink:href="file:///Users/ola/main.git/doc/diagramy/cc_computer_rdax_65.jpg" />
-  <image
-     y="436.20792"
-     x="-259.6358"
-     id="image3185"
-     height="308.30023"
-     width="259.6358"
-     xlink:href="file:///Users/ola/main.git/doc/diagramy/naukowiec.jpg"
-     transform="scale(-1,1)" />
+     height="262.27594"
+     id="image3259"
+     x="1475.2041"
+     y="431.73285" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 1502.1353,510.71305 -282.0144,-243.95546 -0.01,-0.0706 22.6501,5.1226 -22.296,-4.24332 6.8836,21.27228 0,0"
+     id="path4093"
+     sodipodi:nodetypes="ccccccc" />
   <g
      id="layer1"
      transform="translate(440.93723,-2.8825254)">
@@ -1183,12 +1188,13 @@
       </g>
     </g>
     <image
-       xlink:href="file:///Users/ola/main.git/doc/diagramy/schema_tablets.png"
-       x="435.88724"
-       y="285.15646"
-       width="275.29904"
+       sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/../schema_tablets"
+       xlink:href="../schema_tablets"
+       id="image4241"
        height="192.66443"
-       id="image4241" />
+       width="275.29904"
+       y="285.15646"
+       x="435.88724" />
     <text
        x="412.47244"
        y="680.02216"
@@ -1224,12 +1230,13 @@
        transform="matrix(0.86803717,0,0,0.86803717,-39.459489,-50.507669)"
        id="layer1-6">
       <image
-         xlink:href="file:///Users/ola/main.git/doc/diagramy/tabliczka.gif"
-         x="65"
-         y="97.147896"
-         width="300"
+         sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/tabliczka.gif"
+         xlink:href="tabliczka.gif"
+         id="image2904"
          height="499"
-         id="image2904" />
+         width="300"
+         y="97.147896"
+         x="65" />
       <text
          x="89.862289"
          y="105.10793"
@@ -1402,16 +1409,16 @@
            id="tspan2816-5-4"
            style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Imię</tspan></text>
       <text
-         x="354.87604"
+         x="331.83557"
          y="393.46228"
          id="text2814-2-5"
          xml:space="preserve"
          style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Tiresias Infofont Z;-inkscape-font-specification:Tiresias Infofont Z"><tspan
-           x="354.87604"
+           x="331.83557"
            y="393.46228"
            id="tspan2816-5-6"
            style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus">Nazwa miejsca</tspan><tspan
-           x="354.87604"
+           x="331.83557"
            y="415.96228"
            id="tspan3975"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tarablus;-inkscape-font-specification:Tarablus" /></text>
@@ -1576,22 +1583,44 @@
      id="path3275" />
   <path
      style="fill:none;stroke:#000000;stroke-width:4.03170109;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 174.16318,631.6192 154.46898,66.39638 183.26795,78.77524 0.0446,-0.0449 -19.95415,-17.55052 19.93354,17.66946 -31.12093,-4.16195 0,0"
+     d="m 174.16318,631.6192 154.46898,66.39638 183.26795,78.77524 0.0446,-0.0449 -16.01277,-21.88604 15.99216,22.00498 -25.41173,4.90322 5.32666,-1.18242"
      id="path3289"
      sodipodi:nodetypes="cccccccc" />
   <path
      sodipodi:nodetypes="ccccccc"
      id="path4067"
-     d="m 192.81812,587.8401 282.01452,-243.95546 0.009,-0.0706 -20.67935,9.06398 20.71939,-8.97292 -21.86085,27.97262 0,0"
+     d="m 192.81812,587.8401 282.01452,-243.95546 0.009,-0.0706 -26.98556,3.94019 27.0256,-3.84913 -7.67188,25.21365 -0.78828,-0.39413"
      style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-  <path
-     style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 1502.1353,510.71305 -282.0144,-243.95546 -0.01,-0.0706 20.6794,9.06398 -20.7194,-8.97292 21.8608,27.97262 0,0"
-     id="path4093"
-     sodipodi:nodetypes="ccccccc" />
   <path
      sodipodi:nodetypes="cccccccc"
      id="path4095"
-     d="m 1495.7266,544.66885 -154.469,66.39638 -183.268,78.77527 -0.045,-0.045 19.9542,-17.5506 -19.9336,17.6695 31.121,-4.1619 0,0"
+     d="m 1495.7266,544.66885 -154.469,66.39638 -183.268,78.77527 -0.045,-0.045 13.2539,-21.09784 -13.2333,21.21674 27.5738,2.14431 -3.9414,-0.39415"
      style="fill:none;stroke:#000000;stroke-width:4.03170109;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <g
+     id="g3930"
+     transform="translate(1.9282904,3.8565723)">
+    <image
+       sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/Dr_Nick.png"
+       xlink:href="Dr_Nick.png"
+       y="473.25797"
+       x="-175.71558"
+       id="image3140"
+       height="306.18207"
+       width="163.71309"
+       transform="scale(-1,1)" />
+    <rect
+       y="762.99066"
+       x="41.967434"
+       height="3.9579012"
+       width="31.744625"
+       id="rect3148"
+       style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.80106401;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <rect
+       y="763.95758"
+       x="71.92485"
+       height="10.055843"
+       width="7.328835"
+       id="rect3928"
+       style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+  </g>
 </svg>

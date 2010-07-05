@@ -49,10 +49,21 @@ Wszystkie pozostałe symbole to terminale.\\
 \end{tabular}\\
 
 \begin{tabular}{lll}
+{\nonterminal{Lista Zapytań}} & {\arrow}  &{\nonterminal{Zapytanie}}  \\
+ & {\delimit}  &{\nonterminal{Zapytanie}} {\nonterminal{Lista Zapytań}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
 {\nonterminal{Zapytanie}} & {\arrow}  &{\nonterminal{Lista Linii Zapytania}} {\nonterminal{Lista Pustych Linii}}  \\
  & {\delimit}  &{\terminal{define}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{as}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
  & {\delimit}  &{\terminal{search}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{in}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
+  & {\delimit}  &{\terminal{search}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
  & {\delimit}  &{\nonterminal{Lista Pustych Linii}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Lista Linii Zapytania}} & {\arrow}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}}  \\
+ & {\delimit}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}} {\nonterminal{Lista Linii Zapytania}}  \\
 \end{tabular}\\
 
 \begin{tabular}{lll}
@@ -71,25 +82,14 @@ Wszystkie pozostałe symbole to terminale.\\
 \end{tabular}\\
 
 \begin{tabular}{lll}
-{\nonterminal{Wyrażenie2}} & {\arrow}  &{\nonterminal{Tekst}} {\terminal{*}} {\nonterminal{Tekst}}  \\
- & {\delimit}  &{\nonterminal{Tekst}} {\terminal{*}}  \\
- & {\delimit}  &{\terminal{*}} {\nonterminal{Tekst}}  \\
+{\nonterminal{Wyrażenie2}} & {\arrow}  &{\nonterminal{Wyrażenie3}} {\terminal{*}} {\nonterminal{Wyrażenie3}}  \\
  & {\delimit}  &{\nonterminal{Tekst}}  \\
  & {\delimit}  &{\terminal{(}} {\nonterminal{Wyrażenie}} {\terminal{)}}  \\
 \end{tabular}\\
 
 \begin{tabular}{lll}
-{\nonterminal{Lista Zapytań}} & {\arrow}  &{\nonterminal{Zapytanie}}  \\
- & {\delimit}  &{\nonterminal{Zapytanie}} {\nonterminal{Lista Zapytań}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Lista Linii Zapytania}} & {\arrow}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}}  \\
- & {\delimit}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}} {\nonterminal{Lista Linii Zapytania}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Pusta Linia}} & {\arrow}  &{\terminal{$\backslash$n}}  \\
+{\nonterminal{Wyrażenie3}} & {\arrow}  &{\nonterminal{Wyrażenie2}}\\
+ & {\delimit}  &{\emptyP} \\
 \end{tabular}\\
 
 \begin{tabular}{lll}
@@ -98,10 +98,13 @@ Wszystkie pozostałe symbole to terminale.\\
 \end{tabular}\\
 
 \begin{tabular}{lll}
+{\nonterminal{Pusta Linia}} & {\arrow}  &{\terminal{$\backslash$n}}  \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
 {\nonterminal{Tekst}} & {\arrow}  &{\terminal{String}}  \\
  & {\delimit}  &{\nonterminal{Słowo}}  \\
 \end{tabular}\\
-
 
 \begin{tabular}{lll}
 {\nonterminal{Słowo}} & {\arrow}  &{\terminal{SłowoOdLitery}}  \\

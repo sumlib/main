@@ -24,6 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,7 +46,7 @@
      inkscape:cy="667.47154"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <defs
      id="defs4">
@@ -120,15 +121,31 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3121"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
+  <image
+     sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/naukowiec.jpg"
+     xlink:href="naukowiec.jpg"
+     transform="scale(-1,1)"
+     width="185.13544"
+     height="198.20715"
+     id="image3123"
+     x="-215.67586"
+     y="504.22977" />
   <image
      sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/computer.jpg"
      xlink:href="computer.jpg"
-     width="269.73508"
-     height="262.27594"
+     y="454.87228"
+     x="1515.6981"
      id="image3259"
-     x="1475.2041"
-     y="431.73285" />
+     height="200.57079"
+     width="200.31679" />
   <path
      style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="m 1502.1353,510.71305 -282.0144,-243.95546 -0.01,-0.0706 22.6501,5.1226 -22.296,-4.24332 6.8836,21.27228 0,0"
@@ -1190,11 +1207,11 @@
     <image
        sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/../schema_tablets"
        xlink:href="../schema_tablets"
-       id="image4241"
-       height="192.66443"
-       width="275.29904"
+       x="435.88724"
        y="285.15646"
-       x="435.88724" />
+       width="275.29904"
+       height="192.66443"
+       id="image4241" />
     <text
        x="412.47244"
        y="680.02216"
@@ -1232,11 +1249,11 @@
       <image
          sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/tabliczka.gif"
          xlink:href="tabliczka.gif"
-         id="image2904"
-         height="499"
-         width="300"
+         x="65"
          y="97.147896"
-         x="65" />
+         width="300"
+         height="499"
+         id="image2904" />
       <text
          x="89.862289"
          y="105.10793"
@@ -1596,31 +1613,4 @@
      id="path4095"
      d="m 1495.7266,544.66885 -154.469,66.39638 -183.268,78.77527 -0.045,-0.045 13.2539,-21.09784 -13.2333,21.21674 27.5738,2.14431 -3.9414,-0.39415"
      style="fill:none;stroke:#000000;stroke-width:4.03170109;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-  <g
-     id="g3930"
-     transform="translate(1.9282904,3.8565723)">
-    <image
-       sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/Dr_Nick.png"
-       xlink:href="Dr_Nick.png"
-       y="473.25797"
-       x="-175.71558"
-       id="image3140"
-       height="306.18207"
-       width="163.71309"
-       transform="scale(-1,1)" />
-    <rect
-       y="762.99066"
-       x="41.967434"
-       height="3.9579012"
-       width="31.744625"
-       id="rect3148"
-       style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.80106401;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-    <rect
-       y="763.95758"
-       x="71.92485"
-       height="10.055843"
-       width="7.328835"
-       id="rect3928"
-       style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
-  </g>
 </svg>

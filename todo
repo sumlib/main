@@ -50,15 +50,13 @@ Do przeczytania:
 PRACA DOMOWA:
 Ola:
   => poprawić obrazek "po co"
-  => zapytać Krzyśka o konto na postgresie
+    -> mniejszy komputer
+    -> trochę węższy obrazek
   => [przeczytać] postgres
   => [przeczytać] moduły podstawowe  
-  => język należy do jakiejś klasy
-  => [Gramatyka] dodać search "zwierzaki" w regułach gramatyki, przerobić wyrażenia2 - można już więcej gwiazdek
+  => [Gramatyka] język należy do jakiejś klasy
+  => [przeczytać] podsumowanie
 Asia:
-  +> podsumowanie
-  +> załatwić konto na postgresie i wrzucić tql-a => napisać jeszcze raz
-  +-> wcześniejsze rozwiązania
   => zmienić pliki na cpp
   => [przeczytać] xml
   => bibliografia

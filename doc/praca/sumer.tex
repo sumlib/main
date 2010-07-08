@@ -32,6 +32,7 @@
 \definecolor{gray}{RGB}{50,50,50}
 \usepackage[toc,page]{appendix}
 \renewcommand{\appendixtocname}{Dodatki} 
+% \renewcommand{\appendixpage}{\part*{Dodatki}}
 
 \usepackage[colorlinks=true,linkcolor=gray,urlcolor=blue]{hyperref}  
 
@@ -150,8 +151,9 @@ i zmieniać tak, by mógł służyć też do innych zastosowań.
 %\part*{Dodatki}
 %\addcontentsline{toc}{part}{Dodatki}
 \begin{appendix}
-\appendixpage
-
+% \appendixpage
+\part*{Dodatki}
+\addcontentsline{toc}{part}{Dodatki}
 
 \chapter{Schemat bazy danych xml}
 \label{appendix:xmlsch}

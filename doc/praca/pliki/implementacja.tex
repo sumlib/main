@@ -20,7 +20,12 @@ W związku z tym istotną cechą translatora jest możliwość dostosowania do w
  \item \textbf{Wymienne} -- zależne od struktury danych, tłumaczące zapytanie TQL na język odpowiedni dla używanej bazy danych
 i wywołujące je.
 \end{enumerate}
- Wybór modułu wymiennego odbywa się na poziomie kompilacji. Makefile domyślnie buduje obie implementacje tql-a;
+ Wybór modułu wymiennego odbywa się na poziomie kompilacji. Prototypowa implementacja zawiera 2 moduły wymienne:
+  \begin{itemize}
+   \item dla bazy PostgreSQL
+   \item dla bazy XML
+  \end{itemize}
+  Makefile domyślnie buduje obie implementacje tql-a.
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
 

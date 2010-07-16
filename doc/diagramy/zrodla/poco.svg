@@ -11,11 +11,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="1744.9392"
+   width="1456.0084"
    height="1053.8727"
    id="svg2"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="poco.svg">
+   sodipodi:docname="poco.pdf">
   <metadata
      id="metadata233">
     <rdf:RDF>
@@ -41,13 +41,13 @@
      inkscape:window-height="694"
      id="namedview231"
      showgrid="false"
-     inkscape:zoom="0.51859523"
-     inkscape:cx="1006.2632"
-     inkscape:cy="667.47154"
+     inkscape:zoom="0.3667022"
+     inkscape:cx="1068.2805"
+     inkscape:cy="558.3912"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg2" />
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1-6" />
   <defs
      id="defs4">
     <inkscape:perspective
@@ -132,28 +132,28 @@
   <image
      sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/naukowiec.jpg"
      xlink:href="naukowiec.jpg"
-     transform="scale(-1,1)"
-     width="185.13544"
-     height="198.20715"
+     y="475.30548"
+     x="-185.13544"
      id="image3123"
-     x="-215.67586"
-     y="504.22977" />
+     height="198.20715"
+     width="185.13544"
+     transform="scale(-1,1)" />
   <image
      sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/computer.jpg"
      xlink:href="computer.jpg"
-     y="454.87228"
-     x="1515.6981"
+     width="154.03792"
+     height="156.2202"
      id="image3259"
-     height="200.57079"
-     width="200.31679" />
+     x="1301.9705"
+     y="373.88422" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 1502.1353,510.71305 -282.0144,-243.95546 -0.01,-0.0706 22.6501,5.1226 -22.296,-4.24332 6.8836,21.27228 0,0"
+     style="fill:none;stroke:#000000;stroke-width:2.63932848;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 1327.4804,445.65837 -200.1151,-179.42651 -0.01,-0.0519 16.0724,3.76761 -15.8211,-3.12091 4.8846,15.64552 0,0"
      id="path4093"
      sodipodi:nodetypes="ccccccc" />
   <g
      id="layer1"
-     transform="translate(440.93723,-2.8825254)">
+     transform="translate(348.69166,-2.8825254)">
     <rect
        width="2"
        height="1053.8727"
@@ -1207,11 +1207,11 @@
     <image
        sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/../schema_tablets"
        xlink:href="../schema_tablets"
-       x="435.88724"
-       y="285.15646"
-       width="275.29904"
+       id="image4241"
        height="192.66443"
-       id="image4241" />
+       width="275.29904"
+       y="285.15646"
+       x="435.88724" />
     <text
        x="412.47244"
        y="680.02216"
@@ -1249,11 +1249,11 @@
       <image
          sodipodi:absref="/Users/ola/main.git/doc/diagramy/zrodla/tabliczka.gif"
          xlink:href="tabliczka.gif"
-         x="65"
-         y="97.147896"
-         width="300"
+         id="image2904"
          height="499"
-         id="image2904" />
+         width="300"
+         y="97.147896"
+         x="65" />
       <text
          x="89.862289"
          y="105.10793"
@@ -1546,48 +1546,45 @@
            y="158.45734"
            id="tspan3928" /></text>
       <text
-         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         style="font-size:28.46664619px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
          xml:space="preserve"
          id="text3263"
-         transform="matrix(0.80438976,-0.72161953,0.61794259,0.688821,0,0)"
-         y="406.17822"
-         x="-442.8508"><tspan
+         transform="matrix(0.79734107,-0.72799882,0.61252769,0.69491035,0,0)"
+         y="400.03662"
+         x="-422.59012"><tspan
            id="tspan3265"
-           y="406.17822"
-           x="-442.8508">DANE</tspan></text>
+           y="400.03662"
+           x="-422.59012">DANE</tspan></text>
       <text
-         x="1021.3961"
-         y="-388.01361"
-         transform="matrix(0.8110645,0.70689959,-0.61069516,0.70068391,0,0)"
-         id="text4073"
+         x="100.92029"
+         y="862.41785"
+         transform="matrix(0.96842138,0.43550392,-0.36185074,0.86988227,0,0)"
          xml:space="preserve"
-         style="font-size:34.08268738px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
-           x="1021.3961"
-           y="-388.01361"
-           id="tspan4075">DANE</tspan><tspan
-           x="1021.3961"
-           y="-388.01361"
-           id="tspan4077" /></text>
-      <text
-         x="70.009361"
-         y="940.94012"
-         transform="matrix(0.98748168,0.42709785,-0.36897262,0.85309186,0,0)"
-         xml:space="preserve"
-         style="font-size:34.08268738px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         style="font-size:28.98879433px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
          id="text4079"><tspan
-           x="70.009361"
-           y="940.94012"
+           x="100.92029"
+           y="862.41785"
            id="tspan4081">JĘZYK WYSZUKIWANIA</tspan></text>
       <text
-         style="font-size:34.233181px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         style="font-size:29.73629379px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
          xml:space="preserve"
          id="text3267"
-         transform="matrix(0.98610135,-0.44202009,0.37851392,0.84442562,0,0)"
-         y="1288.9763"
-         x="434.44385"><tspan
+         transform="matrix(0.96591897,-0.45125587,0.37076694,0.86206946,0,0)"
+         y="1230.806"
+         x="446.86191"><tspan
            id="tspan3269"
-           y="1288.9763"
-           x="434.44385">JĘZYK WYSZUKIWANIA</tspan></text>
+           y="1230.806"
+           x="446.86191">JĘZYK WYSZUKIWANIA</tspan></text>
+      <text
+         x="975.60815"
+         y="-427.13925"
+         transform="matrix(0.78738254,0.73875828,-0.64554789,0.66434817,0,0)"
+         id="text3054"
+         xml:space="preserve"
+         style="font-size:28.46664619px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><tspan
+           x="975.60815"
+           y="-427.13925"
+           id="tspan3056">DANE</tspan></text>
     </g>
   </g>
   <path
@@ -1599,18 +1596,18 @@
      d=""
      id="path3275" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:4.03170109;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 174.16318,631.6192 154.46898,66.39638 183.26795,78.77524 0.0446,-0.0449 -16.01277,-21.88604 15.99216,22.00498 -25.41173,4.90322 5.32666,-1.18242"
+     style="fill:none;stroke:#000000;stroke-width:3.449471;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 131.76193,604.33207 129.16264,58.1269 153.24353,68.964 0.0373,-0.0393 -13.38942,-19.1602 13.37219,19.26432 -21.24857,4.29254 4.454,-1.03515"
      id="path3289"
      sodipodi:nodetypes="cccccccc" />
   <path
      sodipodi:nodetypes="ccccccc"
      id="path4067"
-     d="m 192.81812,587.8401 282.01452,-243.95546 0.009,-0.0706 -26.98556,3.94019 27.0256,-3.84913 -7.67188,25.21365 -0.78828,-0.39413"
-     style="fill:none;stroke:#000000;stroke-width:3.65343261;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+     d="m 188.69139,507.4344 194.49322,-164.15518 0.006,-0.0475 -18.61078,2.65132 18.63839,-2.59005 -5.29097,16.96602 -0.54364,-0.26521"
+     style="fill:none;stroke:#000000;stroke-width:2.48879766;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
   <path
      sodipodi:nodetypes="cccccccc"
      id="path4095"
-     d="m 1495.7266,544.66885 -154.469,66.39638 -183.268,78.77527 -0.045,-0.045 13.2539,-21.09784 -13.2333,21.21674 27.5738,2.14431 -3.9414,-0.39415"
-     style="fill:none;stroke:#000000;stroke-width:4.03170109;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+     d="m 1329.7419,538.83075 -130.2457,58.64952 -154.5286,69.58408 -0.038,-0.0382 11.0191,-18.27743 -11.0004,18.37947 23.392,1.56805 -3.3445,-0.29952"
+     style="fill:none;stroke:#000000;stroke-width:3.44237041;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
 </svg>

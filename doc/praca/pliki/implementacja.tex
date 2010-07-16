@@ -11,7 +11,7 @@
  % pakiety.pdf: 585x300 pixel, 72dpi, 20.64x10.58 cm, bb=0 0 585 300
  \caption{Podział programu na moduły}
 \end{figure}
-Jednym z głównych założeń języka TQL jest niezależność od struktury danych.
+Jednym z głównych założeń języka TQL, szczególnie ważnym z punktu widzenia implementacji, jest niezależność od struktury danych.
 W związku z tym istotną cechą translatora jest możliwość dostosowania do współpracy z różnymi bazami danych.
 %Jednym z głównych wymagań postawionych przed translatorem, żeby można było podłączyć różne bazy danych.
  Wynikiem tego jest podział translatora na 2 rodzaje modułów:
@@ -20,12 +20,12 @@ W związku z tym istotną cechą translatora jest możliwość dostosowania do w
  \item \textbf{Wymienne} -- zależne od struktury danych, tłumaczące zapytanie TQL na język odpowiedni dla używanej bazy danych
 i wywołujące je.
 \end{enumerate}
- Wybór modułu wymiennego odbywa się na poziomie kompilacji. Prototypowa implementacja zawiera 2 moduły wymienne:
+ W niniejszej pracy przedstawiamy dwie prototypowe implementacje, zawierające własne zestawy modułów wymiennych:
   \begin{itemize}
    \item dla bazy PostgreSQL
    \item dla bazy XML
   \end{itemize}
-  Makefile domyślnie buduje obie implementacje tql-a.
+  Wybór modułów wymiennych odbywa się na poziomie kompilacji. Stworzony przez nas makefile domyślnie buduje obie implementacje translatora TQL.
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
 

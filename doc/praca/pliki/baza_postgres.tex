@@ -50,7 +50,7 @@ Każde proste zapytanie TQL jest tłumaczone na pojedyncze zapytanie SQL. Tłuma
 łączone jest za pomocą UNION.
 
 \subsubsection{Stałe fragmenty zapytania}
-Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL-a.
+Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL-a.\\
 \textit{select} jest inicjowany na 
 \begin{verbatim}
 SELECT t.id, t.id_cdli, t.publication, t.measurements, t.origin_date, 
@@ -61,9 +61,9 @@ SELECT t.id, t.id_cdli, t.publication, t.measurements, t.origin_date,
 \textit{from} jest inicjowany
 \begin{verbatim}
 FROM tablet t
-  LEFT JOIN provenience p ON p.id=t.provenience_id
-  LEFT JOIN collection c ON c.id=t.collection_id
-  LEFT JOIN genre g1 ON g1.id=t.genre_id
+  LEFT JOIN provenience p ON p.id = t.provenience_id
+  LEFT JOIN collection c ON c.id = t.collection_id
+  LEFT JOIN genre g1 ON g1.id = t.genre_id
   LEFT JOIN genre g2 ON g2.id = t.subgenre_id
   LEFT JOIN period pd ON pd.id = t.period_id
 \end{verbatim}
@@ -166,7 +166,7 @@ gdzie $<$wynikowe zapytanie o treść tablczki$>$ to kombinacja zapytań typu:
     id_tab, 
     CAST(array_accum(nodes) as TEXT) as nodes, 
     COUNT(DISTINCT id_seq) AS seq, 
-    <id_seq> AS id_seq
+    <id_sekw> AS id_seq
   FROM (
     SELECT
       t1.node1_id % 1000000 AS id_tab,
@@ -265,6 +265,6 @@ FROM
 
 \subsection{Database\_postgres}
 
-Odpowiada za wywołanie zapytania na konkretnej bazie i zapisanie wyniku do struktury Tablets.
+Odpowiada za wywołanie zapytania w konkretnej bazie i zapisanie wyniku do struktury Tablets.
  Korzysta z pliku database.conf, który zawiera dane dostępu do bazy (host, port, użytkownik, hasło, nazwa bazy)
 oraz biblioteki libpq-fe.h do PostgreSQL.

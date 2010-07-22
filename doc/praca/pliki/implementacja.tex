@@ -86,7 +86,7 @@ Składa się z następujących plików:
 
 Wywołuje funkcję getTablets() z Database\_interface.h, jako parametr podając przetłumaczoną treść zapytania. 
 Funkcja ta zwraca strukturę danych Tablets, wypełnioną informacjami o wyszukanych tabliczkach.
-Następnie na podstawie otrzymanej struktury tworzony jest dokument XML.
+Następnie na podstawie otrzymanej struktury moduł tworzy dokument XML.
 \newline
 Definicja struktury Tablets:
 \begin{verbatim}
@@ -102,13 +102,13 @@ typedef struct{
     char* subgenre;
     char* collection;
     char* text;
-    Tags *tags; // specjalnie oznaczone miejsca w tekscie
+    Tags* tags; // specjalnie oznaczone miejsca w tekscie
                 // (w pierwszej wersji frazy wyszukiwania)
 } Tablet;
 
 typedef struct{
     int size;
-    Tablet *tabs;
+    Tablet* tabs;
 } Tablets;
 \end{verbatim}
 
@@ -117,7 +117,7 @@ typedef struct{
 %Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
 \section{Pliki pomocnicze}
-Definicje struktur danych (wygenerowane za pomocą BNFC, następnie uproszczone):
+Definicje struktur danych i funkcji służących do budowy drzewa struktury składniowej (wygenerowane za pomocą BNFC, następnie uproszczone):
 \begin{itemize}
  \item Absyn.cpp
 \item Absyn.h

@@ -34,12 +34,6 @@ PRACA:
 
 ?> zastanowić się co z xml-schema - atrybut symbol
 
-UWAGI DĄBROWSKIEGO:
-Rozdział 2: rozszerzyć
-Rozdział 3: być może wrzucić przed rozdział 1??
-	"obrazek" model dziedziny -> modele danych => podpisy
-		  TQL             -> SQL, XQuery?
-	w ładnym obrazku brakowało jednego elementu - TQL-a
 	
 	
 Do przeczytania:
@@ -49,14 +43,8 @@ Do przeczytania:
 
 PRACA DOMOWA:
 Ola:
-  => poprawić obrazek "po co"
-    -> mniejszy komputer
-    -> trochę węższy obrazek
-  => [przeczytać] postgres
-  => [przeczytać] moduły podstawowe  
-  => [Gramatyka] język należy do jakiejś klasy
-  => [przeczytać] podsumowanie
+  => stronka - tql
+  => bibliografia - poszukać
 Asia:
-  => zmienić pliki na cpp
   => [przeczytać] xml
-  => bibliografia
+  => bibliografia - znaleźć artykuł

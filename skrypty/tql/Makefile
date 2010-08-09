@@ -45,7 +45,9 @@ xmlTQL: ${OBJS} ${XML_OBJS}
 	${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lzorba
 	#${CC} ${CCFLAGS} ${OBJS} ${XML_OBJS} -o xmlTQL -lzorba_simplestore
 
-
+postgresTQLefence:${OBJS} ${POSTGRES_OBJS}
+	@echo "Linking postgresTQL..."
+	${CC} ${CCFLAGS} ${OBJS} ${POSTGRES_OBJS} -o postgresTQLefence -lpq -lefence
 
 ${POSTGRES_OBJS}: %_postgres.o: %_postgres.cpp %_interface.h Buffer.o
 	@echo "compiling " $*

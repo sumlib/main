@@ -118,7 +118,8 @@ const char* addNodes(Tablet tab){
         node = strtok_r(line, " ", &saveptr2);
         while(node){
 //           printf("node %d: %s\n", nodenr, node);
-           if (nodenr == tagNodes[i].id) {
+           if(i < size){
+            if (nodenr == tagNodes[i].id) {
                 if (openedTagsCount > 0){
                     c = bufPop(&rettextbuf);
                     bufAppendS(&rettextbuf, END_TAG);
@@ -161,6 +162,7 @@ const char* addNodes(Tablet tab){
                 }
                
             }
+           }
             bufAppendS(&rettextbuf, node);
             bufAppendS(&rettextbuf, " ");
             node = strtok_r(NULL, " ", &saveptr2);

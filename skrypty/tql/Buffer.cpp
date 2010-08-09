@@ -30,7 +30,7 @@ void bufAppendS(bufor b, const char* s)
 {
   int len = strlen(s);
   int n;
-  while (b->cur + len > b->size)
+  while (b->cur + len + 1 > b->size)
   {
     b->size *= 2; /* Double the buffer size */
     resizeBuffer(b);

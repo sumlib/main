@@ -1,4 +1,48 @@
 \chapter*{Wprowadzenie}
+% jaka będzie wartość dodana tego co zrobimy
+% cała ścieżka Informatyka -> nasza praca
+% celem naszym było usystematyzować pracę nad systemami dla sumerologów
+
+% nasza ścieżka: Informatyka -> Inżynieria oprogramowania -> różne podejścia -> domain-specific podejście -> domain specific language
+
+% 1. krótki opis problemu - są sumerolodzy, mają tabliczki, chcą sprawnie wyszukiwać
+Istnieje wiele baz danych zawierających teksty odczytane z tabliczek sumeryjskich (najbardziej znana - CDLI zawiera ich prawie 225 tys.). Sumerolodzy zajmują się badaniem i przetwarzaniem tych tekstów, jednak wyszukiwanie interesujących ich tabliczek jest dosyć niewygodne. Wynika to przede wszystkim z nieznajomości specyficznych dla baz danych języków zapytań. 
+Większość serwisów internetowych udostępnia formularze ułatwiające wprowadzanie kryteriów wyszukiwania, jednakże mają one ograniczone możliwości (nie pozwalają na skomplikowane konstrukcje). Dlatego istnieje potrzeba stworzenia narzędzia, które będzie łączyło w sobie jak największą siłę wyrazu i łatwość użycia przez osoby znające jedynie dziedzinę problemu.
+
+% 2. różne podejścia do tworzenia oprogramowania
+Rozwiązywaniem tego typu problemów zajmuje się informatyka poprzez tworzenie odpowiednich systemów. Powstało wiele różnych systemów i na tej podstawie wytworzyły się różne podejścia. %zrobiło się takie kółko: powstają systemy - ludzie coś zauważają - powstają nowe podejścia - ludzie ich używają - powstają systemy
+% Część z nich rozważałyśmy zastanawiająć się nad problemem sumerologów.
+
+Najbardziej popularne jest programowanie zorientowane obiektowo (Object-oriented programming, OOP), które polega na modelowaniu świata rzeczywistego w postaci obiektów. Obiekty mają dane i metody, które mogą te dane zmieniać. Program jest zbiorem obiektów komunikujących się między sobą. 
+
+Innym podejściem jest architektura zorientowana na usługi (Service-Oriented Architecture, SOA), w której definiuje się niezależne od siebie usługi (services) i udostępnia tylko ich interfejsy, ukrywając implementację.
+
+% TODO: DSL: external i internal - podkreślić, że to jest external
+Rozważając problem sumerologów zdecydowałyśmy się na programowanie zorientowane na język (Language-oriented programming). Polega ono na stworzeniu języka odpowiadającego dziedzinie problemu (Domain-Specific Language, DSL). Opisywanie problemów dziedziny jest wtedy znacznie prostsze i bardziej naturalne. Dzięki temu mogą je opisywać nie tylko programiści ale także ludzie związani tylko z konkretną dziedziną. Dopiero w tym języku rozwiązuje się konkretny problem. 
+
+% 3. wybrałyśmy takie podejście bo...
+% Zazwyczaj do konkretnego problemu jedno z podejść pasuje zdecydowanie bardziej niż inne. W niniejszej pracy zdecydowałyśmy się zastosować programowanie zorientowane na język w celu usystematyzowania pracy nad systemami dla sumerologów. 
+Takie podejście pozwala nie tylko stworzyć konkretny system pozwalający na wyszukiwanie tabliczek przez sumerologów, ale także stworzyć podwaliny pod wiele różnych wyszukiwarek tego typu. %TODO: mocniej podkreślić
+
+
+
+% 4. troszkę o TQL-u
+Celem projektu przedstawionego w niniejszej pracy jest zaprojektowanie i implementacja takiego języka, który nazwałyśmy Tablets Query Language (TQL). Ma być intuicyjny i zrozumiały dla sumerologów, umożliwiając jednocześnie tworzenie skomplikowanych zapytań.
+Będzie on udostępniał wyszukiwanie po różnych parametrach tabliczki. 
+
+TQL może być podstawą do tworzenia podobnych języków wyszukiwań dostosowanych do potrzeb innych grup ludzi, np. językoznawców.
+Większość programów ułatwiających tworzenie zapytań jest skomplikowana, daje ograniczone możliwości lub jest przystosowana głównie do przetwarzania danych liczbowych. Tablets Query Language rozwiązuje te problemy: jest prosty i intuicyjny, przystosowany głównie do tekstów, minimalnie zmniejsza siłę wyrazu oraz łatwo go rozbudowywać. 
+
+
+%Język TQL jest nakładką na inne języki (m.in. SQL). 
+Zgodnie z paradygmatem języków dziedzinowych (Domain Specific Languages, DSL) TQL jest tłumaczony do innych, istniejących wcześniej języków zapytań bardziej ogólnego zastosowania (np. SQL).
+% TQL jest jednym z języków dziedzinowych (Domain Specific Languages, DSL). 
+W związku z tym dla każdego sposobu reprezentacji danych należy skonstruować translator, 
+którego zadaniem będzie przetłumaczenie zapytania. 
+% Dla każdego z nich, w zależności od reprezentacji danych, należy skonstruować translator, 
+% którego zadaniem będzie przetłumaczenie zapytania. 
+W ramach niniejszej pracy przedstawione zostaną dwa przykładowe translatory.
+
 \addcontentsline{toc}{chapter}{Wprowadzenie}
 %  \begin{figure}
 %   \centering
@@ -13,31 +57,3 @@
  \label{fig:poco}
 \end{figure}
 
-% jaka będzie wartość dodana tego co zrobimy
-% cała ścieżka Informatyka -> nasza praca
-% celem naszym było usystematyzować pracę nad systemami dla sumerologów
-
-% nasza ścieżka: Informatyka -> Inżynieria oprogramowania -> różne podejścia -> domain-specific podejście -> domain specific language
-
-Główną gałęzią informatyki jest tworzenie oprogramowania, służącego człowiekowi w rozwiązywaniu różnych problemów i wspomaganie go w jego działalności. Praktyczną stroną tego procesu zajmuje się inżynieria oprogramowania, która wyróżnia wiele podejść do samego sposobu programowania. Są to między innymi programowanie zorientowane obiektowo, ktore zakłada, że wszystko jest obiektem; programowanie zorientowane aspektowo, które zakłada, że wszystko jest aspektem oraz programowanie zorientowane na językowo, które polega na stworzeniu języka odpowiadającego domenie problemu (domain specific language) a następnie rozwiązuje go w tym języku. Polega to na tym, że projektuje się i implementuje język, w którym opisywanie problemów dziedziny jest znacznie prostsze i bardziej naturalne. Dzięki temu mogą je opisywać nie tylko programiści ale także ludzie związani tylko z konkretną dziedziną. 
-Zazwyczaj do konkretnego problemu jedno z podejść pasuje zdecydowanie bardziej niż inne. W niniejszej pracy zdecydowałyśmy się zastosować programowanie zorientowane na język w celu usystematyzowania pracy nad systemami dla sumerologów. 
-
-
- 
-Niniejsza praca dotyczy problemu przetwarzania baz danych tabliczek sumeryjskich przez osoby nieznające specyficznych dla baz danych języków zapytań.
-
-
-Istnieje wiele baz danych zawierających teksty odczytane z tabliczek sumeryjskich (najbardziej znana - CDLI zawiera ich prawie 225 tys.). Sumerolodzy zajmują się badaniem i przetwarzaniem tych tekstów, jednak wyszukiwanie interesujących ich tabliczek jest dosyć niewygodne. Wynika to przede wszystkim z nieznajomości specyficznych dla baz danych języków zapytań. 
-Większość serwisów internetowych udostępnia formularze ułatwiające wprowadzanie kryteriów wyszukiwania, jednakże mają one ograniczone możliwości (nie pozwalają na skomplikowane konstrukcje). Dlatego istnieje potrzeba stworzenia narzędzia, które będzie łączyło w sobie jak największą siłę wyrazu i łatwość użycia przez osoby znające jedynie dziedzinę problemu. Celem projektu przedstawionego w niniejszej pracy jest zaprojektowanie i implementacja języka Tablets Query Language (TQL) spełniającego powyższe wymagania. 
-
-TQL jest podstawą do tworzenia podobnych języków wyszukiwań dostosowanych do potrzeb innych grup ludzi, np. językoznawców.
-Większość programów ułatwiających tworzenie zapytań jest skomplikowana, daje ograniczone możliwości lub jest przystosowana głównie do przetwarzania danych liczbowych. Tablets Query Language rozwiązuje te problemy: jest prosty i intuicyjny, przystosowany głównie do tekstów, minimalnie zmniejsza siłę wyrazu oraz łatwo go rozbudowywać. 
-
-%Język TQL jest nakładką na inne języki (m.in. SQL). 
-Zgodnie z paradygmatem języków dziedzinowych (Domain Specific Languages, DSL) TQL jest tłumaczony do innych, istniejących wcześniej języków zapytań bardziej ogólnego zastosowania (np. SQL).
-% TQL jest jednym z języków dziedzinowych (Domain Specific Languages, DSL). 
-W związku z tym dla każdego sposobu reprezentacji danych należy skonstruować translator, 
-którego zadaniem będzie przetłumaczenie zapytania. 
-% Dla każdego z nich, w zależności od reprezentacji danych, należy skonstruować translator, 
-% którego zadaniem będzie przetłumaczenie zapytania. 
-W ramach niniejszej pracy przedstawione zostaną dwa przykładowe translatory.

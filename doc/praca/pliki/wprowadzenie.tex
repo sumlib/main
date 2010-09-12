@@ -4,24 +4,29 @@
 % celem naszym było usystematyzować pracę nad systemami dla sumerologów
 
 % nasza ścieżka: Informatyka -> Inżynieria oprogramowania -> różne podejścia -> domain-specific podejście -> domain specific language
+ 
 
 % 1. krótki opis problemu - są sumerolodzy, mają tabliczki, chcą sprawnie wyszukiwać
-% Problem wyszukiwania tabliczek sumeryjskich był wiele razy podejmowany na naszym wydziale.
 % TODO: podzielić na podrozdziały
+% TODO: 3x pismo
+\section*{Opis problemu}
 Ok. 3500 lat przed naszą erą starożytni Sumerowie jako prawdopodobnie pierwsi na świecie zaczęli używać pisma. Litery odciśnięte za pomocą trzciny w miękkiej glinie miały kształt klinów, stąd nazwa pismo klinowe. Sumerowie używali pisma głównie w celach administracyjnych. Zapisywali między innymi rachunki za dostawy zwierząt oraz rozliczenia z wykonanej na polu lub w warsztacie pracy i należnej zapłaty. Jednymi z ciekawszych tekstów są tzw. listy królów, na których znajdują się daty panowania kolejnych władców i ich osiągnięcia w poszczególnych latach. 
 % TODO: 2xczas
 Ważniejsze tabliczki wypalano, jednak większość po pewnym czasie niszczono, aby zużytą glinę można było ponownie wykorzystać. Do naszych czasów przetrwały głównie te tabliczki, które zostały wypalone podczas przypadkowego pożaru archiwum. Wiele z nich jest zniszczonych, jednak wciąż stanowią ogromną wartość historyczną. 
-% Istnieje wiele baz danych zawierających teksty odczytane z tabliczek sumeryjskich (najbardziej znana - CDLI zawiera ich prawie 225 tys.). 
+ 
 Na podstawie zachowanych tabliczek można się wiele dowiedzieć o historii Sumeru, ale także o życiu zwykłych ludzi w tym okresie, o ich zarobkach, zasiłkach i dniach wolnych. Odczytywaniem tych informacji zajmują się sumerolodzy z całego świata. Aby łatwiej dzielić się zdobytą wiedzą, zaczęli tworzyć cyfrowe bazy tabliczek, dostępne w internecie. Największa taka baza danych to Cuneiform Digital Library Initiative (CDLI), zawierająca prawie 225 tys tekstów.
 
-% Sumerolodzy zajmują się badaniem i przetwarzaniem tych tekstów, 
 Jednak wyszukiwanie interesujących tabliczek jest dosyć niewygodne. 
 % TODO: 2x baz
 Sumerolodzy w większości nie mogą korzystać z tych baz bezpośrednio, gdyż nie znają specyficznych dla baz danych języków zapytań. Prawdopodobnie, nawet gdyby znali te języki, korzystanie z nich byłoby trudne, ponieważ były one tworzone z myślą o bardziej generycznych zastosowaniach i nie odpowiadają potrzebom sumerologów. 
 Większość istniejących obecnie serwisów internetowych udostępnia formularze ułatwiające wprowadzanie kryteriów wyszukiwania, jednak mają one ograniczone możliwości i nie pozwalają na bardziej skomplikowane konstrukcje. Dlatego istnieje potrzeba stworzenia narzędzia wspomagającego wyszukiwanie, które będzie łączyło w sobie jak największą siłę wyrazu a także będzie łatwe w użyciu dla osób znających jedynie dziedzinę problemu.
 
 % 2. różne podejścia do tworzenia oprogramowania
-Przy tego typu problemach z pomocą przychodzi informatyka. Pomimo stosunkowo krótkiego czasu istnienia komputerów, powstało do tej pory wiele różnych systemów informatycznych, a doświadczenie stopniowo zdobywane przy ich budowie prowadzi do ciągłego rozwijania nauki zwanej inżynierią oprogramowania, zajmującej się praktyczną stroną wytwarzania systemów. Obecnie jest znanych bardzo wiele podejść do tworzenia oprogramowania, każdemu odpowiada gałąź problemów, w których sprawdza się najlepiej. 
+Przy tego typu problemach z pomocą przychodzi informatyka. 
+
+\section*{Propozycja rozwiązania}
+% TODO: krótki czas istnienia komputerów? (-; Spróbować może jakoś inaczej połączyć? może tutaj zrobić nowy podrozdział, wtedy będzie trochę sensowniej?
+Pomimo stosunkowo krótkiego czasu istnienia komputerów, powstało do tej pory wiele różnych systemów informatycznych, a doświadczenie stopniowo zdobywane przy ich budowie prowadzi do ciągłego rozwijania nauki zwanej inżynierią oprogramowania, zajmującej się praktyczną stroną wytwarzania systemów. Obecnie jest znanych bardzo wiele podejść do tworzenia oprogramowania, każdemu odpowiada gałąź problemów, w których sprawdza się najlepiej. 
 % Część z nich rozważałyśmy zastanawiająć się nad problemem sumerologów.
 
 Pośród nich najbardziej popularne jest programowanie zorientowane obiektowo (ang. \emph{Object-Oriented Programming}, OOP), które polega na modelowaniu świata rzeczywistego w postaci \textit{obiektów}. Obiekty posiadają dane oraz metody, które mogą te dane zmieniać. Program jest zbiorem obiektów komunikujących się między sobą. 
@@ -29,7 +34,7 @@ Pośród nich najbardziej popularne jest programowanie zorientowane obiektowo (a
 Innym podejściem jest architektura zorientowana na usługi (ang. \emph{Service-Oriented Architecture}, SOA), w której definiuje się niezależne od siebie usługi (services) i udostępnia tylko ich interfejsy, ukrywając implementację.
 
 % TODO: DSL: external i internal - podkreślić, że to jest external
-Rozważając problem sumerologów zdecydowałyśmy się na programowanie zorientowane na język (ang. \emph{Language-Oriented Programming}). Polega ono na stworzeniu języka odpowiadającego dziedzinie problemu, czyli tzw. \emph{Domain-Specific Language}, DSL. Dopiero w tym nowym języku rozwiązuje się konkretny problem (np. znalezienie tekstów sumeryjskich z epoki Ur III dotyczących owiec). Opisywanie problemów dziedziny jest wtedy znacznie prostsze i bardziej naturalne, a dzięki temu znacznie wygodniejsze dla ludzi związanych tylko z konkretną dziedziną. 
+Rozważając problem sumerologów zdecydowałyśmy się na programowanie zorientowane na język (ang. \emph{Language-Oriented Programming}). Polega ono na stworzeniu języka odpowiadającego dziedzinie problemu, czyli tzw. języka dziedzinowego (ang. \emph{Domain-Specific Language}, DSL). Dopiero w tym nowym języku rozwiązuje się konkretny problem (np. znalezienie tekstów sumeryjskich z epoki Ur III dotyczących owiec). Opisywanie problemów dziedziny jest wtedy znacznie prostsze i bardziej naturalne, a dzięki temu znacznie wygodniejsze dla ludzi związanych tylko z konkretną dziedziną. 
 % TODO: napisać, ze są tłumaczone do innych języków
 Wyróżnia się dwa rodzaje języków dziedzinowych - ``wewnętrzne`` (ang. \emph{internal}), które zachowują składnię istniejących już języków i ograniczają tylko ich możliwości, oraz ``zewnętrzne`` (ang. \emph{exernal}), które są zupełnie nowymi językami. W naszym przypadku narzucającym się rozwiązaniem było stworzenie nowego, zewnętrznego DSL, który m.in. miałby składnię przejrzystą dla sumerologa. 
 
@@ -41,7 +46,7 @@ Zaprojektowanie specjalnego języka do wyszukiwania tabliczek sumeryjskich jest 
 
 %TODO: mocniej podkreślić
 
-
+\section*{Tablets Query Language}
 
 % 4. troszkę o TQL-u
 Wychodząc naprzeciw potrzebom sumerologów prezentujemy stworzony przez nas język dziedzinowy do wyszukiwania tabliczek sumeryjskich --- \textit{Tablets Query Language} (TQL). Został on zaprojektowany przede wszystkim jako intuicyjny i zrozumiały dla sumerologów język. Ma także minimalnie ograniczać siłę wyrazu tzn. pozwalać na jak najbardziej skomplikowane zapytania. Chcemy również, żeby był niezależny od sposobu reprezentacji tabliczek. W niniejszej pracy udowodnimy, że TQL spełnia wszystkie te wymagania. 

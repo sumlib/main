@@ -1,4 +1,5 @@
 \chapter*{Wprowadzenie}
+\addcontentsline{toc}{chapter}{Wprowadzenie}
 % jaka będzie wartość dodana tego co zrobimy
 % cała ścieżka Informatyka -> nasza praca
 % celem naszym było usystematyzować pracę nad systemami dla sumerologów
@@ -7,7 +8,6 @@
  
 
 % 1. krótki opis problemu - są sumerolodzy, mają tabliczki, chcą sprawnie wyszukiwać
-% TODO: podzielić na podrozdziały
 % TODO: 3x pismo
 \section*{Opis problemu}
 Ok. 3500 lat przed naszą erą starożytni Sumerowie jako prawdopodobnie pierwsi na świecie zaczęli używać pisma. Litery odciśnięte za pomocą trzciny w miękkiej glinie miały kształt klinów, stąd nazwa pismo klinowe. Sumerowie używali pisma głównie w celach administracyjnych. Zapisywali między innymi rachunki za dostawy zwierząt oraz rozliczenia z wykonanej na polu lub w warsztacie pracy i należnej zapłaty. Jednymi z ciekawszych tekstów są tzw. listy królów, na których znajdują się daty panowania kolejnych władców i ich osiągnięcia w poszczególnych latach. 
@@ -18,6 +18,7 @@ Na podstawie zachowanych tabliczek można się wiele dowiedzieć o historii Sume
 
 Jednak wyszukiwanie interesujących tabliczek jest dosyć niewygodne. 
 % TODO: 2x baz
+% TODO: nie mogą korzystać z tych baz bezpośrednio?
 Sumerolodzy w większości nie mogą korzystać z tych baz bezpośrednio, gdyż nie znają specyficznych dla baz danych języków zapytań. Prawdopodobnie, nawet gdyby znali te języki, korzystanie z nich byłoby trudne, ponieważ były one tworzone z myślą o bardziej generycznych zastosowaniach i nie odpowiadają potrzebom sumerologów. 
 Większość istniejących obecnie serwisów internetowych udostępnia formularze ułatwiające wprowadzanie kryteriów wyszukiwania, jednak mają one ograniczone możliwości i nie pozwalają na bardziej skomplikowane konstrukcje. Dlatego istnieje potrzeba stworzenia narzędzia wspomagającego wyszukiwanie, które będzie łączyło w sobie jak największą siłę wyrazu a także będzie łatwe w użyciu dla osób znających jedynie dziedzinę problemu.
 
@@ -33,7 +34,6 @@ Pośród nich najbardziej popularne jest programowanie zorientowane obiektowo (a
 
 Innym podejściem jest architektura zorientowana na usługi (ang. \emph{Service-Oriented Architecture}, SOA), w której definiuje się niezależne od siebie usługi (services) i udostępnia tylko ich interfejsy, ukrywając implementację.
 
-% TODO: DSL: external i internal - podkreślić, że to jest external
 Rozważając problem sumerologów zdecydowałyśmy się na programowanie zorientowane na język (ang. \emph{Language-Oriented Programming}). Polega ono na stworzeniu języka odpowiadającego dziedzinie problemu, czyli tzw. języka dziedzinowego (ang. \emph{Domain-Specific Language}, DSL). Dopiero w tym nowym języku rozwiązuje się konkretny problem (np. znalezienie tekstów sumeryjskich z epoki Ur III dotyczących owiec). Opisywanie problemów dziedziny jest wtedy znacznie prostsze i bardziej naturalne, a dzięki temu znacznie wygodniejsze dla ludzi związanych tylko z konkretną dziedziną. 
 % TODO: napisać, ze są tłumaczone do innych języków
 Wyróżnia się dwa rodzaje języków dziedzinowych - ``wewnętrzne`` (ang. \emph{internal}), które zachowują składnię istniejących już języków i ograniczają tylko ich możliwości, oraz ``zewnętrzne`` (ang. \emph{exernal}), które są zupełnie nowymi językami. W naszym przypadku narzucającym się rozwiązaniem było stworzenie nowego, zewnętrznego DSL, który m.in. miałby składnię przejrzystą dla sumerologa. 
@@ -76,7 +76,7 @@ Większość programów ułatwiających tworzenie zapytań jest skomplikowana, d
 
 
 
-\addcontentsline{toc}{chapter}{Wprowadzenie}
+
 %  \begin{figure}
 %   \centering
 % \includegraphics[width=340px]{./diagramy/poco.pdf}

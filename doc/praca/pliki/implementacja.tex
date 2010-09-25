@@ -32,7 +32,7 @@ i wywołujące je.
 \chapter{Moduły podstawowe}
 
 \section{Parser}
-Parser został utworzony za pomocą narzędzia BNFC. Następnie zostały w nim wprowadzone modyfikacje:
+Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Następnie zostały w nim wprowadzone modyfikacje:
 \begin{itemize}
 \item poprawienie nazw stałych oznaczających symbole na bardziej intuicyjne,
 \item dodanie tablicy symboli,
@@ -117,10 +117,11 @@ typedef struct{
 %Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
 \section{Pliki pomocnicze}
-Definicje struktur danych i funkcji służących do budowy drzewa struktury składniowej (wygenerowane za pomocą BNFC, następnie uproszczone):
+% TODO: wytłumaczyć co to jest BNFC??
+Definicje struktur danych i funkcji służących do budowy drzewa struktury składniowej (wygenerowane za pomocą BNFC \cite{bnfc}, następnie uproszczone):
 \begin{itemize}
  \item Absyn.cpp
-\item Absyn.h
+ \item Absyn.h
 \end{itemize}
 Tablica symboli:
 \begin{itemize}

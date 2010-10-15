@@ -38,22 +38,24 @@ PRACA:
 	
 
 Do zrobienia:
-O> dokończyć wprowadzenie
-A> bibliografia - techniczna
+AO> wyspać się !!!!!
+A> zaliczyć multimedia !!!
+AO> zapisać pomysły do innych rozdziałów jako TODO
+-> bibliografia - techniczna
 -> bibliografia - dziedzinowa
 A> bibliografia - DSL
-AO> zapisać pomysły do innych rozdziałów jako TODO
--> wywalić podstawowe pojęcia
+
+O> wywalić podstawowe pojęcia
 -> przejrzeć i poprawić całą pracę pod kątem uwag Dąbrowskiego o logice i ciągłości i wypunktowaniu
-  -> wcześniejsze rozwiązania
+  A> wcześniejsze rozwiązania
   -> dziedzina problemu
-  -> definicja języka
+  O> definicja języka
   -> implementacja
   -> postgres
   -> xml
   -> podsumowanie
-O> napisać do Dąbrowskiego
 A> zadzwonić do Stępnia
+
 
 
 

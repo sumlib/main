@@ -35,11 +35,11 @@ PRACA:
 ?> zastanowić się co z xml-schema - atrybut symbol
 
 	
-	
++> bibliografia - techniczna	
++> napisać do Dąbrowskiego
 
 Do zrobienia:
-O> dokończyć wprowadzenie
-A> bibliografia - techniczna
+-> dokończyć wprowadzenie
 -> bibliografia - dziedzinowa
 A> bibliografia - DSL
 AO> zapisać pomysły do innych rozdziałów jako TODO
@@ -52,7 +52,7 @@ AO> zapisać pomysły do innych rozdziałów jako TODO
   -> postgres
   -> xml
   -> podsumowanie
-O> napisać do Dąbrowskiego
+-> array_accum - wspomnieć co to jest
 A> zadzwonić do Stępnia
 
 

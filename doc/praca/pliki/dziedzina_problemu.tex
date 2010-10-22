@@ -25,33 +25,26 @@
 \end{figure}
 ~ 
 
-Głównym pojęciem dziedziny jest tabliczka rozumiana dwojako - jako fizyczna tabliczka gliniana lub jako tabliczka w formie cyfrowej. 
-Jej najważniejszym elementem jest treść zapisana klinami (w tabliczce glinanej) lub odczytami (w tabliczce elektronicznej), która 
-może zawierać m. in. imiona
-osób lub bóstw, liczby, jednostki (np. przy opisywaniu wypłat), miejsca, daty. 
-Część tych elementów można przetłumaczyć na 
-współczesny język (np. jednostki przeliczyć na SI, datę opisową na datę liczbową BC). 
-Ponadto gliniane tabliczki są zapisywane z różnych stron 
-(od góry, z przodu, z tyłu itp) oraz mogą zawierać pieczęcie - co znajduje odzwierciedlenie w treści tabliczki elektronicznej. 
 
-Niestety odczyty zawarte w cyfrowym zapisie tabliczki są tylko jednym z wariantów tłumaczenia z klinów. 
-Ponieważ w cyfrowej wersji nie ma klinów, możliwe są pomyłki w tłumaczeniach, które ciężko zweryfikować.
-Choć są one dosyć mało prawdopodobne, sumerolodzy chcieliby mieć możliwość wyszukiwania po alternatywnych tłumaczeniach.
+Głównym elementem dziedziny jest tabliczka sumeryjska rozumiana dwojako - jako fizyczna tabliczka gliniana lub jako tabliczka w formie cyfrowej.
 
-% Są też uszkodzone fragmenty, które zostały cyfrowo zapisane w najróżniejszej formie.
+Tabliczki gliniane mają różne kształty i wielkość, mogą być zapisane z kilku stron (z przodu, z tyłu, od góry, z boku, itp.) i mogą zawierać pieczęcie, na których również znajduje się tekst. Tekst jest zapisany za pomocą klinów.
+Może on zawierać imiona osób i bóstw, liczby, jednostki (np. przy opisywaniu wypłat), miejsca, daty. Niektóre z tych elementów można przetłumaczyć na współczesny język, na przykład jednostki można przeliczyć na SI, datę opisową na datę wg obecnego kalendarza gregoriańskiego. Często gliniane tabliczki są częściowo uszkodzone, co utrudnia odczytanie znajdującego się na nich tekstu.
 
-Poza treścią tabliczki cyfrowa wersja zawiera także metadane informujące m. in. o jej miejscu znalezienia, czasie powstania, 
- kolekcji do której obecnie należy, publikacji, w której się pojawiła. 
-Są one istotne, gdyż często pozwalają na określenie o czym jest tabliczka bez dokładnej analizy jej treści. 
-Jednym z atrybutów, który w znacznym stopniu pomaga zidentyfikować tabliczkę jest publikacja.
+Dla ułatwienia pracy sumerolodzy tłumaczą zapis klinowy na tzw. odczyty, które są sposobem zapisania tekstu sumeryjskiego za pomocą współczesnych znaków - liter alfabetu łacińskiego i cyfr arabskich. W tłumaczeniu uwzględniony jest także kształt tabliczki i rozmieszczenie poszczególnych fragmentów tekstu. W takiej właśnie formie tabliczki elektroniczne są przechowywane w pamięci komputerów. Niestety ten zapis może być mylący ze względu na niejednoznaczności występujące przy tłumaczeniu. Odczyty zawarte w cyfrowym zapisie tabliczki są tylko jednym z wariantów tłumaczenia z klinów. Przede wszystkim jeden klin może zostać odczytany na wiele różnych sposobów. Ponadto odczytowi może odpowiadać nie tylko jeden klin, ale także ich sekwencja. Ponieważ w cyfrowej wersji nie ma klinów, trudno jest zweryfikować ewentualne pomyłki w tłumaczeniach. 
+% Pomocne mogłoby by narzędzie, które pozwala wyszukiwać również w alternatywnych tłumaczeniach.
+Źródłem dodatkowych problemów są uszkodzenia tabliczek. W wielu przypadkach naukowcy domyślają się jak wyglądał brakujący fragment, jednak nie zawsze. Zarówno informację o uszkodzeniu, jak i swoje przypuszczenia na temat brakującej treści, zapisują na różne sposoby. Również tutaj możliwe są pomyłki i niejednoznaczności.
 
+Tabliczka cyfrowa, oprócz treści, zawiera również informacje, które nie są umieszczone bezpośrednio na tabliczce glinianej. Są to metadane takie jak miejsce znalezienia tabliczki, okres, w którym powstała czy nazwa kolekcji, do której obecnie należy. Te informacje są istotne przy przeszukiwaniu, gdyż często pozwalają na określenie o czym jest tabliczka bez dokładnej analizy jej treści. Atrybutem, który w znacznym stopniu pomaga zidentyfikować tabliczkę jest informacja o jej publikacji.
 
 
 %TODO:spytać
 % Sumerolodzy potrafią określić w przybliżeniu treść tabliczki na podstawie publikacji.
 %TODO:ciągłość
 
-Sumerolodzy oczekują możliwości wyszukiwania po metadanych, po treści tabliczki (po odczytach) 
-i po alternatywnych tłumaczeniach (po klinach).  %TODO: po klinach??
-Dodatkową zaletą byłoby wyszukiwanie po tagach (imionach, jednostkach, datach itp)
+Aby sprawnie przeszukiwać bazy danych zawierające tabliczki, sumerologom potrzebne jest odpowiednie narzędzie.
+Wychodząc naprzeciw tej potrzebie chcemy stworzyć język, w którym będą oni mogli w łatwy sposób wyrażać, jakich tabliczek potrzebują, i który jednocześnie będzie można wykorzystać do przeszukiwania baz danych. Język ten powinien przede wszystkim umożliwiać wyszukiwanie na podstawie treści tabliczki (odczytów), alternatywnych tłumaczeń (klinów) 
+%TODO: na podstawie klinów?
+oraz metadanych.
+Dodatkową zaletą byłoby wyszukiwanie po specyficznych fragmentach (tagach), takich jak imiona, jednostki, daty.
 W pierwszej wersji języka implementujemy tylko wyszukiwanie po odczytach i metadanych.

@@ -1,3 +1,11 @@
+\chapter{Tablets Query Language}
+
+Tablets Query Language (TQL) jest naszą propozycją rozwiązania problemu wyszukiwania tabliczek sumeryjskich. Jest to zewnętrzny język dziedzinowy stworzony od podstaw do tego, aby służyć sumerologom jako język zapytań. Jego składnia jest bardzo prosta i intuicyjna, co będzie widać na przykładach w rozdziale o składni TQL. Jednocześnie, dzięki możliwości formułowania skomplikowanych wyrażeń do wyszukiwania na podstawie pojedynczej metadanej lub treści tabliczki, oraz możliwości łączenia wielu zapytań w jedno zapytanie złożone, TQL ma bardzo dużą siłę wyrazu.
+
+Dodatkowo, jednym z głównych założeń przyjętych przy tworzeniu języka TQL jest niezależność od rzeczywistej reprezentacji danych. Przy konstruowaniu go nie brałyśmy pod uwagę sposobu fizycznej reprezentacji tabliczek, czyli rodzaju bazy danych oraz schematu danych. Skupiłyśmy się jedynie na dziedzinie problemu, czyli na tym, co zawiera tabliczka oraz na podstawie jakich informacji chcemy wyszukiwać. Zakładamy, że niezależnie od reprezentacji danych takie wyszukiwanie będzie możliwe, chociaż oczywiście skonstruowanie odpowiedniego zapytania może być skomplikowane. Przetłumaczenie zapytania TQL na zapytanie w języku odpowiednim do reprezentacji danych, np. SQL, XQuery, jest zadaniem programu tłumaczącego. Dzięki temu praca polegająca na przetłumaczeniu zapytania z "języka dziedziny" na "język komputerów" jest wykonana tylko raz dla każdego sposobu reprezentacji danych, i to przez programistów, a nie sumerologów.
+
+W kolejnych dwóch rozdziałach przedstawimy zaprojektowany przez nas język TQL.
+
 \chapter{Gramatyka}
 
 W tym rozdziale przedstawimy gramatykę zaprojektowanego przez nas języka. W pierwszej części pokażemy strukturę leksykalną TQL, czyli elementy, z których buduje się zapytania. W drugiej części zaprezentujemy reguły tworzenia zapytań, zapisane w formie reguł gramatyki w notacji BNF.

@@ -1,7 +1,10 @@
 \chapter{Wcześniejsze rozwiązania}\label{r:losers}
 
 % TODO: dlaczego nasze rozwiązanie jest najlepsze
-Dotychczasowe rozwiązania problemu przeszukiwania bazy tabliczek opierają się o formularze, na podstawie których można zdefiniować jakich tabliczek szukamy. Różnią się one przede wszystkim poziomem skomplikowania formularzy a tym samym ilością parametrów na podstawie których można wyszukiwać tabliczki. Podstawową wadą takich rozwiązań jest brak możliwości tworzenia zapytań złożonych i brak elastyczności.
+Dotychczasowe rozwiązania problemu przeszukiwania bazy tabliczek opierają się o pomysł stworzenia formularza, w którym, wypełniając odpowiednie pola, można zdefiniować jakich tabliczek szukamy. Różnią się one przede wszystkim poziomem skomplikowania formularzy,
+% TODO 2x formularz
+ a tym samym ilością parametrów na podstawie których można wyszukiwać tabliczki. Podstawową wadą takich rozwiązań jest brak możliwości tworzenia zapytań złożonych i brak elastyczności.
+ % TODO rozwinąć: co to jest brak elastyczności?
 
 % W chwili obecnej nie istnieje język dostosowany do potrzeb sumerologów. Jedyne znane nam rozwiązania przedstawionego wyżej problemu opierają się o pomysł formularzy, które w łatwy sposób można wypełniać i łatwo na ich podstawie tworzyć zapytania. Wadą takich rozwiązań jest brak możliwości tworzenia skomplikowanych zapytań.
 Poniżej przedstawimy dwie przykładowe strony internetowe oferujące wyszukiwanie za pomocą formularzy.
@@ -13,8 +16,10 @@ Poniżej przedstawimy dwie przykładowe strony internetowe oferujące wyszukiwan
  \caption{Formularz wyszukiwania na stronie CDLI}
  \label{fig:cdli-search}
 \end{figure}
-Największą znaną nam bazą tekstów sumeryjskich jest The Cuneiform Digital Library Initiative (CDLI), która zawiera ok 225 tys. tabliczek. Posiada stosunkowo rozbudowany formularz, pozwala na wyszukiwanie po wielu parametrach tabliczki (m. in. dane dot. czasu i miejsca powstania, komentarze CDLI). Dla każdego parametru jest pole tekstowe z możliwymi opcjami wyszukiwania: ``begins with``, ``contains'', ''does not contain''. Dla treści jest pole tekstowe z opcjami ``word``, ``part of word``. Jest również checkbox ''advanced search syntax'', jednak brakuje wyjaśnienia jak go używać.
-Nie można tworzyć bardziej skomplikowanych warunków (np. nie można wyszukać tabliczek, które powstały w Uruk lub w Garshanie) ani zapytań złożonych.
+Największą znaną nam bazą tekstów sumeryjskich jest The Cuneiform Digital Library Initiative (CDLI), która zawiera ok. 225 tys. tabliczek. Posiada stosunkowo rozbudowany formularz, który pozwala na wyszukiwanie po wielu parametrach tabliczki (m. in. po danych dot. czasu i miejsca powstania, komentarzach CDLI
+% TODO jakich komentarzach?
+). Dla każdego parametru jest pole tekstowe z możliwymi opcjami wyszukiwania: ``begins with``, ``contains'', ''does not contain''. Do wyszukiwania na podstawie treści tabliczki jest pole tekstowe z opcjami ``word``, ``part of word``. Jest również checkbox ''advanced search syntax'', jednak brakuje wyjaśnienia jak go używać.
+Nie można tworzyć bardziej skomplikowanych warunków (np. nie można wyszukać tabliczek, które powstały w Uruk lub w Garshanie) ani łączyć kilku zapytań w jedno zapytanie złożone.
 
 % CDLI to największa znana nam baza tekstów sumeryjskich, zawiera ok. 225 tys. tekstów. 
 % Umożliwia wyszukiwanie po wielu parametrach.
@@ -32,9 +37,9 @@ Nie można tworzyć bardziej skomplikowanych warunków (np. nie można wyszukać
  \label{fig:etcsl-search}
 \end{figure}
 
-The Electronic Text Corpus of Sumerian Literature posiada znacznie mniejszą bazę, zawierającą głównie teksty literackie. 
+The Electronic Text Corpus of Sumerian Literature (ETCSL) posiada znacznie mniejszą bazę niż CDLI, składającą się z około 400 tekstów, głównie literackich. 
 Ma ograniczone możliwości wyszukiwania po metadanych (tylko po kategorii tekstu), jednak udostępnia tworzenie bardziej 
 skomplikowanych zapytań dotyczących treści tabliczki. 
-Pozwala określić typ wyszukiwanego słowa (form, lemma, label, pos, emesal, sign),
- a także jego znaczenie w tekście (np. czy jest imieniem bóstwa) oraz część mowy, do której należy. 
-Można również wyszukiwać po fragmencie słowa.
+Pozwala określić typ wyszukiwanego słowa - do wyboru: form, lemma, label, pos, emesal, sign,
+a także jego znaczenie w tekście (np. czy jest imieniem bóstwa) oraz część mowy, do której należy. 
+Można również wyszukiwać na podstawie fragmentu słowa.

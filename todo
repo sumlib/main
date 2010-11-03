@@ -40,7 +40,6 @@ PRACA:
 
 Do zrobienia:
 AO> wyspać się !!!!!
-A> zaliczyć multimedia !!!
 AO> zapisać pomysły do innych rozdziałów jako TODO
 -> bibliografia - techniczna
 -> bibliografia - dziedzinowa
@@ -48,9 +47,10 @@ A> bibliografia - DSL
 
 O> wywalić podstawowe pojęcia
 -> przejrzeć i poprawić całą pracę pod kątem uwag Dąbrowskiego o logice i ciągłości i wypunktowaniu
-  A> wcześniejsze rozwiązania
-  -> dziedzina problemu
-  O> definicja języka
+  O> wcześniejsze rozwiązania
+  A> dziedzina problemu
+  A> definicja języka
+  O> gramatyka + semantyka
   -> implementacja
   -> postgres
   -> xml

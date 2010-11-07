@@ -1,140 +1,23 @@
 \chapter{Tablets Query Language}
+
 % TODO: jak się ma do języków dziedzinowych (tak ogólnie niezależnie od implementacji)
-Tablets Query Language (TQL) jest naszą propozycją rozwiązania problemu wyszukiwania tabliczek sumeryjskich. Jest to zewnętrzny język dziedzinowy stworzony od podstaw do tego, aby służyć sumerologom jako język zapytań. Jego składnia jest bardzo prosta i intuicyjna, co będzie widać na przykładach w rozdziale o składni TQL. Jednocześnie, dzięki możliwości formułowania skomplikowanych wyrażeń do wyszukiwania na podstawie pojedynczej metadanej lub treści tabliczki, oraz możliwości łączenia wielu zapytań w jedno zapytanie złożone, TQL ma bardzo dużą siłę wyrazu.
+Tablets Query Language (TQL) jest naszą propozycją rozwiązania problemu wyszukiwania tabliczek sumeryjskich.
+Jest to zewnętrzny język dziedzinowy stworzony od podstaw do tego, aby służyć sumerologom jako język zapytań.
+Jego składnia jest bardzo prosta i intuicyjna, co będzie widać na przykładach w rozdziale o składni TQL.
+Jednocześnie, dzięki możliwości formułowania skomplikowanych wyrażeń do wyszukiwania na podstawie pojedynczej
+metadanej lub treści tabliczki, oraz możliwości łączenia wielu zapytań w jedno zapytanie złożone,
+TQL ma bardzo dużą siłę wyrazu.
 
-Dodatkowo, jednym z głównych założeń przyjętych przy tworzeniu języka TQL jest niezależność od rzeczywistej reprezentacji danych. Przy konstruowaniu go nie brałyśmy pod uwagę sposobu fizycznej reprezentacji tabliczek, czyli rodzaju bazy danych oraz schematu danych. Skupiłyśmy się jedynie na dziedzinie problemu, czyli na tym, co zawiera tabliczka oraz na podstawie jakich informacji chcemy wyszukiwać. Zakładamy, że niezależnie od reprezentacji danych takie wyszukiwanie będzie możliwe, chociaż oczywiście skonstruowanie odpowiedniego zapytania może być skomplikowane. Przetłumaczenie zapytania TQL na zapytanie w języku odpowiednim do reprezentacji danych, np. SQL, XQuery, jest zadaniem programu tłumaczącego. Dzięki temu praca polegająca na przetłumaczeniu zapytania z "języka dziedziny" na "język komputerów" jest wykonana tylko raz dla każdego sposobu reprezentacji danych, i to przez programistów, a nie sumerologów.
+Dodatkowo, jednym z głównych założeń przyjętych przy tworzeniu języka TQL jest niezależność od rzeczywistej
+reprezentacji danych. Przy konstruowaniu go nie brałyśmy pod uwagę sposobu fizycznej reprezentacji tabliczek,
+czyli rodzaju bazy danych oraz schematu danych. Skupiłyśmy się jedynie na dziedzinie problemu, czyli na tym,
+co zawiera tabliczka oraz na podstawie jakich informacji chcemy wyszukiwać. Zakładamy, że niezależnie od
+reprezentacji danych takie wyszukiwanie będzie możliwe, chociaż oczywiście skonstruowanie odpowiedniego
+zapytania może być skomplikowane. Przetłumaczenie zapytania TQL na zapytanie w języku odpowiednim do
+reprezentacji danych, np. SQL, XQuery, jest zadaniem programu tłumaczącego. Dzięki temu praca polegająca
+na przetłumaczeniu zapytania z "języka dziedziny" na "język komputerów" jest wykonana tylko raz dla każdego
+sposobu reprezentacji danych, i to przez programistów, a nie sumerologów.
 
-W kolejnych dwóch rozdziałach przedstawimy zaprojektowany przez nas język TQL.
-
-\chapter{Gramatyka}
-
-W tym rozdziale przedstawimy gramatykę zaprojektowanego przez nas języka. W pierwszej części pokażemy strukturę leksykalną TQL, czyli elementy, z których buduje się zapytania. W drugiej części zaprezentujemy reguły tworzenia zapytań, zapisane w formie reguł gramatyki w notacji BNF.
-
-\section{Struktura leksykalna}
-\subsection{Literały}
-
-\subsubsection{String}
-Literał \terminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\texttt{"}). Nie może zawierać jedynie znaków 
-``\texttt{"}`` niepoprzedzonych ''\verb6\6``.
-
-% ma postać
-% \terminal{"}$x$\terminal{"}, gdzie $x$ jest dowolnym ciągiem znaków
-% poza \terminal{"}\ niepoprzedzonymi \verb6\6.
-
-
-\subsubsection{SłowoOdLitery}
-Literał \terminal{SłowoOdLitery} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od litery,
-z wyjątkiem słów kluczowych.
-
-
-
-\subsubsection{SłowoOdLiczby}
-Literał \terminal{SłowoOdLiczby} to ciąg liter, cyfr oraz znaków  {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``}, zaczynający się od cyfry.
-
-
-\subsection{Słowa kluczowe}
-\begin{tabular}{lll}
-{\reserved{as}} &{\reserved{define}} &{\reserved{in}} \\
-{\reserved{search}} & & \\
-\end{tabular}\\
-
-\subsection{Znaki specjalne}
-\begin{tabular}{lll}
-{\symb{(}} &{\symb{)}} &{\symb{{$+$}}} \\
-{\symb{/}} &{\symb{{$-$}{$-$}}} &{\symb{*}} \\
-{\symb{:}} & &{\symb{$\backslash$n}} (koniec linii)\\
-\end{tabular}\\
-
-% \subsection{Komentarze}
-% %TODO: komentarze??
-% W chwili obecnej język nie zawiera komentarzy.
-
-\section{Struktura składniowa języka}
-Nieterminale są pomiędzy ''$\langle$`` a ''$\rangle$``. 
-Symbole  ''{\arrow}``  (produkcja),  ''{\delimit}``  (lub) 
-i ''{\emptyP}`` (pusta reguła) należą do notacji BNF. 
-Wszystkie pozostałe symbole to terminale.\\
-
-\begin{tabular}{lll}
-{\nonterminal{Zapytanie Złożone}} & {\arrow}  &{\nonterminal{Lista Zapytań}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Lista Zapytań}} & {\arrow}  &{\nonterminal{Zapytanie}}  \\
- & {\delimit}  &{\nonterminal{Zapytanie}} {\nonterminal{Lista Zapytań}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Zapytanie}} & {\arrow}  &{\nonterminal{Lista Linii Zapytania}} {\nonterminal{Lista Pustych Linii}}  \\
- & {\delimit}  &{\terminal{define}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{as}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
- & {\delimit}  &{\terminal{search}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{in}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
-  & {\delimit}  &{\terminal{search}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}}  \\
- & {\delimit}  &{\nonterminal{Lista Pustych Linii}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Lista Linii Zapytania}} & {\arrow}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}}  \\
- & {\delimit}  &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}} {\nonterminal{Lista Linii Zapytania}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Linia Zapytania}} & {\arrow}  &{\nonterminal{Nazwa pola}} {\terminal{:}} {\nonterminal{Wyrażenie}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Wyrażenie}} & {\arrow}  &{\nonterminal{Wyrażenie}} {\terminal{{$+$}}} {\nonterminal{Wyrażenie1}}  \\
- & {\delimit}  &{\nonterminal{Wyrażenie}} {\terminal{/}} {\nonterminal{Wyrażenie1}}  \\
- & {\delimit}  &{\nonterminal{Wyrażenie1}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Wyrażenie1}} & {\arrow}  &{\terminal{{$-$}{$-$}}} {\nonterminal{Wyrażenie1}}  \\
- & {\delimit}  &{\nonterminal{Wyrażenie2}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Wyrażenie2}} & {\arrow}  &{\nonterminal{Wyrażenie3}} {\terminal{*}} {\nonterminal{Wyrażenie3}}  \\
- & {\delimit}  &{\nonterminal{Tekst}}  \\
- & {\delimit}  &{\terminal{(}} {\nonterminal{Wyrażenie}} {\terminal{)}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Wyrażenie3}} & {\arrow}  &{\nonterminal{Wyrażenie2}}\\
- & {\delimit}  &{\emptyP} \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Lista Pustych Linii}} & {\arrow}  &{\emptyP} \\
- & {\delimit}  &{\nonterminal{Pusta Linia}} {\nonterminal{Lista Pustych Linii}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Pusta Linia}} & {\arrow}  &{\terminal{$\backslash$n}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Tekst}} & {\arrow}  &{\terminal{String}}  \\
- & {\delimit}  &{\nonterminal{Słowo}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Słowo}} & {\arrow}  &{\terminal{SłowoOdLitery}}  \\
- & {\delimit}  &{\terminal{SłowoOdLiczby}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Nazwa pola}} & {\arrow}  &{\terminal{SłowoOdLitery}}  \\
-\end{tabular}\\
-
-\begin{tabular}{lll}
-{\nonterminal{Nazwa}} & {\arrow}  &{\terminal{String}}  \\
-\end{tabular}\\
-
-Powyższa gramatyka może jest gramatyką bezkontekstową. 
-
-\chapter{Semantyka}
-%możliwe pola
-%W zapytaniu TQL można pytać o następujące dane:
 Język TQL umożliwia wyszukiwanie na podstawie kryteriów dotyczących następujących danych:
 \begin{longtable}{|p{3in}|p{3in}|}
 \hline
@@ -153,7 +36,7 @@ okres powstania & period
 typ i podtyp & genre
 \\
 \hline
-rok powstania & year 
+rok powstania & year
 \\
 \hline
 publikacja & publication
@@ -162,9 +45,9 @@ publikacja & publication
 treść (odczyty)& text
 \\
 \hline
-treść (kliny) & cunetext
-\\
-\hline
+%treść (kliny) & cunetext
+%\\
+%\hline
 kolekcja & collection
 \\
 \hline
@@ -172,13 +55,138 @@ muzeum & museum
 \\
 \hline
 \end{longtable}
-% \item kliny 
-% \item treść na pieczęci (seal)
-%  \item kod tematyczny (code)
-% "provenience", "publication", "period", "year", "genre", "code", "cdli_id", "text", "seal"
-Język można łatwo rozszerzać, aby umożliwić tworzenie kryteriów wyszukiwania w oparciu o inne dane (np. zawartość pieczęci).
+Język można łatwo rozszerzać, aby umożliwić tworzenie kryteriów wyszukiwania w oparciu o inne dane
+(np. kliny, zawartość pieczęci).
 
-%Semantykę przedstawimy na wybranych przykładach. 
+W kolejnych dwóch rozdziałach przedstawimy gramatykę i semantykę zaprojektowanego przez nas języka TQL.
+
+
+
+\chapter{Gramatyka}
+
+W tym rozdziale przedstawimy gramatykę zaprojektowanego przez nas języka.
+W pierwszej części pokażemy strukturę leksykalną TQL, czyli elementy, z których buduje się zapytania.
+W drugiej części zaprezentujemy reguły tworzenia zapytań, zapisane w formie reguł gramatyki w notacji BNF.
+
+\section{Struktura leksykalna}
+
+\subsection{Literały}
+
+\subsubsection{String}
+Literał \terminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\texttt{"}). Nie może zawierać jedynie znaków
+``\texttt{"}`` niepoprzedzonych ''\verb6\6``.
+
+\subsubsection{SłowoOdLitery}
+Literał \terminal{SłowoOdLitery} to ciąg liter, cyfr oraz znaków {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``},
+zaczynający się od litery, z wyjątkiem słów kluczowych.
+
+\subsubsection{SłowoOdLiczby}
+Literał \terminal{SłowoOdLiczby} to ciąg liter, cyfr oraz znaków {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``},
+zaczynający się od cyfry.
+
+
+\subsection{Słowa kluczowe}
+
+\begin{tabular}{lll}
+{\reserved{as}} &{\reserved{define}} &{\reserved{in}} \\
+{\reserved{search}} & & \\
+\end{tabular}\\
+
+\subsection{Znaki specjalne}
+
+\begin{tabular}{lll}
+{\symb{(}} &{\symb{)}} &{\symb{{$+$}}} \\
+{\symb{/}} &{\symb{{$-$}{$-$}}} &{\symb{*}} \\
+{\symb{:}} & &{\symb{$\backslash$n}} (koniec linii)\\
+\end{tabular}\\
+
+\section{Struktura składniowa języka}
+
+Poniżej przedstawimy reguły gramatyki TQL w notacji BNF.
+Nieterminale są zapisane pomiędzy ''$\langle$`` a ''$\rangle$``.
+Symbole ''{\arrow}`` (produkcja), ''{\delimit}`` (lub)
+i ''{\emptyP}`` (pusta reguła) należą do notacji BNF.
+Wszystkie pozostałe symbole to terminale.\\
+
+\begin{tabular}{lll}
+{\nonterminal{Zapytanie Złożone}} & {\arrow} &{\nonterminal{Lista Zapytań}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Lista Zapytań}} & {\arrow} &{\nonterminal{Zapytanie}} \\
+ & {\delimit} &{\nonterminal{Zapytanie}} {\nonterminal{Lista Zapytań}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Zapytanie}} & {\arrow} &{\nonterminal{Lista Linii Zapytania}} {\nonterminal{Lista Pustych Linii}} \\
+ & {\delimit} &{\terminal{define}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{as}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}} \\
+ & {\delimit} &{\terminal{search}} {\terminal{$\backslash$n}} {\nonterminal{Zapytanie}} {\terminal{in}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}} \\
+  & {\delimit} &{\terminal{search}} {\nonterminal{Nazwa}} {\nonterminal{Lista Pustych Linii}} \\
+ & {\delimit} &{\nonterminal{Lista Pustych Linii}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Lista Linii Zapytania}} & {\arrow} &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}} \\
+ & {\delimit} &{\nonterminal{Linia Zapytania}} {\terminal{$\backslash$n}} {\nonterminal{Lista Linii Zapytania}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Linia Zapytania}} & {\arrow} &{\nonterminal{Nazwa pola}} {\terminal{:}} {\nonterminal{Wyrażenie}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Wyrażenie}} & {\arrow} &{\nonterminal{Wyrażenie}} {\terminal{{$+$}}} {\nonterminal{Wyrażenie1}} \\
+ & {\delimit} &{\nonterminal{Wyrażenie}} {\terminal{/}} {\nonterminal{Wyrażenie1}} \\
+ & {\delimit} &{\nonterminal{Wyrażenie1}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Wyrażenie1}} & {\arrow} &{\terminal{{$-$}{$-$}}} {\nonterminal{Wyrażenie1}} \\
+ & {\delimit} &{\nonterminal{Wyrażenie2}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Wyrażenie2}} & {\arrow} &{\nonterminal{Wyrażenie3}} {\terminal{*}} {\nonterminal{Wyrażenie3}} \\
+ & {\delimit} &{\nonterminal{Tekst}} \\
+ & {\delimit} &{\terminal{(}} {\nonterminal{Wyrażenie}} {\terminal{)}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Wyrażenie3}} & {\arrow} &{\nonterminal{Wyrażenie2}}\\
+ & {\delimit} &{\emptyP} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Lista Pustych Linii}} & {\arrow} &{\emptyP} \\
+ & {\delimit} &{\nonterminal{Pusta Linia}} {\nonterminal{Lista Pustych Linii}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Pusta Linia}} & {\arrow} &{\terminal{$\backslash$n}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Tekst}} & {\arrow} &{\terminal{String}} \\
+ & {\delimit} &{\nonterminal{Słowo}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Słowo}} & {\arrow} &{\terminal{SłowoOdLitery}} \\
+ & {\delimit} &{\terminal{SłowoOdLiczby}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Nazwa pola}} & {\arrow} &{\terminal{SłowoOdLitery}} \\
+\end{tabular}\\
+
+\begin{tabular}{lll}
+{\nonterminal{Nazwa}} & {\arrow} &{\terminal{String}} \\
+\end{tabular}\\
+
+Powyższa gramatyka jest gramatyką bezkontekstową.
+
+\chapter{Semantyka}
+
 Poniżej przedstawiamy semantykę wybranych przykładów.
 \section{Zapytanie proste}
 \begin{verbatim}
@@ -189,7 +197,7 @@ text: udu + (masz2/ugula) --szabra
 \end{verbatim}
 Wynikiem zapytania będą wszystkie tabliczki, które:
 \begin{itemize}
- \item pochodzą z miejscowości o nazwie zaczynającej się na ``Gar''
+\item pochodzą z miejscowości o nazwie zaczynającej się na ``Gar''
 \item pochodzą z okresu Ur III
 \item są dokumentami administracyjnymi
 \item zawierają słowo ``udu'' oraz conajmniej jedno ze słów ``masz2'' lub ``ugula''

@@ -35,19 +35,23 @@ na których również znajduje się tekst. Przez kilka tysięcy lat istnienia ul
 obecnie ich pełne odczytanie.
 Przykładowa gliniana tabliczka zaprezentowana jest na rysunku \ref{fig:tabliczka}.
 
-Tekst na tabliczkach jest zapisany za pomocą \emph{klinów}. % TODO akapit o samym piśmie klinowym
+% akapit o samym piśmie klinowym
+Tekst na tabliczkach jest zapisany za pomocą \emph{klinów}. Pismo klinowe jest prawdopodobnie najstarszym pismem na świecie 
+(konkurują z nim jedynie hieroglify egipskie). Początkowo składało się z piktogramów z czasem coraz bardziej upraszczanych.
+Powstało jako pomoc w sprawach gospodarczych (np. ilość i rodzaj obiecanych ludziom zwierząt). 
 
 Treść tabliczek to najczęściej dokumenty urzędowe dotyczące m.in. czynności administracyjnych i gospodarczych, 
 produkcji i dystrybucji rozmaitych artykułów, uroczystości religijno-kulturowych, umów cywilno-prawnych itp. \cite{powalka}
 Często można spotkać w niej między innymi imiona osób i bóstw, liczby, jednostki (np. talent - jednostka wagi), %TODO: sprawdzić
 miejsca, daty. Niektóre z tych elementów można przetłumaczyć na współczesny język, na przykład jednostki można przeliczyć na SI, 
-datę opisową na datę wg obecnego kalendarza gregoriańskiego. %TODO narzuca się ``Pozostałe ...''?
+datę opisową na datę wg obecnego kalendarza gregoriańskiego. 
 
-                                                                %TODO: jak to się ma do zapisu fonetycznego?
 Dla ułatwienia pracy sumerolodzy tłumaczą zapis klinowy na tzw. \emph{odczyty}. 
-Są one sposobem zapisania tekstu sumeryjskiego za pomocą współczesnych znaków - liter alfabetu łacińskiego i cyfr arabskich. 
-W tłumaczeniu uwzględniony jest także kształt tabliczki i rozmieszczenie poszczególnych fragmentów tekstu. % przykład z wyjaśnieniem?
-
+Są one sposobem zapisania tekstu sumeryjskiego za pomocą współczesnych znaków - liter alfabetu łacińskiego i cyfr arabskich 
+na podstawie prawdopodobnego brzmienia słów po sumeryjsku. 
+W tłumaczeniu uwzględniony jest także kształt tabliczki i rozmieszczenie poszczególnych fragmentów tekstu 
+(zgodnie z rysunkiem \ref{fig:tabliczka}). 
+% 
 Odczyty zawarte w cyfrowym zapisie tabliczki są tylko jednym z wariantów tłumaczenia z klinów. 
 Przede wszystkim dlatego, że jeden klin może zostać odczytany na wiele różnych sposobów. 
 Ponadto odczytowi może odpowiadać nie tylko jeden klin, ale także ich sekwencja. 
@@ -69,16 +73,12 @@ Te informacje są istotne przy przeszukiwaniu, gdyż często pozwalają na okre�
 jej treści. 
 W praktyce, wśród sumerologów, atrybutem, który w znacznym stopniu pomaga zidentyfikować tabliczkę jest informacja o jej publikacji.
 
-%TODO:ciągłość
-
-%TODO: ten akapit powinien umiejscowić projekt w dziedzinie problemu - przeformułować
-                          %cyfrowe zbiory tabliczek?
-Aby sprawnie przeszukiwać bazy danych zawierające tabliczki, sumerologom potrzebne jest odpowiednie narzędzie.
+Nie ma wątpliwości, że cyfrowa postać tabliczek sumeryjskich wraz z podstawowymi możliwościami wyszukiwania znacząco
+% TODO: 2 razy wyszukiwania
+ułatwia ich badanie sumerologom. Brakuje im jednak możliwości bardziej skomplikowanego i rozbudowanego wyszukiwania.
 Wychodząc naprzeciw tej potrzebie chcemy stworzyć język, w którym będą oni mogli w łatwy sposób wyrażać, 
 jakich tabliczek potrzebują, i który jednocześnie będzie można wykorzystać do przeszukiwania baz danych. 
 Język ten powinien przede wszystkim umożliwiać wyszukiwanie na podstawie treści tabliczki (odczytów), 
-alternatywnych tłumaczeń (klinów)
-%TODO: na podstawie klinów?
-oraz metadanych.
+alternatywnych tłumaczeń (wymaga to przetłumaczenia tabliczki spowrotem na oryginalne kliny) oraz metadanych.
 Dodatkową zaletą byłoby wyszukiwanie po specyficznych fragmentach (tagach), takich jak imiona, jednostki, daty.
 W pierwszej wersji języka implementujemy tylko wyszukiwanie po odczytach i metadanych.

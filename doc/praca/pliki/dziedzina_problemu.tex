@@ -27,7 +27,7 @@
 
 Podstawowym elementem rozpatrywanej przez nas dziedziny jest \emph{tabliczka sumeryjska}. 
 Pojęcie to odnosi się zarówno do fizycznej \emph{tabliczki glinianej} jak i do jej cyfrowej reprezentacji, 
-nadającej się do przechowywania na komputerze. 
+odpowiedniej do przechowywania na komputerze. 
 
 Tabliczki gliniane mają różne kształty i rozmiary. 
 Mogą być zapisane z wielu stron (z przodu, z tyłu, od góry, z boku, itp.), a także mogą zawierać pieczęcie, 
@@ -38,9 +38,10 @@ Przykładowa gliniana tabliczka zaprezentowana jest na rysunku \ref{fig:tabliczk
 % akapit o samym piśmie klinowym
 Tekst na tabliczkach jest zapisany za pomocą \emph{klinów}. Pismo klinowe jest prawdopodobnie najstarszym pismem na świecie 
 (konkurują z nim jedynie hieroglify egipskie). Początkowo składało się z piktogramów z czasem coraz bardziej upraszczanych.
-Powstało jako pomoc w sprawach gospodarczych (np. ilość i rodzaj obiecanych ludziom zwierząt). 
+%Powstało jako pomoc w sprawach gospodarczych (np. ilość i rodzaj obiecanych ludziom zwierząt).
+Służyło pomocą w rozliczeniach i umowach, zapisywano np. ilość i rodzaj obiecanych ludziom zwierząt.
 
-Treść tabliczek to najczęściej dokumenty urzędowe dotyczące m.in. czynności administracyjnych i gospodarczych, 
+Treść tabliczek to najczęściej dokumenty urzędowe dotyczące czynności administracyjnych i gospodarczych, 
 produkcji i dystrybucji rozmaitych artykułów, uroczystości religijno-kulturowych, umów cywilno-prawnych itp. \cite{powalka}
 Często można spotkać w niej między innymi imiona osób i bóstw, liczby, jednostki (np. talent - jednostka wagi), %TODO: sprawdzić
 miejsca, daty. Niektóre z tych elementów można przetłumaczyć na współczesny język, na przykład jednostki można przeliczyć na SI, 
@@ -48,7 +49,7 @@ datę opisową na datę wg obecnego kalendarza gregoriańskiego.
 
 Dla ułatwienia pracy sumerolodzy tłumaczą zapis klinowy na tzw. \emph{odczyty}. 
 Są one sposobem zapisania tekstu sumeryjskiego za pomocą współczesnych znaków - liter alfabetu łacińskiego i cyfr arabskich 
-na podstawie prawdopodobnego brzmienia słów po sumeryjsku. 
+na podstawie prawdopodobnego brzmienia słów w języku sumeryjskim. 
 W tłumaczeniu uwzględniony jest także kształt tabliczki i rozmieszczenie poszczególnych fragmentów tekstu 
 (zgodnie z rysunkiem \ref{fig:tabliczka}). 
 % 
@@ -62,7 +63,7 @@ Niestety ten zapis może być mylący ze względu na niejednoznaczności występ
 
 % Pomocne mogłoby by narzędzie, które pozwala wyszukiwać również w alternatywnych tłumaczeniach.
 Źródłem dodatkowych problemów są uszkodzenia tabliczek. 
-W wielu przypadkach naukowcy mogą domyśleć się jak wyglądał brakujący fragment. 
+W wielu przypadkach naukowcy mogą domyślić się jak wyglądał brakujący fragment. 
 Zawsze natomiast informację o uszkodzeniu oraz domniemaną brakującą treść zapisują w tabliczce cyfrowej.
 Ponieważ pewne konwencje opisywania tych informacji zostały przyjęte dosyć późno i nie przez wszystkich sumerologów, 
 są one zapisywane na różne sposoby.Również tutaj możliwe są pomyłki i niejednoznaczności.
@@ -79,6 +80,6 @@ ułatwia ich badanie sumerologom. Brakuje im jednak możliwości bardziej skompl
 Wychodząc naprzeciw tej potrzebie chcemy stworzyć język, w którym będą oni mogli w łatwy sposób wyrażać, 
 jakich tabliczek potrzebują, i który jednocześnie będzie można wykorzystać do przeszukiwania baz danych. 
 Język ten powinien przede wszystkim umożliwiać wyszukiwanie na podstawie treści tabliczki (odczytów), 
-alternatywnych tłumaczeń (wymaga to przetłumaczenia tabliczki spowrotem na oryginalne kliny) oraz metadanych.
+alternatywnych tłumaczeń (wymaga to przetłumaczenia tabliczki z powrotem na kliny) oraz metadanych.
 Dodatkową zaletą byłoby wyszukiwanie po specyficznych fragmentach (tagach), takich jak imiona, jednostki, daty.
 W pierwszej wersji języka implementujemy tylko wyszukiwanie po odczytach i metadanych.

@@ -6,28 +6,26 @@
  % diagram-encji-maly.pdf: 930x560 pixel, 72dpi, 32.81x19.76 cm, bb=0 0 930 560
  \caption{Diagram encji}
 \end{figure}
-Jednym z problemów przy projektowaniu bazy danych był wybór takiej reprezentacji treści tabliczki, żeby efektywnie wykonywać następujące operacje:
-\begin{itemize}
- \item wyszukiwanie po treści tabliczki (po odczytach, klinach i tagach),
-\item wyszukiwanie treści konkretnej tabliczki.
-\end{itemize}
-Najlepszym rozwiązaniem pierwszego problemu jest reprezentacja treści tabliczki
-w formie grafu,
- którego krawędziami są odczyty, kliny i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}).
-Natomiast w przypadku drugiego problemu narzuca się przechowywanie treści
+Jednym z problemów przy projektowaniu bazy danych był wybór takiej reprezentacji treści tabliczki, 
+żeby efektywnie wyszukiwać zarówno treść konkretnej tabliczki jak i tabliczki, których treść spełnia kryteria
+ (wg odczytów lub zapisu klinowego).
+
+W przypadku pierwszego problemu jako rozwiązanie narzuca się przechowywanie treści
 jako otwarty tekst.
+Natomiast najlepszym rozwiązaniem drugiego jest reprezentacja treści tabliczki
+w formie grafu,
+% TODO: wywalić tagi?
+ którego krawędziami są odczyty, kliny i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}).
 Zdecydowałyśmy się na połączenie obu sposobów. Odczyty, kliny i tagi przechowujemy w tabelach Reading, Cuneiform i Tag, 
 natomiast otwarty tekst w kolumnie show\_text tabeli Tablet.
+% TODO: co to znaczy ``możliwość odwzorowania treści tabliczki między reprezentacjami''?
+% może napisać więcej na temat dlaczego jest tak zanim dojdziemy do tego jak jest
 Aby zapewnić możliwość odwzorowania treści tabliczki między reprezentacjami, węzły są liczbami postaci:
-%Treść tabliczki jest przechowywana nie tylko jako otwarty tekst (kolumna w tabeli Tablet), ale także w formie grafu,
- %którego krawędziami są odczyty i tagi (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}) 
-%w tabelach Reading i Tag. 
-%  Węzeł tego grafu jest liczbą postaci:
 \begin{verbatim}
  <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>
 \end{verbatim}
-gdzie numer węzła w tabliczce to numer kolejnego słowa (słowa są oddzielone spacjami i końcem linii) pomnożone przez 10 (żeby umożliwić
-wstawienie kilku węzłów w jednym słowie np. pozwolić na przetłumaczenie jednego słowa na sekwencję trzech klinów). 
+gdzie numer węzła w tabliczce to numer kolejnego słowa (słowa są oddzielone spacjami i końcem linii) pomnożone przez 10 
+(żeby umożliwić wstawienie kilku węzłów w jednym słowie np. pozwolić na przetłumaczenie jednego słowa na sekwencję trzech klinów). 
 
 
 Przerywane linie na diagramie encji oznaczają opisany powyżej związek pomiędzy id węzła (node1\_id i node2\_id) 
@@ -144,7 +142,6 @@ c.value LIKE 'wartosc'
 
 
 \subsubsection{Tłumaczenie zapytań o treść tabliczki}
-%Została zaimplementowana tylko jedna konstrukcja złożona - przy zapytaniu o treść tabliczki (pole ''text``).
 Przy tłumaczeniu zapytań o treść tabliczki
 korzystamy z przedstawienia treści tabliczki w formie grafu.
 
@@ -266,5 +263,5 @@ FROM
 \subsection{Database\_postgres}
 
 Odpowiada za wywołanie zapytania w konkretnej bazie i zapisanie wyniku do struktury Tablets.
- Korzysta z pliku database.conf, który zawiera dane dostępu do bazy (host, port, użytkownik, hasło, nazwa bazy)
+ Korzysta z pliku database.conf, który zawiera dane dostępu do bazy (nazwa bazy, host, port, użytkownik, hasło)
 oraz biblioteki libpq-fe.h do PostgreSQL.

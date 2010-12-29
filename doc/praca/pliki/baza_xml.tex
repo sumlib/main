@@ -21,8 +21,10 @@
 Schemat dokumentu zamieszczony powyżej jest graficznym przedstawieniem dokumentu XML Schema (dodatek \ref{appendix:xmlsch}) 
 wygenerowanym przez program Oxygen.
 
-Przy jego tworzeniu, podobnie jak w bazie relacyjnej, skorzystałyśmy z pomysłu dra Wojciecha Jaworskiego, 
-aby przedstawić treść tabliczki w formie grafu. 
+Jest on oparty, podobnie jak w bazie postgres, na pomyśle dra Wojciecha Jaworskiego, 
+ aby przedstawić treść tabliczki w formie grafu. 
+% Przy jego tworzeniu, podobnie jak w bazie relacyjnej, skorzystałyśmy z pomysłu dra Wojciecha Jaworskiego, 
+% aby przedstawić treść tabliczki w formie grafu. 
 Każda krawędź tego grafu (odpowiadająca odczytowi) jest oddzielnym elementem, zawierającym atrybuty \textit{node1}, \textit{node2} 
 i \textit{symbol}.
 Atrybuty \textit{node1} oraz \textit{node2} oznaczają numery węzłów grafu,
@@ -33,7 +35,8 @@ Metadane tabliczek przechowywane są w postaci podelementów elementu \textit{ta
 
 
 \subsection{Translator\_xml}
-Do przeszukiwania dokumentu XML wykorzystujemy język XQuery, który jest częścią rekomendacji W3C dotyczącej XML.\\
+% TODO: jest
+Do przeszukiwania dokumentu XML wykorzystywany jest język XQuery, który jest częścią rekomendacji W3C dotyczącej XML.\\
 Proste zapytanie TQL jest tłumaczone na pojedynczą konstrukcję FLWOR (For Let Where Order by Return).\\
 
 \subsubsection{Stałe fragmenty zapytania}

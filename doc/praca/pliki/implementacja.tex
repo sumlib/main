@@ -3,6 +3,7 @@
  \includegraphics[width=450px,bb=0 0 608 517]{../diagramy/struktura2.pdf}
  % struktura.pdf: 608x517 pixel, 72dpi, 21.45x18.24 cm, bb=0 0 608 517
  \caption{Struktura systemu korzystającego z translatora}
+ \label{struktura_systemu}
 \end{figure}
 
 \begin{figure}
@@ -10,26 +11,33 @@
  \includegraphics[width=500px]{../diagramy/pakiety.pdf}
  % pakiety.pdf: 585x300 pixel, 72dpi, 20.64x10.58 cm, bb=0 0 585 300
  \caption{Podział programu na moduły}
+ \label{moduly}
 \end{figure}
 Jednym z głównych założeń języka TQL, szczególnie ważnym z punktu widzenia implementacji, jest niezależność od struktury danych.
-W związku z tym istotną cechą translatora jest możliwość dostosowania do współpracy z różnymi bazami danych.
+W związku z tym istotną cechą translatora jest możliwość dostosowania  go do współpracy z różnymi bazami danych.
 %Jednym z głównych wymagań postawionych przed translatorem, żeby można było podłączyć różne bazy danych.
- Wynikiem tego jest podział translatora na 2 rodzaje modułów:
+ Wynikiem tego jest podział translatora na 2 rodzaje modułów (rysunek \ref{moduly}):
 \begin{enumerate}
- \item \textbf{Podstawowe} -- niezależne od struktury danych i zajmujące się głównie parsowaniem i analizą składniową zapytania.
- \item \textbf{Wymienne} -- zależne od struktury danych, tłumaczące zapytanie TQL na język odpowiedni dla używanej bazy danych
+ \item \textbf{Podstawowe} -- niezależne od struktury danych, zajmujące się głównie parsowaniem i analizą składniową zapytania.
+ \item \textbf{Wymienne} -- zależne od struktury danych, tłumaczące zapytanie z TQL na język odpowiedni dla używanej bazy danych
 i wywołujące je.
 \end{enumerate}
- W niniejszej pracy przedstawiamy dwie prototypowe implementacje, zawierające własne zestawy modułów wymiennych:
+Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, który korzysta z translatora TQL. Taki system, oprócz modułów podstawowych translatora, zawiera bazę tabliczek w dowolnej formie, implemetację modułów wymiennych umożliwiającą korzystanie z tej bazy, oraz interfejs użytkownika - do wprowadzania zapytań i wyświetlania wyników. \\
+
+ W niniejszej pracy prezentujemy dwie prototypowe implementacje translatora, zawierające własne zestawy modułów wymiennych:
   \begin{itemize}
    \item dla bazy PostgreSQL
    \item dla bazy XML
   \end{itemize}
-  Wybór modułów wymiennych odbywa się na poziomie kompilacji. Stworzony przez nas makefile domyślnie buduje obie implementacje translatora TQL.
+  Wybór modułów wymiennych odbywa się na poziomie kompilacji.
+%TODO tu mi brakuje jakiego wyjaśnienia co to znaczy albo jakie ma skutki, że to jest na poziomie kompilacji.
+ Stworzony przez nas Makefile domyślnie buduje obie implementacje translatora TQL.
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
 
 \chapter{Moduły podstawowe}
+
+W tym rozdziale przedstawimy dokładniej poszczególne moduły podstawowe translatora.
 
 \section{Parser}
 Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Następnie zostały w nim wprowadzone modyfikacje:
@@ -39,7 +47,7 @@ Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Następnie zost
 \item usunięcie niepotrzebnych funkcji z interfejsu,
 \item uporządkowanie kodu.
 \end{itemize}
-Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h.
+Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h. Główna funkcja tego modułu to parseComplexQuery(FILE *inp). Argumentem jest wskaźnik do pliku zawierającego zapytanie TQL, a wynikiem odpowiednie drzewo struktury składniowej.
 Na parser składają się następujące pliki:
 \begin{itemize}
  \item Parser.cpp
@@ -49,9 +57,9 @@ Na parser składają się następujące pliki:
 \end{itemize}
 
 \section{Analizator kontekstowy}
-Moduł analizuje drzewo struktury składniowej w następujący sposób:
+Podstawową funkcją w tym module jest analyse(ComplexQuery complexQuery), której argumentem oraz wynikiem jest drzewo struktury składniowej zapytania TQL. Funkcja:
 \begin{itemize}
- \item sprawdza, czy podano prawidłowe nazwy pól,  %to co jest po lewej w linii zapytania jest nazwą pola.
+ \item sprawdza, czy podano prawidłowe nazwy pól, na podstawie których następuje wyszkukiwanie,  %to co jest po lewej w linii zapytania jest nazwą pola.
 \item upraszcza drzewo - z wywołania zapytania (wywołanie \textit{search in}) tworzy zapytanie proste.
 \end{itemize}
 Składa się z następujących plików:
@@ -61,7 +69,7 @@ Składa się z następujących plików:
 \end{itemize}
 
 \section{Translator}
-Zadaniem translatora jest przetłumaczenie drzewa składni abstrakcyjnej na zapytanie w docelowym języku. 
+Zadaniem translatora jest przetłumaczenie drzewa składni abstrakcyjnej na zapytanie w docelowym języku.
 Składa się z następujących plików:
 \begin {itemize}
  \item Translator.cpp
@@ -71,8 +79,8 @@ Składa się z następujących plików:
 \end {itemize}
 
 Tłumaczenie poszczególnych elementów drzewa zależy od implementacji interfejsu zawartego w pliku Translator\_interface.h. 
-Funkcja translate() przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_interface.
-Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult(), aby przekazać je do modułu bazy.
+Funkcja translate(ComplexQuery complexQuery) przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_interface.
+Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult(), aby przekazać je jako wynik, ktory następnie trafia do modułu bazy.
 
 \section{Baza}
 Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - jako XML.
@@ -84,9 +92,10 @@ Składa się z następujących plików:
 % \item Database\_config.c (implementacja interfejsu z Database\_conf.h, zależny od wyboru bazy danych itp)
 \end {itemize}
 
-Wywołuje funkcję getTablets() z Database\_interface.h, jako parametr podając przetłumaczoną treść zapytania. 
-Funkcja ta zwraca strukturę danych Tablets, wypełnioną informacjami o wyszukanych tabliczkach.
-Następnie na podstawie otrzymanej struktury moduł tworzy dokument XML.
+Główną funkcją w tym module jest getXmlFromQuery(char *query), która
+wywołuje funkcję getTablets(char *query) z Database\_interface.h, jako parametr podając przetłumaczoną treść zapytania. 
+Dostaje w wyniku strukturę danych Tablets, wypełnioną informacjami o wyszukanych tabliczkach.
+Następnie na podstawie otrzymanej struktury tworzy dokument XML i przekazuje go jako wynik wywołania zapytania.
 \newline
 Definicja struktury Tablets:
 \begin{verbatim}

@@ -28,6 +28,8 @@ Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, kt
   \end{itemize}
   Wybór modułów wymiennych odbywa się na poziomie kompilacji.
 %TODO tu mi brakuje jakiego wyjaśnienia co to znaczy albo jakie ma skutki, że to jest na poziomie kompilacji.
+% skutki: jeden skompilowany translator jest dla jednego typu bazy danych - jest z jednej strony lżejszy z drugiej mniej 
+% uniwersalny. Jak chcemy inny - musimy przekompilwać. Krzysiek mówi, że jedyną zaletą jest to, że to jest prostsze
  Stworzony przez nas Makefile domyślnie buduje obie implementacje translatora TQL.
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
@@ -131,6 +133,7 @@ typedef struct{
 
 \section{Pliki pomocnicze}
 % TODO: wytłumaczyć co to jest BNFC??
+% nom, można by. tylko jakoś krótko (-;
 Definicje struktur danych i funkcji służących do budowy drzewa struktury składniowej (wygenerowane za pomocą BNFC \cite{bnfc}, następnie uproszczone):
 \begin{itemize}
  \item Absyn.cpp

@@ -1,20 +1,7 @@
-\begin{figure}[h]
- \centering
- \includegraphics[width=450px,bb=0 0 608 517]{../diagramy/struktura2.pdf}
- % struktura.pdf: 608x517 pixel, 72dpi, 21.45x18.24 cm, bb=0 0 608 517
- \caption{Struktura systemu korzystającego z translatora}
- \label{struktura_systemu}
-\end{figure}
 
-\begin{figure}
- \centering
- \includegraphics[width=500px]{../diagramy/pakiety.pdf}
- % pakiety.pdf: 585x300 pixel, 72dpi, 20.64x10.58 cm, bb=0 0 585 300
- \caption{Podział programu na moduły}
- \label{moduly}
-\end{figure}
+
 Jednym z głównych założeń języka TQL, szczególnie ważnym z punktu widzenia implementacji, jest niezależność od struktury danych.
-W związku z tym istotną cechą translatora jest możliwość dostosowania  go do współpracy z różnymi bazami danych.
+W związku z tym istotną cechą programu tłumaczęcego zapytania w TQL (translatora) jest możliwość dostosowania  go do współpracy z różnymi bazami danych.
 %Jednym z głównych wymagań postawionych przed translatorem, żeby można było podłączyć różne bazy danych.
  Wynikiem tego jest podział translatora na 2 rodzaje modułów (rysunek \ref{moduly}):
 \begin{enumerate}
@@ -22,6 +9,16 @@ W związku z tym istotną cechą translatora jest możliwość dostosowania  go 
  \item \textbf{Wymienne} -- zależne od struktury danych, tłumaczące zapytanie z TQL na język odpowiedni dla używanej bazy danych
 i wywołujące je.
 \end{enumerate}
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=450px]{../diagramy/pakiety.pdf}
+ % pakiety.pdf: 585x300 pixel, 72dpi, 20.64x10.58 cm, bb=0 0 585 300
+ \caption{Podział programu na moduły}
+ \label{moduly}
+\end{figure}
+
+
 Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, który korzysta z translatora TQL. Taki system, oprócz modułów podstawowych translatora, zawiera bazę tabliczek w dowolnej formie, implemetację modułów wymiennych umożliwiającą korzystanie z tej bazy, oraz interfejs użytkownika - do wprowadzania zapytań i wyświetlania wyników. \\
 
  W niniejszej pracy prezentujemy dwie prototypowe implementacje translatora, zawierające własne zestawy modułów wymiennych:
@@ -34,6 +31,13 @@ Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, kt
  Stworzony przez nas Makefile domyślnie buduje obie implementacje translatora TQL.
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=450px,bb=0 0 608 517]{../diagramy/struktura2.pdf}
+ % struktura.pdf: 608x517 pixel, 72dpi, 21.45x18.24 cm, bb=0 0 608 517
+ \caption{Struktura systemu korzystającego z translatora}
+ \label{struktura_systemu}
+\end{figure}
 
 \chapter{Moduły podstawowe}
 
@@ -80,7 +84,7 @@ Składa się z następujących plików:
 
 Tłumaczenie poszczególnych elementów drzewa zależy od implementacji interfejsu zawartego w pliku Translator\_interface.h. 
 Funkcja translate(ComplexQuery complexQuery) przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_interface.
-Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult(), aby przekazać je jako wynik, ktory następnie trafia do modułu bazy.
+Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult() i przekazuje je jako wynik.
 
 \section{Baza}
 Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - jako XML.
@@ -97,7 +101,8 @@ wywołuje funkcję getTablets(char *query) z Database\_interface.h, jako paramet
 Dostaje w wyniku strukturę danych Tablets, wypełnioną informacjami o wyszukanych tabliczkach.
 Następnie na podstawie otrzymanej struktury tworzy dokument XML i przekazuje go jako wynik wywołania zapytania.
 \newline
-Definicja struktury Tablets:
+Struktura Tablets zawiera metadane tabliczki, jej treść oraz informację o frazach, na podstawie których tabliczka została znaleziona. 
+Poniżej przedstawiamy definicję struktury Tablets:
 \begin{verbatim}
 typedef struct{    
     char* id;
@@ -111,8 +116,7 @@ typedef struct{
     char* subgenre;
     char* collection;
     char* text;
-    Tags* tags; // specjalnie oznaczone miejsca w tekscie
-                // (w pierwszej wersji frazy wyszukiwania)
+    Tags* tags; // specjalnie oznaczone miejsca w tekscie - frazy wyszukiwania
 } Tablet;
 
 typedef struct{

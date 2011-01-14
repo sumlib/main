@@ -1,7 +1,8 @@
 
 
 Jednym z głównych założeń języka TQL, szczególnie ważnym z punktu widzenia implementacji, jest niezależność od struktury danych.
-W związku z tym istotną cechą programu tłumaczęcego zapytania w TQL (translatora) jest możliwość dostosowania  go do współpracy z różnymi bazami danych.
+W związku z tym istotną cechą programu tłumaczącego zapytania w TQL (translatora) jest możliwość dostosowania  
+go do współpracy z różnymi bazami danych.
 %Jednym z głównych wymagań postawionych przed translatorem, żeby można było podłączyć różne bazy danych.
  Wynikiem tego jest podział translatora na 2 rodzaje modułów (rysunek \ref{moduly}):
 \begin{enumerate}
@@ -21,12 +22,10 @@ i wywołujące je.
 
 Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, który korzysta z translatora TQL. Taki system, oprócz modułów podstawowych translatora, zawiera bazę tabliczek w dowolnej formie, implemetację modułów wymiennych umożliwiającą korzystanie z tej bazy, oraz interfejs użytkownika - do wprowadzania zapytań i wyświetlania wyników. \\
 
- W niniejszej pracy prezentujemy dwie prototypowe implementacje translatora, zawierające własne zestawy modułów wymiennych:
-  \begin{itemize}
-   \item dla bazy PostgreSQL
-   \item dla bazy XML
-  \end{itemize}
-  Wybór modułów wymiennych odbywa się na poziomie kompilacji.
+ W niniejszej pracy prezentujemy dwie prototypowe implementacje translatora, zawierające własne zestawy modułów wymiennych: 
+dla bazy PostgreSQL oraz XML.
+   Wybór modułów wymiennych odbywa się na poziomie kompilacji.
+
 %TODO tu mi brakuje jakiego wyjaśnienia co to znaczy albo jakie ma skutki, że to jest na poziomie kompilacji.
 % skutki: jeden skompilowany translator jest dla jednego typu bazy danych - jest z jednej strony lżejszy z drugiej mniej 
 % uniwersalny. Jak chcemy inny - musimy przekompilwać. Krzysiek mówi, że jedyną zaletą jest to, że to jest prostsze
@@ -46,14 +45,21 @@ Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, kt
 W tym rozdziale przedstawimy dokładniej poszczególne moduły podstawowe translatora.
 
 \section{Parser}
+% TODO: wytłumaczyć co to jest BNFC??
+% nom, można by. tylko jakoś krótko (-;
 Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Następnie zostały w nim wprowadzone modyfikacje:
+% TODO: wywalić wypunktowanie
 \begin{itemize}
 \item poprawienie nazw stałych oznaczających symbole na bardziej intuicyjne,
 \item dodanie tablicy symboli,
 \item usunięcie niepotrzebnych funkcji z interfejsu,
 \item uporządkowanie kodu.
 \end{itemize}
-Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h. Główna funkcja tego modułu to parseComplexQuery(FILE *inp). Argumentem jest wskaźnik do pliku zawierającego zapytanie TQL, a wynikiem odpowiednie drzewo struktury składniowej.
+Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h. 
+
+
+Główna funkcja tego modułu to \verb|parseComplexQuery(FILE *inp)|. Argumentem jest wskaźnik do pliku zawierającego zapytanie TQL, 
+a wynikiem odpowiednie drzewo struktury składniowej.
 Na parser składają się następujące pliki:
 \begin{itemize}
  \item Parser.cpp
@@ -63,7 +69,8 @@ Na parser składają się następujące pliki:
 \end{itemize}
 
 \section{Analizator kontekstowy}
-Podstawową funkcją w tym module jest analyse(ComplexQuery complexQuery), której argumentem oraz wynikiem jest drzewo struktury składniowej zapytania TQL. Funkcja:
+Podstawową funkcją w tym module jest \verb|analyse(ComplexQuery complexQuery)|, której argumentem oraz wynikiem jest 
+drzewo struktury składniowej zapytania TQL. Funkcja:
 \begin{itemize}
  \item sprawdza, czy podano prawidłowe nazwy pól, na podstawie których następuje wyszkukiwanie,  %to co jest po lewej w linii zapytania jest nazwą pola.
 \item upraszcza drzewo - z wywołania zapytania (wywołanie \textit{search in}) tworzy zapytanie proste.
@@ -85,7 +92,8 @@ Składa się z następujących plików:
 \end {itemize}
 
 Tłumaczenie poszczególnych elementów drzewa zależy od implementacji interfejsu zawartego w pliku Translator\_interface.h. 
-Funkcja translate(ComplexQuery complexQuery) przechodzi całą strukturę drzewa, wywołując w razie potrzeby odpowiednie funkcje z Translator\_interface.
+Funkcja \verb|translate(ComplexQuery complexQuery)| przechodzi całą strukturę drzewa, wywołując w razie 
+potrzeby odpowiednie funkcje z Translator\_interface.
 Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult() i przekazuje je jako wynik.
 
 \section{Baza}
@@ -98,8 +106,8 @@ Składa się z następujących plików:
 % \item Database\_config.c (implementacja interfejsu z Database\_conf.h, zależny od wyboru bazy danych itp)
 \end {itemize}
 
-Główną funkcją w tym module jest getXmlFromQuery(char *query), która
-wywołuje funkcję getTablets(char *query) z Database\_interface.h, jako parametr podając przetłumaczoną treść zapytania. 
+Główną funkcją w tym module jest \verb|getXmlFromQuery(char *query)|, która
+wywołuje funkcję \verb|getTablets(char *query|) z Database\_interface.h, jako parametr podając przetłumaczoną treść zapytania. 
 Dostaje w wyniku strukturę danych Tablets, wypełnioną informacjami o wyszukanych tabliczkach.
 Następnie na podstawie otrzymanej struktury tworzy dokument XML i przekazuje go jako wynik wywołania zapytania.
 \newline
@@ -132,9 +140,8 @@ typedef struct{
 %Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
 \section{Pliki pomocnicze}
-% TODO: wytłumaczyć co to jest BNFC??
-% nom, można by. tylko jakoś krótko (-;
-Definicje struktur danych i funkcji służących do budowy drzewa struktury składniowej (wygenerowane za pomocą BNFC \cite{bnfc}, następnie uproszczone):
+Definicje struktur danych i funkcji służących do budowy drzewa struktury składniowej (wygenerowane za pomocą BNFC \cite{bnfc}, 
+następnie uproszczone):
 \begin{itemize}
  \item Absyn.cpp
  \item Absyn.h

@@ -25,9 +25,9 @@ Największym z nich jest brak wpływu na postać wyniku, co utrudnia np. zbieran
 (m. in. nie da się spytać o ilość tabliczek spełniających dane kryteria). 
 Można jednak stworzyć narzędzia do samej prezentacji wyników zapytań, które pokonają to ograniczenie. 
 
-% TODO: niby jest to zgodne z założeniem, ale może warto zwrócić na to uwagę?
-% Poza tym TQL jest jedynie językiem wyszukiwania - nie można z jego pomocą zmieniać danych znajdujących się w bazie, 
-% ani dodawać nowych. Akceptujemy to, gdyż zgodnie z definicją języków dziedzinowych, TQL jest językiem wąskiego zastosowania.
+% TODO: poprawić sformułowanie
+Poza tym TQL jest jedynie językiem wyszukiwania - nie można z jego pomocą zmieniać danych znajdujących się w bazie, 
+ ani dodawać nowych. Akceptujemy to, gdyż zgodnie z definicją języków dziedzinowych, TQL jest językiem wąskiego zastosowania.
 
 %zalety
 Dzięki specyficznym cechom języka TQL, można również dostosować go do wykorzystania w innych dziedzinach. 
@@ -40,7 +40,6 @@ W ramach niniejszej pracy zaprezentowane zostały dwie implementacje języka TQL
 Po stworzeniu pierwszej czas poświęcony na drugą był już niewielki. 
 Największym zadaniem było przetłumaczenie poszczególnych konstrukcji TQL na XQuery. 
 Pozwala to sądzić, że każda kolejna implementacja, dla różnych typów baz i różnych schematów danych, 
-% TODO: tak lepiej?
 nie będzie wymagała dużego nakładu pracy. 
 
 
@@ -48,14 +47,10 @@ nie będzie wymagała dużego nakładu pracy.
 \section*{Możliwości rozwoju}
 \addcontentsline{toc}{section}{Możliwości rozwoju}
 %co dalej
-% TODO: nie jestem pewna, czy powinnyśmy pisać co chcemy, czy co można z tym zrobić, bez zaznaczania, że to będziemy my (-;
-%sprytne, popieram :)
 W pierwszej kolejności należy stworzyć własną stronę internetową z wyszukiwarką tabliczek, 
 która byłaby dostępna dla Wydziału Historii UW i rozwijana z pomocą z naukowców z tej instytucji. 
-%TODO: właściwie już jest zaczęte. Wspomnieć?
+%TODO: właściwie już jest zaczęte. Wspomnieć? - spytać Dąbrowskiego
 Poza tym warto spróbować nawiązać współpracę z projektem CDLI, (zob. rozdział 3.).
-% TODO: napisać, że wymieniliśmy już wstępne maile? Nie wykazali się dużym zainteresowaniem, 
-ale może nie przedstawiłyśmy jasno o co chodzi?
 Implementacja TQL dla bazy CDLI, wraz z interfejsem www, z pewnością byłaby przydatnym narzędziem dla sumerologów na całym świecie.
 
 W dalszej perspektywie można rozwinąć język TQL między innymi o wyszukiwanie wg klinów i wg tagów.
@@ -65,29 +60,3 @@ Dodatkowo warto stworzyć narzędzie do analizy uszkodzonych fragmentów i wykry
 Dzięki niemu można by zmniejszyć ryzyko pominięcia istotnych tabliczek podczas wyszukiwania. 
 
 Rozwój projektu będzie zależał również od potrzeb zgłaszanych przez samych sumerologów.
-
-
-% Jeśli TQL spotka się z zainteresowaniem naukowców, będziemy rozwijać język dodając przede wszystkim wyszukiwanie po klinach i po tagach. Dodatkowo chciałybyśmy stworzyć narzędzie do analizy uszkodzonych fragmentów i wykrywania pomyłek (np. literówek) w odczytanych tekstach. Bez takiego narzędzia można przy wyszukiwaniu pominąć cenne tabliczki zawierające pożądaną treść. Dalszy rozwój projektu będzie zależał przede wszystkim od potrzeb zgłaszanych przez sumerologów.
-
-
-
-%rozszerzenie języka o nowe konstrukcje jest trudne, 
-
-
-%Wnioski:
-%=> Drugą implementację pisało się znacznie łatwiej
-%=> udało się osiągnąć założony cel pracy
-%=> istnieje potencjalna możliwość innego wykorzystania programu
-%=> nie ograniczamy ilości pól, po których można wyszukiwać
-%=> cechy TQL:
-%      prosty i intuicyjny przez osoby znające jedynie dziedzinę problemu, -> spytać stępnia 
-%      przystosowany głównie do tekstów, -> tak
-%      minimalnie zmniejsza siłę wyrazu -> nie pozwala na insert i update, ale takie były założenia, poza tym tak
-%      łatwo go rozbudowywać. -> rozszerzenie języka o nowe konstrukcje jest trudne, a o nowe pola proste
-%      użytkownik nie ma wpływu na postać wyniku - język pozwala tylko na określenie kryteriów wyszukiwania,
-% w związku z czym raczej nie nadaje się do statystyk -
-%
-%
-%Jesteśmy z siebie dumne
-%
-%co dalej z tym projektem? cdli, własna wyszukiwarka?

@@ -63,7 +63,20 @@ coś w stylu "Nasze rozwiązanie - język TQL", gdzie byśmy mogły się rozpisa
 Byłoby to trochę powtórzenie tego co jest we wprowadzeniu w podsumowaniu, ale w sumie takie coś powinno się chyba znaleźć też we właściwej części pracy ;)
 
 
+PRACA DOMOWA:
+O> When and how develop
+A> wprowadzenie.tex:11:% TODO: 3x pismo
+A> wprowadzenie.tex:27:%TODO: ``dosyć niewygodne''??????
+O> wprowadzenie.tex:85:% TODO: bibliografia
+O> wczesniejsze_rozwiazania.tex:12:% TODO rozwinąć: co to jest brak elastyczności?
+O> dziedzina_problemu.tex:43:% TODO: dorzucić ``Pierwsze słowo'' jako bibliografię
+A> dziedzina_problemu.tex:79:% TODO: 2 razy wyszukiwania
+O> definicja_jezyka_TQL.tex:3:% TODO: jak się ma do języków dziedzinowych (tak ogólnie niezależnie od implementacji)
+O> implementacja.tex:29:%TODO tu mi brakuje jakiego wyjaśnienia co to znaczy albo jakie ma skutki, że to jest na poziomie kompilacji.
+O> implementacja.tex:48:% TODO: wytłumaczyć co to jest BNFC??
+A> implementacja.tex:51:% TODO: wywalić wypunktowanie
+A> baza_postgres.tex:19:% TODO: co to znaczy ``możliwość odwzorowania treści tabliczki między reprezentacjami''?
+A> podsumowanie.tex:28:% TODO: poprawić sformułowanie
+A> podsumowanie.tex:57:% TODO: napisać, że wyszukiwanie wg klinów wymaga tłumaczenia odczyty -> kliny a wg. tagów narzędzia do ich wykrywania
 
-
-
-
+-> podsumowanie.tex:52:%TODO: właściwie już jest zaczęte. Wspomnieć? - spytać Dąbrowskiego

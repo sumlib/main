@@ -1,12 +1,13 @@
 \chapter{Tablets Query Language}
 
-% TODO: jak się ma do języków dziedzinowych (tak ogólnie niezależnie od implementacji)
 Tablets Query Language (TQL) jest naszą propozycją rozwiązania problemu wyszukiwania tabliczek sumeryjskich.
-Jest to zewnętrzny język dziedzinowy stworzony od podstaw do tego, aby służyć sumerologom jako język zapytań.
-Jego składnia jest bardzo prosta i intuicyjna, co będzie widać na przykładach w rozdziale \ref{chap:semantyka}. %o składni TQL.
-Jednocześnie, dzięki możliwości formułowania skomplikowanych wyrażeń do wyszukiwania na podstawie pojedynczej
-metadanej lub treści tabliczki, oraz możliwości łączenia wielu zapytań w jedno zapytanie złożone,
-TQL ma bardzo dużą siłę wyrazu.
+Jest to zewnętrzny język dziedzinowy stworzony do tego, aby służyć sumerologom jako język zapytań.
+Formalna definicja składni TQL znajduje się w rozdziale \ref{chap:skladnia}.
+Jest ona zaprojektowana od podstaw, dzięki czemu jest bardzo prosta i intuicyjna, co będzie widać na przykładach opisujących semantykę w rozdziale \ref{chap:semantyka}. 
+Wiele języków dziedzinowych, w przeciwieństwie do TQL, bazuje na istniejących już językach. Są to tzw. wewnętrzne języki dziedzinowe. Jednak w przypadku naszego problemu było to niewskazane rozwiązanie, gdyż składnia przejęta z istniejącego języka zapytań bardziej ogólnego zastosowania byłaby nieintuicyjna, a tworzone zapytania długie i skomplikowane.
+Prostą składnię TQL udało nam się połączyć z dużą siłą wyrazu. Język daje możliwość formułowania złożonych 
+wyrażeń do wyszukiwania na podstawie pojedynczej
+metadanej lub treści tabliczki, oraz możliwość łączenia wielu zapytań w jedno.
 
 Dodatkowo, jednym z głównych założeń przyjętych przy tworzeniu języka TQL jest niezależność od rzeczywistej
 reprezentacji danych. Przy konstruowaniu go nie brałyśmy pod uwagę sposobu fizycznej reprezentacji tabliczek,
@@ -62,7 +63,7 @@ W kolejnych dwóch rozdziałach przedstawimy gramatykę i semantykę zaprojektow
 
 
 
-\chapter{Gramatyka}
+\chapter{\label{chap:skladnia}Gramatyka}
 
 W tym rozdziale przedstawimy gramatykę zaprojektowanego przez nas języka.
 W pierwszej części pokażemy strukturę leksykalną TQL, czyli elementy, z których buduje się zapytania.

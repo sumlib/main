@@ -7,7 +7,7 @@
  \caption{Diagram encji}
 \end{figure}
 Jednym z problemów przy projektowaniu bazy danych był wybór takiej reprezentacji treści tabliczki, 
-żeby efektywnie wyszukiwać zarówno treść konkretnej tabliczki jak i tabliczki, których treść spełnia kryteria
+żeby efektywnie wyszukiwać zarówno treść konkretnej tabliczki jak i tabliczki, których treść spełnia podane kryteria
  (wg odczytów lub zapisu klinowego).
 
 W przypadku pierwszego problemu jako rozwiązanie narzuca się przechowywanie treści
@@ -15,10 +15,11 @@ jako otwarty tekst.
 Natomiast najlepszym rozwiązaniem drugiego jest reprezentacja treści tabliczki
 w formie grafu, którego krawędziami są odczyty i kliny (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}).
 Zdecydowałyśmy się na połączenie obu sposobów. Odczyty oraz kliny przechowujemy w tabelach Reading i Cuneiform, 
-natomiast otwarty tekst w kolumnie show\_text tabeli Tablet.
-% TODO: co to znaczy ``możliwość odwzorowania treści tabliczki między reprezentacjami''?
-% napisać więcej na temat dlaczego jest tak zanim dojdziemy do tego jak jest
-% Jeśli szukamy tabliczki zawierającej jakieś slowa używamy tabelki Reading wpp - tabelki Tablet
+natomiast otwarty tekst w kolumnie show\_text tabeli Tablet. 
+% TODO: jeszcze raz spojrzeć
+Dzięki temu rozwiązaniu, szukając tabliczki zawierającej podane odczyty (lub kliny) korzystamy z reprezentacji
+grafowej w tabelce Reading (lub Cuneiform).
+Jeśli zaś szukamy tabliczki, spełniającej inne kryteria korzystamy z reprezentacji otwartym tekstem w tabelce Tablet.
 Aby zapewnić możliwość odwzorowania treści tabliczki między reprezentacjami, węzły są liczbami postaci:
 \begin{verbatim}
  <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>

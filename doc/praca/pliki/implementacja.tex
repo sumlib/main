@@ -47,14 +47,11 @@ W tym rozdziale przedstawimy dokładniej poszczególne moduły podstawowe transl
 \section{Parser}
 % TODO: wytłumaczyć co to jest BNFC??
 % nom, można by. tylko jakoś krótko (-;
-Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Następnie zostały w nim wprowadzone modyfikacje:
-% TODO: wywalić wypunktowanie
-\begin{itemize}
-\item poprawienie nazw stałych oznaczających symbole na bardziej intuicyjne,
-\item dodanie tablicy symboli,
-\item usunięcie niepotrzebnych funkcji z interfejsu,
-\item uporządkowanie kodu.
-\end{itemize}
+Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Następnie 
+poprawiłyśmy nazwy stałych oznaczających symbole na bardziej intuicyjne,
+dodałyśmy tablicę symboli,
+usunęłyśmy niepotrzebne funkcje z interfejsu
+oraz ogólnie uporządkowałyśmy kod.
 Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h. 
 
 
@@ -70,12 +67,12 @@ Na parser składają się następujące pliki:
 
 \section{Analizator kontekstowy}
 Podstawową funkcją w tym module jest \verb|analyse(ComplexQuery complexQuery)|, której argumentem oraz wynikiem jest 
-drzewo struktury składniowej zapytania TQL. Funkcja:
-\begin{itemize}
- \item sprawdza, czy podano prawidłowe nazwy pól, na podstawie których następuje wyszkukiwanie,  %to co jest po lewej w linii zapytania jest nazwą pola.
-\item upraszcza drzewo - z wywołania zapytania (wywołanie \textit{search in}) tworzy zapytanie proste.
-\end{itemize}
-Składa się z następujących plików:
+drzewo struktury składniowej zapytania TQL. Funkcja ta
+ sprawdza, czy podano prawidłowe nazwy pól, na podstawie których następuje wyszkukiwanie,  %to co jest po lewej w linii zapytania jest nazwą pola.
+oraz upraszcza drzewo - z wywołania zapytania (wywołanie \textit{search in}) tworzy zapytanie proste.
+% TODO: może wcześniej warto zauważyć (przy semantyce języka), że search in to tak naprawdę zapytanie proste
+
+Analizator kontekstowy składa się z następujących plików:
 \begin{itemize}
  \item Context.cpp
  \item Context.h
@@ -137,6 +134,7 @@ typedef struct{
 
 %//miejsca gdzie w tekście są wyniki wyszukiwania
 
+% TODO: tego w końcu nie piszemy?
 %Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
 \section{Pliki pomocnicze}

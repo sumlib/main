@@ -71,7 +71,6 @@ O> dziedzina_problemu.tex:43:% TODO: dorzucić ``Pierwsze słowo'' jako bibliogr
 O> definicja_jezyka_TQL.tex:3:% TODO: jak się ma do języków dziedzinowych (tak ogólnie niezależnie od implementacji)
 O> implementacja.tex:29:%TODO tu mi brakuje jakiego wyjaśnienia co to znaczy albo jakie ma skutki, że to jest na poziomie kompilacji.
 O> implementacja.tex:48:% TODO: wytłumaczyć co to jest BNFC??
-A> implementacja.tex:51:% TODO: wywalić wypunktowanie
 A> baza_postgres.tex:19:% TODO: co to znaczy ``możliwość odwzorowania treści tabliczki między reprezentacjami''?
 A> podsumowanie.tex:28:% TODO: poprawić sformułowanie
 A> podsumowanie.tex:57:% TODO: napisać, że wyszukiwanie wg klinów wymaga tłumaczenia odczyty -> kliny a wg. tagów narzędzia do ich wykrywania

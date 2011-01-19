@@ -24,11 +24,9 @@ Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, kt
 
  W niniejszej pracy prezentujemy dwie prototypowe implementacje translatora, zawierające własne zestawy modułów wymiennych: 
 dla bazy PostgreSQL oraz XML.
-   Wybór modułów wymiennych odbywa się na poziomie kompilacji.
-
-%TODO tu mi brakuje jakiego wyjaśnienia co to znaczy albo jakie ma skutki, że to jest na poziomie kompilacji.
-% skutki: jeden skompilowany translator jest dla jednego typu bazy danych - jest z jednej strony lżejszy z drugiej mniej 
-% uniwersalny. Jak chcemy inny - musimy przekompilwać. Krzysiek mówi, że jedyną zaletą jest to, że to jest prostsze
+   Wybór modułów wymiennych odbywa się na poziomie kompilacji. Jest to rozwiązanie najprostsze do zaimplementowania,
+ ale dla każdego rodzaju bazy danych wymaga osobnej kompilacji.
+%TODO: dwa razy kompilacji
  Stworzony przez nas Makefile domyślnie buduje obie implementacje translatora TQL.
 %Bez względu na wybór modułu wymiennego interfejs całego translatora jest taki sam we wszystkich instancjach.
 
@@ -45,18 +43,24 @@ dla bazy PostgreSQL oraz XML.
 W tym rozdziale przedstawimy dokładniej poszczególne moduły podstawowe translatora.
 
 \section{Parser}
-% TODO: wytłumaczyć co to jest BNFC??
-% nom, można by. tylko jakoś krótko (-;
-Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Następnie 
-poprawiłyśmy nazwy stałych oznaczających symbole na bardziej intuicyjne,
+Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Na podstawie etykietowanej gramatyki BNF 
+narzędzie to tworzy parser oraz szkielet analizatora składni w wybranym języku: C, C++, C\#, F\#, Haskell, Java lub OCaml. 
+BNFC tworzy również pliki wejściowe dla generatora leksera (np. Flex) oraz dla generatora parsera (np. Bison). 
+Dodatkowym produktem jest dokument w formacie Latex, który zawiera specyfikację zaprojektowanego języka.
+
+
+Po automatycznym utworzeniu parsera, 
+poprawiłyśmy nazwy stałych oznaczających symbole na bardziej intuicyjne.
+Następnie
 dodałyśmy tablicę symboli,
 usunęłyśmy niepotrzebne funkcje z interfejsu
-oraz ogólnie uporządkowałyśmy kod.
-Moduł ten parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h. 
+i ogólnie uporządkowałyśmy kod.
 
+Moduł  parsuje zapytanie w języku TQL, tworząc drzewo struktury składniowej, które jest zdefiniowane w pliku pomocniczym Absyn.h.
 
 Główna funkcja tego modułu to \verb|parseComplexQuery(FILE *inp)|. Argumentem jest wskaźnik do pliku zawierającego zapytanie TQL, 
 a wynikiem odpowiednie drzewo struktury składniowej.
+
 Na parser składają się następujące pliki:
 \begin{itemize}
  \item Parser.cpp
@@ -64,6 +68,7 @@ Na parser składają się następujące pliki:
  \item TQL.y % tłumaczony na Parser.c
  \item TQL.l % tłumaczony na Lexer.c
 \end{itemize}
+
 
 \section{Analizator kontekstowy}
 Podstawową funkcją w tym module jest \verb|analyse(ComplexQuery complexQuery)|, której argumentem oraz wynikiem jest 

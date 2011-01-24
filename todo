@@ -64,6 +64,10 @@ Byłoby to trochę powtórzenie tego co jest we wprowadzeniu w podsumowaniu, ale
 
 
 PRACA DOMOWA:
-O> wprowadzenie.tex:85:% TODO: bibliografia
+A> pliki/baza_postgres.tex:19:% TODO: dwie reprezentacje - jeszcze przejrzeć
+O> pliki/definicja_jezyka_TQL.tex:250:% TODO: warto zauważyć, że search in to tak naprawdę zapytanie proste
+A> pliki/implementacja.tex:30:%TODO: przeformułować (moduły wymienne na poziomie kompilacji)
+O> pliki/implementacja.tex:143:% TODO: przeredagować (info w bazie)
+A> pliki/wprowadzenie.tex:83:% TODO: bibliografia - język dziedzinowy
 
--> podsumowanie.tex:52:%TODO: właściwie już jest zaczęte. Wspomnieć? - spytać Dąbrowskiego
+-> pliki/podsumowanie.tex:51:%TODO: właściwie już jest zaczęte. Wspomnieć? - spytać Dąbrowskiego

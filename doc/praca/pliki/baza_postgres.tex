@@ -16,10 +16,11 @@ Natomiast najlepszym rozwiązaniem drugiego jest reprezentacja treści tabliczki
 w formie grafu, którego krawędziami są odczyty i kliny (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}).
 Zdecydowałyśmy się na połączenie obu sposobów. Odczyty oraz kliny przechowujemy w tabelach Reading i Cuneiform, 
 natomiast otwarty tekst w kolumnie show\_text tabeli Tablet. 
-% TODO: jeszcze raz spojrzeć
+% TODO: dwie reprezentacje - jeszcze przejrzeć
+% nie wiadomo po co jest odwzorowanie
 Dzięki temu rozwiązaniu, szukając tabliczki zawierającej podane odczyty (lub kliny) korzystamy z reprezentacji
 grafowej w tabelce Reading (lub Cuneiform).
-Jeśli zaś szukamy tabliczki, spełniającej inne kryteria korzystamy z reprezentacji otwartym tekstem w tabelce Tablet.
+Natomiast zawsze korzystamy z reprezentacji otwartym tekstem w tabelce Tablet w celu wyświetlenia treści tabliczki.
 Aby zapewnić możliwość odwzorowania treści tabliczki między reprezentacjami, węzły są liczbami postaci:
 \begin{verbatim}
  <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>

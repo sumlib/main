@@ -57,7 +57,7 @@ konkretną dziedziną.
 
 Wyróżnia się dwa rodzaje języków dziedzinowych - ``wewnętrzne`` (ang. \emph{internal}), które zachowują składnię istniejących już języków 
 i ograniczają tylko ich możliwości, oraz ``zewnętrzne`` (ang. \emph{exernal}), które są zupełnie nowymi językami, tłumaczonymi do 
-istniejących wcześniej. W naszym przypadku narzucającym się podejściem było stworzenie nowego, zewnętrznego DSL, zaprojektowanego 
+istniejących wcześniej \cite{fowler}. W naszym przypadku narzucającym się podejściem było stworzenie nowego, zewnętrznego DSL, zaprojektowanego 
 specjalnie do wyszukiwania tabliczek sumeryjskich, który miałby składnię przejrzystą dla sumerologa. 
 
 % 3. wybrałyśmy takie podejście bo...
@@ -78,9 +78,12 @@ Wychodząc naprzeciw potrzebom sumerologów prezentujemy stworzony przez nas ję
  Ma także minimalnie ograniczać siłę wyrazu tzn. pozwalać na konstruowanie jak najbardziej skomplikowanych zapytań. Chcemy również, żeby 
 był niezależny od sposobu reprezentacji tabliczek. W niniejszej pracy udowodnimy, że TQL spełnia wszystkie te wymagania. 
 
+% TODO: przerobić - wziąć wzroce z When and how i przeformułować
+% design pattern - language invention
+% implementation pattern - preprocesor => source to source
 Zgodnie z paradygmatem języka dziedzinowego, TQL jest tłumaczony do innych, istniejących wcześniej języków zapytań bardziej 
 ogólnego zastosowania, np. SQL, XQuery \cite{xquery}, odpowiednio do sposobu reprezentacji danych.
-% TODO: bibliografia - język dziedzinowy
+
 
 Sposobem reprezentacji danych nazywamy rodzaj bazy danych (np. relacyjna, obiektowa, XML), konkretną implementację serwera 
 (np. PostgreSQL \cite{postgres}, Zorba \cite{zorba}) oraz schemat danych. Dla każdego takiego sposobu zapytanie w docelowym jzyku może się różnić, a zatem 

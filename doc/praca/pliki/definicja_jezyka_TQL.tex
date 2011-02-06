@@ -231,7 +231,7 @@ oraz wszystkie tabliczki, które:
 \end{itemize}
 
 
-\section{Zapytanie zdefiniowane}
+\section{\label{sec:zdefiniowane} Zapytanie zdefiniowane}
 \begin{verbatim}
  define
   provenience: Gar*a
@@ -247,13 +247,18 @@ Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
 \end{itemize}
 
 \section{Wywołanie zapytania zdefiniowanego}
-% TODO: warto zauważyć, że search in to tak naprawdę zapytanie proste
 \subsection{Zwykłe}
 \begin{verbatim}
 search "zwierzęta w Gar*a"
 \end{verbatim}
 Wynikiem zapytania będą dokładnie te tabliczki, które spełniają wszystkie warunki zapytania ''zwierzęta w Gar*a``.\\
-Takie zapytanie jest równoważne zapytaniu prostemu - wnętrzu zapytania zdefiniowanego.
+Takie zapytanie jest równoważne następującemu zapytaniu prostemu:
+\begin{verbatim}
+  provenience: Gar*a
+  period: Ur III
+  text: "udu ban"/mash2
+\end{verbatim}
+Zakładając, że \textit{''zwierzęta w Gar*a``} są jak w sekcji \ref{sec:zdefiniowane}.
 \subsection{Z dodatkowym warunkiem wyszukiwania}
 \begin{verbatim}
 search
@@ -265,6 +270,13 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
  \item spełniają wszystkie warunki zapytania ''zwierzęta w Gar*a``
 \item zawierają słowo ''adad-tilati``.
 \end{itemize}
-Łatwo zauważyć, że jest to część wspólna zbiorów wyników dwóch zapytań prostych. Jedno z nich to wnętrze zapytania zdefiniowanego, a drugie to dodatkowe warunki wyszukiwania.
-
+% Łatwo zauważyć, że jest to część wspólna zbiorów wyników dwóch zapytań prostych. 
+% Jedno z nich to wnętrze zapytania zdefiniowanego, a drugie to dodatkowe warunki wyszukiwania.
+Takie zapytanie jest równoważne następującemu zapytaniu prostemu:
+\begin{verbatim}
+  provenience: Gar*a
+  period: Ur III
+  text: ("udu ban"/mash2)+adad-tilati
+\end{verbatim}
+Zakładając, że \textit{''zwierzęta w Gar*a``} są jak w sekcji \ref{sec:zdefiniowane}.
 

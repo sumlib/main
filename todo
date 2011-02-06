@@ -64,6 +64,8 @@ Byłoby to trochę powtórzenie tego co jest we wprowadzeniu w podsumowaniu, ale
 
 
 PRACA DOMOWA:
-A> pliki/wprowadzenie.tex:83:% TODO: bibliografia - język dziedzinowy
+A> sumer.tex:121:%TODO: przeformułować - powtórzenia
+O> sumer.tex:175:bibitem{fowler} Martin Fowler, textit{Domain Specific Languages}, % TODO: sprawdzić która strona itp.
+O> pliki/wprowadzenie.tex:81:% TODO: przerobić - wziąć wzroce z When and how i przeformułować
 
 -> pliki/podsumowanie.tex:51:%TODO: właściwie już jest zaczęte. Wspomnieć? - spytać Dąbrowskiego

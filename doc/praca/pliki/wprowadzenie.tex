@@ -78,17 +78,25 @@ Wychodząc naprzeciw potrzebom sumerologów prezentujemy stworzony przez nas ję
  Ma także minimalnie ograniczać siłę wyrazu tzn. pozwalać na konstruowanie jak najbardziej skomplikowanych zapytań. Chcemy również, żeby 
 był niezależny od sposobu reprezentacji tabliczek. W niniejszej pracy udowodnimy, że TQL spełnia wszystkie te wymagania. 
 
-% TODO: przerobić - wziąć wzroce z When and how i przeformułować
-% design pattern - language invention
-% implementation pattern - preprocesor => source to source
-Zgodnie z paradygmatem języka dziedzinowego, TQL jest tłumaczony do innych, istniejących wcześniej języków zapytań bardziej 
-ogólnego zastosowania, np. SQL, XQuery \cite{xquery}, odpowiednio do sposobu reprezentacji danych.
+
+Projektowanie języka dziedzinowego może polegać na wykorzystaniu istniejącego języka - wzorzec "Languge exploitation"
+\cite{mernik} lub na stworzeniu języka od podstaw, innego niż istniejące do tej pory - wzorzec "Language invention" \cite{mernik}.
+Ze względu na to, że TQL ma być używany głównie przez osoby nie znające języków zapytań do baz danych,
+zdecydowałyśmy się na to drugie podeście. Pozwala ono na jak najlepsze dopasowanie TQL do potrzeb przyszłych
+użytkowników.
+
+
+Przy wyborze sposobu implementacji TQL kierowałyśmy się potrzebą umożliwienia pracy z różnymi bazami tabliczek.
+Aby to zapewnić, zastosowałyśmy wzorzec "Preprocessor" \cite{mernik}, a konkretnie
+"Source-to-source transformation". Oznacza to, że TQL jest za automatycznie tłumaczony do innych,
+istniejących wcześniej języków zapytań bardziej ogólnego zastosowania, np. SQL, XQuery \cite{xquery},
+odpowiednio do sposobu reprezentacji danych.
 
 
 Sposobem reprezentacji danych nazywamy rodzaj bazy danych (np. relacyjna, obiektowa, XML), konkretną implementację serwera 
 (np. PostgreSQL \cite{postgres}, Zorba \cite{zorba}) oraz schemat danych. Dla każdego takiego sposobu zapytanie w docelowym jzyku może się różnić, a zatem 
 różnić się będzie również program tłumaczący TQL na ten język.
-Oznacza to, że dla każdego sposobu reprezentacji danych należy stworzyć oddzielny program tłumaczący. 
+Wynika z tego, że dla każdego sposobu reprezentacji danych należy stworzyć oddzielny program tłumaczący. 
 %którego zadaniem będzie przetłumaczenie zapytania na odpowiedni do tej reprezentacji język. 
 W ramach niniejszej pracy oprócz języka TQL zaprezentujemy dwie prototypowe implementacje komponentu do wyszukiwarki, zawierającego 
 m.in. program tłumaczący.

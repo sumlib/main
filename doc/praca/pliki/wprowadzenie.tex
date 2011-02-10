@@ -79,10 +79,10 @@ Wychodząc naprzeciw potrzebom sumerologów prezentujemy stworzony przez nas ję
 był niezależny od sposobu reprezentacji tabliczek. W niniejszej pracy udowodnimy, że TQL spełnia wszystkie te wymagania. 
 
 
-Projektowanie języka dziedzinowego może polegać na wykorzystaniu istniejącego języka - wzorzec "Languge exploitation"
-\cite{mernik} lub na stworzeniu języka od podstaw, innego niż istniejące do tej pory - wzorzec "Language invention" \cite{mernik}.
+Projektowanie języka dziedzinowego może polegać na wykorzystaniu istniejącego języka (wzorzec "Languge exploitation" \cite{mernik}) 
+lub na stworzeniu od podstaw innego niż istniejące do tej pory języka (wzorzec "Language invention" \cite{mernik}).
 Ze względu na to, że TQL ma być używany głównie przez osoby nie znające języków zapytań do baz danych,
-zdecydowałyśmy się na to drugie podeście. Pozwala ono na jak najlepsze dopasowanie TQL do potrzeb przyszłych
+zdecydowałyśmy się na to drugie podejście. Pozwala ono na lepsze dopasowanie TQL do potrzeb przyszłych
 użytkowników.
 
 
@@ -94,23 +94,15 @@ odpowiednio do sposobu reprezentacji danych.
 
 
 Sposobem reprezentacji danych nazywamy rodzaj bazy danych (np. relacyjna, obiektowa, XML), konkretną implementację serwera 
-(np. PostgreSQL \cite{postgres}, Zorba \cite{zorba}) oraz schemat danych. Dla każdego takiego sposobu zapytanie w docelowym jzyku może się różnić, a zatem 
-różnić się będzie również program tłumaczący TQL na ten język.
+(np. PostgreSQL \cite{postgres}, Zorba \cite{zorba}) oraz schemat danych. Dla każdego takiego sposobu zapytanie w docelowym 
+języku może się różnić, a zatem różnić się będzie również program tłumaczący TQL na ten język.
 Wynika z tego, że dla każdego sposobu reprezentacji danych należy stworzyć oddzielny program tłumaczący. 
 %którego zadaniem będzie przetłumaczenie zapytania na odpowiedni do tej reprezentacji język. 
 W ramach niniejszej pracy oprócz języka TQL zaprezentujemy dwie prototypowe implementacje komponentu do wyszukiwarki, zawierającego 
 m.in. program tłumaczący.
-Ten komponent, nazywany dalej w translatorem, tłumaczy zapytanie TQL na zapytanie w języku specyficznym dla danej bazy, przekazuje 
+Ten komponent, nazywany dalej translatorem, tłumaczy zapytanie TQL na zapytanie w języku specyficznym dla danej bazy, przekazuje 
 przetłumaczone zapytanie do bazy, odbiera wynik i przedstawia go w odpowiedniej postaci. Pokażemy implementacje translatora dla bazy 
 PostgreSQL (z językiem wyszukiwania SQL) oraz dla bazy XML (z językiem wyszukiwania XQuery).
-% Celem projektu przedstawionego w niniejszej pracy jest zaprojektowanie i implementacja takiego języka, który nazwałyśmy Tablets Query Language (TQL). Ma być intuicyjny i zrozumiały dla sumerologów, umożliwiając jednocześnie tworzenie skomplikowanych zapytań.
-% Będzie on udostępniał wyszukiwanie po różnych parametrach tabliczki. 
-
-
-% Dla każdego z nich, w zależności od reprezentacji danych, należy skonstruować translator, 
-% którego zadaniem będzie przetłumaczenie zapytania. 
-%W ramach niniejszej pracy przedstawione zostaną dwa przykładowe translatory.
-
 
 
 TQL może być także podstawą do tworzenia podobnych języków wyszukiwań dostosowanych do potrzeb innych grup ludzi, np. językoznawców.

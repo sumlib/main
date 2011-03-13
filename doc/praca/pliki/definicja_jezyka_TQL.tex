@@ -1,4 +1,4 @@
-\chapter{Tablets Query Language}
+\section{Tablets Query Language}
 
 Tablets Query Language (TQL) jest naszą propozycją rozwiązania problemu wyszukiwania tabliczek sumeryjskich.
 Jest to zewnętrzny język dziedzinowy stworzony do tego, aby służyć sumerologom jako język zapytań.
@@ -63,37 +63,37 @@ W kolejnych dwóch rozdziałach przedstawimy gramatykę i semantykę zaprojektow
 
 
 
-\chapter{\label{chap:skladnia}Gramatyka}
+\section{\label{chap:skladnia}Gramatyka}
 
 W tym rozdziale przedstawimy gramatykę zaprojektowanego przez nas języka.
 W pierwszej części pokażemy strukturę leksykalną TQL, czyli elementy, z których buduje się zapytania.
 W drugiej części zaprezentujemy reguły tworzenia zapytań, zapisane w formie reguł gramatyki w notacji BNF.
 
-\section{Struktura leksykalna}
+\subsection{Struktura leksykalna}
 
-\subsection{Literały}
+\subsubsection{Literały}
 
-\subsubsection{String}
+\paragraph{String}
 Literał \terminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\texttt{"}). Nie może zawierać jedynie znaków
 ``\texttt{"}`` niepoprzedzonych ''\verb6\6``.
 
-\subsubsection{SłowoOdLitery}
+\paragraph{SłowoOdLitery}
 Literał \terminal{SłowoOdLitery} to ciąg liter, cyfr oraz znaków {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``},
 zaczynający się od litery, z wyjątkiem słów kluczowych.
 
-\subsubsection{SłowoOdLiczby}
+\paragraph{SłowoOdLiczby}
 Literał \terminal{SłowoOdLiczby} to ciąg liter, cyfr oraz znaków {''\texttt{-}``, ''\texttt{'}``, ''\texttt{\_}``},
 zaczynający się od cyfry.
 
 
-\subsection{Słowa kluczowe}
+\subsubsection{Słowa kluczowe}
 
 \begin{tabular}{lll}
 {\reserved{as}} &{\reserved{define}} &{\reserved{in}} \\
 {\reserved{search}} & & \\
 \end{tabular}\\
 
-\subsection{Znaki specjalne}
+\subsubsection{Znaki specjalne}
 
 \begin{tabular}{lll}
 {\symb{(}} &{\symb{)}} &{\symb{{$+$}}} \\
@@ -101,7 +101,7 @@ zaczynający się od cyfry.
 {\symb{:}} & &{\symb{$\backslash$n}} (koniec linii)\\
 \end{tabular}\\
 
-\section{\label{sec:skladnia}Struktura składniowa języka}
+\subsection{\label{sec:skladnia}Struktura składniowa języka}
 
 Poniżej przedstawimy reguły gramatyki TQL w notacji BNF.
 Nieterminale są zapisane pomiędzy ''$\langle$`` a ''$\rangle$``.
@@ -186,10 +186,10 @@ Wszystkie pozostałe symbole to terminale.\\
 
 Powyższa gramatyka jest gramatyką bezkontekstową.
 
-\chapter{\label{chap:semantyka}Semantyka}
+\section{\label{chap:semantyka}Semantyka}
 
 Poniżej przedstawiamy semantykę wybranych przykładów.
-\section{Zapytanie proste}
+\subsection{Zapytanie proste}
 \begin{verbatim}
 provenience: Gar*
 period: "Ur III"
@@ -206,7 +206,7 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
 \end{itemize}
 
 
-\section{Zapytanie złożone}
+\subsection{Zapytanie złożone}
 \begin{verbatim}
 provenience: Ur
 period: "Ur III"/"Ur IV"
@@ -231,7 +231,7 @@ oraz wszystkie tabliczki, które:
 \end{itemize}
 
 
-\section{\label{sec:zdefiniowane} Zapytanie zdefiniowane}
+\subsection{\label{sec:zdefiniowane} Zapytanie zdefiniowane}
 \begin{verbatim}
  define
   provenience: Gar*a
@@ -246,8 +246,8 @@ Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
 \item zawierają conajmniej jedną z fraz ''udu ban`` lub ''mash2``
 \end{itemize}
 
-\section{Wywołanie zapytania zdefiniowanego}
-\subsection{Zwykłe}
+\subsection{Wywołanie zapytania zdefiniowanego}
+\subsubsection{Zwykłe}
 \begin{verbatim}
 search "zwierzęta w Gar*a"
 \end{verbatim}
@@ -259,7 +259,7 @@ Takie zapytanie jest równoważne następującemu zapytaniu prostemu:
   text: "udu ban"/mash2
 \end{verbatim}
 Zakładając, że \textit{''zwierzęta w Gar*a``} są jak w sekcji \ref{sec:zdefiniowane}.
-\subsection{Z dodatkowym warunkiem wyszukiwania}
+\subsubsection{Z dodatkowym warunkiem wyszukiwania}
 \begin{verbatim}
 search
   text: adad-tilati

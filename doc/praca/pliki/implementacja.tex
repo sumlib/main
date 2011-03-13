@@ -41,11 +41,11 @@ jednak wymaga osobnego programu dla każdego rodzaju bazy danych.
  \label{struktura_systemu}
 \end{figure}
 
-\chapter{Moduły podstawowe}
+\section{Moduły podstawowe}
 
 W tym rozdziale przedstawimy dokładniej poszczególne moduły podstawowe translatora.
 
-\section{Parser}
+\subsection{Parser}
 Parser został utworzony za pomocą narzędzia BNFC \cite{bnfc}. Na podstawie etykietowanej gramatyki BNF 
 narzędzie to tworzy parser oraz szkielet analizatora składni w wybranym języku: C, C++, C\#, F\#, Haskell, Java lub OCaml. 
 BNFC tworzy również pliki wejściowe dla generatora leksera (np. Flex) oraz dla generatora parsera (np. Bison). 
@@ -73,7 +73,7 @@ Na parser składają się następujące pliki:
 \end{itemize}
 
 
-\section{Analizator kontekstowy}
+\subsection{Analizator kontekstowy}
 Podstawową funkcją w tym module jest \verb|analyse(ComplexQuery complexQuery)|, której argumentem oraz wynikiem jest 
 drzewo struktury składniowej zapytania TQL. Funkcja ta
  sprawdza, czy podano prawidłowe nazwy pól, na podstawie których następuje wyszkukiwanie,  %to co jest po lewej w linii zapytania jest nazwą pola.
@@ -85,7 +85,7 @@ Analizator kontekstowy składa się z następujących plików:
  \item Context.h
 \end{itemize}
 
-\section{Translator}
+\subsection{Translator}
 Zadaniem translatora jest przetłumaczenie drzewa składni abstrakcyjnej na zapytanie w docelowym języku.
 Składa się z następujących plików:
 \begin {itemize}
@@ -100,7 +100,7 @@ Funkcja \verb|translate(ComplexQuery complexQuery)| przechodzi całą strukturę
 potrzeby odpowiednie funkcje z Translator\_interface.
 Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult() i przekazuje je jako wynik.
 
-\section{Baza}
+\subsection{Baza}
 Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - jako XML.
 Składa się z następujących plików:
 \begin {itemize}
@@ -142,7 +142,7 @@ typedef struct{
 Zakładamy, że w bazie danych znajdują się informacje potrzebne do wypełnienia powyższej struktury (nie licząc fraz wyszukiwania).
 %Wszystkie niezbędne informacje powinny się znajdować w bazie danych.
 
-\section{Pliki pomocnicze}
+\subsection{Pliki pomocnicze}
 Definicje struktur danych i funkcji służących do budowy drzewa struktury składniowej (wygenerowane za pomocą BNFC \cite{bnfc}, 
 następnie uproszczone):
 \begin{itemize}
@@ -166,7 +166,7 @@ Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexpl
 \end{itemize}
 
 
-\chapter{Moduły wymienne}
+\section{Moduły wymienne}
 Pliki zależne od wyboru konkretnej bazy danych to:
 \begin{itemize}
  \item Translator\_$<$nazwa$>$.cpp - dla modułu translatora

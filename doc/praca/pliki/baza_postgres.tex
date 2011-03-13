@@ -1,5 +1,5 @@
-\section{Baza PostgreSQL}
-\subsection{Diagram encji}
+\subsection{Baza PostgreSQL}
+\subsubsection{Diagram encji}
 \begin{figure}[h]
  \centering
  \includegraphics[width=500px,bb=0 0 930 560]{../diagramy/diagram-encji-maly.pdf}
@@ -43,13 +43,13 @@ a id tabliczki (Tablet.id).
 
  
 
-\subsection{Translator\_postgres}
+\subsubsection{Translator\_postgres}
 Tłumaczy otrzymane fragmenty drzewa struktury zapytania na język SQL. Przetłumaczone fragmenty zbiera do buforów 
 (\textit{select}, \textit{from}, \textit{where}), które następnie odpowiednio łączy.
 Każde proste zapytanie TQL jest tłumaczone na pojedyncze zapytanie SQL. Tłumaczenie kilku prostych zapytań
 łączone jest za pomocą UNION.
 
-\subsubsection{Stałe fragmenty zapytania}
+\paragraph{Stałe fragmenty zapytania}
 Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL-a.\\
 \textit{select} jest inicjowany na 
 \begin{verbatim}
@@ -71,7 +71,7 @@ FROM tablet t
 
 
 
-\subsubsection{Tłumaczenie zapytań o atrybuty tabliczki}
+\paragraph{Tłumaczenie zapytań o atrybuty tabliczki}
 Poniższe tłumaczenia są dodawane do bufora \textit{where} i łączone za pomocą AND.
 \begin{longtable}{|p{3in}|p{3in}|}
 \hline
@@ -143,7 +143,7 @@ c.value LIKE 'wartosc'
 \end{longtable}
 
 
-\subsubsection{Tłumaczenie zapytań o treść tabliczki}
+\paragraph{Tłumaczenie zapytań o treść tabliczki}
 Przy tłumaczeniu zapytań o treść tabliczki
 korzystamy z przedstawienia treści tabliczki w formie grafu.
 
@@ -262,7 +262,7 @@ FROM
 \end{longtable}
 
 
-\subsection{Database\_postgres}
+\subsubsection{Database\_postgres}
 
 Odpowiada za wywołanie zapytania w konkretnej bazie i zapisanie wyniku do struktury Tablets.
  Korzysta z pliku database.conf, który zawiera dane dostępu do bazy (nazwa bazy, host, port, użytkownik, hasło)

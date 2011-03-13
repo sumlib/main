@@ -32,7 +32,7 @@
 \definecolor{gray}{RGB}{50,50,50}
 \usepackage[toc,page]{appendix}
 \renewcommand{\appendixtocname}{Dodatki} 
-% \renewcommand{\appendixpage}{\part*{Dodatki}}
+% \renewcommand{\appendixpage}{\chapter*{Dodatki}}
 
 \usepackage[colorlinks=true,linkcolor=gray,urlcolor=blue]{hyperref}  
 
@@ -121,30 +121,30 @@ Jedna z nich jest oparta na relacyjnej bazie danych, a druga na bazie w postaci 
 
 \tableofcontents
 \include{pliki/wprowadzenie}
-\part{Problem przeszukiwania bazy tabliczek sumeryjskich}
+\chapter{Problem przeszukiwania bazy tabliczek sumeryjskich}
 \include{pliki/podstawowe_pojecia}
 \include{pliki/dziedzina_problemu}
 \include{pliki/wczesniejsze_rozwiazania}
 
-\part{Definicja języka TQL}
+\chapter{Definicja języka TQL}
 \include{pliki/definicja_jezyka_TQL}
 
-\part{Implementacja}
+\chapter{Implementacja}
 \include{pliki/implementacja}
 \include{pliki/baza_postgres}
 \include{pliki/baza_xml}
 
-%\chapter{Dokumentacja użytkowa i opis implementacji}\label{r:impl}
+%\section{Dokumentacja użytkowa i opis implementacji}\label{r:impl}
 \include{pliki/podsumowanie}
 
-%\part*{Dodatki}
+%\chapter*{Dodatki}
 %\addcontentsline{toc}{part}{Dodatki}
 \begin{appendix}
 % \appendixpage
-\part*{Dodatki}
-\addcontentsline{toc}{part}{Dodatki}
+\chapter*{Dodatki}
+\addcontentsline{toc}{chapter}{Dodatki}
 
-\chapter{Schemat bazy danych xml}
+\section*{Schemat bazy danych xml}
 \label{appendix:xmlsch}
 
 \include{pliki/sumlib_xs}

@@ -41,14 +41,36 @@ Największym zadaniem było przetłumaczenie poszczególnych konstrukcji TQL na 
 Pozwala to sądzić, że każda kolejna implementacja, dla różnych typów baz i różnych schematów danych, 
 nie będzie wymagała dużego nakładu pracy. 
 
-
+\pagebreak
 
 \section*{Możliwości rozwoju}
 \addcontentsline{toc}{section}{Możliwości rozwoju}
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=500px]{../diagramy/wyszuk_zapyt.png}
+ % wyszuk_zapyt.png: 811x524 pixel, 72dpi, 28.61x18.49 cm, bb=0 0 811 524
+ \caption{Okno do wprowadzania zapytania}
+ \label{fig:wyszuk_zapyt}
+\end{figure}
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=500px]{../diagramy/wyszuk_wynik.png}
+ % wyszuk_wynik.png: 823x628 pixel, 72dpi, 29.03x22.15 cm, bb=0 0 823 628
+ \caption{Sposób prezentacji wyników zapytania}
+ \label{fig:wyszuk_wynik}
+\end{figure}
+
 %co dalej
-W pierwszej kolejności należy stworzyć własną stronę internetową z wyszukiwarką tabliczek, 
-która byłaby dostępna dla Wydziału Historii UW i rozwijana z pomocą z naukowców z tej instytucji. 
-%TODO: właściwie już jest zaczęte. Wspomnieć? - spytać Dąbrowskiego
+Jako dodatek do pracy stworzyłyśmy stronę internetową umożliwiającą zadanie zapytania w języku TQL i prezentującą wyniki. 
+Jej wygląd jest przedstawiony na rysunkach \ref{fig:wyszuk_zapyt} oraz \ref{fig:wyszuk_wynik}.
+% TODO: W chwili obecnej jest ona dostępna na stronie \url{http://students.mimuw.edu.pl/~/jw234694/sumlib/}.
+Stanowi ona zalążek przyjaznego interfejsu użytkownika dla naukowców, którzy będą współpracować z TQL. Plany jej rozwoju
+uwzględniają między innymi funkcjonalność graficznego budowanie zapytania.
+% TODO: walnąć rozdzialik o graficznym bilderze
+Na chwilę obecną serwis internetowy jest w trakcie bycia udostępnianym dla Wydziału Historii UW.
+Pracownicy tej instytucji będą pierwszymi testerami całego rozwiązania.
+
 Poza tym warto spróbować nawiązać współpracę z projektem CDLI, (zob. rozdział 3.).
 Implementacja TQL dla bazy CDLI, wraz z interfejsem www, z pewnością byłaby przydatnym narzędziem dla sumerologów na całym świecie.
 

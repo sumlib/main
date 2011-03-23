@@ -13,7 +13,7 @@ Jednym z problemów przy projektowaniu bazy danych był wybór takiej reprezenta
 W przypadku pierwszego problemu jako rozwiązanie narzuca się przechowywanie treści
 jako otwarty tekst.
 Natomiast najlepszym rozwiązaniem drugiego jest reprezentacja treści tabliczki
-w formie grafu, którego krawędziami są odczyty i kliny (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13-24]{jaworski}).
+w formie grafu, którego krawędziami są odczyty i kliny (zgodnie z pomysłem dr Wojciecha Jaworskiego\cite[s.13--24]{jaworski}).
 Zdecydowałyśmy się na połączenie obu sposobów. Odczyty oraz kliny przechowujemy w tabelach Reading i Cuneiform, 
 natomiast otwarty tekst w kolumnie show\_text tabeli Tablet. 
 
@@ -50,7 +50,7 @@ Każde proste zapytanie TQL jest tłumaczone na pojedyncze zapytanie SQL. Tłuma
 łączone jest za pomocą UNION.
 
 \paragraph{Stałe fragmenty zapytania}
-Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL-a.\\
+Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL--a.\\
 \textit{select} jest inicjowany na 
 \begin{verbatim}
 SELECT t.id, t.id_cdli, t.publication, t.measurements, t.origin_date, 
@@ -190,12 +190,12 @@ gdzie $<$wynikowe zapytanie o treść tablczki$>$ to kombinacja zapytań typu:
    ) AS a 
   GROUP BY id_tab
 \end{verbatim}
-Zmienne użyte w powyższym pseudo-kodzie:
+Zmienne użyte w powyższym pseudo--kodzie:
 \begin{description}
- \item[id\_sekw] - kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu - do rozróżniania podzapytań)
- \item[dl\_sekw] - ilość słów składających się na wyszukiwaną sekwencję
- \item[sekw] - tablica zawierająca słowa składające się na wyszukiwaną sekwencję
-\item[nazwa\_tabeli] - nazwa tabeli, w której wyszukujemy (Reading lub Cuneiform)
+ \item[id\_sekw] -- kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu -- do rozróżniania podzapytań)
+ \item[dl\_sekw] -- ilość słów składających się na wyszukiwaną sekwencję
+ \item[sekw] -- tablica zawierająca słowa składające się na wyszukiwaną sekwencję
+\item[nazwa\_tabeli] -- nazwa tabeli, w której wyszukujemy (Reading lub Cuneiform)
  \end{description}
 
 \begin{longtable}{|p{1in}|p{4.5in}|}

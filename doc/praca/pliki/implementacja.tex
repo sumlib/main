@@ -1,5 +1,5 @@
 
-Przy implementacji języka TQL zastosowałyśmy podejście polegające na tzw. preprocessingu - wzorzec Preprocessor \cite{mernik}.
+Przy implementacji języka TQL zastosowałyśmy podejście polegające na tzw. preprocessingu -- wzorzec Preprocessor \cite{mernik}.
 W naszym przypadku polega to na przetłumaczeniu zapytania w języku TQL na zapytanie w innym, istniejącym już języku zapytań wyższego poziomu,
 a następnie skorzystaniu z przetłumaczonego w ten sposób zapytania. W tej części pracy przedstawimy sposób zaimplementowania programu tłumaczącego.
 
@@ -23,7 +23,7 @@ i wywołujące je.
 \end{figure}
 
 
-Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, który korzysta z translatora TQL. Taki system, oprócz modułów podstawowych translatora, zawiera bazę tabliczek w dowolnej formie, implemetację modułów wymiennych umożliwiającą korzystanie z tej bazy, oraz interfejs użytkownika - do wprowadzania zapytań i wyświetlania wyników. \\
+Na rysunku \ref{struktura_systemu} przedstawiamy ogólnie strukturę systemu, który korzysta z translatora TQL. Taki system, oprócz modułów podstawowych translatora, zawiera bazę tabliczek w dowolnej formie, implemetację modułów wymiennych umożliwiającą korzystanie z tej bazy, oraz interfejs użytkownika -- do wprowadzania zapytań i wyświetlania wyników. \\
 
  W niniejszej pracy prezentujemy dwie prototypowe implementacje translatora, zawierające własne zestawy modułów wymiennych: 
 dla bazy PostgreSQL oraz XML.
@@ -77,7 +77,7 @@ Na parser składają się następujące pliki:
 Podstawową funkcją w tym module jest \verb|analyse(ComplexQuery complexQuery)|, której argumentem oraz wynikiem jest 
 drzewo struktury składniowej zapytania TQL. Funkcja ta
  sprawdza, czy podano prawidłowe nazwy pól, na podstawie których następuje wyszkukiwanie,  %to co jest po lewej w linii zapytania jest nazwą pola.
-oraz upraszcza drzewo - z wywołania zapytania (wywołanie \textit{search in}) tworzy zapytanie proste.
+oraz upraszcza drzewo -- z wywołania zapytania (wywołanie \textit{search in}) tworzy zapytanie proste.
 
 Analizator kontekstowy składa się z następujących plików:
 \begin{itemize}
@@ -101,7 +101,7 @@ potrzeby odpowiednie funkcje z Translator\_interface.
 Następnie pobiera przetłumaczone zapytanie za pomocą funkcji getResult() i przekazuje je jako wynik.
 
 \subsection{Baza}
-Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie - jako XML.
+Moduł bazy jest odpowiedzialny za wywołanie przetłumaczonego zapytania i przekazanie wyniku w określonej formie -- jako XML.
 Składa się z następujących plików:
 \begin {itemize}
  \item Database.cpp
@@ -169,7 +169,7 @@ Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexpl
 \section{Moduły wymienne}
 Pliki zależne od wyboru konkretnej bazy danych to:
 \begin{itemize}
- \item Translator\_$<$nazwa$>$.cpp - dla modułu translatora
-\item Database\_$<$nazwa$>$.cpp - dla modułu bazy
+ \item Translator\_$<$nazwa$>$.cpp -- dla modułu translatora
+\item Database\_$<$nazwa$>$.cpp -- dla modułu bazy
 \end{itemize}
 Ich interfejsy są wspólne dla wszystkich baz danych.

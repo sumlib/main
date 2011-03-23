@@ -10,23 +10,23 @@
 % 1. krótki opis problemu - są sumerolodzy, mają tabliczki, chcą sprawnie wyszukiwać
 \subsection*{Opis problemu}
 
-Ok. 3500 lat przed naszą erą starożytni Sumerowie, jako prawdopodobnie pierwsi na świecie, zaczęli używać pisma. 
+Ok. 3500 lat p.n.e. starożytni Sumerowie, jako prawdopodobnie pierwsi na świecie, zaczęli używać pisma. 
 Ze względu na ksztat liter odciśniętych za pomocą trzciny w miękkiej glinie zostało ono później nazwane pismem klinowym. 
 Sumerowie używali go głównie w celach administracyjnych. Zapisywali między innymi rachunki za dostawy zwierząt oraz rozliczenia z 
 wykonanej na polu lub w warsztacie pracy i należnej zapłaty. Jednymi z ciekawszych tekstów są tzw. listy królów, na 
 których znajdują się daty panowania kolejnych władców i ich osiągnięcia w poszczególnych latach. 
 Ważniejsze tabliczki wypalano, jednak większość po pewnym czasie niszczono, aby zużytą glinę można było ponownie wykorzystać. 
 Do dzisiaj przetrwały głównie te tabliczki, które zostały wypalone podczas przypadkowego pożaru archiwum. 
-Wiele z nich jest zniszczonych, jednak wciąż stanowią ogromną wartość historyczną.
+Znaczna część z nich jest zniszczonych, jednak wciąż stanowią ogromną wartość historyczną.
  
 Na podstawie zachowanych tabliczek można się wiele dowiedzieć o historii Sumeru, a także o życiu zwykłych ludzi w tym okresie, 
 o ich zarobkach, zasiłkach i dniach wolnych. Odczytywaniem tych informacji zajmują się sumerolodzy z całego świata. 
-Aby łatwiej dzielić się zdobytą wiedzą, zaczęli tworzyć cyfrowe bazy tabliczek, dostępne w internecie. 
-Największa z nich to Cuneiform Digital Library Initiative (CDLI), zawierająca prawie 225 tys tekstów.
+Aby łatwiej dzielić się zdobytą wiedzą, zaczęli tworzyć cyfrowe bazy tabliczek dostępne w internecie. 
+Największa z nich to Cuneiform Digital Library Initiative (CDLI), zawierająca prawie 225 tys. tekstów.
 
-Jednak wyszukiwanie interesujących tabliczek może być w tym momencie uciążliwe. 
+Jednak wyszukiwanie interesujących tabliczek może być uciążliwe. 
 
-Sumerolodzy mogliby skorzystać ze specyficznych dla baz danych języków zapytań (np. SQL), ale po pierwsze większość z 
+Sumerolodzy mogliby skorzystać z języków zapytań specyficznych dla baz danych (np. SQL), ale po pierwsze większość z 
 nich nie zna tych języków, a po drugie budowanie w ten sposób złożonych zapytań dotyczących danych tekstowych jest czasochłonne. 
 Takie języki były tworzone z myślą o bardziej generycznych zastosowaniach i nie odpowiadają potrzebom sumerologów.
 Z tych powodów większość istniejących obecnie serwisów internetowych udostępnia formularze ułatwiające wprowadzanie kryteriów
@@ -50,15 +50,15 @@ obiektów komunikujących się między sobą.
 Innym podejściem jest architektura zorientowana na usługi (ang. \emph{Service--Oriented Architecture}, SOA), w której definiuje się 
 niezależne od siebie usługi (services) i udostępnia tylko ich interfejsy, ukrywając implementację.
 
-Rozważając problem sumerologów zdecydowałyśmy się na programowanie zorientowane na język (ang. \emph{Language--Oriented Programming}). 
+Rozważając problem sumerologów, zdecydowałyśmy się na programowanie zorientowane na język (ang. \emph{Language--Oriented Programming}). 
 Polega ono na stworzeniu języka odpowiadającego dziedzinie problemu, czyli tzw. języka dziedzinowego (ang. \emph{Domain--Specific Language},
  DSL). Dopiero w tym nowym języku rozwiązuje się konkretny problem (np. znalezienie tekstów sumeryjskich z epoki Ur III dotyczących owiec). 
 Opisywanie problemów dziedziny jest wtedy znacznie prostsze i bardziej naturalne, a dzięki temu wygodne dla ludzi związanych tylko z 
 konkretną dziedziną. 
 
 Wyróżnia się dwa rodzaje języków dziedzinowych -- ``wewnętrzne`` (ang. \emph{internal}), które zachowują składnię istniejących już języków 
-i ograniczają tylko ich możliwości, oraz ``zewnętrzne`` (ang. \emph{external}), które są zupełnie nowymi językami, tłumaczonymi do 
-istniejących wcześniej \cite{fowler}. W naszym przypadku narzucającym się podejściem było stworzenie nowego, zewnętrznego DSL, zaprojektowanego 
+i ograniczają tylko ich możliwości, oraz ``zewnętrzne`` (ang. \emph{external}), które są zupełnie nowymi językami, tłumaczonymi na 
+istniejące wcześniej \cite{fowler}. W naszym przypadku narzucającym się podejściem było stworzenie nowego, zewnętrznego DSL, zaprojektowanego 
 specjalnie do wyszukiwania tabliczek sumeryjskich, który miałby składnię przejrzystą dla sumerologa. 
 
 % 3. wybrałyśmy takie podejście bo...
@@ -82,24 +82,25 @@ był niezależny od sposobu reprezentacji tabliczek. W niniejszej pracy udowodni
 
 Projektowanie języka dziedzinowego może polegać na wykorzystaniu istniejącego języka (wzorzec "Languge exploitation" \cite{mernik}) 
 lub na stworzeniu od podstaw innego niż istniejące do tej pory języka (wzorzec "Language invention" \cite{mernik}).
-Ze względu na to, że TQL ma być używany głównie przez osoby nie znające języków zapytań do baz danych,
+Ze względu na to, że TQL ma być używany głównie przez osoby nieznające języków zapytań do baz danych,
 zdecydowałyśmy się na to drugie podejście. Pozwala ono na lepsze dopasowanie TQL do potrzeb przyszłych
 użytkowników.
 
 
 Przy wyborze sposobu implementacji TQL kierowałyśmy się potrzebą umożliwienia pracy z różnymi bazami tabliczek.
 Aby to zapewnić, zastosowałyśmy wzorzec "Preprocessor" \cite{mernik}, a konkretnie
-"Source--to--source transformation". Oznacza to, że TQL jest za automatycznie tłumaczony do innych,
-istniejących wcześniej języków zapytań bardziej ogólnego zastosowania, np. SQL, XQuery \cite{xquery},
+"Source--to--source transformation". Oznacza to, że TQL jest automatycznie tłumaczony na inne,
+istniejące wcześniej języki zapytań bardziej ogólnego zastosowania, np. SQL, XQuery \cite{xquery},
 odpowiednio do sposobu reprezentacji danych.
 
 
 Sposobem reprezentacji danych nazywamy rodzaj bazy danych (np. relacyjna, obiektowa, XML), konkretną implementację serwera 
-(np. PostgreSQL \cite{postgres}, Zorba \cite{zorba}) oraz schemat danych. Dla każdego takiego sposobu zapytanie w docelowym 
+(np. PostgreSQL \cite{postgres}, Zorba \cite{zorba}) oraz schemat danych. Dla każdego takiego sposobu reprezentacji
+ zapytanie w docelowym 
 języku może się różnić, a zatem różnić się będzie również program tłumaczący TQL na ten język.
 Wynika z tego, że dla każdego sposobu reprezentacji danych należy stworzyć oddzielny program tłumaczący. 
 %którego zadaniem będzie przetłumaczenie zapytania na odpowiedni do tej reprezentacji język. 
-W ramach niniejszej pracy oprócz języka TQL zaprezentujemy dwie prototypowe implementacje komponentu do wyszukiwarki, zawierającego 
+W ramach niniejszej pracy, oprócz języka TQL, zaprezentujemy dwie prototypowe implementacje komponentu do wyszukiwarki, zawierającego 
 m.in. program tłumaczący.
 Ten komponent, nazywany dalej translatorem, tłumaczy zapytanie TQL na zapytanie w języku specyficznym dla danej bazy, przekazuje 
 przetłumaczone zapytanie do bazy, odbiera wynik i przedstawia go w odpowiedniej postaci. Pokażemy implementacje translatora dla bazy 

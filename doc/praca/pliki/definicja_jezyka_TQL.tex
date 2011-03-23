@@ -3,11 +3,13 @@
 Tablets Query Language (TQL) jest naszą propozycją rozwiązania problemu wyszukiwania tabliczek sumeryjskich.
 Jest to zewnętrzny język dziedzinowy stworzony do tego, aby służyć sumerologom jako język zapytań.
 Formalna definicja składni TQL znajduje się w rozdziale \ref{chap:skladnia}.
-Jest ona zaprojektowana od podstaw, dzięki czemu jest bardzo prosta i intuicyjna, co będzie widać na przykładach opisujących semantykę w rozdziale \ref{chap:semantyka}. 
+Jest ona zaprojektowana od podstaw, dzięki czemu jest bardzo prosta i intuicyjna, co będzie widać na przykładach 
+opisujących semantykę w rozdziale \ref{chap:semantyka}. 
 Wiele języków dziedzinowych, w przeciwieństwie do TQL, bazuje na istniejących już językach. Są to tzw. wewnętrzne języki dziedzinowe. Jednak w przypadku naszego problemu było to niewskazane rozwiązanie, gdyż składnia przejęta z istniejącego języka zapytań bardziej ogólnego zastosowania byłaby nieintuicyjna, a tworzone zapytania długie i skomplikowane.
-Prostą składnię TQL udało nam się połączyć z dużą siłą wyrazu. Język daje możliwość formułowania złożonych 
+Udało nam się połączyć prostą składnię TQL z dużą siłą wyrazu.
+ Język daje możliwość formułowania złożonych 
 wyrażeń do wyszukiwania na podstawie pojedynczej
-metadanej lub treści tabliczki, oraz możliwość łączenia wielu zapytań w jedno.
+metadanej lub treści tabliczki oraz możliwość łączenia wielu zapytań w jedno.
 
 Dodatkowo, jednym z głównych założeń przyjętych przy tworzeniu języka TQL jest niezależność od rzeczywistej
 reprezentacji danych. Przy konstruowaniu go nie brałyśmy pod uwagę sposobu fizycznej reprezentacji tabliczek,
@@ -20,7 +22,7 @@ na przetłumaczeniu zapytania z "języka dziedziny" na "język komputerów" jest
 sposobu reprezentacji danych, i to przez programistów, a nie sumerologów.
 
 Język TQL umożliwia wyszukiwanie na podstawie kryteriów dotyczących następujących danych:
-\begin{longtable}{|p{3in}|p{3in}|}
+\begin{longtable}{|p{3in}|p{2.5in}|}
 \hline
 {\bf Opis} & {\bf Nazwa pola w TQL}\\
 \hline
@@ -74,7 +76,7 @@ W drugiej części zaprezentujemy reguły tworzenia zapytań, zapisane w formie 
 \subsubsection{Literały}
 
 \paragraph{String}
-Literał \terminal{String}\ jest ciągiem dowolnych znaków w cudzysłowiu (\texttt{"}). Nie może zawierać jedynie znaków
+Literał \terminal{String}\ jest ciągiem dowolnych znaków w cudzysłowie (\texttt{"}). Nie może zawierać jedynie znaków
 ``\texttt{"}`` niepoprzedzonych ''\verb6\6``.
 
 \paragraph{SłowoOdLitery}
@@ -202,7 +204,7 @@ Wynikiem zapytania będą wszystkie tabliczki, które:
 \item pochodzą z okresu Ur III
 \item są dokumentami administracyjnymi
 \item zawierają słowo ``udu'' oraz conajmniej jedno ze słów ``masz2'' lub ``ugula''
-\item nie zawierają słowa ``szabra''
+\item nie zawierają słowa ``szabra''.
 \end{itemize}
 
 
@@ -227,7 +229,7 @@ oraz wszystkie tabliczki, które:
 \begin{itemize}
  \item zawierają słowo ''masz2`` lub ''ugula``
  \item zostały opublikowane w pracy, której nazwa kończy się na ''tan``
- \item pochodzą z miejscowości Ur
+ \item pochodzą z miejscowości Ur.
 \end{itemize}
 
 
@@ -243,7 +245,7 @@ Wynikiem zapytania (po jego wywołaniu) będą wszystkie tabliczki, które:
 \begin{itemize}
 \item pochodzą z miejscowości, których nazwy zaczynają się na ''Gar`` i kończą na ''a''
 \item pochodzą z okresu Ur III
-\item zawierają conajmniej jedną z fraz ''udu ban`` lub ''mash2``
+\item zawierają conajmniej jedną z fraz ''udu ban`` lub ''mash2``.
 \end{itemize}
 
 \subsection{Wywołanie zapytania zdefiniowanego}

@@ -53,7 +53,7 @@ niezależne od siebie usługi (services) i udostępnia tylko ich interfejsy, ukr
 Rozważając problem sumerologów, zdecydowałyśmy się na programowanie zorientowane na język (ang. \emph{Language--Oriented Programming}). 
 Polega ono na stworzeniu języka odpowiadającego dziedzinie problemu, czyli tzw. języka dziedzinowego (ang. \emph{Domain--Specific Language},
  DSL). Dopiero w tym nowym języku rozwiązuje się konkretny problem (np. znalezienie tekstów sumeryjskich z epoki Ur III dotyczących owiec). 
-Opisywanie problemów dziedziny jest wtedy znacznie prostsze i bardziej naturalne, a dzięki temu wygodne dla ludzi związanych tylko z 
+Opisywanie problemów jest wtedy znacznie prostsze i bardziej naturalne, a dzięki temu wygodne dla ludzi związanych tylko z 
 konkretną dziedziną. 
 
 Wyróżnia się dwa rodzaje języków dziedzinowych -- ``wewnętrzne`` (ang. \emph{internal}), które zachowują składnię istniejących już języków 
@@ -81,7 +81,7 @@ był niezależny od sposobu reprezentacji tabliczek. W niniejszej pracy udowodni
 
 
 Projektowanie języka dziedzinowego może polegać na wykorzystaniu istniejącego języka (wzorzec "Languge exploitation" \cite{mernik}) 
-lub na stworzeniu od podstaw innego niż istniejące do tej pory języka (wzorzec "Language invention" \cite{mernik}).
+lub na stworzeniu od podstaw innego niż istniejące do tej pory (wzorzec "Language invention" \cite{mernik}).
 Ze względu na to, że TQL ma być używany głównie przez osoby nieznające języków zapytań do baz danych,
 zdecydowałyśmy się na to drugie podejście. Pozwala ono na lepsze dopasowanie TQL do potrzeb przyszłych
 użytkowników.
@@ -107,7 +107,7 @@ przetłumaczone zapytanie do bazy, odbiera wynik i przedstawia go w odpowiedniej
 PostgreSQL (z językiem wyszukiwania SQL) oraz dla bazy XML (z językiem wyszukiwania XQuery).
 
 
-TQL może być także podstawą do tworzenia podobnych języków wyszukiwań dostosowanych do potrzeb innych grup ludzi, np. językoznawców.
+TQL może być także podstawą do tworzenia podobnych języków wyszukiwania dostosowanych do potrzeb innych grup ludzi, np. językoznawców.
 Większość programów ułatwiających tworzenie zapytań jest skomplikowana, daje ograniczone możliwości lub jest przystosowana głównie do 
 przetwarzania danych liczbowych. Tablets Query Language rozwiązuje te problemy: jest prosty i intuicyjny, przystosowany głównie do tekstów,
  minimalnie zmniejsza siłę wyrazu oraz łatwo go rozbudowywać. 

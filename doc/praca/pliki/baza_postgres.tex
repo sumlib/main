@@ -44,7 +44,7 @@ a id tabliczki (Tablet.id).
  
 
 \subsubsection{Translator\_postgres}
-Moduł \textbf{Translator\_postgres} tłumaczy otrzymane fragmenty drzewa struktury zapytania na język SQL. Przetłumaczone fragmenty zbiera do buforów 
+Moduł \textit{Translator\_postgres} tłumaczy otrzymane fragmenty drzewa struktury zapytania na język SQL. Przetłumaczone fragmenty zbiera do buforów 
 (\textit{select}, \textit{from}, \textit{where}), które następnie odpowiednio łączy.
 Każde proste zapytanie TQL jest tłumaczone na pojedyncze zapytanie SQL. Tłumaczenie kilku prostych zapytań
 łączone jest za pomocą UNION.
@@ -264,6 +264,6 @@ FROM
 
 \subsubsection{Database\_postgres}
 
-Moduł \textbf{Database\_postgres} odpowiada za wywołanie zapytania w konkretnej bazie i zapisanie wyniku do struktury Tablets.
+Moduł \textit{Database\_postgres} odpowiada za wywołanie zapytania w konkretnej bazie i zapisanie wyniku do struktury Tablets.
  Korzysta z pliku database.conf, który zawiera dane dostępu do bazy (nazwa bazy, host, port, użytkownik, hasło)
 oraz biblioteki libpq-fe.h do PostgreSQL.

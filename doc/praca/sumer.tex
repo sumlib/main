@@ -36,6 +36,7 @@
 
 \usepackage[colorlinks=true,linkcolor=gray,urlcolor=blue]{hyperref}  
 
+% \setcounter{secnumdepth}{3}
 
 
 \newcommand{\emptyP}{\mbox{$\epsilon$}}
@@ -122,19 +123,15 @@ Jedna z nich jest oparta na relacyjnej bazie danych, a druga na bazie w postaci 
 
 \tableofcontents
 \include{pliki/wprowadzenie}
-\chapter{Problem przeszukiwania bazy tabliczek sumeryjskich}
 \include{pliki/podstawowe_pojecia}
 \include{pliki/dziedzina_problemu}
 \include{pliki/wczesniejsze_rozwiazania}
 
-\chapter{Definicja języka TQL}
 \include{pliki/definicja_jezyka_TQL}
 
-\chapter{Implementacja}
 \include{pliki/implementacja}
 \include{pliki/baza_postgres}
 \include{pliki/baza_xml}
-
 %\section{Dokumentacja użytkowa i opis implementacji}\label{r:impl}
 \include{pliki/podsumowanie}
 
@@ -142,15 +139,7 @@ Jedna z nich jest oparta na relacyjnej bazie danych, a druga na bazie w postaci 
 %\addcontentsline{toc}{part}{Dodatki}
 \begin{appendix}
 % \appendixpage
-\chapter*{Dodatki}
-\addcontentsline{toc}{chapter}{Dodatki}
-
-\section*{Schemat bazy danych xml}
-\label{appendix:xmlsch}
-
 \include{pliki/sumlib_xs}
-
-
 
 \end{appendix}
 

@@ -1,25 +1,12 @@
 \chapter*{Podsumowanie}
 \addcontentsline{toc}{chapter}{Podsumowanie}
-% Zakończenie pracy magisterskiej jest jej podsumowaniem, w którym powinno się znaleźć potwierdzenie 
-% lub też obalenie założonej przez autora tezy, poparte odpowiednimi argumentami. 
-% Zamieścić tu można również pewien bilans swojej pracy oraz wszelkie nasuwające się wnioski. 
-% Zakończenie ma postać klamry, spinającej całą pracę magisterską w pewną całość składającą się ze wstępu, 
-% rozwinięcia oraz zakończenia, które stanowi konkluzję dla całej pracy.
-% 
-% W zakończeniu powinno się zamieścić kilka zdań od siebie, na przykład dotyczących prognozy analizowanego zjawiska, 
-% rokować, wątpliwości itp. Tak jak i we wstępie, również tutaj autor powinien popisać się niejako swoimi umiejętnościami 
-% pisarskimi, erudycją i kompetencjami w opisywanej dziedzinie, istnieje bowiem duże ryzyko, iż właśnie zakończenie zostanie 
-% przeczytane przez recenzenta.
-
 \section*{Podsumowanie projektu}
 \addcontentsline{toc}{section}{Podsumowanie projektu}
-%cel osiągnięty
 Przedstawiona w niniejszej pracy realizacja języka TQL spełnia najważniejsze postulaty. 
 Po pierwsze jest on intuicyjny i prosty w użyciu dla osób znających jedynie dziedzinę problemu.
 % (co potwierdza opinia dr hab. Marka Stępnia)
 Po drugie minimalnie ogranicza siłę wyrazu pozwalając na tworzenie skomplikowanych zapytań.
 
-%wady
 Język TQL ma jednak kilka ograniczeń w stosunku do typowych języków zapytań. 
 Największym z nich jest brak wpływu na postać wyniku, co utrudnia np. zbieranie danych statystycznych 
 (m. in. nie da się spytać o ilość tabliczek spełniających dane kryteria). 
@@ -41,13 +28,13 @@ Największym zadaniem było przetłumaczenie poszczególnych konstrukcji TQL na 
 Pozwala to sądzić, że każda kolejna implementacja, dla różnych typów baz i różnych schematów danych, 
 nie będzie wymagała dużego nakładu pracy. 
 
-\pagebreak
+\newpage 
 
 \section*{Możliwości rozwoju}
 \addcontentsline{toc}{section}{Możliwości rozwoju}
 \begin{figure}[h]
  \centering
- \includegraphics[width=500px]{../diagramy/wyszuk_zapyt.png}
+ \includegraphics[width=450px]{../diagramy/wyszuk_zapyt.png}
  % wyszuk_zapyt.png: 811x524 pixel, 72dpi, 28.61x18.49 cm, bb=0 0 811 524
  \caption{Okno do wprowadzania zapytania}
  \label{fig:wyszuk_zapyt}
@@ -55,7 +42,7 @@ nie będzie wymagała dużego nakładu pracy.
 
 \begin{figure}[h]
  \centering
- \includegraphics[width=500px]{../diagramy/wyszuk_wynik.png}
+ \includegraphics[width=450px]{../diagramy/wyszuk_wynik.png}
  % wyszuk_wynik.png: 823x628 pixel, 72dpi, 29.03x22.15 cm, bb=0 0 823 628
  \caption{Sposób prezentacji wyników zapytania}
  \label{fig:wyszuk_wynik}
@@ -83,3 +70,9 @@ Dodatkowo warto stworzyć narzędzie do analizy uszkodzonych fragmentów i wykry
 Dzięki niemu można by zmniejszyć ryzyko pominięcia istotnych tabliczek podczas wyszukiwania. 
 
 Rozwój projektu będzie zależał również od potrzeb zgłaszanych przez samych sumerologów.
+
+% co można by inaczej (``Dyskusje'')
+% c++, LL, Boost spirit
+% wymyśleć inne zapytanie na ``NOT''
+% co jest złego w typowej relacyjnej bazie danych
+% przenośność między systemami operacyjnymi

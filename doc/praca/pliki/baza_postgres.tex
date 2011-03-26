@@ -2,7 +2,7 @@
 \subsubsection{Diagram encji}
 \begin{figure}[h]
  \centering
- \includegraphics[width=500px,bb=0 0 930 560]{../diagramy/diagram-encji-maly.pdf}
+ \includegraphics[width=500px]{../diagramy/diagram-encji-maly.pdf}
  % diagram-encji-maly.pdf: 930x560 pixel, 72dpi, 32.81x19.76 cm, bb=0 0 930 560
  \caption{Diagram encji}
 \end{figure}
@@ -17,12 +17,12 @@ w formie grafu, którego krawędziami są odczyty i kliny (zgodnie z pomysłem d
 Zdecydowałyśmy się na połączenie obu sposobów. Odczyty oraz kliny przechowujemy w tabelach Reading i Cuneiform, 
 natomiast otwarty tekst w kolumnie show\_text tabeli Tablet. 
 
-Dzięki temu rozwiązaniu, szukając tabliczki zawierającej podane odczyty (lub kliny) korzystamy z reprezentacji
+Dzięki temu rozwiązaniu, szukając tabliczki zawierającej podane odczyty (lub kliny), korzystamy z reprezentacji
 grafowej w tabeli Reading (lub Cuneiform).
 Natomiast zawsze korzystamy z otwartego tekstu w tabeli Tablet w celu wyświetlenia treści tabliczki.
 % Aby zapewnić możliwość odwzorowania treści tabliczki między reprezentacjami, węzły są liczbami postaci:
-Kiedy zatem wyszukujemy w tabeli Reading (lub Cuneiform) musimy być w stanie powiązać znalezione odczyty (kliny) 
-z całą treścią tabliczki w tabeli Tablet. Osiągamy to zapisując węzły w grafie w postaci:
+Kiedy zatem wyszukujemy w tabeli Reading (lub Cuneiform), musimy być w stanie powiązać znalezione odczyty (kliny) 
+z całą treścią tabliczki w tabeli Tablet. Osiągamy to, zapisując węzły w grafie w postaci:
 \begin{verbatim}
  <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>
 \end{verbatim}
@@ -195,7 +195,7 @@ Zmienne użyte w powyższym pseudo--kodzie:
  \item[id\_sekw] -- kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu -- do rozróżniania podzapytań)
  \item[dl\_sekw] -- ilość słów składających się na wyszukiwaną sekwencję
  \item[sekw] -- tablica zawierająca słowa składające się na wyszukiwaną sekwencję
-\item[nazwa\_tabeli] -- nazwa tabeli, w której wyszukujemy (Reading lub Cuneiform)
+\item[nazwa\_tabeli] -- nazwa tabeli, w której wyszukujemy (Reading lub Cuneiform).
  \end{description}
 
 \begin{longtable}{|p{1in}|p{4.5in}|}

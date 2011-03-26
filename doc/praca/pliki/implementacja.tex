@@ -7,10 +7,10 @@ Jednym z głównych założeń języka TQL, szczególnie ważnym z punktu widzen
 W związku z tym istotną cechą programu tłumaczącego zapytania w TQL (translatora) jest możliwość dostosowania  
 go do współpracy z różnymi bazami danych.
 %Jednym z głównych wymagań postawionych przed translatorem, żeby można było podłączyć różne bazy danych.
- Wynikiem tego jest podział translatora na 2 rodzaje modułów (rysunek \ref{moduly}):
+ Wynikiem tego jest podział translatora na dwa rodzaje modułów (rysunek \ref{moduly}):
 \begin{enumerate}
- \item \textbf{Podstawowe} -- niezależne od struktury danych, zajmujące się głównie parsowaniem i analizą składniową zapytania.
- \item \textbf{Wymienne} -- zależne od struktury danych, tłumaczące zapytanie z TQL na język odpowiedni dla używanej bazy danych
+ \item \textbf{podstawowe} -- niezależne od struktury danych, zajmujące się głównie parsowaniem i analizą składniową zapytania;
+ \item \textbf{wymienne} -- zależne od struktury danych, tłumaczące zapytanie z TQL na język odpowiedni dla używanej bazy danych
 i wywołujące je.
 \end{enumerate}
 
@@ -53,7 +53,7 @@ Dodatkowym produktem jest dokument w formacie Latex, który zawiera specyfikacj�
 
 
 Po automatycznym utworzeniu parsera, 
-poprawiłyśmy nazwy stałych oznaczających symbole na bardziej intuicyjne.
+zmieniłyśmy nazwy stałych oznaczających symbole na bardziej intuicyjne.
 Następnie
 dodałyśmy tablicę symboli,
 usunęłyśmy niepotrzebne funkcje z interfejsu
@@ -69,7 +69,7 @@ Na parser składają się następujące pliki:
  \item Parser.cpp
  \item Parser.h
  \item TQL.y % tłumaczony na Parser.c
- \item TQL.l % tłumaczony na Lexer.c
+ \item TQL.l. % tłumaczony na Lexer.c
 \end{itemize}
 
 
@@ -82,7 +82,7 @@ oraz upraszcza drzewo -- z wywołania zapytania (wywołanie \textit{search in}) 
 Analizator kontekstowy składa się z następujących plików:
 \begin{itemize}
  \item Context.cpp
- \item Context.h
+ \item Context.h.
 \end{itemize}
 
 \subsection{Translator}
@@ -91,7 +91,7 @@ Składa się z następujących plików:
 \begin {itemize}
  \item Translator.cpp
  \item Translator.h
- \item Translator\_interface.h (interfejs modułu translatora zależnego od bazy danych)
+ \item Translator\_interface.h (interfejs modułu translatora zależnego od bazy danych).
  %\item Translator\_config.c (implementacja interfejsu z Translator\_config.h, zależny od wyboru bazy danych itp)
 \end {itemize}
 
@@ -106,7 +106,7 @@ Składa się z następujących plików:
 \begin {itemize}
  \item Database.cpp
  \item Database.h
- \item Database\_interface.h (interfejs modułu bazy zależnego od bazy danych)
+ \item Database\_interface.h (interfejs modułu bazy zależnego od bazy danych).
 % \item Database\_config.c (implementacja interfejsu z Database\_conf.h, zależny od wyboru bazy danych itp)
 \end {itemize}
 
@@ -147,22 +147,22 @@ Definicje struktur danych i funkcji służących do budowy drzewa struktury skł
 następnie uproszczone):
 \begin{itemize}
  \item Absyn.cpp
- \item Absyn.h
+ \item Absyn.h.
 \end{itemize}
 Tablica symboli:
 \begin{itemize}
  \item Symbols.cpp
-\item Symbols.h
+\item Symbols.h.
 \end{itemize}
 Obsługa błędów:
 \begin{itemize}
  \item Err.cpp
-\item Err.h
+\item Err.h.
 \end{itemize}
 Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexplode}:
 \begin{itemize}
  \item Cexplode.cpp
- \item Cexplode.h
+ \item Cexplode.h.
 \end{itemize}
 
 
@@ -170,6 +170,6 @@ Moduł do dzielenia tekstu względem separatora, pobrany z internetu \cite{cexpl
 Pliki zależne od wyboru konkretnej bazy danych to:
 \begin{itemize}
  \item Translator\_$<$nazwa$>$.cpp -- dla modułu translatora
-\item Database\_$<$nazwa$>$.cpp -- dla modułu bazy
+\item Database\_$<$nazwa$>$.cpp -- dla modułu bazy.
 \end{itemize}
 Ich interfejsy są wspólne dla wszystkich baz danych.

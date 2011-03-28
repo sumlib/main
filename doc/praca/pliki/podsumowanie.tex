@@ -7,6 +7,7 @@ Po pierwsze jest on intuicyjny i prosty w użyciu dla osób znających jedynie d
 % (co potwierdza opinia dr hab. Marka Stępnia)
 Po drugie minimalnie ogranicza siłę wyrazu pozwalając na tworzenie skomplikowanych zapytań.
 
+%TODO: to jest trochę podobne do tego, co piszę w dyskusji
 Język TQL ma jednak kilka ograniczeń w stosunku do typowych języków zapytań. 
 Największym z nich jest brak wpływu na postać wyniku, co utrudnia np. zbieranie danych statystycznych 
 (m. in. nie da się spytać o ilość tabliczek spełniających dane kryteria). 
@@ -71,8 +72,25 @@ Dzięki niemu można by zmniejszyć ryzyko pominięcia istotnych tabliczek podcz
 
 Rozwój projektu będzie zależał również od potrzeb zgłaszanych przez samych sumerologów.
 
+
+\section*{Dyskusja}
+\addcontentsline{toc}{section}{Dyskusja}
 % co można by inaczej (``Dyskusje'')
+
+% konstrukcja języka
+%zapytanie, którego się nie da wyrazić
+Język TQL pozwala wyrazić wiele zapytań w prosty sposób, ale istnieją również takie, których nie da się w nim zapisać.
+Przykładem takiego zapytania jest "znajdź tabliczki, które zawierają frazę zaczynającą się od słowa udu, której drugim słowem nie jest słowo ban".
+Ogólnie TQL pozwala tworzyć zapytania w oparciu o frazy, określone w całości lub częściowo, ale nie pozwala konstruować warunków
+dotyczących fragmentów fraz. Godzimy się na to ograniczenie, ponieważ najczęściej nie jest to potrzebne. Niemniej jednak % ;)
+warto rozważyć alternatywną konstrukcję języka, która umożliwa zapisywanie tego typu zapytań.
+
+%sortowanie
+Poza tym miłym rozszerzeniem TQL-a byłaby możliwość sortowania wyników zapytań.
+
+% implementacja
 % c++, LL, Boost spirit
 % wymyśleć inne zapytanie na ``NOT''
 % co jest złego w typowej relacyjnej bazie danych
 % przenośność między systemami operacyjnymi
+

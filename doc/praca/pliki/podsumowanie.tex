@@ -82,15 +82,27 @@ Rozwój projektu będzie zależał również od potrzeb zgłaszanych przez samyc
 Język TQL pozwala wyrazić wiele zapytań w prosty sposób, ale istnieją również takie, których nie da się w nim zapisać.
 Przykładem takiego zapytania jest "znajdź tabliczki, które zawierają frazę zaczynającą się od słowa udu, której drugim słowem nie jest słowo ban".
 Ogólnie TQL pozwala tworzyć zapytania w oparciu o frazy, określone w całości lub częściowo, ale nie pozwala konstruować warunków
-dotyczących fragmentów fraz. Godzimy się na to ograniczenie, ponieważ najczęściej nie jest to potrzebne. Niemniej jednak % ;)
-warto rozważyć alternatywną konstrukcję języka, która umożliwa zapisywanie tego typu zapytań.
+dotyczących fragmentów fraz. Godzimy się na to ograniczenie, ponieważ najczęściej nie jest to potrzebne. Niemniej jednak
+warto rozważyć alternatywną konstrukcję języka, która umożliwi zapisywanie tego typu zapytań.
 
 %sortowanie
-Poza tym miłym rozszerzeniem TQL-a byłaby możliwość sortowania wyników zapytań.
+Warto również zastanowić się nad możliwością sortowania wyników zapytań. W obecnej wersji TQL moża to zrobić na poziomie interfejsu, jednak
+dodanie takiej funkcjonalności do języka pozwoliłoby na sortowanie bezpośrednio w bazie danych.
 
 % implementacja
+Przedstawiona w pracy implementacja TQL jest tylko przykładowa. W szczególności można rozważyć optymalizacje w modułach zależnych od bazy
+danych, czyli wybór takiego sposobu budowania zapytania docelowego, który pozwoli jak najszybciej je wykonać. 
 % c++, LL, Boost spirit
 % wymyśleć inne zapytanie na ``NOT''
+W tym momencie implementacja zapytania zawierającego "-- --" (not) jest dla bazy PostgreSQL nieoptymalna.
+Polega ona na wyszukaniu wszystkich tabliczek, następnie wyszukaniu tabliczek zawierających niechcianą frazę, a potem odjęciu obu wyników.
+Można tutaj zaproponować algorytm, który będzie działał szybciej.
+
 % co jest złego w typowej relacyjnej bazie danych
+Innym problemem, który również warto rozważyć przy implementacji TQL, jest wybór odpowiedniego sposobu reprezentacji danych. Szeroko rozpowszechnione
+bazy relacyjne nie są najlepszym rozwiązaniem, gdyż trudno w nich przeprowadzać operacje na tekstach. Potrzebna jest baza, która umożliwi jednocześnie szybki
+dostęp do całego tekstu, jak również szybkie wyszukiwanie fraz. Pomysł przedstawienia treści tabliczki za pomocą grafu pozwala na łatwe wyszukiwanie fraz oraz
+alternatywnych tłumaczeń, jednak bazy relacyjne nie są przystosowane do przechowywania takich struktur danych.
+
 % przenośność między systemami operacyjnymi
 

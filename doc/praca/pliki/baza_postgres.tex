@@ -50,15 +50,16 @@ Każde proste zapytanie TQL jest tłumaczone na pojedyncze zapytanie SQL. Tłuma
 łączone jest za pomocą UNION.
 
 \paragraph{Stałe fragmenty zapytania}
-Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL--a.\\
-\textit{select} jest inicjowany na 
+Tłumaczenie prostego zapytania zaczyna się od inicjalizacji buforów przechowujących poszczególne części wynikowego SQL--a.
+\vspace{5pt}\\
+\textit{select} jest inicjowany na:
 \begin{verbatim}
 SELECT t.id, t.id_cdli, t.publication, t.measurements, t.origin_date, 
        p.value as provenience, pd.value as period,
        g1.value as genre, g2.value as subgenre, 
        c.value as collection, t.text
 \end{verbatim}
-\textit{from} jest inicjowany
+\textit{from} jest inicjowany:
 \begin{verbatim}
 FROM tablet t
   LEFT JOIN provenience p ON p.id = t.provenience_id
@@ -126,7 +127,7 @@ c.value LIKE 'wartosc'
 \hline
 \end{longtable}
 
-\textbf{Tłumaczenie operatorów:}
+\textbf{Tłumaczenie operatorów}
 \begin{longtable}{|p{1in}|p{1in}|}
 \hline
 {\bf Operator} & {\bf Tłumaczenie}\\
@@ -159,7 +160,7 @@ natomiast do \textit{select} dodajemy:
 , sequence.nodes as nodes
 \end{verbatim}
 
-gdzie $<$wynikowe zapytanie o treść tabliczki$>$ to kombinacja zapytań typu:
+gdzie $<$wynikowe zapytanie o treść tabliczki$>$, to kombinacja zapytań typu:
 \begin{verbatim}
   SELECT 
     id_tab, 
@@ -190,11 +191,11 @@ gdzie $<$wynikowe zapytanie o treść tabliczki$>$ to kombinacja zapytań typu:
    ) AS a 
   GROUP BY id_tab
 \end{verbatim}
-Zmienne użyte w powyższym pseudo--kodzie:
+Zmienne użyte w powyższym pseudokodzie:
 \begin{description}
- \item[id\_sekw] -- kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu -- do rozróżniania podzapytań)
- \item[dl\_sekw] -- ilość słów składających się na wyszukiwaną sekwencję
- \item[sekw] -- tablica zawierająca słowa składające się na wyszukiwaną sekwencję
+ \item[id\_sekw] -- kolejny numer sekwencji (przydatny przy bardziej skomplikowanym zapytaniu -- do rozróżniania podzapytań),
+ \item[dl\_sekw] -- ilość słów składających się na wyszukiwaną sekwencję,
+ \item[sekw] -- tablica zawierająca słowa składające się na wyszukiwaną sekwencję,
 \item[nazwa\_tabeli] -- nazwa tabeli, w której wyszukujemy (Reading lub Cuneiform).
  \end{description}
 

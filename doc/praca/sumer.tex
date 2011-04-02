@@ -36,8 +36,14 @@
 
 \usepackage[colorlinks=true,linkcolor=gray,urlcolor=blue]{hyperref}  
 
-% \setcounter{secnumdepth}{3}
-
+%  \setcounter{secnumdepth}{3}
+ \makeatletter
+ \renewcommand\paragraph{%
+    \@startsection{paragraph}{4}{0mm}%
+        {-\baselineskip}%
+        {.01\baselineskip}%
+       {\normalfont\normalsize\bfseries}}
+ \makeatother
 
 \newcommand{\emptyP}{\mbox{$\epsilon$}}
 \newcommand{\terminal}[1]{\mbox{{\texttt {#1}}}}
@@ -146,25 +152,35 @@ Praca jest napisana jako projekt dwuosobowy wspólnie z (...).
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
+
+% ./wprowadzenie.tex:60
+\bibitem{fowler} Martin Fowler, \url{http://martinfowler.com/bliki/DomainSpecificLanguage.html}
+% ./wprowadzenie.tex:82
+\bibitem{mernik} Marjan Mernik, Jan Heering, Anthony M. Sloane, \textit{When and How to Develop Domain-Specific Languages}
+% ./wprowadzenie.tex:92
+\bibitem{xquery} XQuery, \url{http://www.w3.org/XML/Query/}
+% ./wprowadzenie.tex:97
+\bibitem{postgres} PostgreSQL, \url{http://www.postgresql.org/}
+% ./wprowadzenie.tex:97
+\bibitem{zorba} Zorba - procesor XQuery, \url{http://www.zorba-xquery.com/}
+% ./dziedzina_problemu.tex:32
+\bibitem{kuckenburg} Martin Kuckenburg, \textit{Pierwsze słowo}, Państwowy Instytut Wydawniczy, Warszawa 2006, rozdział 8, 9
+% ./dziedzina_problemu.tex:36
 \bibitem{powalka} Agata Powałka, Marek Stępień, Jerzy Tyszkiewicz, \textit{Automatyczna analiza dokumentów sumeryjskich}, 
 Czas i przestrzeń, \url{http://www.czasiprzestrzen.wuw.pl/?id=str,sumeryjskich,1,0}
-% \bibitem{jaworski} Wojciech Jaworski, \textit{Modelowanie tresci sumeryjskich tekstów gospodarczych z epoki Ur~III}, 
-% \url{http://nlp.ipipan.waw.pl/NLP-SEMINAR/071119.pdf}, 19 listopada 2007
+% ./wczesniejsze_rozwiazania.tex:20
+\bibitem{cdli} Cuneiform Digital Library Initiative, \url{http://cdli.ucla.edu}
+% ./wczesniejsze_rozwiazania.tex:36
+\bibitem{etcsl} The Electronic Text Corpus of Sumerian Literature, \url{http://etcsl.orinst.ox.ac.uk/}
+% ./implementacja.tex:49
+\bibitem{bnfc} BNF Converter, \url{http://www.ohloh.net/p/12800} %- Strona projektu BNFC
+% ./implementacja.tex:162
+\bibitem{cexplode} C-explode, \url{http://maz-programmersdiary.blogspot.com/2008/09/c-explode.html}
+% ./baza_postgres.tex:16
 \bibitem{jaworski} Wojciech Jaworski, \textit{Contents Modelling of Neo-Sumerian Ur III Economic Text Corpus}, 
 Proceedings of the 22nd International Conference on Computational Linguistics (Coling 2008), strony 369-376
 Manchester, August 2008
 
-\bibitem{kuckenburg} Martin Kuckenburg, \textit{Pierwsze słowo}, Państwowy Instytut Wydawniczy, Warszawa 2006, rozdział 8, 9
-\bibitem{fowler} Martin Fowler, \url{http://martinfowler.com/bliki/DomainSpecificLanguage.html}
-%DSL - the good, the bad and the ugly
-\bibitem{mernik} Marjan Mernik, Jan Heering, Anthony M. Sloane, \textit{When and How to Develop Domain-Specific Languages}
-\bibitem{cdli} Cuneiform Digital Library Initiative, \url{http://cdli.ucla.edu}
-\bibitem{etcsl} The Electronic Text Corpus of Sumerian Literature, \url{http://etcsl.orinst.ox.ac.uk/}
-\bibitem{bnfc} BNF Converter, \url{http://www.ohloh.net/p/12800} %- Strona projektu BNFC
-\bibitem{cexplode} C-explode, \url{http://maz-programmersdiary.blogspot.com/2008/09/c-explode.html}
-\bibitem{postgres} PostgreSQL, \url{http://www.postgresql.org/}
-\bibitem{xquery} XQuery, \url{http://www.w3.org/XML/Query/}
-\bibitem{zorba} Zorba - procesor XQuery, \url{http://www.zorba-xquery.com/}
 
 
 %\bibitem[Bea65]{beaman} Juliusz Beaman, \textit{Morbidity of the Jolly function}, Mathematica Absurdica, 117 (1965) 338--9.

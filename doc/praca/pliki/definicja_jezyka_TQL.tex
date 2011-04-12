@@ -282,3 +282,51 @@ Takie zapytanie jest równoważne następującemu zapytaniu prostemu:
 \end{verbatim}
 Zakładając, że \textit{''zwierzęta w Gar*a``} są jak w sekcji \ref{sec:zdefiniowane}.
 
+
+\section{\label{chap:uzycie}Przykład użycia TQL}
+
+Zaprezentujemy przykład problemu, który został rozwiązany za pomocą języka TQL.
+
+Chcemy, w zbiorze tabliczek z okresu Ur III, dotyczących dostaw owiec (udu), odnaleźć te, które nie były sporządzone pod nadzorem adad-tilati. Przyjmujemy, że tabliczki, które były sporządzone pod nadzorem danego urzędnika zawierają jego
+imię, być może z jakąś końcówką.
+
+W znanych nam wyszukiwarkach, np. na stronie CDLI nie da się tego zrobić - nie można wyszukać tabliczek, które nie zawierają podanego słowa.
+Natomiast w języku TQL takie zapytanie da się łatwo wyrazić, np.
+
+\begin{verbatim}
+text: udu --adad-tilati*
+period: Ur III
+\end{verbatim}
+
+Co więcej, można zapytanie 
+
+\begin{verbatim}
+text: udu
+period: Ur III
+\end{verbatim}
+
+zapisać jako zapytanie zdefiniowane, a następnie wyszukiwać za jego pomocą tabliczki z odpowiednimi imionami lub bez,
+np.
+
+\begin{verbatim}
+define
+  text: udu
+  period: Ur III
+as "owce w Ur III"
+\end{verbatim}
+
+\begin{verbatim}
+search
+  text: --adad-tilati*
+in "owce w Ur III"
+\end{verbatim}
+
+\begin{verbatim}
+search
+  text: adad-tilati* + {d}inanna
+in "owce w Ur III"
+\end{verbatim}
+
+
+Takie rozwiązanie jest znaczącym ułatwieniem, ponieważ pozwala uniknąć wpisywania wiele razy podobnych zapytań.
+

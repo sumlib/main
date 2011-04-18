@@ -1,7 +1,9 @@
 \subsection{Baza PostgreSQL}
 \subsubsection{Diagram encji}
 \begin{figure}[h]
- \centering
+% \centering
+\vspace{-20pt}
+\hspace{-40pt}
  \includegraphics[width=500px]{../diagramy/diagram-encji-maly.pdf}
  % diagram-encji-maly.pdf: 930x560 pixel, 72dpi, 32.81x19.76 cm, bb=0 0 930 560
  \caption{Diagram encji}
@@ -10,7 +12,7 @@ Jednym z problemów przy projektowaniu bazy danych był wybór takiej reprezenta
 żeby efektywnie wyszukiwać zarówno treść konkretnej tabliczki, jak i tabliczki, których treść spełnia podane kryteria
  (wg odczytów lub zapisu klinowego).
 
-W przypadku pierwszego problemu jako rozwiązanie narzuca się przechowywanie treści
+W przypadku pierwszego problemu narzucające się rozwiązanie to przechowywanie treści
 jako otwarty tekst.
 Natomiast najlepszym rozwiązaniem drugiego jest reprezentacja treści tabliczki
 w formie grafu, którego krawędziami są odczyty i kliny (zgodnie z pomysłem dr Wojciecha Jaworskiego \cite[s.374]{jaworski}).
@@ -23,9 +25,9 @@ Natomiast zawsze korzystamy z otwartego tekstu w tabeli Tablet w celu wyświetle
 % Aby zapewnić możliwość odwzorowania treści tabliczki między reprezentacjami, węzły są liczbami postaci:
 Kiedy zatem wyszukujemy w tabeli Reading (lub Cuneiform), musimy być w stanie powiązać znalezione odczyty (kliny) 
 z całą treścią tabliczki w tabeli Tablet. Osiągamy to, zapisując węzły w grafie w postaci:
-\begin{verbatim}
- <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>
-\end{verbatim}
+\begin{alltt}
+ <numer węzła w tabliczce> * 1 000 000 + <id tabliczki>\normalfont,
+\end{alltt}
 gdzie numer węzła w tabliczce to numer kolejnego słowa (słowa są oddzielone spacjami i końcem linii) pomnożone przez 10 
 (żeby umożliwić wstawienie kilku węzłów w jednym słowie np. pozwolić na przetłumaczenie jednego słowa na sekwencję trzech klinów). 
 

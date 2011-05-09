@@ -156,12 +156,10 @@ INNER JOIN (
   <wynikowe zapytanie o treść tabliczki>
 ) AS sequence ON sequence.id_tab = t.id
 \end{verbatim}
-
 natomiast do \textit{select} dodajemy:
 \begin{verbatim}
 , sequence.nodes as nodes
 \end{verbatim}
-
 gdzie $<$wynikowe zapytanie o treść tabliczki$>$, to kombinacja zapytań typu:
 \begin{verbatim}
   SELECT 
